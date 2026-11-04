@@ -1,0 +1,53 @@
+{
+ "title": "Let It Be",
+ "artist": "The Beatles",
+ "key": "C major",
+ "bpm": 72,
+ "episode": 2,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The *four chords* behind half of pop music",
+ "hook_beats": 6,
+ "hook_focus": 2,
+ "cover_text": "The *four chords* behind half of pop",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "beats": 10,
+   "text": "Home base: *C major*. Four chords, endless songs."
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 5,
+   "text": "The V. Its *B* is the leading tone, aching to go home.",
+   "focus_note": "B"
+  },
+  {
+   "name": "Am",
+   "roman": "vi",
+   "tag": "relative minor",
+   "beats": 5,
+   "text": "Instead of home: *A minor*, the sad twin of C.",
+   "focus_note": "A"
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "warmth",
+   "beats": 5,
+   "text": "The IV. *F* is the soft landing.",
+   "focus_note": "F"
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "text": "I–V–vi–IV. You've heard this *a thousand times*."
+  }
+ ]
+}

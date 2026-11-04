@@ -1,0 +1,69 @@
+{
+ "title": "Hey Jude (coda)",
+ "artist": "The Beatles",
+ "key": "F major",
+ "bpm": 74,
+ "episode": 3,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why the *Hey Jude* ending could go on forever",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "The *borrowed chord* that never lets it end",
+ "chords": [
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "beats": 10,
+   "text": "Home: *F major*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "♭VII",
+   "tag": "borrowed",
+   "beats": 6,
+   "text": "*E♭* isn't in F major. It's the Mixolydian ♭VII.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Bb",
+   "roman": "IV",
+   "tag": "plagal",
+   "beats": 6,
+   "text": "Down to *B♭*, the IV. No V anywhere.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "beats": 6,
+   "text": "♭VII–IV–I never pulls hard, so it *just keeps looping*.",
+   "notes": [
+    "F2",
+    "A3",
+    "C4",
+    "F4"
+   ]
+  }
+ ]
+}

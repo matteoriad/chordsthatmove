@@ -1,0 +1,80 @@
+{
+ "title": "Zombie",
+ "artist": "The Cranberries",
+ "key": "E minor",
+ "bpm": 84,
+ "episode": 10,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "*Zombie* uses the happiest loop in pop",
+ "hook_beats": 6,
+ "hook_focus": 0,
+ "cover_text": "The *happiest loop* in pop, starting sad",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "vi",
+   "tag": "start",
+   "beats": 14,
+   "text": "It starts on *E minor*…",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "",
+   "beats": 8,
+   "text": "…then *C*…",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "",
+   "beats": 8,
+   "text": "…then *G*…",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "V",
+   "tag": "",
+   "beats": 8,
+   "text": "…then *D*. vi–IV–I–V: the pop loop, *rotated*.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "vi",
+   "tag": "start",
+   "beats": 4,
+   "text": "Same chords as happy songs. *Starting on vi* makes it ache.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  }
+ ]
+}

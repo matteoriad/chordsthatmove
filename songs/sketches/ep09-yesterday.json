@@ -1,0 +1,68 @@
+{
+ "title": "Yesterday",
+ "artist": "The Beatles",
+ "key": "F major",
+ "bpm": 97,
+ "episode": 9,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The *two-chord detour* in Yesterday",
+ "hook_beats": 6,
+ "hook_focus": 2,
+ "cover_text": "The *two-chord detour* that sounds like regret",
+ "chords": [
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "beats": 12,
+   "text": "Home: *F major*."
+  },
+  {
+   "name": "Em7",
+   "roman": "ii/vi",
+   "tag": "detour",
+   "beats": 6,
+   "text": "*Em7* isn't in F. It's the ii *of D minor*.",
+   "focus_note": "E"
+  },
+  {
+   "name": "A7",
+   "roman": "V/vi",
+   "tag": "secondary dominant",
+   "beats": 6,
+   "text": "*A7*. Its *C♯* is a leading tone into D.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "Dm",
+   "roman": "vi",
+   "tag": "landing",
+   "beats": 6,
+   "text": "It lands on *D minor*. The detour sounds like regret.",
+   "focus_note": "D"
+  },
+  {
+   "name": "Bb",
+   "roman": "IV",
+   "tag": "turn home",
+   "beats": 6,
+   "text": "*B♭*, the IV, turning back home."
+  },
+  {
+   "name": "C7",
+   "roman": "V7",
+   "tag": "dominant",
+   "beats": 6,
+   "text": "*C7*, the real V. Its E pulls up to F.",
+   "focus_note": "E"
+  },
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "text": "Home again."
+  }
+ ]
+}

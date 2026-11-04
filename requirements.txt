@@ -1,0 +1,6 @@
+numpy
+scipy
+pillow
+pycairo
+fonttools
+requests

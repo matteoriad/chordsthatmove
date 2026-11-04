@@ -1,0 +1,52 @@
+{
+ "title": "Smells Like Teen Spirit",
+ "artist": "Nirvana",
+ "key": "F",
+ "bpm": 117,
+ "episode": 12,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why *Teen Spirit* is neither major nor minor",
+ "hook_beats": 6,
+ "hook_focus": 2,
+ "cover_text": "Neither *major nor minor*. Just loud.",
+ "chords": [
+  {
+   "name": "F5",
+   "roman": "I",
+   "tag": "power chord",
+   "beats": 14,
+   "text": "Power chords: just *root and fifth*. No third."
+  },
+  {
+   "name": "Bb5",
+   "roman": "IV",
+   "tag": "power chord",
+   "beats": 8,
+   "text": "*B♭*, the IV. So far, normal."
+  },
+  {
+   "name": "Ab5",
+   "roman": "♭III",
+   "tag": "borrowed",
+   "beats": 8,
+   "text": "*A♭* isn't in F major. It's borrowed from F minor.",
+   "focus_note": "Ab"
+  },
+  {
+   "name": "Db5",
+   "roman": "♭VI",
+   "tag": "borrowed",
+   "beats": 8,
+   "text": "*D♭*, another borrowed chord.",
+   "focus_note": "Db"
+  },
+  {
+   "name": "F5",
+   "roman": "I",
+   "tag": "power chord",
+   "beats": 4,
+   "text": "No thirds: not happy, not sad. *Just loud*."
+  }
+ ]
+}

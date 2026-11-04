@@ -1,0 +1,83 @@
+{
+ "title": "Wonderwall",
+ "artist": "Oasis",
+ "key": "F♯ minor",
+ "bpm": 87,
+ "episode": 4,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The *two notes* that never move in Wonderwall",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "The *two notes* that never move",
+ "chords": [
+  {
+   "name": "F#m7",
+   "roman": "vi",
+   "tag": "drone",
+   "beats": 12,
+   "text": "Capo 2. The top two notes, *E and A*, ring all song.",
+   "notes": [
+    "F#2",
+    "A3",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "drone",
+   "beats": 8,
+   "text": "The bass and one voice move. *The drone stays*.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Esus4",
+   "roman": "V",
+   "tag": "suspended",
+   "beats": 8,
+   "text": "Sus4: no third, so *neither major nor minor*.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "A4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "B7sus4",
+   "roman": "II",
+   "tag": "suspended",
+   "beats": 8,
+   "text": "Still suspended. It *never lands*, so it loops.",
+   "notes": [
+    "B2",
+    "B3",
+    "E4",
+    "A4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "F#m7",
+   "roman": "vi",
+   "tag": "drone",
+   "beats": 4,
+   "text": "Same two notes on top, *start to finish*.",
+   "notes": [
+    "F#2",
+    "A3",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,81 @@
+{
+ "title": "Get Lucky",
+ "artist": "Daft Punk",
+ "key": "B Dorian",
+ "bpm": 116,
+ "episode": 11,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The loop in *Get Lucky* never comes home",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "The loop that *never comes home*",
+ "chords": [
+  {
+   "name": "Bm7",
+   "roman": "vi",
+   "tag": "home?",
+   "beats": 14,
+   "text": "*Bm7*. Is this home? Hard to say.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "A4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home?",
+   "beats": 8,
+   "text": "*D major*. Maybe this is home?",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "F#m7",
+   "roman": "iii",
+   "tag": "home?",
+   "beats": 8,
+   "text": "*F♯m7*. Or this?",
+   "notes": [
+    "F#2",
+    "A3",
+    "E4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "E",
+   "roman": "II",
+   "tag": "loop",
+   "beats": 8,
+   "text": "*E major*, and the loop restarts *before anything resolves*.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Bm7",
+   "roman": "vi",
+   "tag": "",
+   "beats": 4,
+   "text": "No chord ever wins. That's *why it grooves*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "A4"
+   ]
+  }
+ ]
+}

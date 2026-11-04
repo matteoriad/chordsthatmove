@@ -1,0 +1,51 @@
+{
+ "title": "Viva la Vida",
+ "artist": "Coldplay",
+ "key": "A♭ major",
+ "bpm": 138,
+ "episode": 14,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why *Viva la Vida* sounds triumphant and sad",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "Triumphant *and* sad at the same time",
+ "chords": [
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "not home",
+   "beats": 18,
+   "text": "It starts on *D♭*, the IV. Not home."
+  },
+  {
+   "name": "Eb",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 8,
+   "text": "*E♭*, the V, building tension."
+  },
+  {
+   "name": "Ab",
+   "roman": "I",
+   "tag": "home",
+   "beats": 8,
+   "text": "Home: *A♭ major*. The triumph."
+  },
+  {
+   "name": "Fm",
+   "roman": "vi",
+   "tag": "bittersweet",
+   "beats": 8,
+   "text": "Then *F minor*, the vi. Triumph turns bittersweet.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "",
+   "beats": 4,
+   "text": "Around again, *never quite resting*."
+  }
+ ]
+}

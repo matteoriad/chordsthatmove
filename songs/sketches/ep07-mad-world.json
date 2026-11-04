@@ -1,0 +1,51 @@
+{
+ "title": "Mad World",
+ "artist": "Tears for Fears",
+ "key": "E minor",
+ "bpm": 90,
+ "episode": 7,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "One *bright note* makes Mad World haunting",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "One *bright note* makes it haunting",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "beats": 12,
+   "text": "Home: *E minor*."
+  },
+  {
+   "name": "G",
+   "roman": "III",
+   "tag": "relative major",
+   "beats": 8,
+   "text": "Up to the relative major, *G*."
+  },
+  {
+   "name": "D",
+   "roman": "VII",
+   "tag": "in key",
+   "beats": 8,
+   "text": "*D*, the ♭VII. Still dark, still in the key."
+  },
+  {
+   "name": "A",
+   "roman": "IV",
+   "tag": "dorian",
+   "beats": 8,
+   "text": "The trick: *A major*, not minor. That *C♯* is Dorian.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "beats": 4,
+   "text": "Back to E minor. *One bright note* is what haunts."
+  }
+ ]
+}

@@ -1,0 +1,57 @@
+name: Daily reel
+
+on:
+  schedule:
+    # 16:53 UTC = 17:53 Berlin in winter, 18:53 in summer
+    - cron: "53 16 * * *"
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: "Render only, don't post to Instagram"
+        type: boolean
+        default: true
+      episode:
+        description: "Optional: force a specific episode number"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency: daily-reel
+
+jobs:
+  post:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: System packages
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libcairo2-dev pkg-config
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Render and post
+        env:
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
+          GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
+          EPISODE: ${{ inputs.episode }}
+        run: |
+          git config user.name "chordsthatmove-bot"
+          git config user.email "chordsthatmove-bot@users.noreply.github.com"
+          python pipeline/post.py
+
+      - name: Keep the rendered files
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: reel
+          path: out/
+          retention-days: 14

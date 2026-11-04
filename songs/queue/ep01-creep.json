@@ -1,0 +1,84 @@
+{
+ "title": "Creep",
+ "artist": "Radiohead",
+ "key": "G major",
+ "bpm": 92,
+ "episode": 1,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The *one borrowed chord* that makes Creep hurt",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "chords": [
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "beats": 14,
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "text": "Home base. We're in *G major*."
+  },
+  {
+   "name": "B",
+   "roman": "III",
+   "tag": "chromatic",
+   "beats": 8,
+   "notes": [
+    "B2",
+    "B3",
+    "D#4",
+    "F#4"
+   ],
+   "focus": 2,
+   "text": "Should be B minor. Going major adds *D♯*, a note outside the key."
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "lift",
+   "beats": 8,
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 2,
+   "text": "That *D♯ rises to E*. The lift: bright, hopeful."
+  },
+  {
+   "name": "Cm",
+   "roman": "iv",
+   "tag": "borrowed",
+   "beats": 8,
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ],
+   "focus": 2,
+   "text": "Borrowed from G minor. *E sinks to E♭* and the hope collapses."
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 2,
+   "text": "Back home, but it *doesn't feel the same*."
+  }
+ ],
+ "cover_text": "The one *borrowed chord* that makes it hurt"
+}

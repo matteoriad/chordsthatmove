@@ -1,0 +1,136 @@
+{
+ "title": "Hotel California",
+ "artist": "Eagles",
+ "key": "B minor",
+ "bpm": 74,
+ "episode": 5,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The chord in *Hotel California* that breaks the key",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "The chord that *breaks the key*",
+ "chords": [
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "beats": 10,
+   "text": "Home: *B minor*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "harmonic minor",
+   "beats": 4,
+   "text": "F♯ *major*, not minor. Its *A♯* pulls back to B.",
+   "notes": [
+    "F#2",
+    "A#3",
+    "C#4",
+    "F#4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "A",
+   "roman": "VII",
+   "tag": "descent",
+   "beats": 4,
+   "text": "Down a step to *A*.",
+   "notes": [
+    "A2",
+    "A3",
+    "C#4",
+    "E4"
+   ]
+  },
+  {
+   "name": "E",
+   "roman": "IV",
+   "tag": "dorian",
+   "beats": 4,
+   "text": "*E major* in B minor: the Dorian IV.",
+   "notes": [
+    "E2",
+    "G#3",
+    "B3",
+    "E4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "VI",
+   "tag": "descent",
+   "beats": 4,
+   "text": "The descent continues: *G*.",
+   "notes": [
+    "G2",
+    "G3",
+    "B3",
+    "D4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "III",
+   "tag": "relative major",
+   "beats": 4,
+   "text": "*D major*, the relative major. A flash of light.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "iv",
+   "tag": "minor iv",
+   "beats": 4,
+   "text": "Now *E minor*: the dark twin of that E major.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "dominant",
+   "beats": 4,
+   "text": "F♯ again, *A♯ pulling home*.",
+   "notes": [
+    "F#2",
+    "A#3",
+    "C#4",
+    "F#4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "beats": 4,
+   "text": "Back to *B minor*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4"
+   ]
+  }
+ ]
+}

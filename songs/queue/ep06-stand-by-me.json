@@ -1,0 +1,83 @@
+{
+ "title": "Stand By Me",
+ "artist": "Ben E. King",
+ "key": "A major",
+ "bpm": 118,
+ "episode": 6,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The *1950s loop* hiding in Stand By Me",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "The *1950s loop* everyone still uses",
+ "chords": [
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "beats": 14,
+   "text": "Home: *A major*.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "relative minor",
+   "beats": 8,
+   "text": "Down to the relative minor, *F♯ minor*.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "lift",
+   "beats": 8,
+   "text": "The IV: *D major*. A lift.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 8,
+   "text": "The V. Its *G♯* aches back up to A.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "text": "I–vi–IV–V: the *doo-wop progression*.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}
