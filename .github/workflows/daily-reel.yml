@@ -2,8 +2,9 @@ name: Daily reel
 
 on:
   schedule:
-    # 16:53 UTC = 17:53 Berlin in winter, 18:53 in summer
-    - cron: "53 16 * * *"
+    # 10:00 Berlin all year: GitHub cron is UTC, so fire at 08:02 and 09:02 UTC
+    # and let the "Berlin 10 o'clock" step below keep only the run in Berlin's 10:xx hour.
+    - cron: "2 8,9 * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -24,19 +25,35 @@ jobs:
     runs-on: ubuntu-24.04
     timeout-minutes: 30
     steps:
+      - name: Berlin 10 o'clock
+        id: gate
+        run: |
+          H=$(TZ=Europe/Berlin date +%H)
+          if [ "${{ github.event_name }}" != "schedule" ] || [ "$H" = "10" ]; then
+            echo "go=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "It's ${H}:xx in Berlin, not 10:xx: skipping this run."
+            echo "go=false" >> "$GITHUB_OUTPUT"
+          fi
+
       - uses: actions/checkout@v4
+        if: steps.gate.outputs.go == 'true'
 
       - name: System packages
+        if: steps.gate.outputs.go == 'true'
         run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libcairo2-dev pkg-config
 
       - uses: actions/setup-python@v5
+        if: steps.gate.outputs.go == 'true'
         with:
           python-version: "3.12"
           cache: pip
 
       - run: pip install -r requirements.txt
+        if: steps.gate.outputs.go == 'true'
 
       - name: Render and post
+        if: steps.gate.outputs.go == 'true'
         env:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
@@ -50,7 +67,7 @@ jobs:
           python pipeline/post.py
 
       - name: Keep the rendered files
-        if: always()
+        if: always() && steps.gate.outputs.go == 'true'
         uses: actions/upload-artifact@v4
         with:
           name: reel
