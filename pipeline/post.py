@@ -7,7 +7,9 @@ Instagram has processed it → publish → record it in posted.json → refresh 
 access token.
 
 Env:
-  IG_USER_ID, IG_ACCESS_TOKEN   Instagram API with Instagram Login (required unless DRY_RUN)
+  IG_USER_ID, IG_ACCESS_TOKEN   Instagram account ID + token (required unless DRY_RUN)
+  IG_LOGIN                      "facebook" (default: Facebook-login setup, Page token, no expiry)
+                                or "instagram" (Instagram-login setup, 60-day token, auto-refresh)
   GH_ADMIN_TOKEN                optional PAT that may update repo secrets (auto token refresh)
   DRY_RUN=true                  render only; no git push, no Instagram calls
   EPISODE=N                     force a specific episode
@@ -20,7 +22,9 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, ROOT)
 import brandreel  # noqa: E402
 
-API = "https://graph.instagram.com/" + os.environ.get("IG_API_VERSION", "v22.0")
+LOGIN = os.environ.get("IG_LOGIN", "facebook").strip().lower() or "facebook"
+HOST = "graph.instagram.com" if LOGIN == "instagram" else "graph.facebook.com"
+API = f"https://{HOST}/" + os.environ.get("IG_API_VERSION", "v22.0")
 RUPLOAD = "https://rupload.facebook.com/ig-api-upload/" + os.environ.get("IG_API_VERSION", "v22.0")
 STATE = os.path.join(ROOT, "posted.json")
 DRY = os.environ.get("DRY_RUN", "false").lower() == "true"
@@ -146,7 +150,7 @@ def main():
     git("add", "posted.json"); git("commit", "-m", f"posted episode {ep}: {spec['title']}"); git("push")
     left = len([x for x in q if x[0] not in done and x[0] != ep])
     log(f"{left} episodes left in the queue")
-    refresh_token(token)
+    if LOGIN == "instagram": refresh_token(token)   # Facebook-login Page tokens don't expire
 
 
 if __name__ == "__main__":
