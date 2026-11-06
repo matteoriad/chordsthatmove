@@ -34,6 +34,14 @@ def log(*a): print(*a, flush=True)
 def git(*args): return subprocess.run(["git", "-C", ROOT, *args], check=True, capture_output=True, text=True).stdout.strip()
 
 
+def commit_push(path, msg):
+    """Commit and push one file; a no-op if it is unchanged (e.g. on a rerun)."""
+    git("add", path)
+    if subprocess.run(["git", "-C", ROOT, "diff", "--cached", "--quiet"]).returncode == 0:
+        log(f"{path} unchanged, nothing to commit"); return
+    git("commit", "-m", msg); git("push")
+
+
 def load_state():
     return json.load(open(STATE)) if os.path.exists(STATE) else []
 
@@ -139,7 +147,7 @@ def main():
 
     user, token = os.environ["IG_USER_ID"], os.environ["IG_ACCESS_TOKEN"]
     repo = os.environ["GITHUB_REPOSITORY"]
-    git("add", cover_rel); git("commit", "-m", f"cover: episode {ep}"); git("push")
+    commit_push(cover_rel, f"cover: episode {ep}")
     cover_url = f"https://raw.githubusercontent.com/{repo}/{git('rev-parse', 'HEAD')}/{cover_rel}"
     time.sleep(5)
     mid, link = publish_reel(video, cover_url, text, user, token)
@@ -147,7 +155,7 @@ def main():
     state.append({"episode": ep, "slug": slug, "title": spec["title"], "media_id": mid, "permalink": link,
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=1)
-    git("add", "posted.json"); git("commit", "-m", f"posted episode {ep}: {spec['title']}"); git("push")
+    commit_push("posted.json", f"posted episode {ep}: {spec['title']}")
     left = len([x for x in q if x[0] not in done and x[0] != ep])
     log(f"{left} episodes left in the queue")
     if LOGIN == "instagram": refresh_token(token)   # Facebook-login Page tokens don't expire
