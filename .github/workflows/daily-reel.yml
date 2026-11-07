@@ -17,6 +17,10 @@ on:
       episode:
         description: "Optional: force a specific episode number"
         required: false
+      crosspost_only:
+        description: "Only put already-posted episodes on YouTube/TikTok (no Instagram post)"
+        type: boolean
+        default: false
   push:
     # Changing .github/post-now posts the next episode immediately.
     branches: [main]
@@ -62,11 +66,21 @@ jobs:
           IG_LOGIN: ${{ vars.IG_LOGIN }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           EPISODE: ${{ inputs.episode }}
+          YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+          YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+          YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+          YT_PRIVACY: ${{ vars.YT_PRIVACY }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          TIKTOK_MODE: ${{ vars.TIKTOK_MODE }}
+          TIKTOK_PRIVACY: ${{ vars.TIKTOK_PRIVACY }}
+          CROSSPOST_ONLY: ${{ github.event_name == 'workflow_dispatch' && inputs.crosspost_only || false }}
         run: |
           git config user.name "chordsthatmove-bot"
           git config user.email "chordsthatmove-bot@users.noreply.github.com"
           git pull -q --rebase origin main
-          python pipeline/post.py
+          if [ "$CROSSPOST_ONLY" = "true" ]; then python pipeline/crosspost.py; else python pipeline/post.py; fi
 
       - name: Keep the rendered files
         if: always() && steps.gate.outputs.go == 'true'

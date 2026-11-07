@@ -2,7 +2,7 @@
 
 Twice a day, at 01:00 and 13:00 Berlin time, GitHub Actions picks the next song in `songs/queue/`,
 renders the reel (voice lines + synth audio) and its cover, and publishes it to
-Instagram as a Reel. Nothing runs on your laptop.
+Instagram as a Reel, then to YouTube Shorts and TikTok. Nothing runs on your laptop.
 
 ```
 songs/sketches/   chord symbols + hooks + captions (what you or Claude write)
@@ -10,6 +10,8 @@ songs/queue/      full specs with voicings (built from sketches by voicing.py)
 brandreel.py      video + cover renderer ("chords that move" brand)
 songreel.py       timing + synth audio
 pipeline/post.py  render → upload → publish → record in posted.json
+pipeline/crosspost.py + platforms.py   YouTube Shorts + TikTok (backfills and retries)
+pipeline/connect.py                    one-time sign-in for YouTube/TikTok tokens
 .github/workflows/daily-reel.yml   the schedule (pipeline/gate.py holds the posting slots)
 ```
 
@@ -49,6 +51,49 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 - Actions → **Daily reel** → Run workflow with **dry run** ticked → download the `reel` artifact and check it.
 - Run it again with dry run unticked to post episode 1 right away.
 - From then on it posts by itself twice a day. If a run fails, GitHub emails you.
+
+## YouTube Shorts and TikTok
+
+After every Instagram post the same video goes to YouTube Shorts and TikTok. Each platform is
+switched on by its secrets; without them it is skipped. Every run also uploads any posted episode
+that isn't on a platform yet, oldest first (up to 6 per platform per run), so old episodes get
+backfilled and failed uploads retried. A YouTube/TikTok failure never blocks the Instagram post.
+`posted.json` records the YouTube ID and TikTok publish ID per episode.
+
+To backfill right away: Actions → **Daily reel** → Run workflow → untick **dry run**, tick
+**crosspost only**.
+
+### YouTube (one-time, ~10 min)
+1. In YouTube, create the channel (e.g. "chords that move") on the Google account you'll use.
+2. console.cloud.google.com → new project → APIs & Services → Library → enable **YouTube Data API v3**.
+3. Google Auth Platform / OAuth consent screen: **External**, fill in the app name and your email,
+   add the scope `.../auth/youtube.upload`. Then **Publish app** so its status is **In production**.
+   Skip this and the token stops working after 7 days. Google will show an "unverified app"
+   warning when you sign in; that's fine for your own channel.
+4. Credentials → Create credentials → **OAuth client ID** → type **Desktop app**. Copy the ID and secret.
+5. On your laptop: `pip install requests && python3 pipeline/connect.py youtube CLIENT_ID CLIENT_SECRET`
+   and sign in, picking the chords that move channel.
+6. Repo secrets: `YT_CLIENT_ID`, `YT_CLIENT_SECRET`, `YT_REFRESH_TOKEN`.
+   Optional repo variable `YT_PRIVACY` (`public` default, or `unlisted`/`private` to test first).
+
+### TikTok (one-time, plus TikTok's app review)
+1. Make @chordsthatmove on TikTok.
+2. developers.tiktok.com → Manage apps → **Connect an app**. Add the products **Login Kit** and
+   **Content Posting API**. In Login Kit set the Redirect URI to
+   `https://github.com/matteoriad/chordsthatmove`. Add the scope `video.upload`.
+3. Submit the app for review (icon, description, terms + privacy URLs; the repo URL works for
+   a personal tool). While waiting you can test in **Sandbox** by adding @chordsthatmove as a target user.
+4. On your laptop: `python3 pipeline/connect.py tiktok CLIENT_KEY CLIENT_SECRET`, log in as
+   @chordsthatmove, then paste the GitHub address the browser lands on back into the terminal.
+5. Repo secrets: `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET`, `TIKTOK_REFRESH_TOKEN`.
+   Also add `GH_ADMIN_TOKEN` (a fine-grained PAT on this repo with *Secrets: read and write*) so
+   the pipeline can save TikTok's refresh token when it rotates.
+
+**Inbox mode (default):** each video lands in the TikTok app as a draft notification and you tap
+Post (a chance to add a trending sound). No TikTok audit needed. **Direct mode:** set the repo variable
+`TIKTOK_MODE=direct`, add the `video.publish` scope and Direct Post in the app, and redo step 4 with
+`TIKTOK_MODE=direct python3 pipeline/connect.py tiktok ...`. Until TikTok audits the app, direct
+posts are private-only; after the audit they go public by themselves.
 
 ## Adding songs
 Write a sketch in `songs/sketches/` (copy an existing one), then build the queue file:

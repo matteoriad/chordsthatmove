@@ -4,7 +4,7 @@
 Steps: pick next song → render reel + covers → push the cover (public URL for
 Instagram) → create Reel container with resumable video upload → wait until
 Instagram has processed it → publish → record it in posted.json → refresh the
-access token.
+access token → cross-post to YouTube Shorts / TikTok (pipeline/crosspost.py).
 
 Env:
   IG_USER_ID, IG_ACCESS_TOKEN   Instagram account ID + token (required unless DRY_RUN)
@@ -156,6 +156,10 @@ def main():
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=1)
     commit_push("posted.json", f"posted episode {ep}: {spec['title']}")
+    import crosspost   # YouTube Shorts + TikTok (skipped if their secrets aren't set)
+    if crosspost.catch_up(state, rendered={slug: video}):
+        json.dump(state, open(STATE, "w"), indent=1)
+        commit_push("posted.json", f"cross-posted episode {ep}: {spec['title']}")
     left = len([x for x in q if x[0] not in done and x[0] != ep])
     log(f"{left} episodes left in the queue")
     if LOGIN == "instagram": refresh_token(token)   # Facebook-login Page tokens don't expire
