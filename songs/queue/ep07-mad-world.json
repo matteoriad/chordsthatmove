@@ -6,17 +6,17 @@
  "episode": 7,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "One *bright note* makes Mad World haunting",
+ "hook": "The *one bright note* that makes Mad World ache",
  "hook_beats": 6,
  "hook_focus": 3,
- "cover_text": "One *bright note* makes it haunting",
+ "cover_text": "One *bright note* in a dark room",
  "chords": [
   {
    "name": "Em",
    "roman": "i",
    "tag": "home",
    "beats": 12,
-   "text": "Home: *E minor*.",
+   "text": "Home: *E minor*. Cold and still.",
    "notes": [
     "E2",
     "B3",
@@ -29,7 +29,7 @@
    "roman": "III",
    "tag": "relative major",
    "beats": 8,
-   "text": "Up to the relative major, *G*.",
+   "text": "Up to *G major*. Brighter, but the same notes.",
    "notes": [
     "G2",
     "B3",
@@ -42,7 +42,7 @@
    "roman": "VII",
    "tag": "in key",
    "beats": 8,
-   "text": "*D*, the ♭VII. Still dark, still in the key.",
+   "text": "*D major*. Still inside the gloom.",
    "notes": [
     "D3",
     "A3",
@@ -55,7 +55,7 @@
    "roman": "IV",
    "tag": "dorian",
    "beats": 8,
-   "text": "The trick: *A major*, not minor. That *C♯* is Dorian.",
+   "text": "*A major*, not minor. Its C♯ doesn't belong here.",
    "notes": [
     "A2",
     "A3",
@@ -69,7 +69,7 @@
    "roman": "i",
    "tag": "home",
    "beats": 4,
-   "text": "Back to E minor. *One bright note* is what haunts.",
+   "text": "Back to E minor. *Hope that doesn't fit* is what haunts.",
    "notes": [
     "E2",
     "G3",

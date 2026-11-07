@@ -6,31 +6,31 @@
  "episode": 13,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "The one chord in *Hallelujah* that isn't in the key",
+ "hook": "The chord that makes Hallelujah *break your heart*",
  "hook_beats": 6,
  "hook_focus": 5,
- "cover_text": "The one chord that *isn't in the key*",
+ "cover_text": "The chord that *breaks your heart*",
  "chords": [
   {
    "name": "F",
    "roman": "IV",
    "tag": "",
    "beats": 10,
-   "text": "*F*, the IV, in C major."
+   "text": "*F*, the IV, in C major. Gentle and open."
   },
   {
    "name": "G",
    "roman": "V",
    "tag": "",
    "beats": 4,
-   "text": "*G*, the V. You expect C next…"
+   "text": "*G*, the V. You expect home, C major…"
   },
   {
    "name": "Am",
    "roman": "vi",
    "tag": "deceptive",
    "beats": 4,
-   "text": "…but it lands on *A minor*. A deceptive cadence.",
+   "text": "…but it lands on *A minor*. Comfort denied.",
    "focus_note": "A"
   },
   {
@@ -38,21 +38,21 @@
    "roman": "IV",
    "tag": "",
    "beats": 4,
-   "text": "Back to *F*."
+   "text": "Back to *F*. Trying again."
   },
   {
    "name": "G",
    "roman": "V",
    "tag": "",
    "beats": 4,
-   "text": "*G* again."
+   "text": "*G* again. Hoping…"
   },
   {
    "name": "E7",
    "roman": "V/vi",
    "tag": "secondary dominant",
    "beats": 4,
-   "text": "*E7*: its *G♯* isn't in C. It leans into A.",
+   "text": "*E7*: its G♯ isn't in C. It drags you toward A minor.",
    "focus_note": "G#"
   },
   {
@@ -60,7 +60,7 @@
    "roman": "vi",
    "tag": "resolution",
    "beats": 4,
-   "text": "And it resolves to *A minor*. The sad ending feels inevitable.",
+   "text": "A minor arrives. *Sadness feels inevitable*.",
    "focus_note": "A"
   }
  ]

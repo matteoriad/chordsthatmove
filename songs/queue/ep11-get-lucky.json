@@ -6,17 +6,17 @@
  "episode": 11,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "The loop in *Get Lucky* never comes home",
+ "hook": "Why Get Lucky feels like *a night that never ends*",
  "hook_beats": 6,
  "hook_focus": 3,
- "cover_text": "The loop that *never comes home*",
+ "cover_text": "The loop that *never wants to go home*",
  "chords": [
   {
    "name": "Bm7",
    "roman": "vi",
    "tag": "home?",
    "beats": 14,
-   "text": "*Bm7*. Is this home? Hard to say.",
+   "text": "*Bm7*. Cool, a little moody. Is this home?",
    "notes": [
     "B2",
     "B3",
@@ -29,7 +29,7 @@
    "roman": "I",
    "tag": "home?",
    "beats": 8,
-   "text": "*D major*. Maybe this is home?",
+   "text": "*D major*. Brighter. Maybe this is home?",
    "notes": [
     "D3",
     "A3",
@@ -42,7 +42,7 @@
    "roman": "iii",
    "tag": "home?",
    "beats": 8,
-   "text": "*F♯m7*. Or this?",
+   "text": "*F♯m7*. Or this? Nothing settles.",
    "notes": [
     "F#2",
     "A3",
@@ -55,7 +55,7 @@
    "roman": "II",
    "tag": "loop",
    "beats": 8,
-   "text": "*E major*, and the loop restarts *before anything resolves*.",
+   "text": "*E major*, and it restarts before anyone has to leave.",
    "notes": [
     "E2",
     "B3",
@@ -69,7 +69,7 @@
    "roman": "vi",
    "tag": "",
    "beats": 4,
-   "text": "No chord ever wins. That's *why it grooves*.",
+   "text": "No chord ever wins, so *the night never ends*.",
    "notes": [
     "B2",
     "B3",

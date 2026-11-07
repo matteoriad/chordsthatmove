@@ -6,24 +6,24 @@
  "episode": 6,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "The *1950s loop* hiding in Stand By Me",
+ "hook": "The four chords that make Stand By Me *feel safe*",
  "hook_beats": 6,
  "hook_focus": 1,
- "cover_text": "The *1950s loop* everyone still uses",
+ "cover_text": "Four chords that *feel like safety*",
  "chords": [
   {
    "name": "A",
    "roman": "I",
    "tag": "home",
    "beats": 14,
-   "text": "Home: *A major*."
+   "text": "Home: *A major*. Warm and steady."
   },
   {
    "name": "F#m",
    "roman": "vi",
    "tag": "relative minor",
    "beats": 8,
-   "text": "Down to the relative minor, *F♯ minor*.",
+   "text": "Down to *F♯ minor*. A shadow, but the same family.",
    "focus_note": "F#"
   },
   {
@@ -31,7 +31,7 @@
    "roman": "IV",
    "tag": "lift",
    "beats": 8,
-   "text": "The IV: *D major*. A lift.",
+   "text": "*D major* lifts it. It's going to be fine.",
    "focus_note": "D"
   },
   {
@@ -39,7 +39,7 @@
    "roman": "V",
    "tag": "tension",
    "beats": 8,
-   "text": "The V. Its *G♯* aches back up to A.",
+   "text": "The V. Its *G♯* aches to get back home.",
    "focus_note": "G#"
   },
   {
@@ -47,7 +47,7 @@
    "roman": "I",
    "tag": "home",
    "beats": 4,
-   "text": "I–vi–IV–V: the *doo-wop progression*."
+   "text": "And it always gets there. *It never lets you down*."
   }
  ]
 }

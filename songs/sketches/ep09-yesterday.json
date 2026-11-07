@@ -6,24 +6,24 @@
  "episode": 9,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "The *two-chord detour* in Yesterday",
+ "hook": "How two chords turn Yesterday *into regret*",
  "hook_beats": 6,
  "hook_focus": 2,
- "cover_text": "The *two-chord detour* that sounds like regret",
+ "cover_text": "Two chords that *sound like regret*",
  "chords": [
   {
    "name": "F",
    "roman": "I",
    "tag": "home",
    "beats": 12,
-   "text": "Home: *F major*."
+   "text": "Home: *F major*. Calm, almost sunny."
   },
   {
    "name": "Em7",
    "roman": "ii/vi",
    "tag": "detour",
    "beats": 6,
-   "text": "*Em7* isn't in F. It's the ii *of D minor*.",
+   "text": "Suddenly *Em7*, a chord from somewhere else.",
    "focus_note": "E"
   },
   {
@@ -31,7 +31,7 @@
    "roman": "V/vi",
    "tag": "secondary dominant",
    "beats": 6,
-   "text": "*A7*. Its *C♯* is a leading tone into D.",
+   "text": "*A7*. Its C♯ leans hard into D minor.",
    "focus_note": "C#"
   },
   {
@@ -39,7 +39,7 @@
    "roman": "vi",
    "tag": "landing",
    "beats": 6,
-   "text": "It lands on *D minor*. The detour sounds like regret.",
+   "text": "It lands on *D minor*. The sun goes in.",
    "focus_note": "D"
   },
   {
@@ -47,14 +47,14 @@
    "roman": "IV",
    "tag": "turn home",
    "beats": 6,
-   "text": "*B♭*, the IV, turning back home."
+   "text": "*B♭* tries to turn it around…"
   },
   {
    "name": "C7",
    "roman": "V7",
    "tag": "dominant",
    "beats": 6,
-   "text": "*C7*, the real V. Its E pulls up to F.",
+   "text": "*C7*. Its E pulls up toward home…",
    "focus_note": "E"
   },
   {
@@ -62,7 +62,7 @@
    "roman": "I",
    "tag": "home",
    "beats": 4,
-   "text": "Home again."
+   "text": "Home again, but *something is lost*."
   }
  ]
 }

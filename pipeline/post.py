@@ -64,7 +64,7 @@ def caption(spec):
     return (f"{plain(spec['hook'])}\n\n"
             f"{spec['artist']} — {spec['title']} · {spec['key']}\n"
             f"{' → '.join(chords)}\n({' – '.join(romans)})\n\n"
-            f"A new song broken down every day. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
+            f"Two songs broken down every day. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
             f"#musictheory #chordprogression #{tag} #songwriting #harmony #pianochords #guitarchords #producer")
 
 

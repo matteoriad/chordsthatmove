@@ -6,45 +6,45 @@
  "episode": 10,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "*Zombie* uses the happiest loop in pop",
+ "hook": "Why Zombie *hurts* with pop's happiest chords",
  "hook_beats": 6,
  "hook_focus": 0,
- "cover_text": "The *happiest loop* in pop, starting sad",
+ "cover_text": "Pop's happiest chords, *starting in pain*",
  "chords": [
   {
    "name": "Em",
    "roman": "vi",
    "tag": "start",
    "beats": 14,
-   "text": "It starts on *E minor*…"
+   "text": "It starts on *E minor*. Already wounded…"
   },
   {
    "name": "C",
    "roman": "IV",
    "tag": "",
    "beats": 8,
-   "text": "…then *C*…"
+   "text": "…then *C*. A little warmth…"
   },
   {
    "name": "G",
    "roman": "I",
    "tag": "",
    "beats": 8,
-   "text": "…then *G*…"
+   "text": "…then *G*, the chord that should feel like home…"
   },
   {
    "name": "D",
    "roman": "V",
    "tag": "",
    "beats": 8,
-   "text": "…then *D*. vi–IV–I–V: the pop loop, *rotated*."
+   "text": "…then *D*. The same loop as countless happy hits."
   },
   {
    "name": "Em",
    "roman": "vi",
    "tag": "start",
    "beats": 4,
-   "text": "Same chords as happy songs. *Starting on vi* makes it ache."
+   "text": "But it *keeps falling back* to E minor. That's the ache."
   }
  ]
 }

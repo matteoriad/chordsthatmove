@@ -6,17 +6,17 @@
  "episode": 12,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why *Teen Spirit* is neither major nor minor",
+ "hook": "Teen Spirit isn't happy or sad. *It's just angry.*",
  "hook_beats": 6,
  "hook_focus": 2,
- "cover_text": "Neither *major nor minor*. Just loud.",
+ "cover_text": "Not happy. Not sad. *Just angry.*",
  "chords": [
   {
    "name": "F5",
    "roman": "I",
    "tag": "power chord",
    "beats": 14,
-   "text": "Power chords: just *root and fifth*. No third.",
+   "text": "Power chords: just *root and fifth*. No mood decided yet.",
    "notes": [
     "F2",
     "F3",
@@ -42,7 +42,7 @@
    "roman": "♭III",
    "tag": "borrowed",
    "beats": 8,
-   "text": "*A♭* isn't in F major. It's borrowed from F minor.",
+   "text": "*A♭* isn't in F major. It drags in darkness from F minor.",
    "notes": [
     "Ab2",
     "Ab3",
@@ -56,7 +56,7 @@
    "roman": "♭VI",
    "tag": "borrowed",
    "beats": 8,
-   "text": "*D♭*, another borrowed chord.",
+   "text": "*D♭*, borrowed too. Heavier still.",
    "notes": [
     "Db3",
     "Db4",
@@ -70,7 +70,7 @@
    "roman": "I",
    "tag": "power chord",
    "beats": 4,
-   "text": "No thirds: not happy, not sad. *Just loud*.",
+   "text": "No thirds: not happy, not sad. *Just raw*.",
    "notes": [
     "F2",
     "F3",

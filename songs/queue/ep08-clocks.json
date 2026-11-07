@@ -6,17 +6,17 @@
  "episode": 8,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why *Clocks* never feels like it lands",
+ "hook": "Why Clocks feels urgent but *never arrives*",
  "hook_beats": 6,
  "hook_focus": 1,
- "cover_text": "The *minor chord* that keeps it floating",
+ "cover_text": "The chord that *never lets it land*",
  "chords": [
   {
    "name": "Eb",
    "roman": "I",
    "tag": "home",
    "beats": 18,
-   "text": "Home: *E♭ major*.",
+   "text": "Home: *E♭ major*. Bright, but restless.",
    "notes": [
     "Eb3",
     "Bb3",
@@ -29,7 +29,7 @@
    "roman": "v",
    "tag": "borrowed",
    "beats": 8,
-   "text": "B♭ *minor*, not major: *D♭* instead of D.",
+   "text": "B♭ minor, not major: *D♭* replaces the note that pulls home.",
    "notes": [
     "Bb2",
     "Bb3",
@@ -43,7 +43,7 @@
    "roman": "ii",
    "tag": "no V",
    "beats": 8,
-   "text": "The ii: *F minor*. A real V never comes.",
+   "text": "*F minor*. Still waiting for a V that never comes.",
    "notes": [
     "F2",
     "Ab3",
@@ -56,7 +56,7 @@
    "roman": "I",
    "tag": "home",
    "beats": 6,
-   "text": "No leading tone, *no pull*. So it floats.",
+   "text": "No pull home, so it *never truly lands*. It just keeps going.",
    "notes": [
     "Eb3",
     "G3",

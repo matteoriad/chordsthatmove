@@ -1,6 +1,6 @@
 # chords that move: daily reel pipeline
 
-Every day at ~18:00 Berlin time, GitHub Actions picks the next song in `songs/queue/`,
+Twice a day, at 01:00 and 13:00 Berlin time, GitHub Actions picks the next song in `songs/queue/`,
 renders the reel (voice lines + synth audio) and its cover, and publishes it to
 Instagram as a Reel. Nothing runs on your laptop.
 
@@ -10,7 +10,7 @@ songs/queue/      full specs with voicings (built from sketches by voicing.py)
 brandreel.py      video + cover renderer ("chords that move" brand)
 songreel.py       timing + synth audio
 pipeline/post.py  render → upload → publish → record in posted.json
-.github/workflows/daily-reel.yml   the daily schedule
+.github/workflows/daily-reel.yml   the schedule (pipeline/gate.py holds the posting slots)
 ```
 
 ## One-time setup
@@ -48,7 +48,7 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 ### 4. Test, then go live
 - Actions → **Daily reel** → Run workflow with **dry run** ticked → download the `reel` artifact and check it.
 - Run it again with dry run unticked to post episode 1 right away.
-- From then on it posts by itself every day. If a run fails, GitHub emails you.
+- From then on it posts by itself twice a day. If a run fails, GitHub emails you.
 
 ## Adding songs
 Write a sketch in `songs/sketches/` (copy an existing one), then build the queue file:

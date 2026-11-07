@@ -6,24 +6,24 @@
  "episode": 5,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "The chord in *Hotel California* that breaks the key",
+ "hook": "Why Hotel California feels like *you can't leave*",
  "hook_beats": 6,
  "hook_focus": 1,
- "cover_text": "The chord that *breaks the key*",
+ "cover_text": "The chord that *won't let you leave*",
  "chords": [
   {
    "name": "Bm",
    "roman": "i",
    "tag": "home",
    "beats": 10,
-   "text": "Home: *B minor*."
+   "text": "Home: *B minor*. Dark and hazy."
   },
   {
    "name": "F#",
    "roman": "V",
    "tag": "harmonic minor",
    "beats": 4,
-   "text": "F♯ *major*, not minor. Its *A♯* pulls back to B.",
+   "text": "Should be minor. Going major adds *A♯*, a hook back to B.",
    "focus_note": "A#"
   },
   {
@@ -31,14 +31,14 @@
    "roman": "VII",
    "tag": "descent",
    "beats": 4,
-   "text": "Down a step to *A*."
+   "text": "Then it starts *sinking*, one step at a time."
   },
   {
    "name": "E",
    "roman": "IV",
    "tag": "dorian",
    "beats": 4,
-   "text": "*E major* in B minor: the Dorian IV.",
+   "text": "*E major*: its G♯ is a flash of light in a dark key.",
    "focus_note": "G#"
   },
   {
@@ -46,21 +46,21 @@
    "roman": "VI",
    "tag": "descent",
    "beats": 4,
-   "text": "The descent continues: *G*."
+   "text": "Down again to *G*. The light fades."
   },
   {
    "name": "D",
    "roman": "III",
    "tag": "relative major",
    "beats": 4,
-   "text": "*D major*, the relative major. A flash of light."
+   "text": "*D major*, the warmest chord yet. A way out?"
   },
   {
    "name": "Em",
    "roman": "iv",
    "tag": "minor iv",
    "beats": 4,
-   "text": "Now *E minor*: the dark twin of that E major.",
+   "text": "No. *E minor* takes the light back.",
    "focus_note": "G"
   },
   {
@@ -68,7 +68,7 @@
    "roman": "V",
    "tag": "dominant",
    "beats": 4,
-   "text": "F♯ again, *A♯ pulling home*.",
+   "text": "F♯ again. *A♯ pulls* you back toward B…",
    "focus_note": "A#"
   },
   {
@@ -76,7 +76,7 @@
    "roman": "i",
    "tag": "home",
    "beats": 4,
-   "text": "Back to *B minor*."
+   "text": "…and you're *right where you started*."
   }
  ]
 }
