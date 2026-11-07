@@ -3,7 +3,7 @@
  "artist": "Coldplay",
  "key": "E♭ major",
  "bpm": 131,
- "episode": 8,
+ "episode": 9,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Clocks feels urgent but *never arrives*",
@@ -16,7 +16,13 @@
    "roman": "I",
    "tag": "home",
    "beats": 18,
-   "text": "Home: *E♭ major*. Bright, but restless."
+   "text": "Home: *E♭ major*. Bright, but restless.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
   },
   {
    "name": "Bbm",
@@ -24,21 +30,39 @@
    "tag": "borrowed",
    "beats": 8,
    "text": "B♭ minor, not major: *D♭* replaces the note that pulls home.",
-   "focus_note": "Db"
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "Db4",
+    "F4"
+   ],
+   "focus": 2
   },
   {
    "name": "Fm",
    "roman": "ii",
    "tag": "no V",
    "beats": 8,
-   "text": "*F minor*. Still waiting for a V that never comes."
+   "text": "*F minor*. Still waiting for a V that never comes.",
+   "notes": [
+    "F2",
+    "Ab3",
+    "C4",
+    "F4"
+   ]
   },
   {
    "name": "Eb",
    "roman": "I",
    "tag": "home",
    "beats": 6,
-   "text": "No pull home, so it *never truly lands*. It just keeps going."
+   "text": "No pull home, so it *never truly lands*. It just keeps going.",
+   "notes": [
+    "Eb3",
+    "G3",
+    "Bb3",
+    "Eb4"
+   ]
   }
  ]
 }

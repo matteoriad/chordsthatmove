@@ -3,7 +3,7 @@
  "artist": "The Cranberries",
  "key": "E minor",
  "bpm": 84,
- "episode": 10,
+ "episode": 11,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Zombie *hurts* with pop's happiest chords",
@@ -16,65 +16,35 @@
    "roman": "vi",
    "tag": "start",
    "beats": 14,
-   "text": "It starts on *E minor*. Already wounded…",
-   "notes": [
-    "E2",
-    "B3",
-    "E4",
-    "G4"
-   ]
+   "text": "It starts on *E minor*. Already wounded…"
   },
   {
    "name": "C",
    "roman": "IV",
    "tag": "",
    "beats": 8,
-   "text": "…then *C*. A little warmth…",
-   "notes": [
-    "C3",
-    "C4",
-    "E4",
-    "G4"
-   ]
+   "text": "…then *C*. A little warmth…"
   },
   {
    "name": "G",
    "roman": "I",
    "tag": "",
    "beats": 8,
-   "text": "…then *G*, the chord that should feel like home…",
-   "notes": [
-    "G2",
-    "B3",
-    "D4",
-    "G4"
-   ]
+   "text": "…then *G*, the chord that should feel like home…"
   },
   {
    "name": "D",
    "roman": "V",
    "tag": "",
    "beats": 8,
-   "text": "…then *D*. The same loop as countless happy hits.",
-   "notes": [
-    "D3",
-    "A3",
-    "D4",
-    "F#4"
-   ]
+   "text": "…then *D*. The same loop as countless happy hits."
   },
   {
    "name": "Em",
    "roman": "vi",
    "tag": "start",
    "beats": 4,
-   "text": "But it *keeps falling back* to E minor. That's the ache.",
-   "notes": [
-    "E2",
-    "B3",
-    "E4",
-    "G4"
-   ]
+   "text": "But it *keeps falling back* to E minor. That's the ache."
   }
  ]
 }

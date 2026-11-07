@@ -3,7 +3,7 @@
  "artist": "Daft Punk",
  "key": "B Dorian",
  "bpm": 116,
- "episode": 11,
+ "episode": 12,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Get Lucky feels like *a night that never ends*",
@@ -16,39 +16,21 @@
    "roman": "vi",
    "tag": "home?",
    "beats": 14,
-   "text": "*Bm7*. Cool, a little moody. Is this home?",
-   "notes": [
-    "B2",
-    "B3",
-    "D4",
-    "A4"
-   ]
+   "text": "*Bm7*. Cool, a little moody. Is this home?"
   },
   {
    "name": "D",
    "roman": "I",
    "tag": "home?",
    "beats": 8,
-   "text": "*D major*. Brighter. Maybe this is home?",
-   "notes": [
-    "D3",
-    "A3",
-    "D4",
-    "F#4"
-   ]
+   "text": "*D major*. Brighter. Maybe this is home?"
   },
   {
    "name": "F#m7",
    "roman": "iii",
    "tag": "home?",
    "beats": 8,
-   "text": "*F♯m7*. Or this? Nothing settles.",
-   "notes": [
-    "F#2",
-    "A3",
-    "E4",
-    "F#4"
-   ]
+   "text": "*F♯m7*. Or this? Nothing settles."
   },
   {
    "name": "E",
@@ -56,26 +38,14 @@
    "tag": "loop",
    "beats": 8,
    "text": "*E major*, and it restarts before anyone has to leave.",
-   "notes": [
-    "E2",
-    "B3",
-    "E4",
-    "G#4"
-   ],
-   "focus": 3
+   "focus_note": "G#"
   },
   {
    "name": "Bm7",
    "roman": "vi",
    "tag": "",
    "beats": 4,
-   "text": "No chord ever wins, so *the night never ends*.",
-   "notes": [
-    "B2",
-    "B3",
-    "D4",
-    "A4"
-   ]
+   "text": "No chord ever wins, so *the night never ends*."
   }
  ]
 }

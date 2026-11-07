@@ -1,0 +1,25 @@
+{
+ "title": "I Shot the Sheriff",
+ "artist": "Bob Marley",
+ "key": "G minor",
+ "bpm": 96,
+ "episode": 6,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The one chord that keeps I Shot the Sheriff *on edge*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "The chord that keeps it *on edge*",
+ "chords": [
+  {"name": "Gm7", "roman": "i7", "tag": "home", "beats": 14,
+   "text": "Home: *G minor*. Cool, laid-back, a little dark."},
+  {"name": "Cm7", "roman": "iv7", "tag": "minor iv", "beats": 8,
+   "text": "*C minor*, the iv. The mood sinks deeper.", "focus_note": "Eb"},
+  {"name": "Ebmaj7", "roman": "VImaj7", "tag": "verse", "beats": 8,
+   "text": "*E♭maj7*: warm and hazy. A moment to breathe."},
+  {"name": "Dm7", "roman": "v7", "tag": "minor v", "beats": 8,
+   "text": "Minor v: *F, not F♯*. Nothing pulls you home.", "focus_note": "F"},
+  {"name": "Gm7", "roman": "i7", "tag": "home", "beats": 6,
+   "text": "Home again, but *never relieved*. Still on edge."}
+ ]
+}

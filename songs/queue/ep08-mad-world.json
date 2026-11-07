@@ -3,7 +3,7 @@
  "artist": "Tears for Fears",
  "key": "E minor",
  "bpm": 90,
- "episode": 7,
+ "episode": 8,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "The *one bright note* that makes Mad World ache",
@@ -16,21 +16,39 @@
    "roman": "i",
    "tag": "home",
    "beats": 12,
-   "text": "Home: *E minor*. Cold and still."
+   "text": "Home: *E minor*. Cold and still.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
   },
   {
    "name": "G",
    "roman": "III",
    "tag": "relative major",
    "beats": 8,
-   "text": "Up to *G major*. Brighter, but the same notes."
+   "text": "Up to *G major*. Brighter, but the same notes.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
   },
   {
    "name": "D",
    "roman": "VII",
    "tag": "in key",
    "beats": 8,
-   "text": "*D major*. Still inside the gloom."
+   "text": "*D major*. Still inside the gloom.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
   },
   {
    "name": "A",
@@ -38,14 +56,26 @@
    "tag": "dorian",
    "beats": 8,
    "text": "*A major*, not minor. Its C♯ doesn't belong here.",
-   "focus_note": "C#"
+   "notes": [
+    "A2",
+    "A3",
+    "C#4",
+    "E4"
+   ],
+   "focus": 2
   },
   {
    "name": "Em",
    "roman": "i",
    "tag": "home",
    "beats": 4,
-   "text": "Back to E minor. *Hope that doesn't fit* is what haunts."
+   "text": "Back to E minor. *Hope that doesn't fit* is what haunts.",
+   "notes": [
+    "E2",
+    "G3",
+    "B3",
+    "E4"
+   ]
   }
  ]
 }

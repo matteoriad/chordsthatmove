@@ -3,7 +3,7 @@
  "artist": "Coldplay",
  "key": "A♭ major",
  "bpm": 138,
- "episode": 14,
+ "episode": 15,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Viva la Vida feels like *glory and loss at once*",
@@ -16,21 +16,39 @@
    "roman": "IV",
    "tag": "not home",
    "beats": 18,
-   "text": "It starts on *D♭*, the IV. Not home. Already reaching."
+   "text": "It starts on *D♭*, the IV. Not home. Already reaching.",
+   "notes": [
+    "Db3",
+    "Db4",
+    "F4",
+    "Ab4"
+   ]
   },
   {
    "name": "Eb",
    "roman": "V",
    "tag": "tension",
    "beats": 8,
-   "text": "*E♭*, the V. The march builds…"
+   "text": "*E♭*, the V. The march builds…",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
   },
   {
    "name": "Ab",
    "roman": "I",
    "tag": "home",
    "beats": 8,
-   "text": "Home: *A♭ major*. The victory."
+   "text": "Home: *A♭ major*. The victory.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
   },
   {
    "name": "Fm",
@@ -38,14 +56,26 @@
    "tag": "bittersweet",
    "beats": 8,
    "text": "Then *F minor*. The victory turns to loss.",
-   "focus_note": "F"
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "Ab4"
+   ],
+   "focus": 2
   },
   {
    "name": "Db",
    "roman": "IV",
    "tag": "",
    "beats": 4,
-   "text": "Around again: the glory *never gets to stay*."
+   "text": "Around again: the glory *never gets to stay*.",
+   "notes": [
+    "Db3",
+    "Db4",
+    "F4",
+    "Ab4"
+   ]
   }
  ]
 }
