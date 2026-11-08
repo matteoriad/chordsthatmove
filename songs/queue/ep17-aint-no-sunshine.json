@@ -1,0 +1,68 @@
+{
+ "title": "Ain't No Sunshine",
+ "artist": "Bill Withers",
+ "key": "A minor",
+ "bpm": 78,
+ "episode": 17,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Ain't No Sunshine feels *so empty*",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "The chord that *feels like an empty room*",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 12,
+   "text": "Home: *A minor*. Low, quiet, alone.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "minor v",
+   "beats": 6,
+   "text": "Minor v: *G, not G♯*. Nothing pulls you home.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "glimpse",
+   "beats": 6,
+   "text": "*G major*: a flicker of light, then gone.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 6,
+   "text": "Back to A minor. *The room is still empty*.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,111 @@
+{
+ "title": "Something",
+ "artist": "The Beatles",
+ "key": "C major",
+ "bpm": 66,
+ "episode": 18,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Something feels like *falling for someone*",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "One note, *falling slowly*",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "beats": 10,
+   "text": "Home: *C major*. Calm, settled.",
+   "notes": [
+    "C3",
+    "E4",
+    "G4",
+    "C5"
+   ]
+  },
+  {
+   "name": "Cmaj7",
+   "roman": "Imaj7",
+   "tag": "line cliché",
+   "beats": 5,
+   "text": "Top note *C slips to B*. Something shifts.",
+   "focus_note": "B",
+   "notes": [
+    "C3",
+    "E4",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "C7",
+   "roman": "I7",
+   "tag": "line cliché",
+   "beats": 5,
+   "text": "*B slips to B♭*. Further down, deeper in.",
+   "focus_note": "Bb",
+   "notes": [
+    "C3",
+    "E4",
+    "G4",
+    "Bb4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "landing",
+   "beats": 5,
+   "text": "*B♭ lands on A*: F major. You've fallen.",
+   "focus_note": "A",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "D7",
+   "roman": "II7",
+   "tag": "secondary dominant",
+   "beats": 5,
+   "text": "*F♯* sneaks in: brighter, more hopeful.",
+   "focus_note": "F#",
+   "notes": [
+    "D3",
+    "C4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 5,
+   "text": "*G*, the V. Waiting for an answer…",
+   "focus_note": "B",
+   "notes": [
+    "G2",
+    "B3",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "text": "…and it starts *falling all over again*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  }
+ ]
+}

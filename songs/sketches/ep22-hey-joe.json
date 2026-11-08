@@ -1,0 +1,61 @@
+{
+ "title": "Hey Joe",
+ "artist": "Jimi Hendrix",
+ "key": "E major",
+ "bpm": 84,
+ "episode": 22,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Hey Joe sounds like *running out of road*",
+ "hook_beats": 6,
+ "hook_focus": 4,
+ "cover_text": "Five chords, *no turning back*",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "♭VI",
+   "tag": "start",
+   "beats": 12,
+   "text": "It starts on *C*, far from home in E."
+  },
+  {
+   "name": "G",
+   "roman": "♭III",
+   "tag": "fifth up",
+   "beats": 6,
+   "text": "Up a fifth: *G*. Already moving.",
+   "focus_note": "B"
+  },
+  {
+   "name": "D",
+   "roman": "♭VII",
+   "tag": "fifth up",
+   "beats": 6,
+   "text": "Up again: *D*, and an F♯ sneaks in.",
+   "focus_note": "F#"
+  },
+  {
+   "name": "A",
+   "roman": "IV",
+   "tag": "fifth up",
+   "beats": 6,
+   "text": "Again: *A*. C♯ now. Getting closer.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "E",
+   "roman": "I",
+   "tag": "home",
+   "beats": 8,
+   "text": "*E major* at last. Its G♯ hits like a wall.",
+   "focus_note": "G#"
+  },
+  {
+   "name": "C",
+   "roman": "♭VI",
+   "tag": "start",
+   "beats": 4,
+   "text": "Then back down to C. *Running again*."
+  }
+ ]
+}

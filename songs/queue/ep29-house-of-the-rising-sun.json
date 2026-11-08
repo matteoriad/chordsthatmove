@@ -1,0 +1,122 @@
+{
+ "title": "House of the Rising Sun",
+ "artist": "The Animals",
+ "key": "A minor",
+ "bpm": 117,
+ "episode": 29,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why House of the Rising Sun feels *like fate*",
+ "hook_beats": 6,
+ "hook_focus": 6,
+ "cover_text": "The chord that *seals your fate*",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 14,
+   "text": "Home: *A minor*. A dark story begins.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "relative major",
+   "beats": 8,
+   "text": "*C major*: a little light in the room.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "dorian",
+   "beats": 8,
+   "text": "*D major*'s F♯ brightens it. Hope?",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "F",
+   "roman": "VI",
+   "tag": "sinking",
+   "beats": 8,
+   "text": "*F♯ falls to F*. The hope sinks.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 8,
+   "text": "Back to A minor, *heavier now*.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "relative major",
+   "beats": 8,
+   "text": "*C* again. The same small light…",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "harmonic minor",
+   "beats": 8,
+   "text": "…then *E major*. G♯ drags you toward fate.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 6,
+   "text": "*No escape*: back where it began.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}
