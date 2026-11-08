@@ -180,6 +180,14 @@ class Reel:
         up = s.pitch[:, 1:].flatten(); bs = s.pitch[:, 0]
         self.urange, self.brange = (up.min() - 1, up.max() + 1), (bs.min() - 1, bs.max() + 1)
 
+    def label(self):
+        """Top-right header and hook pill. Episodes: ARTIST — TITLE (jamreel.py overrides)."""
+        return f"{self.spec['artist'].upper()} — {self.spec['title'].upper()}"
+
+    def cover_kicker(self):
+        """Small line above the cover title. Episodes: the artist (jamreel.py overrides)."""
+        return self.spec["artist"].upper()
+
     # pitch → y in two lanes (upper voices roomy, bass compact)
     def ymap(self, v, p, ut, ub, bt, bb):
         lo, hi = self.brange if v == 0 else self.urange
@@ -270,12 +278,12 @@ class Reel:
                 chip = (cy, ca, t1, t2, w1)
         img = to_pil(surf); d = ImageDraw.Draw(img)
         tx.draw(d, L + 48, tx.base(240 - 13, SEMI, 22), "chords that move", SEMI, 22, SOFT, -0.03)
-        hd = f"{sp['artist'].upper()} — {sp['title'].upper()}"
+        hd = self.label()
         if hook:
             hd = f"EP. {int(sp['episode']):02d}" if sp.get("episode") else ""
         tx.draw(d, R - tx.width(hd, MONO, 22, 0.12), tx.base(240 - 13, MONO, 22), hd, MONO, 22, MUTED, 0.12)
         if hook:
-            label = f"{sp['artist'].upper()} — {sp['title'].upper()}"
+            label = self.label()
             pw = tx.width(label, MONO, 22, 0.12) + 44
             d.rounded_rectangle([L, 420, L + pw, 470], radius=25, outline=(46, 46, 58), width=2)
             tx.draw(d, L + 22, tx.base(420, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
@@ -414,7 +422,7 @@ class Reel:
         logo(cr, CW - PX_ - 72, CH - PY - 72, 72, 8)
         buf = np.frombuffer(surf.get_data(), np.uint8).reshape(CH, surf.get_stride() // 4, 4)[:, :CW]
         img = Image.fromarray(buf[:, :, [2, 1, 0]].copy()); d = ImageDraw.Draw(img)
-        tx.draw(d, PX_, tx.base(PY, MONO, 26), sp["artist"].upper(), MONO, 26, MUTED, 0.14)
+        tx.draw(d, PX_, tx.base(PY, MONO, 26), self.cover_kicker(), MONO, 26, MUTED, 0.14)
         # title: as big as fits (two lines max)
         size = 210
         while size > 110:
@@ -466,8 +474,8 @@ def stills(spec, outdir, times):
         p = os.path.join(outdir, f"frame_{t:05.2f}.jpg"); r.frame(t).save(p, quality=90); print(p)
 
 
-def render(spec, out):
-    r = Reel(spec); s = r.song
+def render(spec, out, reel_cls=None):
+    r = (reel_cls or Reel)(spec); s = r.song
     base = os.path.splitext(out)[0]
     wav, silent, tmp = base + ".wav", base + ".video.tmp.mp4", base + ".tmp.mp4"
     sr.synth(s, wav)

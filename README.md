@@ -105,3 +105,23 @@ python3 -c "import json,voicing,sys; p=sys.argv[1]; json.dump(voicing.build(json
 Preview without posting: `python3 brandreel.py render songs/queue/ep15-your-song.json test.mp4`
 and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
 When the queue runs out, the job fails and GitHub emails you.
+
+## Reel exports from the web app
+
+The jam web app (chords that move – jam) lets people export their own progressions as reels.
+It can't run Python or ffmpeg itself, so it starts `.github/workflows/export-reel.yml` through the
+GitHub API. The workflow renders the jam with `jamreel.py` (the same `brandreel.py` look, with the
+jam's title in place of song and artist and a small "made with chords that move" end card),
+uploads the MP4 and cover to Supabase Storage through signed links from the app, and reports
+back to the app's webhook. It never commits and is independent of the daily posting workflow.
+
+```
+python3 jamreel.py JAM.json OUTDIR   # → OUTDIR/reel.mp4, cover.png, cover_reel.png
+```
+
+One-time setup in this repo (Settings → Secrets and variables → Actions):
+- variable `EXPORT_APP_URL`: the web app's URL, e.g. `https://chordsthatmove.com`
+- secret `EXPORT_WEBHOOK_SECRET`: the same value as in the web app
+
+The web app needs a fine-grained GitHub token with **Actions: read and write** on this
+repository only.

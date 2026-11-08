@@ -1,0 +1,74 @@
+name: Export reel (web app)
+run-name: "Export ${{ inputs.export_id }}"
+
+# Started by the web app (chords that move – jam) through the GitHub API when someone exports
+# a jam. Renders it with jamreel.py, uploads the MP4 and cover to Supabase Storage through
+# signed links from the app, and reports back to the app's webhook.
+#
+# Independent of daily-reel.yml: different concurrency group, read-only checkout, never commits.
+#
+# This repo is public: the jam and the upload links are never put into env vars or logs
+# (pipeline/export_job.py reads inputs from the event file and masks the links).
+#
+# Setup: repo variable EXPORT_APP_URL (e.g. https://chordsthatmove.com) and
+#        repo secret EXPORT_WEBHOOK_SECRET (same value as in the web app).
+
+on:
+  workflow_dispatch:
+    inputs:
+      export_id:
+        description: "exports.id in the web app's database (UUID)"
+        required: true
+        type: string
+      jam:
+        description: "Jam JSON, same shape as songs/queue/*.json"
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+concurrency:
+  group: export-reel-${{ inputs.export_id }}
+  cancel-in-progress: false
+
+jobs:
+  render:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    env:
+      EXPORT_APP_URL: ${{ vars.EXPORT_APP_URL }}
+      EXPORT_WEBHOOK_SECRET: ${{ secrets.EXPORT_WEBHOOK_SECRET }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - name: Read the export request
+        run: python3 pipeline/export_job.py prepare
+
+      - name: Tell the app we're rendering
+        run: python3 pipeline/export_job.py start
+
+      - name: System packages
+        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libcairo2-dev pkg-config
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - run: pip install -r requirements.txt
+
+      - name: Render
+        run: python3 jamreel.py work/jam.json work/out
+
+      - name: Upload
+        run: python3 pipeline/export_job.py upload
+
+      - name: Tell the app it's ready
+        run: python3 pipeline/export_job.py done
+
+      - name: Tell the app it failed
+        if: failure() || cancelled()
+        run: python3 pipeline/export_job.py failed
