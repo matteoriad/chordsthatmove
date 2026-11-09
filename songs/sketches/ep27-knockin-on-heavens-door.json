@@ -1,0 +1,67 @@
+{
+ "title": "Knockin' on Heaven's Door",
+ "artist": "Bob Dylan",
+ "key": "G major",
+ "bpm": 69,
+ "episode": 27,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Knockin' on Heaven's Door *never gets an answer*",
+ "hook_beats": 6,
+ "hook_focus": 2,
+ "cover_text": "Two endings, *no answer*",
+ "chords": [
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "beats": 11,
+   "text": "Home: *G major*. Plain and honest."
+  },
+  {
+   "name": "D",
+   "roman": "V",
+   "tag": "lean",
+   "beats": 5,
+   "text": "*D*, the V. Leaning forward."
+  },
+  {
+   "name": "Am",
+   "roman": "ii",
+   "tag": "sigh",
+   "beats": 5,
+   "text": "Then *A minor*, not home. A tired sigh.",
+   "focus_note": "C"
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "beats": 5,
+   "text": "Back to G. *Try again*."
+  },
+  {
+   "name": "D",
+   "roman": "V",
+   "tag": "lean",
+   "beats": 5,
+   "text": "*D* again. Same lean."
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "open",
+   "beats": 5,
+   "text": "This time *C major*: softer, an open door.",
+   "focus_note": "E"
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "beats": 4,
+   "text": "No big ending. *Still waiting at the door*."
+  }
+ ],
+ "question": "Dylan or Guns N' Roses version? 👇"
+}

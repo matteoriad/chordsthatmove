@@ -1,0 +1,82 @@
+{
+ "title": "Blinding Lights",
+ "artist": "The Weeknd",
+ "key": "F minor",
+ "bpm": 171,
+ "episode": 17,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Blinding Lights feels *like a night drive alone*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "The chord that *lights up the dark*",
+ "question": "Which 80s song does this remind you of? 👇",
+ "chords": [
+  {
+   "name": "Fm",
+   "roman": "i",
+   "tag": "home",
+   "beats": 18,
+   "text": "Home: *F minor*. Dark streets, neon glow.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Cm",
+   "roman": "v",
+   "tag": "minor v",
+   "beats": 12,
+   "text": "*C minor*. Still dark. Still driving.",
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "♭VII",
+   "tag": "climb",
+   "beats": 12,
+   "text": "*E♭ major* starts to climb. Lights ahead.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bb",
+   "roman": "IV",
+   "tag": "dorian",
+   "beats": 12,
+   "text": "*B♭ major* brings D natural: sudden headlights.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Fm",
+   "roman": "i",
+   "tag": "home",
+   "beats": 8,
+   "text": "Back to F minor. *Still alone, still racing*.",
+   "notes": [
+    "F2",
+    "Ab3",
+    "C4",
+    "F4"
+   ]
+  }
+ ]
+}

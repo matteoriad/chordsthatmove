@@ -1,0 +1,52 @@
+{
+ "title": "Hit the Road Jack",
+ "artist": "Ray Charles",
+ "key": "A minor",
+ "bpm": 86,
+ "episode": 21,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Hit the Road Jack feels like *being thrown out*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "Four chords *walking you out*",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 12,
+   "text": "Home: *A minor*. Arms crossed."
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "step down",
+   "beats": 6,
+   "text": "*G*: one step down the stairs."
+  },
+  {
+   "name": "F",
+   "roman": "♭VI",
+   "tag": "step down",
+   "beats": 6,
+   "text": "*F*: another step. No way back up."
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "andalusian",
+   "beats": 6,
+   "text": "*E major*: its G♯ is the door swinging shut.",
+   "focus_note": "G#"
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 4,
+   "text": "And you're out. *Then it happens again*."
+  }
+ ],
+ "question": "Name another song that uses these four chords 👇"
+}

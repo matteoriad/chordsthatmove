@@ -105,3 +105,5 @@ python3 -c "import json,voicing,sys; p=sys.argv[1]; json.dump(voicing.build(json
 Preview without posting: `python3 brandreel.py render songs/queue/ep15-your-song.json test.mp4`
 and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
 When the queue runs out, the job fails and GitHub emails you.
+
+Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).

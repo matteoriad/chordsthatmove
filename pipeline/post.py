@@ -60,10 +60,11 @@ def plain(text): return text.replace("*", "")
 def caption(spec):
     chords = [c["name"] for c in spec["chords"]]
     romans = [c.get("roman", "") for c in spec["chords"]]
-    tag = re.sub(r"[^a-z0-9]", "", spec["title"].lower())
+    tag = spec.get("hashtag") or re.sub(r"[^a-z0-9]", "", spec["title"].lower())
     return (f"{plain(spec['hook'])}\n\n"
             f"{spec['artist']} — {spec['title']} · {spec['key']}\n"
             f"{' → '.join(chords)}\n({' – '.join(romans)})\n\n"
+            f"{plain(spec.get('question') or 'Which song should I break down next? Comment it 👇')}\n\n"
             f"Two songs broken down every day. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
             f"#musictheory #chordprogression #{tag} #songwriting #harmony #pianochords #guitarchords #producer")
 

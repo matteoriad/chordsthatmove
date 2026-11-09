@@ -1,0 +1,84 @@
+{
+ "title": "The Girl from Ipanema",
+ "artist": "Getz & Gilberto",
+ "key": "F major",
+ "bpm": 130,
+ "episode": 26,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Girl from Ipanema feels like *a lazy summer day*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "The chord that *slides like a sigh*",
+ "question": "Should I do more bossa nova? 👇",
+ "chords": [
+  {
+   "name": "Fmaj7",
+   "roman": "Imaj7",
+   "tag": "home",
+   "beats": 14,
+   "text": "Home: *Fmaj7*. Sun, sand, nowhere to be.",
+   "notes": [
+    "F2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G7",
+   "roman": "II7",
+   "tag": "lift",
+   "beats": 8,
+   "text": "*B natural* sneaks in: a lift, like a breeze.",
+   "notes": [
+    "G2",
+    "B3",
+    "F4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Gm7",
+   "roman": "ii7",
+   "tag": "settle",
+   "beats": 8,
+   "text": "*B slips to B♭*. The breeze drops.",
+   "notes": [
+    "G2",
+    "Bb3",
+    "F4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Gb7",
+   "roman": "♭II7",
+   "tag": "tritone sub",
+   "beats": 8,
+   "text": "*G♭7* replaces C7. Bass and top slide down.",
+   "notes": [
+    "Gb2",
+    "Bb3",
+    "Fb4",
+    "Gb4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Fmaj7",
+   "roman": "Imaj7",
+   "tag": "home",
+   "beats": 6,
+   "text": "…and melts *back into F*.",
+   "notes": [
+    "F2",
+    "A3",
+    "E4",
+    "F4"
+   ]
+  }
+ ]
+}

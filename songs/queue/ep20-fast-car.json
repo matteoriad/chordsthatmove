@@ -1,0 +1,83 @@
+{
+ "title": "Fast Car",
+ "artist": "Tracy Chapman",
+ "key": "A major",
+ "bpm": 104,
+ "episode": 20,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Fast Car feels like *escaping but never leaving*",
+ "hook_beats": 6,
+ "hook_focus": 0,
+ "cover_text": "The riff that *dreams of escape*",
+ "question": "Tracy Chapman or Luke Combs version? 👇",
+ "chords": [
+  {
+   "name": "Dmaj7",
+   "roman": "IVmaj7",
+   "tag": "not home",
+   "beats": 14,
+   "text": "It starts on *Dmaj7*, the IV. Already dreaming.",
+   "notes": [
+    "D3",
+    "C#4",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "beats": 8,
+   "text": "*A*, home. The place you want to leave.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "relative minor",
+   "beats": 8,
+   "text": "*F♯ minor*: the doubt creeps in.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 8,
+   "text": "The V. *G♯ reaches for home*, but…",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Dmaj7",
+   "roman": "IVmaj7",
+   "tag": "loop",
+   "beats": 6,
+   "text": "…it drives back to D. *Escape never lands*.",
+   "notes": [
+    "D3",
+    "C#4",
+    "F#4",
+    "A4"
+   ]
+  }
+ ]
+}

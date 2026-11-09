@@ -1,0 +1,52 @@
+{
+ "title": "Viva la Vida",
+ "artist": "Coldplay",
+ "key": "A♭ major",
+ "bpm": 138,
+ "episode": 19,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Viva la Vida feels like *glory and loss at once*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "Triumphant *and* sad at the same time",
+ "chords": [
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "not home",
+   "beats": 18,
+   "text": "It starts on *D♭*, the IV. Not home. Already reaching."
+  },
+  {
+   "name": "Eb",
+   "roman": "V",
+   "tag": "tension",
+   "beats": 8,
+   "text": "*E♭*, the V. The march builds…"
+  },
+  {
+   "name": "Ab",
+   "roman": "I",
+   "tag": "home",
+   "beats": 8,
+   "text": "Home: *A♭ major*. The victory."
+  },
+  {
+   "name": "Fm",
+   "roman": "vi",
+   "tag": "bittersweet",
+   "beats": 8,
+   "text": "Then *F minor*. The victory turns to loss.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "",
+   "beats": 4,
+   "text": "Around again: the glory *never gets to stay*."
+  }
+ ],
+ "question": "Triumphant or sad: how does it feel to you? 👇"
+}

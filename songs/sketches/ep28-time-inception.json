@@ -1,0 +1,52 @@
+{
+ "title": "Time (Inception)",
+ "artist": "Hans Zimmer",
+ "key": "A minor",
+ "bpm": 60,
+ "episode": 28,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Time from Inception feels *like it's running out*",
+ "hook_beats": 6,
+ "hook_focus": 3,
+ "cover_text": "A loop that *feels like time slipping*",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "beats": 12,
+   "text": "Home: *A minor*. Still. Waiting."
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "no pull",
+   "beats": 6,
+   "text": "*E minor*: soft, no pull. Just drifting."
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "building",
+   "beats": 6,
+   "text": "*G* rises. Something is building."
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "lift",
+   "beats": 6,
+   "text": "*D major*: F♯ lifts it, almost hopeful.",
+   "focus_note": "F#"
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "loop",
+   "beats": 4,
+   "text": "No V, no ending. *Time just keeps going*."
+  }
+ ],
+ "question": "Which film score should I break down next? 👇"
+}

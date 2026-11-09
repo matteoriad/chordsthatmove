@@ -1,0 +1,69 @@
+{
+ "title": "Sweet Child O' Mine",
+ "artist": "Guns N' Roses",
+ "key": "D major",
+ "bpm": 125,
+ "episode": 18,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Sweet Child O' Mine sounds *like childhood*",
+ "hook_beats": 6,
+ "hook_focus": 1,
+ "cover_text": "The borrowed chord that *sounds like childhood*",
+ "question": "Other songs that use this ♭VII trick? 👇",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "beats": 14,
+   "text": "Home: *D major*. Bright, wide open.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "♭VII",
+   "tag": "mixolydian",
+   "beats": 8,
+   "text": "*C major* isn't in D. Borrowed, it softens the shine.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "lift",
+   "beats": 8,
+   "text": "*G major* lifts you up, like sun through a window.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "beats": 8,
+   "text": "Home again, *warm and a little wistful*.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
+  }
+ ]
+}
