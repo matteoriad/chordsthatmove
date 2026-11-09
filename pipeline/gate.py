@@ -43,6 +43,8 @@ def main():
     event = os.environ.get("EVENT")
     if event == "workflow_dispatch":
         return out(True, "Manual run: going ahead.")
+    if os.path.exists(os.path.join(ROOT, ".github", "PAUSED")):
+        return out(False, "Posting is paused (.github/PAUSED exists): skipping.")
     now = datetime.datetime.now(BER)
     posted = latest_posted()
     last = max((datetime.datetime.fromisoformat(p["posted_at"]) for p in posted), default=None)
