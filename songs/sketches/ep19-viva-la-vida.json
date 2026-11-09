@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Viva la Vida feels like *glory and loss at once*",
- "hook_beats": 6,
  "hook_focus": 3,
  "cover_text": "Triumphant *and* sad at the same time",
  "chords": [
@@ -15,37 +14,38 @@
    "name": "Db",
    "roman": "IV",
    "tag": "not home",
-   "beats": 18,
-   "text": "It starts on *D♭*, the IV. Not home. Already reaching."
+   "text": "It starts on *D♭*, the IV. Not home. Already reaching.",
+   "bars": 1
   },
   {
    "name": "Eb",
    "roman": "V",
    "tag": "tension",
-   "beats": 8,
-   "text": "*E♭*, the V. The march builds…"
+   "text": "*E♭*, the V. The march builds…",
+   "bars": 1
   },
   {
    "name": "Ab",
    "roman": "I",
    "tag": "home",
-   "beats": 8,
-   "text": "Home: *A♭ major*. The victory."
+   "text": "Home: *A♭ major*. The victory.",
+   "bars": 1
   },
   {
    "name": "Fm",
    "roman": "vi",
    "tag": "bittersweet",
-   "beats": 8,
    "text": "Then *F minor*. The victory turns to loss.",
-   "focus_note": "F"
+   "focus_note": "F",
+   "bars": 1
   },
   {
    "name": "Db",
    "roman": "IV",
    "tag": "",
-   "beats": 4,
-   "text": "Around again: the glory *never gets to stay*."
+   "text": "Around again: the glory *never gets to stay*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Triumphant or sad: how does it feel to you? 👇"

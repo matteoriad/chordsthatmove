@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why House of the Rising Sun feels *like fate*",
- "hook_beats": 6,
  "hook_focus": 6,
  "cover_text": "The chord that *seals your fate*",
  "question": "Was this the first song you learned on guitar? 👇",
@@ -16,33 +15,32 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 14,
    "text": "Home: *A minor*. A dark story begins.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "III",
    "tag": "relative major",
-   "beats": 8,
    "text": "*C major*: a little light in the room.",
    "notes": [
     "C3",
     "C4",
     "E4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "IV",
    "tag": "dorian",
-   "beats": 8,
    "text": "*D major*'s F♯ brightens it. Hope?",
    "notes": [
     "D3",
@@ -50,13 +48,13 @@
     "F#4",
     "A4"
    ],
-   "focus": 2
+   "focus": 2,
+   "bars": 1
   },
   {
    "name": "F",
    "roman": "VI",
    "tag": "sinking",
-   "beats": 8,
    "text": "*F♯ falls to F*. The hope sinks.",
    "notes": [
     "F2",
@@ -64,39 +62,39 @@
     "F4",
     "A4"
    ],
-   "focus": 2
+   "focus": 2,
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 8,
    "text": "Back to A minor, *heavier now*.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "III",
    "tag": "relative major",
-   "beats": 8,
    "text": "*C* again. The same small light…",
    "notes": [
     "C3",
     "C4",
     "E4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "E",
    "roman": "V",
    "tag": "harmonic minor",
-   "beats": 8,
    "text": "…then *E major*. G♯ drags you toward fate.",
    "notes": [
     "E2",
@@ -104,20 +102,22 @@
     "E4",
     "G#4"
    ],
-   "focus": 3
+   "focus": 3,
+   "bars": 2
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 6,
    "text": "*No escape*: back where it began.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ]
 }

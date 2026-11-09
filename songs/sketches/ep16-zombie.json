@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Zombie *hurts* with pop's happiest chords",
- "hook_beats": 6,
  "hook_focus": 0,
  "cover_text": "Pop's happiest chords, *starting in pain*",
  "chords": [
@@ -15,36 +14,37 @@
    "name": "Em",
    "roman": "vi",
    "tag": "start",
-   "beats": 14,
-   "text": "It starts on *E minor*. Already wounded…"
+   "text": "It starts on *E minor*. Already wounded…",
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "IV",
    "tag": "",
-   "beats": 8,
-   "text": "…then *C*. A little warmth…"
+   "text": "…then *C*. A little warmth…",
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "I",
    "tag": "",
-   "beats": 8,
-   "text": "…then *G*, the chord that should feel like home…"
+   "text": "…then *G*, the chord that should feel like home…",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "V",
    "tag": "",
-   "beats": 8,
-   "text": "…then *D*. The same loop as countless happy hits."
+   "text": "…then *D*. The same loop as countless happy hits.",
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "vi",
    "tag": "start",
-   "beats": 4,
-   "text": "But it *keeps falling back* to E minor. That's the ache."
+   "text": "But it *keeps falling back* to E minor. That's the ache.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Name another sad song built on happy chords 👇"

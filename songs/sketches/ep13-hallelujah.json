@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "The chord that makes Hallelujah *break your heart*",
- "hook_beats": 6,
  "hook_focus": 5,
  "cover_text": "The chord that *breaks your heart*",
  "chords": [
@@ -15,53 +14,54 @@
    "name": "F",
    "roman": "IV",
    "tag": "",
-   "beats": 10,
-   "text": "*F*, the IV, in C major. Gentle and open."
+   "text": "*F*, the IV, in C major. Gentle and open.",
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "V",
    "tag": "",
-   "beats": 4,
-   "text": "*G*, the V. You expect home, C major…"
+   "text": "*G*, the V. You expect home, C major…",
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "vi",
    "tag": "deceptive",
-   "beats": 4,
    "text": "…but it lands on *A minor*. Comfort denied.",
-   "focus_note": "A"
+   "focus_note": "A",
+   "bars": 1
   },
   {
    "name": "F",
    "roman": "IV",
    "tag": "",
-   "beats": 4,
-   "text": "Back to *F*. Trying again."
+   "text": "Back to *F*. Trying again.",
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "V",
    "tag": "",
-   "beats": 4,
-   "text": "*G* again. Hoping…"
+   "text": "*G* again. Hoping…",
+   "bars": 1
   },
   {
    "name": "E7",
    "roman": "V/vi",
    "tag": "secondary dominant",
-   "beats": 4,
    "text": "*E7*: its G♯ isn't in C. It drags you toward A minor.",
-   "focus_note": "G#"
+   "focus_note": "G#",
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "vi",
    "tag": "resolution",
-   "beats": 4,
    "text": "A minor arrives. *Sadness feels inevitable*.",
-   "focus_note": "A"
+   "focus_note": "A",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Which version wrecks you most: Cohen, Buckley or Cale? 👇"

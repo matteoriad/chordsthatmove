@@ -107,3 +107,15 @@ and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
 When the queue runs out, the job fails and GitHub emails you.
 
 Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).
+
+## Timing (whole bars)
+Each chord in a sketch has `"bars"`: how long it lasts in the original song in 4/4 bars
+(1, 2, 0.5 = two beats, 0.25 = one beat). A final return-home chord gets `"ending": true`.
+`brandreel.expand()` turns this into the played timeline: a whole-bar intro on the first chord
+(the hook plays over it), the loop stretched evenly by ×2/×4 when chords would be too short
+to read, and a whole-bar ending before the outro. Everything lands on whole bars and keeps
+the record's proportions (Clocks: E♭ 2, B♭m 4, Fm 2). Old episodes with `"beats"` still render as before.
+
+## Pausing
+Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);
+delete it to resume.

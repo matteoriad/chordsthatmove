@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Hey Joe sounds like *running out of road*",
- "hook_beats": 6,
  "hook_focus": 4,
  "cover_text": "Five chords, *no turning back*",
  "chords": [
@@ -15,47 +14,48 @@
    "name": "C",
    "roman": "♭VI",
    "tag": "start",
-   "beats": 12,
-   "text": "It starts on *C*, far from home in E."
+   "text": "It starts on *C*, far from home in E.",
+   "bars": 0.5
   },
   {
    "name": "G",
    "roman": "♭III",
    "tag": "fifth up",
-   "beats": 6,
    "text": "Up a fifth: *G*. Already moving.",
-   "focus_note": "B"
+   "focus_note": "B",
+   "bars": 0.5
   },
   {
    "name": "D",
    "roman": "♭VII",
    "tag": "fifth up",
-   "beats": 6,
    "text": "Up again: *D*, and an F♯ sneaks in.",
-   "focus_note": "F#"
+   "focus_note": "F#",
+   "bars": 0.5
   },
   {
    "name": "A",
    "roman": "IV",
    "tag": "fifth up",
-   "beats": 6,
    "text": "Again: *A*. C♯ now. Getting closer.",
-   "focus_note": "C#"
+   "focus_note": "C#",
+   "bars": 0.5
   },
   {
    "name": "E",
    "roman": "I",
    "tag": "home",
-   "beats": 8,
    "text": "*E major* at last. Its G♯ hits like a wall.",
-   "focus_note": "G#"
+   "focus_note": "G#",
+   "bars": 2
   },
   {
    "name": "C",
    "roman": "♭VI",
    "tag": "start",
-   "beats": 4,
-   "text": "Then back down to C. *Running again*."
+   "text": "Then back down to C. *Running again*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Hendrix's most underrated chord move? 👇"

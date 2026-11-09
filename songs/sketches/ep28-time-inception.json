@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Time from Inception feels *like it's running out*",
- "hook_beats": 6,
  "hook_focus": 3,
  "cover_text": "A loop that *feels like time slipping*",
  "chords": [
@@ -15,37 +14,38 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 12,
-   "text": "Home: *A minor*. Still. Waiting."
+   "text": "Home: *A minor*. Still. Waiting.",
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "v",
    "tag": "no pull",
-   "beats": 6,
-   "text": "*E minor*: soft, no pull. Just drifting."
+   "text": "*E minor*: soft, no pull. Just drifting.",
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "♭VII",
    "tag": "building",
-   "beats": 6,
-   "text": "*G* rises. Something is building."
+   "text": "*G* rises. Something is building.",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "IV",
    "tag": "lift",
-   "beats": 6,
    "text": "*D major*: F♯ lifts it, almost hopeful.",
-   "focus_note": "F#"
+   "focus_note": "F#",
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "loop",
-   "beats": 4,
-   "text": "No V, no ending. *Time just keeps going*."
+   "text": "No V, no ending. *Time just keeps going*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Which film score should I break down next? 👇"

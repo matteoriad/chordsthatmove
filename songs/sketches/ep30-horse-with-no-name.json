@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why A Horse with No Name feels *like endless desert*",
- "hook_beats": 6,
  "hook_focus": 1,
  "cover_text": "Two chords, *one endless desert*",
  "chords": [
@@ -15,20 +14,19 @@
    "name": "Em",
    "roman": "i",
    "tag": "drone",
-   "beats": 14,
    "text": "Home: *E minor*. Heat, dust, no shade.",
    "notes": [
     "E2",
     "G3",
     "B3",
     "E4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D6/F#",
    "roman": "♭VII6",
    "tag": "drone",
-   "beats": 8,
    "text": "Only one voice moves: *G up to A*.",
    "focus_note": "A",
    "notes": [
@@ -36,13 +34,13 @@
     "A3",
     "B3",
     "E4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "i",
    "tag": "drone",
-   "beats": 8,
    "text": "Back to E minor. *The same horizon*.",
    "focus_note": "G",
    "notes": [
@@ -50,33 +48,35 @@
     "G3",
     "B3",
     "E4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D6/F#",
    "roman": "♭VII6",
    "tag": "drone",
-   "beats": 8,
    "text": "Again. *B and E never move*.",
    "notes": [
     "F#2",
     "A3",
     "B3",
     "E4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "i",
    "tag": "drone",
-   "beats": 6,
    "text": "Two chords, one drone: *it never ends*.",
    "notes": [
     "E2",
     "G3",
     "B3",
     "E4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Two-chord songs that never get boring? 👇"

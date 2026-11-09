@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Time from Inception feels *like it's running out*",
- "hook_beats": 6,
  "hook_focus": 3,
  "cover_text": "A loop that *feels like time slipping*",
  "question": "Which film score should I break down next? 👇",
@@ -16,46 +15,45 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 12,
    "text": "Home: *A minor*. Still. Waiting.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "v",
    "tag": "no pull",
-   "beats": 6,
    "text": "*E minor*: soft, no pull. Just drifting.",
    "notes": [
     "E2",
     "B3",
     "E4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "♭VII",
    "tag": "building",
-   "beats": 6,
    "text": "*G* rises. Something is building.",
    "notes": [
     "G2",
     "B3",
     "D4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "IV",
    "tag": "lift",
-   "beats": 6,
    "text": "*D major*: F♯ lifts it, almost hopeful.",
    "notes": [
     "D3",
@@ -63,20 +61,22 @@
     "D4",
     "F#4"
    ],
-   "focus": 3
+   "focus": 3,
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "loop",
-   "beats": 4,
    "text": "No V, no ending. *Time just keeps going*.",
    "notes": [
     "A2",
     "A3",
     "C4",
     "E4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ]
 }

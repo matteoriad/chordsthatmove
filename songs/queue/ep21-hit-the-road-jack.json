@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Hit the Road Jack feels like *being thrown out*",
- "hook_beats": 6,
  "hook_focus": 3,
  "cover_text": "Four chords *walking you out*",
  "question": "Name another song that uses these four chords 👇",
@@ -16,46 +15,45 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 12,
    "text": "Home: *A minor*. Arms crossed.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "♭VII",
    "tag": "step down",
-   "beats": 6,
    "text": "*G*: one step down the stairs.",
    "notes": [
     "G2",
     "B3",
     "D4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "F",
    "roman": "♭VI",
    "tag": "step down",
-   "beats": 6,
    "text": "*F*: another step. No way back up.",
    "notes": [
     "F2",
     "C4",
     "F4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "E",
    "roman": "V",
    "tag": "andalusian",
-   "beats": 6,
    "text": "*E major*: its G♯ is the door swinging shut.",
    "notes": [
     "E2",
@@ -63,20 +61,22 @@
     "E4",
     "G#4"
    ],
-   "focus": 3
+   "focus": 3,
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 4,
    "text": "And you're out. *Then it happens again*.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ]
 }

@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Knockin' on Heaven's Door *never gets an answer*",
- "hook_beats": 6,
  "hook_focus": 2,
  "cover_text": "Two endings, *no answer*",
  "chords": [
@@ -15,52 +14,53 @@
    "name": "G",
    "roman": "I",
    "tag": "home",
-   "beats": 11,
-   "text": "Home: *G major*. Plain and honest."
+   "text": "Home: *G major*. Plain and honest.",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "V",
    "tag": "lean",
-   "beats": 5,
-   "text": "*D*, the V. Leaning forward."
+   "text": "*D*, the V. Leaning forward.",
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "ii",
    "tag": "sigh",
-   "beats": 5,
    "text": "Then *A minor*, not home. A tired sigh.",
-   "focus_note": "C"
+   "focus_note": "C",
+   "bars": 2
   },
   {
    "name": "G",
    "roman": "I",
    "tag": "home",
-   "beats": 5,
-   "text": "Back to G. *Try again*."
+   "text": "Back to G. *Try again*.",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "V",
    "tag": "lean",
-   "beats": 5,
-   "text": "*D* again. Same lean."
+   "text": "*D* again. Same lean.",
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "IV",
    "tag": "open",
-   "beats": 5,
    "text": "This time *C major*: softer, an open door.",
-   "focus_note": "E"
+   "focus_note": "E",
+   "bars": 2
   },
   {
    "name": "G",
    "roman": "I",
    "tag": "home",
-   "beats": 4,
-   "text": "No big ending. *Still waiting at the door*."
+   "text": "No big ending. *Still waiting at the door*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Dylan or Guns N' Roses version? 👇"

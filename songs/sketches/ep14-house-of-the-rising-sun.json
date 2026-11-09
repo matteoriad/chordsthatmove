@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why House of the Rising Sun feels *like fate*",
- "hook_beats": 6,
  "hook_focus": 6,
  "cover_text": "The chord that *seals your fate*",
  "chords": [
@@ -15,60 +14,61 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 14,
-   "text": "Home: *A minor*. A dark story begins."
+   "text": "Home: *A minor*. A dark story begins.",
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "III",
    "tag": "relative major",
-   "beats": 8,
-   "text": "*C major*: a little light in the room."
+   "text": "*C major*: a little light in the room.",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "IV",
    "tag": "dorian",
-   "beats": 8,
    "text": "*D major*'s F♯ brightens it. Hope?",
-   "focus_note": "F#"
+   "focus_note": "F#",
+   "bars": 1
   },
   {
    "name": "F",
    "roman": "VI",
    "tag": "sinking",
-   "beats": 8,
    "text": "*F♯ falls to F*. The hope sinks.",
-   "focus_note": "F"
+   "focus_note": "F",
+   "bars": 1
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 8,
-   "text": "Back to A minor, *heavier now*."
+   "text": "Back to A minor, *heavier now*.",
+   "bars": 1
   },
   {
    "name": "C",
    "roman": "III",
    "tag": "relative major",
-   "beats": 8,
-   "text": "*C* again. The same small light…"
+   "text": "*C* again. The same small light…",
+   "bars": 1
   },
   {
    "name": "E",
    "roman": "V",
    "tag": "harmonic minor",
-   "beats": 8,
    "text": "…then *E major*. G♯ drags you toward fate.",
-   "focus_note": "G#"
+   "focus_note": "G#",
+   "bars": 2
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 6,
-   "text": "*No escape*: back where it began."
+   "text": "*No escape*: back where it began.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Was this the first song you learned on guitar? 👇"

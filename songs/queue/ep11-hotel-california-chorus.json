@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Hotel California's chorus *won't let you out*",
- "hook_beats": 6,
  "hook_focus": 2,
  "cover_text": "Part 2: the chorus that *locks the door*",
  "question": "Verse or chorus: which part traps you more? 👇",
@@ -17,33 +16,32 @@
    "name": "G",
    "roman": "VI",
    "tag": "welcome",
-   "beats": 11,
    "text": "It opens on *G major*. Warm, bright: a welcome.",
    "notes": [
     "G2",
     "B3",
     "D4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "III",
    "tag": "relative major",
-   "beats": 5,
    "text": "*D major*, the relative major. Daylight at last.",
    "notes": [
     "D3",
     "A3",
     "D4",
     "F#4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "F#",
    "roman": "V",
    "tag": "harmonic minor",
-   "beats": 5,
    "text": "Then *A♯* creeps in. F♯ major: the trap springs.",
    "notes": [
     "F#2",
@@ -51,13 +49,13 @@
     "C#4",
     "F#4"
    ],
-   "focus": 1
+   "focus": 1,
+   "bars": 1
   },
   {
    "name": "Bm",
    "roman": "i",
    "tag": "home",
-   "beats": 5,
    "text": "*A♯ rises to B*. B minor: the door clicks shut.",
    "notes": [
     "B2",
@@ -65,39 +63,39 @@
     "D4",
     "F#4"
    ],
-   "focus": 1
+   "focus": 1,
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "VI",
    "tag": "welcome",
-   "beats": 5,
    "text": "*G* again. Another warm welcome…",
    "notes": [
     "G2",
     "B3",
     "D4",
     "G4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "III",
    "tag": "relative major",
-   "beats": 5,
    "text": "…*D*, the daylight again…",
    "notes": [
     "D3",
     "A3",
     "D4",
     "F#4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "iv",
    "tag": "minor iv",
-   "beats": 5,
    "text": "*E minor* dims it. The light starts fading.",
    "notes": [
     "E2",
@@ -105,13 +103,13 @@
     "E4",
     "G4"
    ],
-   "focus": 2
+   "focus": 2,
+   "bars": 1
   },
   {
    "name": "F#",
    "roman": "V",
    "tag": "dominant",
-   "beats": 5,
    "text": "*F♯* again. A♯ pulls you back toward B…",
    "notes": [
     "F#2",
@@ -119,20 +117,22 @@
     "C#4",
     "F#4"
    ],
-   "focus": 1
+   "focus": 1,
+   "bars": 1
   },
   {
    "name": "Bm",
    "roman": "i",
    "tag": "home",
-   "beats": 4,
    "text": "…and *the door locks again*.",
    "notes": [
     "B2",
     "B3",
     "D4",
     "F#4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ]
 }

@@ -154,9 +154,48 @@ INTERVALS = {1: "half step", 2: "whole step", 3: "minor 3rd", 4: "major 3rd", 5:
              6: "tritone", 7: "perfect 5th", 12: "octave"}
 
 
+def expand(spec):
+    """Musical timing. Chords given in real bars ("bars", may be 0.5 / 0.25) become:
+    a whole-bar intro on the first chord (the hook plays over it), the loop with every
+    chord stretched by the same power of two (so proportions match the record and
+    every chord lands on whole bars), and a whole-bar ending back on the first chord.
+    Specs without "bars" keep their old "beats" timing."""
+    if not any("bars" in c for c in spec["chords"]):
+        return spec
+    bpb = spec.get("beats_per_bar", 4)
+    bar = bpb * 60 / spec["bpm"]
+    MIN = spec.get("min_chord_seconds", 2.4)
+    chords = [dict(c) for c in spec["chords"]]
+    ending = chords.pop() if chords[-1].get("ending") else None
+    k = spec.get("stretch") or 1
+    while not spec.get("stretch") and k < 8 and (
+            min(c["bars"] for c in chords) * k * bar < MIN
+            or any(abs(c["bars"] * k - round(c["bars"] * k)) > 1e-6 for c in chords)):
+        k *= 2
+
+    def pow2_bars(sec):
+        n = 1
+        while n * bar < sec - 1e-6: n *= 2
+        return n
+
+    first = chords[0]
+    intro_bars = pow2_bars(spec.get("hook_seconds", 3.6))
+    out = [{"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
+            "notes": first["notes"], "beats": intro_bars * bpb, "intro": True}]
+    for c in chords:
+        out.append({**c, "beats": int(round(c["bars"] * k)) * bpb})
+    if ending is not None:
+        nb = max(pow2_bars(2.0), int(round(ending.get("bars", 1))))
+        out.append({**ending, "beats": nb * bpb})
+    elif chords[-1]["name"] != first["name"]:
+        out.append({"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
+                    "notes": first["notes"], "beats": pow2_bars(2.0) * bpb, "ending": True})
+    return {**spec, "chords": out, "hook_beats": intro_bars * bpb, "_intro": 1, "_stretch": k}
+
+
 class Reel:
     def __init__(self, spec):
-        self.spec = spec
+        self.spec = spec = expand(spec)
         self.song = s = sr.Song(spec)
         self.accent = hexrgb(spec.get("accent", "#FF7AA8"))
         self.hook_end = s.hook_end or sr.LEAD_IN
@@ -326,14 +365,16 @@ class Reel:
         labs = []
         for i, c in enumerate(sp["chords"]):
             lx = PH + (s.starts[i] - now) * PX
-            labs.append([max(L, lx), pretty_chord(c["name"]), i])
+            if i > 0 and sp["chords"][i - 1]["name"] == c["name"]:   # same chord continues
+                labs[-1][3] = i; continue
+            labs.append([max(L, lx), pretty_chord(c["name"]), i, i])
         for j in range(len(labs) - 2, -1, -1):
             wj = tx.width(labs[j][1], MONO, 22)
             labs[j][0] = min(labs[j][0], labs[j + 1][0] - wj - 30)
-        for lx, nm, i in labs:
+        for lx, nm, i, i_end in labs:
             if lx > R + 40: continue
             fade = np.clip((lx - (L - 30)) / 30, 0, 1)
-            col = PAPER if i == ci else (DIM if i < ci else FAINT)
+            col = PAPER if i <= ci <= i_end else (DIM if i_end < ci else FAINT)
             if fade > 0: tx.draw(d, lx, 1126, nm, MONO, 22, mixc(col, fade))
         for v, hy in heads:
             note = sr.pretty(ch["notes"][v])
@@ -394,13 +435,14 @@ class Reel:
         CW, CH, PX_, PY = 1080, 1350, 96, 104
         surf = cairo.ImageSurface(cairo.FORMAT_RGB24, CW, CH); cr = cairo.Context(surf)
         cr.set_source_rgb(*rgb1(INK)); cr.paint()
-        cols = list(sp["chords"])
+        off = sp.get("_intro", 0)              # skip the intro chord added by expand()
+        cols = list(sp["chords"][off:])
         if len(cols) > 1 and cols[-1]["name"] == cols[0]["name"]: cols = cols[:-1]
         n = len(cols); fi = min(sp.get("hook_focus", n - 1), n - 1)
         # overview lines (888 x 200) above the bottom row
         gx, gy, gw = PX_, 1350 - PY - 72 - 60 - 200, 888
         cw = gw / n
-        yv = lambda v, i: self.ymap(v, s.pitch[i, v], gy + 20, gy + 130, gy + 160, gy + 192)
+        yv = lambda v, i: self.ymap(v, s.pitch[i + off, v], gy + 20, gy + 130, gy + 160, gy + 192)
         cr.set_line_width(6); cr.set_line_cap(cairo.LINE_CAP_ROUND)
         for v in range(s.nv):
             cr.set_source_rgb(*rgb1(self.voice_cols[v]))
@@ -409,7 +451,7 @@ class Reel:
                 xb = gx + i * cw; y0, y1 = yv(v, i - 1), yv(v, i)
                 cr.line_to(xb - 14, y0); cr.curve_to(xb, y0, xb, y1, xb + 14, y1)
             cr.line_to(gx + gw - 8, yv(v, n - 1)); cr.stroke()
-        fv = self.focus[fi] if self.focus[fi] is not None else 2 % s.nv
+        fv = self.focus[fi + off] if self.focus[fi + off] is not None else 2 % s.nv
         cr.set_source_rgb(1, 1, 1); cr.arc(gx + fi * cw + 30, yv(fv, fi), 10, 0, 6.2832); cr.fill()
         logo(cr, CW - PX_ - 72, CH - PY - 72, 72, 8)
         buf = np.frombuffer(surf.get_data(), np.uint8).reshape(CH, surf.get_stride() // 4, 4)[:, :CW]

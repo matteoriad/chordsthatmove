@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Ain't No Sunshine *never lets the light in*",
- "hook_beats": 6,
  "hook_focus": 1,
  "cover_text": "Two chords that *keep the light out*",
  "question": "Saddest two-minute song ever written? 👇",
@@ -16,20 +15,19 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 12,
    "text": "Home: *A minor*. Low, quiet, alone.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 0.5
   },
   {
    "name": "Em",
    "roman": "v",
    "tag": "minor v",
-   "beats": 6,
    "text": "Minor v: *G, not G♯*. Nothing pulls you home.",
    "notes": [
     "E2",
@@ -37,33 +35,34 @@
     "E4",
     "G4"
    ],
-   "focus": 3
+   "focus": 3,
+   "bars": 0.25
   },
   {
    "name": "G",
    "roman": "♭VII",
    "tag": "glimpse",
-   "beats": 6,
    "text": "*G major*: a flicker of light, then gone.",
    "notes": [
     "G2",
     "B3",
     "D4",
     "G4"
-   ]
+   ],
+   "bars": 0.25
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 6,
    "text": "Back to A minor. *The room is still empty*.",
    "notes": [
     "A2",
     "C4",
     "E4",
     "A4"
-   ]
+   ],
+   "bars": 1
   }
  ]
 }

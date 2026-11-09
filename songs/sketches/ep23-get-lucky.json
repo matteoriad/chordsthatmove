@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Get Lucky feels like *a night that never ends*",
- "hook_beats": 6,
  "hook_focus": 3,
  "cover_text": "The loop that *never wants to go home*",
  "chords": [
@@ -15,37 +14,38 @@
    "name": "Bm7",
    "roman": "vi",
    "tag": "home?",
-   "beats": 14,
-   "text": "*Bm7*. Cool, a little moody. Is this home?"
+   "text": "*Bm7*. Cool, a little moody. Is this home?",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "I",
    "tag": "home?",
-   "beats": 8,
-   "text": "*D major*. Brighter. Maybe this is home?"
+   "text": "*D major*. Brighter. Maybe this is home?",
+   "bars": 1
   },
   {
    "name": "F#m7",
    "roman": "iii",
    "tag": "home?",
-   "beats": 8,
-   "text": "*F♯m7*. Or this? Nothing settles."
+   "text": "*F♯m7*. Or this? Nothing settles.",
+   "bars": 1
   },
   {
    "name": "E",
    "roman": "II",
    "tag": "loop",
-   "beats": 8,
    "text": "*E major*, and it restarts before anyone has to leave.",
-   "focus_note": "G#"
+   "focus_note": "G#",
+   "bars": 1
   },
   {
    "name": "Bm7",
    "roman": "vi",
    "tag": "",
-   "beats": 4,
-   "text": "No chord ever wins, so *the night never ends*."
+   "text": "No chord ever wins, so *the night never ends*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Which chord feels like home to you? 👇"

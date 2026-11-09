@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "How two chords turn Yesterday *into regret*",
- "hook_beats": 6,
  "hook_focus": 2,
  "cover_text": "Two chords that *sound like regret*",
  "question": "Which chord hits hardest for you: Em7 or A7? 👇",
@@ -16,20 +15,19 @@
    "name": "F",
    "roman": "I",
    "tag": "home",
-   "beats": 12,
    "text": "Home: *F major*. Calm, almost sunny.",
    "notes": [
     "F2",
     "C4",
     "F4",
     "A4"
-   ]
+   ],
+   "bars": 1
   },
   {
    "name": "Em7",
    "roman": "ii/vi",
    "tag": "detour",
-   "beats": 6,
    "text": "Suddenly *Em7*, a chord from somewhere else.",
    "notes": [
     "E2",
@@ -37,13 +35,13 @@
     "E4",
     "G4"
    ],
-   "focus": 2
+   "focus": 2,
+   "bars": 0.5
   },
   {
    "name": "A7",
    "roman": "V/vi",
    "tag": "secondary dominant",
-   "beats": 6,
    "text": "*A7*. Its C♯ leans hard into D minor.",
    "notes": [
     "A2",
@@ -51,13 +49,13 @@
     "E4",
     "G4"
    ],
-   "focus": 1
+   "focus": 1,
+   "bars": 0.5
   },
   {
    "name": "Dm",
    "roman": "vi",
    "tag": "landing",
-   "beats": 6,
    "text": "It lands on *D minor*. The sun goes in.",
    "notes": [
     "D3",
@@ -65,26 +63,26 @@
     "F4",
     "A4"
    ],
-   "focus": 1
+   "focus": 1,
+   "bars": 1
   },
   {
    "name": "Bb",
    "roman": "IV",
    "tag": "turn home",
-   "beats": 6,
    "text": "*B♭* tries to turn it around…",
    "notes": [
     "Bb2",
     "D4",
     "F4",
     "Bb4"
-   ]
+   ],
+   "bars": 0.5
   },
   {
    "name": "C7",
    "roman": "V7",
    "tag": "dominant",
-   "beats": 6,
    "text": "*C7*. Its E pulls up toward home…",
    "notes": [
     "C3",
@@ -92,20 +90,22 @@
     "E4",
     "Bb4"
    ],
-   "focus": 2
+   "focus": 2,
+   "bars": 0.5
   },
   {
    "name": "F",
    "roman": "I",
    "tag": "home",
-   "beats": 4,
    "text": "Home again, but *something is lost*.",
    "notes": [
     "F2",
     "C4",
     "F4",
     "A4"
-   ]
+   ],
+   "bars": 1,
+   "ending": true
   }
  ]
 }

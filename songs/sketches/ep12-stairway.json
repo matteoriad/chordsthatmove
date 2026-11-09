@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Stairway to Heaven *starts by walking down*",
- "hook_beats": 6,
  "hook_focus": 1,
  "cover_text": "A stairway that *only goes down*",
  "chords": [
@@ -15,51 +14,52 @@
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 12,
-   "text": "Home: *A minor*. Quiet, like an old story."
+   "text": "Home: *A minor*. Quiet, like an old story.",
+   "bars": 0.5
   },
   {
    "name": "Am/G#",
    "roman": "i/7",
    "tag": "chromatic bass",
-   "beats": 6,
-   "text": "The bass slips to *G♯*. A shiver."
+   "text": "The bass slips to *G♯*. A shiver.",
+   "bars": 0.5
   },
   {
    "name": "C/G",
    "roman": "III/5",
    "tag": "chromatic bass",
-   "beats": 6,
-   "text": "Down again to *G*. The floor keeps sinking."
+   "text": "Down again to *G*. The floor keeps sinking.",
+   "bars": 0.5
   },
   {
    "name": "D/F#",
    "roman": "IV/3",
    "tag": "chromatic bass",
-   "beats": 6,
-   "text": "*F♯* in the bass: a brief, sad warmth."
+   "text": "*F♯* in the bass: a brief, sad warmth.",
+   "bars": 0.5
   },
   {
    "name": "Fmaj7",
    "roman": "VImaj7",
    "tag": "chromatic bass",
-   "beats": 6,
    "text": "*Fmaj7*: five steps down, soft and sad.",
-   "focus_note": "E"
+   "focus_note": "E",
+   "bars": 0.5
   },
   {
    "name": "G",
    "roman": "VII",
    "tag": "climb",
-   "beats": 6,
-   "text": "*G* climbs back toward the start…"
+   "text": "*G* climbs back toward the start…",
+   "bars": 0.5
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
-   "beats": 4,
-   "text": "…and the fall *begins again*."
+   "text": "…and the fall *begins again*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "question": "Did you learn this intro on guitar? Be honest 👇"

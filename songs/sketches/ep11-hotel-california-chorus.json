@@ -7,7 +7,6 @@
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Why Hotel California's chorus *won't let you out*",
- "hook_beats": 6,
  "hook_focus": 2,
  "cover_text": "Part 2: the chorus that *locks the door*",
  "question": "Verse or chorus: which part traps you more? 👇",
@@ -16,68 +15,69 @@
    "name": "G",
    "roman": "VI",
    "tag": "welcome",
-   "beats": 11,
-   "text": "It opens on *G major*. Warm, bright: a welcome."
+   "text": "It opens on *G major*. Warm, bright: a welcome.",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "III",
    "tag": "relative major",
-   "beats": 5,
-   "text": "*D major*, the relative major. Daylight at last."
+   "text": "*D major*, the relative major. Daylight at last.",
+   "bars": 1
   },
   {
    "name": "F#",
    "roman": "V",
    "tag": "harmonic minor",
-   "beats": 5,
    "text": "Then *A♯* creeps in. F♯ major: the trap springs.",
-   "focus_note": "A#"
+   "focus_note": "A#",
+   "bars": 1
   },
   {
    "name": "Bm",
    "roman": "i",
    "tag": "home",
-   "beats": 5,
    "text": "*A♯ rises to B*. B minor: the door clicks shut.",
-   "focus_note": "B"
+   "focus_note": "B",
+   "bars": 1
   },
   {
    "name": "G",
    "roman": "VI",
    "tag": "welcome",
-   "beats": 5,
-   "text": "*G* again. Another warm welcome…"
+   "text": "*G* again. Another warm welcome…",
+   "bars": 1
   },
   {
    "name": "D",
    "roman": "III",
    "tag": "relative major",
-   "beats": 5,
-   "text": "…*D*, the daylight again…"
+   "text": "…*D*, the daylight again…",
+   "bars": 1
   },
   {
    "name": "Em",
    "roman": "iv",
    "tag": "minor iv",
-   "beats": 5,
    "text": "*E minor* dims it. The light starts fading.",
-   "focus_note": "E"
+   "focus_note": "E",
+   "bars": 1
   },
   {
    "name": "F#",
    "roman": "V",
    "tag": "dominant",
-   "beats": 5,
    "text": "*F♯* again. A♯ pulls you back toward B…",
-   "focus_note": "A#"
+   "focus_note": "A#",
+   "bars": 1
   },
   {
    "name": "Bm",
    "roman": "i",
    "tag": "home",
-   "beats": 4,
-   "text": "…and *the door locks again*."
+   "text": "…and *the door locks again*.",
+   "bars": 1,
+   "ending": true
   }
  ],
  "hashtag": "hotelcalifornia"
