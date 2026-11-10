@@ -34,7 +34,8 @@ concurrency: daily-reel
 jobs:
   post:
     runs-on: ubuntu-24.04
-    timeout-minutes: 45
+    # The gate step can sleep up to ~60 min waiting for the slot, so leave room for the build.
+    timeout-minutes: 120
     steps:
       - uses: actions/checkout@v4
 
@@ -46,7 +47,11 @@ jobs:
 
       - name: System packages
         if: steps.gate.outputs.go == 'true'
-        run: sudo apt-get update -q && sudo apt-get install -y -q ffmpeg libcairo2-dev pkg-config
+        timeout-minutes: 30
+        run: |
+          APT_OPTS="-o Acquire::Retries=5 -o Acquire::http::Timeout=20"
+          sudo apt-get update -q $APT_OPTS
+          sudo apt-get install -y -q --no-install-recommends $APT_OPTS ffmpeg libcairo2-dev pkg-config
 
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.go == 'true'
