@@ -6,10 +6,10 @@
  "episode": 43,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Sweet Home Alabama *can't find home*",
+ "hook": "Why can't these chords *find home*?",
  "hook_focus": 1,
  "cover_text": "Three chords, *two homes*",
- "question": "D or G: which sounds like home to you? 👇",
+ "question": "Did you get it before the reveal? Be honest 👇",
  "chords": [
   {
    "name": "D",
@@ -33,5 +33,6 @@
    "bars": 1,
    "text": "G feels like home too. *So which is it?*"
   }
- ]
+ ],
+ "guess": true
 }

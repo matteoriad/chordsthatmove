@@ -6,10 +6,10 @@
  "episode": 25,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Teen Spirit isn't happy or sad. *It's just angry.*",
+ "hook": "Why do these chords sound *so angry*?",
  "hook_focus": 2,
  "cover_text": "Not happy. Not sad. *Just angry.*",
- "question": "Angry or sad: what do you hear? 👇",
+ "question": "Did you get it before the reveal? Be honest 👇",
  "chords": [
   {
    "name": "F5",
@@ -79,5 +79,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

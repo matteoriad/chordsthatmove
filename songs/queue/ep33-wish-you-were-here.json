@@ -6,10 +6,10 @@
  "episode": 33,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Wish You Were Here feels like *someone's missing*",
+ "hook": "Why do these chords feel like *someone's missing*?",
  "hook_focus": 1,
  "cover_text": "Home, but *someone's missing*",
- "question": "Best Pink Floyd song to learn on guitar? 👇",
+ "question": "Which chord gave it away for you? 👇",
  "chords": [
   {
    "name": "C",
@@ -120,5 +120,6 @@
     "G4"
    ]
   }
- ]
+ ],
+ "guess": true
 }

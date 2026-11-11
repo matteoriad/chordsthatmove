@@ -6,10 +6,10 @@
  "episode": 15,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Something feels like *falling for someone*",
+ "hook": "Why do these chords feel like *falling for someone*?",
  "hook_focus": 1,
  "cover_text": "One note, *falling slowly*",
- "question": "Best Beatles chord change ever? Drop yours 👇",
+ "question": "Which chord gave it away for you? 👇",
  "chords": [
   {
    "name": "C",
@@ -28,7 +28,7 @@
    "name": "Cmaj7",
    "roman": "Imaj7",
    "tag": "line cliché",
-   "text": "Top note *C slips to B*. Something shifts.",
+   "text": "Top note *C slips to B*. The mood shifts.",
    "notes": [
     "C3",
     "E4",
@@ -108,5 +108,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

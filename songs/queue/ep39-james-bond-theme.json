@@ -6,10 +6,10 @@
  "episode": 39,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why the James Bond theme sounds *dangerous*",
+ "hook": "Why do these chords sound *so dangerous*?",
  "hook_focus": 2,
  "cover_text": "One note that *sounds like danger*",
- "question": "Best Bond film of all time? 👇",
+ "question": "Which chord gave it away for you? 👇",
  "hashtag": "jamesbond",
  "chords": [
   {
@@ -82,5 +82,6 @@
    "ending": true,
    "focus": 1
   }
- ]
+ ],
+ "guess": true
 }

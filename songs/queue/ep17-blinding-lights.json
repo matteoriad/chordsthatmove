@@ -6,10 +6,10 @@
  "episode": 17,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Blinding Lights feels *like a night drive alone*",
+ "hook": "Why do these chords feel like *a night drive alone*?",
  "hook_focus": 3,
- "cover_text": "The chord that *lights up the dark*",
- "question": "Which 80s song does this remind you of? 👇",
+ "cover_text": "The chord that *breaks the dark*",
+ "question": "Got it within 3 chords? Be honest 👇",
  "chords": [
   {
    "name": "Fm",
@@ -41,7 +41,7 @@
    "name": "Eb",
    "roman": "♭VII",
    "tag": "climb",
-   "text": "*E♭ major* starts to climb. Lights ahead.",
+   "text": "*E♭ major* starts to climb. The road opens.",
    "notes": [
     "Eb3",
     "Bb3",
@@ -78,5 +78,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

@@ -6,10 +6,10 @@
  "episode": 37,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Careless Whisper sounds *so guilty*",
+ "hook": "Why do these chords sound *so guilty*?",
  "hook_focus": 3,
  "cover_text": "The chord that *can't confess*",
- "question": "Can you hum the sax riff right now? 👇",
+ "question": "Did you get it before the reveal? Be honest 👇",
  "chords": [
   {
    "name": "Dm7",
@@ -48,5 +48,6 @@
    "text": "Back to D minor. *The guilt stays*.",
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

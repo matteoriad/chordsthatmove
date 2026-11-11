@@ -6,10 +6,10 @@
  "episode": 29,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Riptide feels like *being pulled under*",
+ "hook": "Why do these chords feel like *being pulled under*?",
  "hook_focus": 0,
  "cover_text": "The loop that *keeps pulling you back*",
- "question": "Ukulele or guitar for this one? 👇",
+ "question": "Got it within 3 chords? Be honest 👇",
  "chords": [
   {
    "name": "Am",
@@ -64,5 +64,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

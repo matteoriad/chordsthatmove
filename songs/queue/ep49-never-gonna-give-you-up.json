@@ -6,10 +6,10 @@
  "episode": 49,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Never Gonna Give You Up is *impossible to escape*",
+ "hook": "Why are these chords *impossible to escape*?",
  "hook_focus": 2,
  "cover_text": "A chorus that *never comes home*",
- "question": "Be honest: how many times have you been Rickrolled? 👇",
+ "question": "Did you get it before the reveal? Be honest 👇",
  "chords": [
   {
    "name": "Gbmaj7",
@@ -65,5 +65,6 @@
    ],
    "focus": 3
   }
- ]
+ ],
+ "guess": true
 }

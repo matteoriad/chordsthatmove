@@ -6,10 +6,10 @@
  "episode": 35,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Back to Black *pulls you back into the dark*",
+ "hook": "Why do these chords *pull you into the dark*?",
  "hook_focus": 3,
  "cover_text": "The chord that *pulls you back*",
- "question": "Amy's saddest song? Name it 👇",
+ "question": "Got it within 3 chords? Be honest 👇",
  "chords": [
   {
    "name": "Dm",
@@ -50,5 +50,6 @@
    "focus_note": "D",
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

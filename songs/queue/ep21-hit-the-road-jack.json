@@ -6,10 +6,10 @@
  "episode": 21,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Hit the Road Jack feels like *being thrown out*",
+ "hook": "Why do these chords feel like *being thrown out*?",
  "hook_focus": 3,
  "cover_text": "Four chords *walking you out*",
- "question": "Name another song that uses these four chords 👇",
+ "question": "Which chord gave it away for you? 👇",
  "chords": [
   {
    "name": "Am",
@@ -78,5 +78,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

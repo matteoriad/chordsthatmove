@@ -61,6 +61,14 @@ def caption(spec):
     chords = [c["name"] for c in spec["chords"]]
     romans = [c.get("roman", "") for c in spec["chords"]]
     tag = spec.get("hashtag") or re.sub(r"[^a-z0-9]", "", spec["title"].lower())
+    if spec.get("guess"):   # guess mode: nothing in the first lines gives the song away
+        return (f"{plain(spec['hook'])} Guess the song 🎶\n\n"
+                f"{plain(spec.get('question') or 'Did you get it before the reveal? Be honest 👇')}\n\n"
+                f"New song broken down every 4 hours. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
+                f"#musictheory #chordprogression #guessthesong #songwriting #harmony #pianochords #guitarchords\n"
+                f".\n.\n.\n"
+                f"Answer: {spec['artist']} — {spec['title']} · {spec['key']}\n"
+                f"{' → '.join(chords)}\n({' – '.join(romans)})\n#{tag}")
     return (f"{plain(spec['hook'])}\n\n"
             f"{spec['artist']} — {spec['title']} · {spec['key']}\n"
             f"{' → '.join(chords)}\n({' – '.join(romans)})\n\n"

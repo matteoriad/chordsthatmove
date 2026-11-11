@@ -6,10 +6,10 @@
  "episode": 23,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Get Lucky feels like *a night that never ends*",
+ "hook": "Why do these chords feel like *an endless night*?",
  "hook_focus": 3,
  "cover_text": "The loop that *never wants to go home*",
- "question": "Which chord feels like home to you? 👇",
+ "question": "Got it within 3 chords? Be honest 👇",
  "chords": [
   {
    "name": "Bm7",
@@ -78,5 +78,6 @@
    "bars": 1,
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

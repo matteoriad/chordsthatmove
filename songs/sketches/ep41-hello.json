@@ -6,10 +6,10 @@
  "episode": 41,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Adele's Hello feels like *calling the past*",
+ "hook": "Why do these chords feel like *calling the past*?",
  "hook_focus": 3,
  "cover_text": "A call that *never connects*",
- "question": "Adele's best: Hello or Someone Like You? 👇",
+ "question": "Got it within 3 chords? Be honest 👇",
  "hashtag": "adele",
  "chords": [
   {
@@ -49,5 +49,6 @@
    "text": "Back to F minor. *Still calling*.",
    "ending": true
   }
- ]
+ ],
+ "guess": true
 }

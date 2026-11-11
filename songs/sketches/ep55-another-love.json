@@ -6,10 +6,10 @@
  "episode": 55,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Another Love feels like *loving with nothing left*",
+ "hook": "Why do these chords feel like *nothing's left*?",
  "hook_focus": 3,
  "cover_text": "The chord with *nothing left*",
- "question": "Sing along in the car, or cry? Be honest 👇",
+ "question": "Did you get it before the reveal? Be honest 👇",
  "chords": [
   {
    "name": "C",
@@ -40,5 +40,6 @@
    "text": "Bm, not B. No pull home: *nothing left*.",
    "focus_note": "D"
   }
- ]
+ ],
+ "guess": true
 }

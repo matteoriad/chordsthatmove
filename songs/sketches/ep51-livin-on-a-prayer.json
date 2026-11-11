@@ -6,10 +6,10 @@
  "episode": 51,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Livin' on a Prayer feels like *barely holding on*",
+ "hook": "Why do these chords feel like *barely holding on*?",
  "hook_focus": 3,
  "cover_text": "The same chords, *now they're hope*",
- "question": "Can you hit the key change? Be honest 👇",
+ "question": "Which chord gave it away for you? 👇",
  "chords": [
   {
    "name": "Em",
@@ -53,5 +53,6 @@
    "bars": 1,
    "text": "D, the V of G: *one more push*."
   }
- ]
+ ],
+ "guess": true
 }

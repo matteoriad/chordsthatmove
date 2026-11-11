@@ -6,10 +6,10 @@
  "episode": 53,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Karma Police feels like *being judged*",
+ "hook": "Why do these chords feel like *being judged*?",
  "hook_focus": 5,
  "cover_text": "F♯ or F: *the verdict*",
- "question": "Best Radiohead song to learn first? 👇",
+ "question": "Got it within 3 chords? Be honest 👇",
  "chords": [
   {
    "name": "Am",
@@ -68,5 +68,6 @@
    "bars": 0.5,
    "text": "G, and *the trial starts over*."
   }
- ]
+ ],
+ "guess": true
 }

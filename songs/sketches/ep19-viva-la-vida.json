@@ -6,7 +6,7 @@
  "episode": 19,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Viva la Vida feels like *glory and loss at once*",
+ "hook": "Why do these chords feel like *glory and loss*?",
  "hook_focus": 3,
  "cover_text": "Triumphant *and* sad at the same time",
  "chords": [
@@ -48,5 +48,6 @@
    "ending": true
   }
  ],
- "question": "Triumphant or sad: how does it feel to you? 👇"
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "guess": true
 }

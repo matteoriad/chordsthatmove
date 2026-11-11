@@ -6,10 +6,10 @@
  "episode": 45,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Amélie's theme feels like *a childhood memory*",
+ "hook": "Why do these chords feel like *a childhood memory*?",
  "hook_focus": 2,
  "cover_text": "A music box that *never stops*",
- "question": "Did you learn this one on piano? Be honest 👇",
+ "question": "Which chord gave it away for you? 👇",
  "hashtag": "amelie",
  "chords": [
   {
@@ -65,5 +65,6 @@
     "F#4"
    ]
   }
- ]
+ ],
+ "guess": true
 }

@@ -6,7 +6,7 @@
  "episode": 27,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why Knockin' on Heaven's Door *never gets an answer*",
+ "hook": "Why do these chords *never get an answer*?",
  "hook_focus": 2,
  "cover_text": "Two endings, *no answer*",
  "chords": [
@@ -50,7 +50,7 @@
    "name": "C",
    "roman": "IV",
    "tag": "open",
-   "text": "This time *C major*: softer, an open door.",
+   "text": "This time *C major*: softer, a way in.",
    "focus_note": "E",
    "bars": 2
   },
@@ -58,10 +58,11 @@
    "name": "G",
    "roman": "I",
    "tag": "home",
-   "text": "No big ending. *Still waiting at the door*.",
+   "text": "No big ending. *Still waiting outside*.",
    "bars": 1,
    "ending": true
   }
  ],
- "question": "Dylan or Guns N' Roses version? 👇"
+ "question": "Which chord gave it away for you? 👇",
+ "guess": true
 }
