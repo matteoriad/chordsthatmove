@@ -454,11 +454,14 @@ class Reel:
         logo(cr, CW - PX_ - 72, CH - PY - 72, 72, 8)
         buf = np.frombuffer(surf.get_data(), np.uint8).reshape(CH, surf.get_stride() // 4, 4)[:, :CW]
         img = Image.fromarray(buf[:, :, [2, 1, 0]].copy()); d = ImageDraw.Draw(img)
-        tx.draw(d, PX_, tx.base(PY, MONO, 26), sp["artist"].upper(), MONO, 26, MUTED, 0.14)
+        guess = sp.get("guess")   # guess mode: no song name on the cover, the chord row is the clue
+        kicker = (f"EP. {int(sp['episode']):02d}" if sp.get("episode") else "") if guess else sp["artist"].upper()
+        tx.draw(d, PX_, tx.base(PY, MONO, 26), kicker, MONO, 26, MUTED, 0.14)
+        big = "Guess the song" if guess else sp["title"]
         # title: as big as fits (two lines max)
         size = 210
         while size > 110:
-            lines = wrap(tokens(sp["title"], PAPER, PAPER), SEMI, size, -0.06, CW - 2 * PX_)
+            lines = wrap(tokens(big, PAPER, PAPER), SEMI, size, -0.06, CW - 2 * PX_)
             widest = max(line[-1][2] + tx.width(line[-1][0], SEMI, size, -0.06) for line in lines)
             if len(lines) <= (1 if size > 160 else 2) and widest <= CW - 2 * PX_: break
             size -= 10
