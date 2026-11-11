@@ -65,7 +65,7 @@ def caption(spec):
             f"{spec['artist']} — {spec['title']} · {spec['key']}\n"
             f"{' → '.join(chords)}\n({' – '.join(romans)})\n\n"
             f"{plain(spec.get('question') or 'Which song should I break down next? Comment it 👇')}\n\n"
-            f"Two songs broken down every day. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
+            f"New song broken down every 4 hours. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
             f"#musictheory #chordprogression #{tag} #songwriting #harmony #pianochords #guitarchords #producer")
 
 
@@ -127,8 +127,6 @@ def main():
     if not pending:
         raise SystemExit("Queue is empty: add songs to songs/queue/ (see README).")
     ep, slug, spec = pending[0]
-    later = [x for x in q if x[0] > ep and x[0] not in done]
-    if later: spec["next"] = f"{later[0][2]['artist']} — {later[0][2]['title']}"
     log(f"Episode {ep}: {spec['artist']} — {spec['title']}")
 
     out = os.path.join(ROOT, "out"); os.makedirs(out, exist_ok=True)

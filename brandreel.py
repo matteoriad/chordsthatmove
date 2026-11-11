@@ -309,12 +309,12 @@ class Reel:
                 chip = (cy, ca, t1, t2, w1)
         img = to_pil(surf); d = ImageDraw.Draw(img)
         tx.draw(d, L + 48, tx.base(240 - 13, SEMI, 22), "chords that move", SEMI, 22, SOFT, -0.03)
-        hd = f"{sp['artist'].upper()} — {sp['title'].upper()}"
+        hd = "GUESS THE SONG" if sp.get("guess") else f"{sp['artist'].upper()} — {sp['title'].upper()}"
         if hook:
             hd = f"EP. {int(sp['episode']):02d}" if sp.get("episode") else ""
         tx.draw(d, R - tx.width(hd, MONO, 22, 0.12), tx.base(240 - 13, MONO, 22), hd, MONO, 22, MUTED, 0.12)
         if hook:
-            label = f"{sp['artist'].upper()} — {sp['title'].upper()}"
+            label = "GUESS THE SONG" if sp.get("guess") else f"{sp['artist'].upper()} — {sp['title'].upper()}"
             pw = tx.width(label, MONO, 22, 0.12) + 44
             d.rounded_rectangle([L, 420, L + pw, 470], radius=25, outline=(46, 46, 58), width=2)
             tx.draw(d, L + 22, tx.base(420, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
@@ -405,24 +405,22 @@ class Reel:
             cr.set_source_rgb(1, 1, 1)
             for y in (80, 150, 260, 360): cr.arc(700, y, 16 * p, 0, 6.2832); cr.fill()
         cr.restore()
-        nxt = sp.get("next")
-        if nxt:
-            cr.set_source_rgb(*rgb1(SURFACE)); rrect(cr, L, 1220, R - L, 128, 24); cr.fill_preserve()
-            cr.set_source_rgb(*rgb1(BORDER)); cr.set_line_width(1); cr.stroke()
-            cr.set_source_rgb(*rgb1(PAPER)); cr.set_line_width(2.5); cr.set_line_cap(cairo.LINE_CAP_ROUND)
-            ax, ay = R - 32 - 40, 1284
-            cr.move_to(ax + 8, ay); cr.line_to(ax + 32, ay); cr.move_to(ax + 22, ay - 10); cr.line_to(ax + 32, ay)
-            cr.line_to(ax + 22, ay + 10); cr.stroke()
         img = to_pil(surf); d = ImageDraw.Draw(img)
+        if sp.get("guess"):   # the reveal
+            tx.draw(d, L, tx.base(800, MONO, 26), "THE SONG WAS", MONO, 26, MUTED, 0.14)
+            y = 850
+            for line in wrap(tokens(sp["title"], self.accent, self.accent), SEMI, 104, -0.045, R - L)[:2]:
+                bb = tx.base(y, SEMI, 104, 1.0)
+                for w, c, x in line: tx.draw(d, L + x, bb, w, SEMI, 104, c, -0.045)
+                y += 108
+            tx.draw(d, L, tx.base(y + 20, MONO, 30), sp["artist"].upper(), MONO, 30, PAPER, 0.12)
+            tx.draw(d, L, tx.base(1220, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
+            return img
         b = tx.base(820, SEMI, 112, 0.95)
         tx.draw(d, L, b, "chords", SEMI, 112, PAPER, -0.045)
         x = tx.draw(d, L, b + 106, "that ", SEMI, 112, PAPER, -0.045)
         tx.draw(d, x, b + 106, "move", SEMI, 112, self.accent, -0.045)
         hy = 1220
-        if nxt:
-            tx.draw(d, L + 32, tx.base(1250, MONO, 20), "NEXT EPISODE", MONO, 20, mixc(MUTED, 1, SURFACE), 0.12)
-            tx.draw(d, L + 32, tx.base(1282, SEMI, 36), nxt, SEMI, 36, PAPER, -0.02)
-            hy = 1220 + 128 + 20
         tx.draw(d, L, tx.base(hy, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
         return img
 

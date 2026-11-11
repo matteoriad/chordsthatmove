@@ -24,17 +24,8 @@ def log(*a): print(*a, flush=True)
 
 
 def _spec(slug, episode):
-    """The spec as post.py rendered it, including the 'next episode' end card."""
-    spec = json.load(open(os.path.join(ROOT, "songs/queue", slug + ".json")))
-    import glob
-    later = []
-    for p in glob.glob(os.path.join(ROOT, "songs/queue/*.json")):
-        s = json.load(open(p))
-        if s["episode"] > episode: later.append(s)
-    if later:
-        n = min(later, key=lambda s: s["episode"])
-        spec["next"] = f"{n['artist']} — {n['title']}"
-    return spec
+    """The spec as post.py rendered it."""
+    return json.load(open(os.path.join(ROOT, "songs/queue", slug + ".json")))
 
 
 def catch_up(state, rendered=None, limit=None, dry=False):
