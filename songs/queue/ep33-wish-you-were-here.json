@@ -1,0 +1,124 @@
+{
+ "title": "Wish You Were Here",
+ "artist": "Pink Floyd",
+ "key": "G major",
+ "bpm": 120,
+ "episode": 33,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Wish You Were Here feels like *someone's missing*",
+ "hook_focus": 1,
+ "cover_text": "Home, but *someone's missing*",
+ "question": "Best Pink Floyd song to learn on guitar? 👇",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "away",
+   "bars": 1,
+   "text": "It starts on *C*, not home. Searching.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D/F#",
+   "roman": "V/3",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*D/F♯*: the chord that should lead home…",
+   "notes": [
+    "F#2",
+    "D4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Am",
+   "roman": "ii",
+   "tag": "slip",
+   "bars": 1,
+   "text": "…but it *slips to A minor* instead.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*G*, home, through the back door.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D/F#",
+   "roman": "V/3",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*D* again. Home next, surely…",
+   "notes": [
+    "F#2",
+    "A3",
+    "D4",
+    "F#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "away",
+   "bars": 1,
+   "text": "No: *it falls back to C*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Am",
+   "roman": "ii",
+   "tag": "sigh",
+   "bars": 1,
+   "text": "*A minor*. A long sigh…",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home is there, but *someone's missing*.",
+   "ending": true,
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  }
+ ]
+}

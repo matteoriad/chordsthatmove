@@ -1,0 +1,69 @@
+{
+ "title": "Wicked Game",
+ "artist": "Chris Isaak",
+ "key": "B minor",
+ "bpm": 113,
+ "episode": 36,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Wicked Game feels like *falling for the wrong one*",
+ "hook_focus": 2,
+ "cover_text": "The chord that *tempts you*",
+ "question": "Chris Isaak or HIM version? 👇",
+ "chords": [
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *B minor*. Slow and smoky.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "♭VII",
+   "tag": "drift",
+   "bars": 1,
+   "text": "*A* drifts down a step. Restless.",
+   "notes": [
+    "A2",
+    "A3",
+    "C#4",
+    "E4"
+   ]
+  },
+  {
+   "name": "E",
+   "roman": "IV",
+   "tag": "dorian",
+   "bars": 2,
+   "text": "*E major*: its G♯ is too bright. Temptation.",
+   "notes": [
+    "E2",
+    "G#3",
+    "B3",
+    "E4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back to B minor. *You fall anyway*.",
+   "ending": true,
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4"
+   ]
+  }
+ ]
+}

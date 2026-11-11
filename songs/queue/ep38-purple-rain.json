@@ -1,0 +1,82 @@
+{
+ "title": "Purple Rain",
+ "artist": "Prince",
+ "key": "B♭ major",
+ "bpm": 58,
+ "episode": 38,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Purple Rain feels like *a long goodbye*",
+ "hook_focus": 3,
+ "cover_text": "The chord that *won't let go*",
+ "question": "Best guitar solo ending ever? Name one 👇",
+ "chords": [
+  {
+   "name": "Bb",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *B♭*. Wide open, like a stadium.",
+   "notes": [
+    "Bb2",
+    "D4",
+    "F4",
+    "Bb4"
+   ]
+  },
+  {
+   "name": "Gm",
+   "roman": "vi",
+   "tag": "tender",
+   "bars": 1,
+   "text": "*G minor*: the warmth turns tender.",
+   "notes": [
+    "G2",
+    "D4",
+    "G4",
+    "Bb4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*F*, the V. Home should come next…",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "IV",
+   "tag": "step back",
+   "bars": 1,
+   "text": "…but it *steps back to E♭*. Holding on.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Bb",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home, the slow way. *A long goodbye*.",
+   "ending": true,
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ]
+  }
+ ]
+}

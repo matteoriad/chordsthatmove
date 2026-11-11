@@ -1,0 +1,68 @@
+{
+ "title": "In My Life",
+ "artist": "The Beatles",
+ "key": "A major",
+ "bpm": 103,
+ "episode": 34,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why In My Life feels like *looking back*",
+ "hook_focus": 5,
+ "cover_text": "The chord that *looks back*",
+ "question": "Can you play the piano solo? Be honest 👇",
+ "chords": [
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "Home: *A major*. Warm and settled."
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "motion",
+   "bars": 0.5,
+   "text": "*E*, the V. Gentle motion."
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "relative minor",
+   "bars": 0.5,
+   "text": "*F♯ minor*: a memory with a shadow."
+  },
+  {
+   "name": "A7",
+   "roman": "V/IV",
+   "tag": "secondary dominant",
+   "bars": 0.5,
+   "text": "*A7*: its G tips it toward D.",
+   "focus_note": "G"
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "warmth",
+   "bars": 0.5,
+   "text": "*D major*: full and warm. The good days.",
+   "focus_note": "F#"
+  },
+  {
+   "name": "Dm",
+   "roman": "iv",
+   "tag": "borrowed",
+   "bars": 0.5,
+   "text": "*F♯ drops to F*. Borrowed D minor: gone.",
+   "focus_note": "F"
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home again, but *older now*.",
+   "ending": true
+  }
+ ]
+}

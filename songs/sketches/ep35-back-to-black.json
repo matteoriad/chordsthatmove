@@ -1,0 +1,54 @@
+{
+ "title": "Back to Black",
+ "artist": "Amy Winehouse",
+ "key": "D minor",
+ "bpm": 123,
+ "episode": 35,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Back to Black *pulls you back into the dark*",
+ "hook_focus": 3,
+ "cover_text": "The chord that *pulls you back*",
+ "question": "Amy's saddest song? Name it 👇",
+ "chords": [
+  {
+   "name": "Dm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 2,
+   "text": "Home: *D minor*. Already dark."
+  },
+  {
+   "name": "Gm",
+   "roman": "iv",
+   "tag": "minor iv",
+   "bars": 2,
+   "text": "*G minor*, the iv. Heavier still.",
+   "focus_note": "G"
+  },
+  {
+   "name": "Bb",
+   "roman": "VI",
+   "tag": "glimpse",
+   "bars": 2,
+   "text": "*B♭ major*: a moment of warmth…"
+  },
+  {
+   "name": "A7",
+   "roman": "V7",
+   "tag": "harmonic minor",
+   "bars": 2,
+   "text": "…then *C♯* appears. A7 leans on D.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "Dm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*C♯ rises to D*: back into the dark.",
+   "focus_note": "D",
+   "ending": true
+  }
+ ]
+}

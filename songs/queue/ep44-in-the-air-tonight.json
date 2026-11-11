@@ -1,0 +1,84 @@
+{
+ "title": "In the Air Tonight",
+ "artist": "Phil Collins",
+ "key": "D minor",
+ "bpm": 95,
+ "episode": 44,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why In the Air Tonight feels like *a storm coming*",
+ "hook_focus": 2,
+ "cover_text": "The bass note that *won't move*",
+ "question": "Be honest: did you air-drum the fill? 👇",
+ "chords": [
+  {
+   "name": "Dm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *D minor*. The bass sits on D.",
+   "notes": [
+    "D3",
+    "D4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C/D",
+   "roman": "♭VII/1",
+   "tag": "pedal point",
+   "bars": 1,
+   "text": "*C* over a D that won't move. Unease.",
+   "notes": [
+    "D3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Bb/D",
+   "roman": "VI/3",
+   "tag": "pedal point",
+   "bars": 1,
+   "text": "*B♭* over D: darker, closer.",
+   "notes": [
+    "D3",
+    "D4",
+    "F4",
+    "Bb4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "C/D",
+   "roman": "♭VII/1",
+   "tag": "pedal point",
+   "bars": 1,
+   "text": "*C* again. The D just waits…",
+   "notes": [
+    "D3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Dm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "…and *the storm is still coming*.",
+   "ending": true,
+   "notes": [
+    "D3",
+    "D4",
+    "F4",
+    "A4"
+   ]
+  }
+ ]
+}

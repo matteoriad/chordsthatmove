@@ -1,0 +1,52 @@
+{
+ "title": "Careless Whisper",
+ "artist": "George Michael",
+ "key": "D minor",
+ "bpm": 77,
+ "episode": 37,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Careless Whisper sounds *so guilty*",
+ "hook_focus": 3,
+ "cover_text": "The chord that *can't confess*",
+ "question": "Can you hum the sax riff right now? 👇",
+ "chords": [
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D minor 7*: smooth, but uneasy."
+  },
+  {
+   "name": "Gm7",
+   "roman": "iv7",
+   "tag": "minor iv",
+   "bars": 1,
+   "text": "*G minor 7*: deeper into it."
+  },
+  {
+   "name": "Bbmaj7",
+   "roman": "VImaj7",
+   "tag": "lush",
+   "bars": 1,
+   "text": "*B♭maj7*: lush, almost romantic…"
+  },
+  {
+   "name": "Am7",
+   "roman": "v7",
+   "tag": "minor v",
+   "bars": 1,
+   "text": "*Am7*, not A7. No C♯: it can't come clean.",
+   "focus_note": "C"
+  },
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back to D minor. *The guilt stays*.",
+   "ending": true
+  }
+ ]
+}

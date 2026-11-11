@@ -1,0 +1,86 @@
+{
+ "title": "James Bond Theme",
+ "artist": "Monty Norman",
+ "key": "E minor",
+ "bpm": 139,
+ "episode": 39,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why the James Bond theme sounds *dangerous*",
+ "hook_focus": 2,
+ "cover_text": "One note that *sounds like danger*",
+ "question": "Best Bond film of all time? 👇",
+ "hashtag": "jamesbond",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *E minor*. Dark and steady.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "C/E",
+   "roman": "i♭6",
+   "tag": "chromatic line",
+   "bars": 1,
+   "text": "One note creeps up: *B to C*. Suspicion.",
+   "focus_note": "C",
+   "notes": [
+    "E2",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Em6",
+   "roman": "i6",
+   "tag": "chromatic line",
+   "bars": 1,
+   "text": "Up again: *C to C♯*. Something's off.",
+   "focus_note": "C#",
+   "notes": [
+    "E2",
+    "C#4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "C/E",
+   "roman": "i♭6",
+   "tag": "chromatic line",
+   "bars": 1,
+   "text": "Back to *C*. The tension won't leave.",
+   "focus_note": "C",
+   "notes": [
+    "E2",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Down to B. *Danger is waiting*.",
+   "focus_note": "B",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ],
+   "ending": true
+  }
+ ]
+}

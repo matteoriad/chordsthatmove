@@ -1,0 +1,82 @@
+{
+ "title": "Just the Two of Us",
+ "artist": "Bill Withers",
+ "key": "F minor",
+ "bpm": 96,
+ "episode": 32,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Just the Two of Us feels like *a slow dance*",
+ "hook_focus": 1,
+ "cover_text": "The chords of *a slow dance*",
+ "question": "Grover & Bill's original or Will Smith's? 👇",
+ "chords": [
+  {
+   "name": "Dbmaj7",
+   "roman": "VImaj7",
+   "tag": "dreamy",
+   "bars": 0.5,
+   "text": "*D♭maj7*: soft, wide, a little dreamy.",
+   "notes": [
+    "Db3",
+    "C4",
+    "F4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "C7",
+   "roman": "V7",
+   "tag": "dominant",
+   "bars": 0.5,
+   "text": "Down a half step: *C7*. Its E aches for F.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "Bb4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Fm7",
+   "roman": "i7",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*E rises to F*. F minor: warm and close.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "Ab4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Ebm7",
+   "roman": "vii7",
+   "tag": "detour",
+   "bars": 0.25,
+   "text": "*E♭m7*: a cool turn…",
+   "notes": [
+    "Eb3",
+    "Db4",
+    "Gb4",
+    "Bb4"
+   ]
+  },
+  {
+   "name": "Ab7",
+   "roman": "III7",
+   "tag": "turnaround",
+   "bars": 0.25,
+   "text": "A♭7 sways back: *the dance goes on*.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Gb4",
+    "Ab4"
+   ]
+  }
+ ]
+}

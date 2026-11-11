@@ -1,0 +1,69 @@
+{
+ "title": "Comptine d'un autre été",
+ "artist": "Yann Tiersen",
+ "key": "E minor",
+ "bpm": 100,
+ "episode": 45,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Amélie's theme feels like *a childhood memory*",
+ "hook_focus": 2,
+ "cover_text": "A music box that *never stops*",
+ "question": "Did you learn this one on piano? Be honest 👇",
+ "hashtag": "amelie",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *E minor*. A music box opens.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G/D",
+   "roman": "III/5",
+   "tag": "light",
+   "bars": 1,
+   "text": "*G major* over D. A little light.",
+   "notes": [
+    "D3",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bm/D",
+   "roman": "v/3",
+   "tag": "minor v",
+   "bars": 1,
+   "text": "*B minor*, not B major. No pull home.",
+   "notes": [
+    "D3",
+    "B3",
+    "D4",
+    "F#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "D",
+   "roman": "♭VII",
+   "tag": "turning",
+   "bars": 1,
+   "text": "D major: no resolution, *only memory*.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ]
+  }
+ ]
+}

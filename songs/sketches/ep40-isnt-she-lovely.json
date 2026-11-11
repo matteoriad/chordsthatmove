@@ -1,0 +1,45 @@
+{
+ "title": "Isn't She Lovely",
+ "artist": "Stevie Wonder",
+ "key": "E major",
+ "bpm": 119,
+ "episode": 40,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Isn't She Lovely sounds like *pure joy*",
+ "hook_focus": 1,
+ "cover_text": "The chord that *lifts you up*",
+ "question": "Can you play the harmonica solo? Be honest 👇",
+ "chords": [
+  {
+   "name": "C#m7",
+   "roman": "vi7",
+   "tag": "start",
+   "bars": 1,
+   "text": "It starts on *C♯ minor*. Soft and tender."
+  },
+  {
+   "name": "F#7",
+   "roman": "II7",
+   "tag": "secondary dominant",
+   "bars": 1,
+   "text": "*F♯7*: its A♯ isn't in the key. A lift.",
+   "focus_note": "A#"
+  },
+  {
+   "name": "B",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*A♯ rises to B*. Brighter still.",
+   "focus_note": "B"
+  },
+  {
+   "name": "E",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "E major: home, and *pure joy*."
+  }
+ ]
+}

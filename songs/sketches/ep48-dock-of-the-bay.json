@@ -1,0 +1,55 @@
+{
+ "title": "The Dock of the Bay",
+ "artist": "Otis Redding",
+ "key": "G major",
+ "bpm": 104,
+ "episode": 48,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Dock of the Bay feels like *time drifting by*",
+ "hook_focus": 1,
+ "cover_text": "Chords that *just drift*",
+ "question": "Can you whistle the ending? Be honest 👇",
+ "hashtag": "dockofthebay",
+ "chords": [
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *G major*. Easy and sunny."
+  },
+  {
+   "name": "B7",
+   "roman": "III7",
+   "tag": "chromatic",
+   "bars": 1,
+   "text": "*B7*: its D♯ isn't in G. It points away.",
+   "focus_note": "D#"
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "drift",
+   "bars": 1,
+   "text": "But it *drifts to C* instead.",
+   "focus_note": "C"
+  },
+  {
+   "name": "A7",
+   "roman": "II7",
+   "tag": "chromatic",
+   "bars": 1,
+   "text": "*A7*: C♯ points somewhere new…",
+   "focus_note": "C#"
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "…and it *just drifts home*.",
+   "ending": true
+  }
+ ]
+}

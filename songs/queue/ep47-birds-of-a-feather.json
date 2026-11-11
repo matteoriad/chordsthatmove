@@ -1,0 +1,81 @@
+{
+ "title": "Birds of a Feather",
+ "artist": "Billie Eilish",
+ "key": "D major",
+ "bpm": 105,
+ "episode": 47,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Birds of a Feather feels like *forever*",
+ "hook_focus": 3,
+ "cover_text": "A loop that *goes on forever*",
+ "question": "Billie's best: this or Ocean Eyes? 👇",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *D major*. Calm and certain.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Bm7",
+   "roman": "vi7",
+   "tag": "tender",
+   "bars": 1,
+   "text": "*B minor 7*: tender, a little wistful.",
+   "notes": [
+    "B2",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Em7",
+   "roman": "ii7",
+   "tag": "turnaround",
+   "bars": 1,
+   "text": "*E minor 7*: the turnaround begins.",
+   "notes": [
+    "E2",
+    "D4",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*A* pulls straight back to D…",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "…so the loop *could go on forever*.",
+   "ending": true,
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  }
+ ]
+}

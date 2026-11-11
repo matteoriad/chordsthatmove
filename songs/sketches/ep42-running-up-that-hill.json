@@ -1,0 +1,38 @@
+{
+ "title": "Running Up That Hill",
+ "artist": "Kate Bush",
+ "key": "C minor",
+ "bpm": 108,
+ "episode": 42,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Running Up That Hill feels like *climbing forever*",
+ "hook_focus": 1,
+ "cover_text": "Chords that *climb and never arrive*",
+ "question": "First heard it on Stranger Things? Be honest 👇",
+ "chords": [
+  {
+   "name": "Ab",
+   "roman": "♭VI",
+   "tag": "bottom",
+   "bars": 1,
+   "text": "*A♭*: it starts below home."
+  },
+  {
+   "name": "Bb",
+   "roman": "♭VII",
+   "tag": "climb",
+   "bars": 1,
+   "text": "One step up: *B♭*. Pushing uphill.",
+   "focus_note": "Bb"
+  },
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "top",
+   "bars": 2,
+   "text": "C minor: the top… then *you slide back*.",
+   "focus_note": "C"
+  }
+ ]
+}

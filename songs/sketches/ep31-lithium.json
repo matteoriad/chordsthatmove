@@ -1,0 +1,78 @@
+{
+ "title": "Lithium",
+ "artist": "Nirvana",
+ "key": "D major",
+ "bpm": 123,
+ "episode": 31,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Lithium sounds like *mood swings*",
+ "hook_focus": 4,
+ "cover_text": "Chords that *swing up, then crash*",
+ "question": "Kurt's best riff: Lithium or Teen Spirit? 👇",
+ "chords": [
+  {
+   "name": "D5",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "Home: *D*. Bright, almost happy."
+  },
+  {
+   "name": "F#5",
+   "roman": "III",
+   "tag": "lift",
+   "bars": 0.5,
+   "text": "Now *F♯*. A strange, giddy lift.",
+   "focus_note": "F#"
+  },
+  {
+   "name": "B5",
+   "roman": "VI",
+   "tag": "shadow",
+   "bars": 0.5,
+   "text": "*B*: a shadow crosses the mood.",
+   "focus_note": "B"
+  },
+  {
+   "name": "G5",
+   "roman": "IV",
+   "tag": "calm",
+   "bars": 0.5,
+   "text": "*G* steadies it. Calm, for now.",
+   "focus_note": "G"
+  },
+  {
+   "name": "Bb5",
+   "roman": "♭VI",
+   "tag": "borrowed",
+   "bars": 0.5,
+   "text": "*B♭*, borrowed from D minor. Crash.",
+   "focus_note": "Bb"
+  },
+  {
+   "name": "C5",
+   "roman": "♭VII",
+   "tag": "borrowed",
+   "bars": 0.5,
+   "text": "*C*, borrowed too. Still down.",
+   "focus_note": "C"
+  },
+  {
+   "name": "A5",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.5,
+   "text": "*A* pulls back toward D…",
+   "focus_note": "A"
+  },
+  {
+   "name": "C5",
+   "roman": "♭VII",
+   "tag": "borrowed",
+   "bars": 0.5,
+   "text": "…then *C* drags it down again.",
+   "focus_note": "C"
+  }
+ ]
+}

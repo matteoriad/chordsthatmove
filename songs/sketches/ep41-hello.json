@@ -1,0 +1,53 @@
+{
+ "title": "Hello",
+ "artist": "Adele",
+ "key": "F minor",
+ "bpm": 79,
+ "episode": 41,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Adele's Hello feels like *calling the past*",
+ "hook_focus": 3,
+ "cover_text": "A call that *never connects*",
+ "question": "Adele's best: Hello or Someone Like You? 👇",
+ "hashtag": "adele",
+ "chords": [
+  {
+   "name": "Fm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *F minor*. A quiet, empty room."
+  },
+  {
+   "name": "Ab/Eb",
+   "roman": "III/5",
+   "tag": "bass step",
+   "bars": 1,
+   "text": "The bass steps down to *E♭*. Reaching out."
+  },
+  {
+   "name": "Eb",
+   "roman": "♭VII",
+   "tag": "reaching",
+   "bars": 1,
+   "text": "*E♭ major*: still reaching…"
+  },
+  {
+   "name": "Db",
+   "roman": "♭VI",
+   "tag": "falling",
+   "bars": 1,
+   "text": "D♭. The V never comes: *no answer*.",
+   "focus_note": "Db"
+  },
+  {
+   "name": "Fm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back to F minor. *Still calling*.",
+   "ending": true
+  }
+ ]
+}

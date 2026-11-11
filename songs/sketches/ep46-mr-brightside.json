@@ -1,0 +1,44 @@
+{
+ "title": "Mr. Brightside",
+ "artist": "The Killers",
+ "key": "D♭ major",
+ "bpm": 148,
+ "episode": 46,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Mr. Brightside feels like *jealousy creeping in*",
+ "hook_focus": 1,
+ "cover_text": "The note that *starts the doubt*",
+ "question": "Can you get through it without shouting along? 👇",
+ "chords": [
+  {
+   "name": "Db",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *D♭*. Fine. Everything's fine."
+  },
+  {
+   "name": "Dbmaj7",
+   "roman": "Imaj7",
+   "tag": "doubt",
+   "bars": 1,
+   "text": "*D♭ slips to C*. A small doubt.",
+   "focus_note": "C"
+  },
+  {
+   "name": "Gb",
+   "roman": "IV",
+   "tag": "spiral",
+   "bars": 2,
+   "text": "*C falls to B♭*. The thought won't stop.",
+   "focus_note": "Bb",
+   "notes": [
+    "Gb2",
+    "Bb3",
+    "Db4",
+    "Gb4"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,55 @@
+{
+ "title": "Sweet Home Alabama",
+ "artist": "Lynyrd Skynyrd",
+ "key": "D Mixolydian",
+ "bpm": 98,
+ "episode": 43,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Sweet Home Alabama *can't find home*",
+ "hook_focus": 1,
+ "cover_text": "Three chords, *two homes*",
+ "question": "D or G: which sounds like home to you? 👇",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home?",
+   "bars": 0.5,
+   "text": "Is *D* home? It sure sounds like it.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "♭VII",
+   "tag": "mixolydian",
+   "bars": 0.5,
+   "text": "*C*: C natural isn't in D major.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "home?",
+   "bars": 1,
+   "text": "G feels like home too. *So which is it?*",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  }
+ ]
+}
