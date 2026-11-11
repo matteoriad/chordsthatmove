@@ -1,0 +1,72 @@
+{
+ "title": "Karma Police",
+ "artist": "Radiohead",
+ "key": "A minor",
+ "bpm": 75,
+ "episode": 53,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Karma Police feels like *being judged*",
+ "hook_focus": 5,
+ "cover_text": "F♯ or F: *the verdict*",
+ "question": "Best Radiohead song to learn first? 👇",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "Home: *A minor*. An uneasy calm."
+  },
+  {
+   "name": "D/F#",
+   "roman": "IV/3",
+   "tag": "dorian",
+   "bars": 0.5,
+   "text": "*D/F♯*: a hopeful lift. F♯ is Dorian."
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "sinking",
+   "bars": 0.5,
+   "text": "*E minor*: it sinks again."
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "breath",
+   "bars": 0.5,
+   "text": "*G*: a breath…"
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*A minor*. Same suspicion…"
+  },
+  {
+   "name": "F",
+   "roman": "♭VI",
+   "tag": "aeolian",
+   "bars": 0.5,
+   "text": "Now *F*, not F♯. The verdict lands.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "sinking",
+   "bars": 0.5,
+   "text": "*E minor*: no appeal…"
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "loop",
+   "bars": 0.5,
+   "text": "G, and *the trial starts over*."
+  }
+ ]
+}

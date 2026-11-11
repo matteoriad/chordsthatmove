@@ -1,0 +1,69 @@
+{
+ "title": "Never Gonna Give You Up",
+ "artist": "Rick Astley",
+ "key": "D♭ major",
+ "bpm": 114,
+ "episode": 49,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Never Gonna Give You Up is *impossible to escape*",
+ "hook_focus": 2,
+ "cover_text": "A chorus that *never comes home*",
+ "question": "Be honest: how many times have you been Rickrolled? 👇",
+ "chords": [
+  {
+   "name": "Gbmaj7",
+   "roman": "IVmaj7",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "*G♭maj7*, the IV. Warm and hopeful.",
+   "notes": [
+    "Gb2",
+    "Bb3",
+    "F4",
+    "Gb4"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.5,
+   "text": "*A♭*, the V. Home must be next…",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Fm",
+   "roman": "iii",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "…no: *F minor*, the iii. A sideways step.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "Ab4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Bbm",
+   "roman": "vi",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "B♭m, still not home. So *it loops again*.",
+   "notes": [
+    "Bb2",
+    "Db4",
+    "F4",
+    "Bb4"
+   ],
+   "focus": 3
+  }
+ ]
+}

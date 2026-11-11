@@ -1,0 +1,71 @@
+{
+ "title": "Megalovania",
+ "artist": "Toby Fox",
+ "key": "D minor",
+ "bpm": 120,
+ "episode": 52,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Megalovania sounds *unstoppable*",
+ "hook_focus": 2,
+ "cover_text": "A bass line that *never lets up*",
+ "question": "Undertale: did you spare or fight? 👇",
+ "hashtag": "undertale",
+ "chords": [
+  {
+   "name": "D5",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *D*. The riff hits hard.",
+   "notes": [
+    "D3",
+    "D4",
+    "A4",
+    "D5"
+   ]
+  },
+  {
+   "name": "C5",
+   "roman": "♭VII",
+   "tag": "descent",
+   "bars": 1,
+   "text": "The bass drops to *C*. Still charging.",
+   "notes": [
+    "C3",
+    "C4",
+    "G4",
+    "C5"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "B5",
+   "roman": "♮VI",
+   "tag": "chromatic",
+   "bars": 1,
+   "text": "*B*: another half step down.",
+   "notes": [
+    "B2",
+    "B3",
+    "F#4",
+    "B4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Bb5",
+   "roman": "♭VI",
+   "tag": "chromatic",
+   "bars": 1,
+   "text": "B♭: down again. *It never lets up*.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "F4",
+    "Bb4"
+   ],
+   "focus": 1
+  }
+ ]
+}

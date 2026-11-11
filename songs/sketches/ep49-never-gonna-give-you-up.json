@@ -1,0 +1,45 @@
+{
+ "title": "Never Gonna Give You Up",
+ "artist": "Rick Astley",
+ "key": "D♭ major",
+ "bpm": 114,
+ "episode": 49,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Never Gonna Give You Up is *impossible to escape*",
+ "hook_focus": 2,
+ "cover_text": "A chorus that *never comes home*",
+ "question": "Be honest: how many times have you been Rickrolled? 👇",
+ "chords": [
+  {
+   "name": "Gbmaj7",
+   "roman": "IVmaj7",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "*G♭maj7*, the IV. Warm and hopeful."
+  },
+  {
+   "name": "Ab",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.5,
+   "text": "*A♭*, the V. Home must be next…"
+  },
+  {
+   "name": "Fm",
+   "roman": "iii",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "…no: *F minor*, the iii. A sideways step.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Bbm",
+   "roman": "vi",
+   "tag": "royal road",
+   "bars": 0.5,
+   "text": "B♭m, still not home. So *it loops again*.",
+   "focus_note": "Bb"
+  }
+ ]
+}

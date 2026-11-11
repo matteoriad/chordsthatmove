@@ -1,0 +1,45 @@
+{
+ "title": "Billie Jean",
+ "artist": "Michael Jackson",
+ "key": "F♯ minor",
+ "bpm": 117,
+ "episode": 50,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Billie Jean sounds *so paranoid*",
+ "hook_focus": 1,
+ "cover_text": "Chords that *keep circling you*",
+ "question": "Can you moonwalk? Be honest 👇",
+ "chords": [
+  {
+   "name": "F#m",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "Home: *F♯ minor*. Tight and tense."
+  },
+  {
+   "name": "G#m/F#",
+   "roman": "ii/1",
+   "tag": "dorian",
+   "bars": 0.5,
+   "text": "*G♯m* over F♯: a D♯ sneaks in.",
+   "focus_note": "D#"
+  },
+  {
+   "name": "A/F#",
+   "roman": "III/6",
+   "tag": "pedal",
+   "bars": 0.5,
+   "text": "*A* over F♯: the bass won't let go."
+  },
+  {
+   "name": "G#m/F#",
+   "roman": "ii/1",
+   "tag": "dorian",
+   "bars": 0.5,
+   "text": "D♯ again. It circles, *always watching*.",
+   "focus_note": "D#"
+  }
+ ]
+}

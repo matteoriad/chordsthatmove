@@ -1,0 +1,93 @@
+{
+ "title": "Livin' on a Prayer",
+ "artist": "Bon Jovi",
+ "key": "E minor",
+ "bpm": 123,
+ "episode": 51,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Livin' on a Prayer feels like *barely holding on*",
+ "hook_focus": 3,
+ "cover_text": "The same chords, *now they're hope*",
+ "question": "Can you hit the key change? Be honest 👇",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*E minor*: hard times. Home base.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "VI",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "*C*: pushing up…",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "VII",
+   "tag": "climb",
+   "bars": 1,
+   "text": "*D*: almost there…",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "III / I",
+   "tag": "relative major",
+   "bars": 0.5,
+   "text": "*G major*! Now the same chords mean hope.",
+   "notes": [
+    "G2",
+    "D4",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "*C* again, but brighter: the IV of G.",
+   "notes": [
+    "C3",
+    "E4",
+    "G4",
+    "C5"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "D, the V of G: *one more push*.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  }
+ ]
+}

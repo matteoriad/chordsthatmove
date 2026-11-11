@@ -1,0 +1,68 @@
+{
+ "title": "Another Love",
+ "artist": "Tom Odell",
+ "key": "E minor",
+ "bpm": 123,
+ "episode": 55,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Another Love feels like *loving with nothing left*",
+ "hook_focus": 3,
+ "cover_text": "The chord with *nothing left*",
+ "question": "Sing along in the car, or cry? Be honest 👇",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "VI",
+   "tag": "start",
+   "bars": 1,
+   "text": "It starts on *C*, not home. Hopeful.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "III",
+   "tag": "lift",
+   "bars": 1,
+   "text": "*G major*: a little brighter…",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*E minor*: home, and heavy.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bm",
+   "roman": "v",
+   "tag": "minor v",
+   "bars": 1,
+   "text": "Bm, not B. No pull home: *nothing left*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4"
+   ],
+   "focus": 2
+  }
+ ]
+}

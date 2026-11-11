@@ -1,0 +1,57 @@
+{
+ "title": "Livin' on a Prayer",
+ "artist": "Bon Jovi",
+ "key": "E minor",
+ "bpm": 123,
+ "episode": 51,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Livin' on a Prayer feels like *barely holding on*",
+ "hook_focus": 3,
+ "cover_text": "The same chords, *now they're hope*",
+ "question": "Can you hit the key change? Be honest 👇",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*E minor*: hard times. Home base."
+  },
+  {
+   "name": "C",
+   "roman": "VI",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "*C*: pushing up…"
+  },
+  {
+   "name": "D",
+   "roman": "VII",
+   "tag": "climb",
+   "bars": 1,
+   "text": "*D*: almost there…"
+  },
+  {
+   "name": "G",
+   "roman": "III / I",
+   "tag": "relative major",
+   "bars": 0.5,
+   "text": "*G major*! Now the same chords mean hope."
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "*C* again, but brighter: the IV of G."
+  },
+  {
+   "name": "D",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "D, the V of G: *one more push*."
+  }
+ ]
+}

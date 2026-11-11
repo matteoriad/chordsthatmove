@@ -1,0 +1,37 @@
+{
+ "title": "Imagine",
+ "artist": "John Lennon",
+ "key": "C major",
+ "bpm": 76,
+ "episode": 54,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Imagine feels like *a daydream*",
+ "hook_focus": 1,
+ "cover_text": "One note that *starts the dream*",
+ "question": "Piano players: was this your first song? 👇",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.75,
+   "text": "Home: *C major*. Simple and calm."
+  },
+  {
+   "name": "Cmaj7",
+   "roman": "Imaj7",
+   "tag": "drift",
+   "bars": 0.25,
+   "text": "*C slips to B*: the mind drifts.",
+   "focus_note": "B"
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "float",
+   "bars": 1,
+   "text": "F major: floating, *a daydream*."
+  }
+ ]
+}
