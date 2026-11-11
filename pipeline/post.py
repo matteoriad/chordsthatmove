@@ -3,7 +3,8 @@
 
 Steps: pick next song → render reel + covers → push the cover (public URL for
 Instagram) → create Reel container with resumable video upload → wait until
-Instagram has processed it → publish → record it in posted.json → refresh the
+Instagram has processed it (if Meta rejects the upload, retry with a
+video_url pointing at the mp4 pushed to reels/) → publish → record it in posted.json → refresh the
 access token → cross-post to YouTube Shorts / TikTok (pipeline/crosspost.py).
 
 Env:
@@ -15,7 +16,7 @@ Env:
   EPISODE=N                     force a specific episode
   IG_API_VERSION                default v22.0
 """
-import glob, json, os, re, subprocess, sys, time, datetime
+import glob, json, os, re, shutil, subprocess, sys, time, datetime
 import requests
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -86,24 +87,38 @@ def ig(method, url, **kw):
     return data
 
 
-def publish_reel(video, cover_url, text, user, token):
-    c = ig("POST", f"{API}/{user}/media", data={
-        "media_type": "REELS", "upload_type": "resumable", "caption": text,
-        "cover_url": cover_url, "share_to_feed": "true", "access_token": token})
-    cid = c["id"]; log("container", cid)
-    size = os.path.getsize(video)
-    with open(video, "rb") as f:
-        ig("POST", c.get("uri") or f"{RUPLOAD}/{cid}", data=f.read(), headers={
-            "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)})
-    log("uploaded", size, "bytes")
+def wait_processed(cid, token):
     for _ in range(60):                       # up to ~10 minutes of processing
         st = ig("GET", f"{API}/{cid}", params={"fields": "status_code,status", "access_token": token})
         log("status", st.get("status_code"), st.get("status", ""))
-        if st.get("status_code") == "FINISHED": break
+        if st.get("status_code") == "FINISHED": return
         if st.get("status_code") in ("ERROR", "EXPIRED"): raise SystemExit(f"processing failed: {st}")
         time.sleep(10)
-    else:
-        raise SystemExit("timed out waiting for Instagram to process the video")
+    raise SystemExit("timed out waiting for Instagram to process the video")
+
+
+def publish_reel(video, cover_url, text, user, token, hosted_video_url=None):
+    """Resumable upload first; if Meta's upload server rejects the file or processing fails,
+    retry once with a fresh container that has Instagram fetch the video from a public URL
+    (hosted_video_url() publishes it and returns the URL)."""
+    base = {"media_type": "REELS", "caption": text, "cover_url": cover_url,
+            "share_to_feed": "true", "access_token": token}
+    try:
+        c = ig("POST", f"{API}/{user}/media", data={**base, "upload_type": "resumable"})
+        cid = c["id"]; log("container", cid)
+        size = os.path.getsize(video)
+        with open(video, "rb") as f:
+            ig("POST", c.get("uri") or f"{RUPLOAD}/{cid}", data=f.read(), headers={
+                "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)})
+        log("uploaded", size, "bytes")
+        wait_processed(cid, token)
+    except SystemExit as e:
+        if not hosted_video_url: raise
+        log(f"resumable upload failed ({e}); retrying with video_url")
+        url = hosted_video_url(); log("video_url", url)
+        c = ig("POST", f"{API}/{user}/media", data={**base, "video_url": url})
+        cid = c["id"]; log("container", cid)
+        wait_processed(cid, token)
     pub = ig("POST", f"{API}/{user}/media_publish", data={"creation_id": cid, "access_token": token})
     mid = pub["id"]
     info = ig("GET", f"{API}/{mid}", params={"fields": "permalink", "access_token": token})
@@ -157,7 +172,14 @@ def main():
     commit_push(cover_rel, f"cover: episode {ep}")
     cover_url = f"https://raw.githubusercontent.com/{repo}/{git('rev-parse', 'HEAD')}/{cover_rel}"
     time.sleep(5)
-    mid, link = publish_reel(video, cover_url, text, user, token)
+    def hosted_video_url():   # fallback only: publish the mp4 next to the covers
+        rel = f"reels/{slug}.mp4"
+        os.makedirs(os.path.join(ROOT, "reels"), exist_ok=True)
+        shutil.copyfile(video, os.path.join(ROOT, rel))
+        commit_push(rel, f"reel video: episode {ep} (upload fallback)")
+        time.sleep(5)
+        return f"https://raw.githubusercontent.com/{repo}/{git('rev-parse', 'HEAD')}/{rel}"
+    mid, link = publish_reel(video, cover_url, text, user, token, hosted_video_url)
     log("published", mid, link)
     state.append({"episode": ep, "slug": slug, "title": spec["title"], "media_id": mid, "permalink": link,
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
