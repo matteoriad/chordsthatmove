@@ -65,7 +65,7 @@ def caption(spec):
     if spec.get("guess"):   # guess mode: nothing in the first lines gives the song away
         return (f"{plain(spec['hook'])} Guess the song 🎶\n\n"
                 f"{plain(spec.get('question') or 'Did you get it before the reveal? Be honest 👇')}\n\n"
-                f"New song broken down every 4 hours. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
+                f"Follow {spec.get('handle', '@chordsthatmove')} for more chord breakdowns 🎹\n\n"
                 f"#musictheory #chordprogression #guessthesong #songwriting #harmony #pianochords #guitarchords\n"
                 f".\n.\n.\n"
                 f"Answer: {spec['artist']} — {spec['title']} · {spec['key']}\n"
@@ -74,7 +74,7 @@ def caption(spec):
             f"{spec['artist']} — {spec['title']} · {spec['key']}\n"
             f"{' → '.join(chords)}\n({' – '.join(romans)})\n\n"
             f"{plain(spec.get('question') or 'Which song should I break down next? Comment it 👇')}\n\n"
-            f"New song broken down every 4 hours. Follow {spec.get('handle', '@chordsthatmove')} 🎹\n\n"
+            f"Follow {spec.get('handle', '@chordsthatmove')} for more chord breakdowns 🎹\n\n"
             f"#musictheory #chordprogression #{tag} #songwriting #harmony #pianochords #guitarchords #producer")
 
 
