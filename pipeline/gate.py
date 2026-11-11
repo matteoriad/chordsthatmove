@@ -5,7 +5,8 @@ Six posts a day, every 4 hours: 01:00, 05:00, 09:00, 13:00, 17:00 and 21:00 Berl
 Cron is UTC only and GitHub drops runs at the top of the hour under load, so the
 workflow fires at :41 every hour (covers CET and CEST). A run landing in the hour
 before a slot waits until the slot and posts; runs in the two hours after a slot
-are backups that post only if nothing went out in the last 3 hours.
+are backups that post only if nothing has gone out for that slot yet (a late
+backup post never cancels the next slot).
 "Post now" pushes (the Claude scheduled task) follow the same rules: skip if
 already posted, wait for the slot if early. Manual runs from the Actions tab
 always go.
@@ -47,16 +48,25 @@ def main():
     now = datetime.datetime.now(BER)
     posted = latest_posted()
     last = max((datetime.datetime.fromisoformat(p["posted_at"]) for p in posted), default=None)
-    if last and now - last < MIN_GAP:
-        return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin: skipping.")
+    hour = now.replace(minute=0, second=0, microsecond=0)
     for slot in SLOTS:
         if now.hour == (slot - 1) % 24:
-            target = (now + datetime.timedelta(hours=1)).replace(minute=0, second=0, microsecond=0)
-            print(f"{now:%H:%M} Berlin: waiting {(target - now).total_seconds() / 60:.0f} min until {slot:02d}:00.")
-            time.sleep(max(0, (target - now).total_seconds()))
-            return out(True, f"{slot:02d}:00 Berlin: posting.")
-        if 0 <= (now.hour - slot) % 24 <= BACKUP_HOURS:
+            slot_at, late = hour + datetime.timedelta(hours=1), False
+        elif 0 <= (now.hour - slot) % 24 <= BACKUP_HOURS:
+            slot_at, late = hour - datetime.timedelta(hours=(now.hour - slot) % 24), True
+        else:
+            continue
+        # One post per slot: skip only if something already went out for THIS slot (from the
+        # hour before it on). A late backup post for the previous slot doesn't cancel this one.
+        if last and last >= slot_at - datetime.timedelta(hours=1):
+            return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin for the {slot:02d}:00 slot: skipping.")
+        if late:
             return out(True, f"{now:%H:%M} Berlin: the {slot:02d}:00 post was missed, posting now as backup.")
+        print(f"{now:%H:%M} Berlin: waiting {(slot_at - now).total_seconds() / 60:.0f} min until {slot:02d}:00.")
+        time.sleep(max(0, (slot_at - now).total_seconds()))
+        return out(True, f"{slot:02d}:00 Berlin: posting.")
+    if last and now - last < MIN_GAP:
+        return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin: skipping.")
     if event == "push":   # post-now outside any window: post right away
         return out(True, "Post-now trigger: posting.")
     return out(False, f"{now:%H:%M} Berlin is outside the posting windows: skipping.")
