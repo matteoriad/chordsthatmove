@@ -48,9 +48,24 @@ jobs:
         if: steps.gate.outputs.go == 'true'
         timeout-minutes: 30
         run: |
-          APT_OPTS="-o Acquire::Retries=5 -o Acquire::http::Timeout=20"
-          sudo apt-get update -q $APT_OPTS
-          sudo apt-get install -y -q --no-install-recommends $APT_OPTS ffmpeg libcairo2-dev pkg-config
+          # The runner's default mirror (azure.archive.ubuntu.com) sometimes stops answering,
+          # which used to stall this step until its timeout. Probe it first, cap each install
+          # attempt, and fall back to archive.ubuntu.com if the mirror is slow or down.
+          APT_OPTS="-o Acquire::Retries=2 -o Acquire::http::Timeout=10"
+          PKGS="ffmpeg libcairo2-dev pkg-config"
+          use_main_mirror() {
+            echo "::warning::apt mirror unreachable or too slow, switching to archive.ubuntu.com"
+            for f in /etc/apt/sources.list /etc/apt/sources.list.d/* /etc/apt/apt-mirrors.txt; do
+              [ -f "$f" ] && sudo sed -i 's#azure\.archive\.ubuntu\.com#archive.ubuntu.com#g' "$f"
+            done
+            return 0
+          }
+          apt_install() {
+            sudo apt-get update -q $APT_OPTS &&
+            sudo timeout 480 apt-get install -y -q --no-install-recommends $APT_OPTS $PKGS
+          }
+          curl -fsS --max-time 10 -o /dev/null http://azure.archive.ubuntu.com/ubuntu/dists/noble/Release || use_main_mirror
+          apt_install || { use_main_mirror; apt_install; }
 
       - uses: actions/setup-python@v5
         if: steps.gate.outputs.go == 'true'
