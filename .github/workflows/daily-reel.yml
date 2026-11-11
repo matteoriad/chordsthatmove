@@ -2,12 +2,11 @@ name: Daily reel
 
 on:
   schedule:
-    # Targets: 01:00 and 13:00 Berlin. Cron is UTC and GitHub drops runs at the top of
-    # the hour, so fire at :41 in the UTC hours around each slot (covers CET and CEST);
+    # Targets: 01, 05, 09, 13, 17 and 21 Berlin (every 4 h). Cron is UTC and GitHub drops
+    # runs at the top of the hour, so fire at :41 every hour (covers CET and CEST);
     # pipeline/gate.py waits for the slot and makes sure only one run posts per slot
     # (the others are backups or skip).
-    - cron: "41 22,23,0,1 * * *"
-    - cron: "41 10,11,12,13 * * *"
+    - cron: "41 * * * *"
   workflow_dispatch:
     inputs:
       dry_run:
@@ -39,7 +38,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Posting window (01:00 / 13:00 Berlin)
+      - name: Posting window (every 4 h from 01:00 Berlin)
         id: gate
         env:
           EVENT: ${{ github.event_name }}

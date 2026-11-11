@@ -1,6 +1,6 @@
 # chords that move: daily reel pipeline
 
-Twice a day, at 01:00 and 13:00 Berlin time, GitHub Actions picks the next song in `songs/queue/`,
+Six times a day, every 4 hours (01:00, 05:00, 09:00, 13:00, 17:00, 21:00 Berlin time), GitHub Actions picks the next song in `songs/queue/`,
 renders the reel (voice lines + synth audio) and its cover, and publishes it to
 Instagram as a Reel, then to YouTube Shorts and TikTok. Nothing runs on your laptop.
 
@@ -50,7 +50,7 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 ### 4. Test, then go live
 - Actions → **Daily reel** → Run workflow with **dry run** ticked → download the `reel` artifact and check it.
 - Run it again with dry run unticked to post episode 1 right away.
-- From then on it posts by itself twice a day. If a run fails, GitHub emails you.
+- From then on it posts by itself six times a day. If a run fails, GitHub emails you.
 
 ## YouTube Shorts and TikTok
 

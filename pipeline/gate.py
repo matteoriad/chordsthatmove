@@ -1,12 +1,11 @@
 #!/usr/bin/env python3
 """Decide whether this workflow run should post.
 
-Two posts a day, at 01:00 and 13:00 Berlin (01:00 Berlin is US-evening prime time).
+Six posts a day, every 4 hours: 01:00, 05:00, 09:00, 13:00, 17:00 and 21:00 Berlin.
 Cron is UTC only and GitHub drops runs at the top of the hour under load, so the
-workflow fires at :41 in several UTC hours around each slot (enough to cover both
-CET and CEST). A run landing in the hour before a slot waits until the slot and
-posts; runs in the two hours after a slot are backups that post only if nothing
-went out in the last 6 hours. Everything else skips.
+workflow fires at :41 every hour (covers CET and CEST). A run landing in the hour
+before a slot waits until the slot and posts; runs in the two hours after a slot
+are backups that post only if nothing went out in the last 3 hours.
 "Post now" pushes (the Claude scheduled task) follow the same rules: skip if
 already posted, wait for the slot if early. Manual runs from the Actions tab
 always go.
@@ -16,9 +15,9 @@ from zoneinfo import ZoneInfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BER = ZoneInfo("Europe/Berlin")
-SLOTS = (1, 13)          # posting hours, Berlin time
+SLOTS = (1, 5, 9, 13, 17, 21)   # posting hours, Berlin time (every 4 h)
 BACKUP_HOURS = 2         # how long after a slot a missed post may still go out
-MIN_GAP = datetime.timedelta(hours=6)
+MIN_GAP = datetime.timedelta(hours=3)   # must stay below the 4 h slot spacing
 
 
 def out(go, why):
