@@ -275,7 +275,13 @@
   "title": "Zombie",
   "media_id": "17918044089524740",
   "permalink": "https://www.instagram.com/reel/DfnuF0Yx-RZ/",
-  "posted_at": "2026-11-12T00:01:30+00:00"
+  "posted_at": "2026-11-12T00:01:30+00:00",
+  "tiktok": {
+   "publish_id": "7707189371010567446",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7707189371010567446",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
+  }
  },
  {
   "episode": 17,
@@ -283,6 +289,12 @@
   "title": "Blinding Lights",
   "media_id": "18116687993467929",
   "permalink": "https://www.instagram.com/reel/DfoJlsqPbzo/",
-  "posted_at": "2026-11-12T04:01:51+00:00"
+  "posted_at": "2026-11-12T04:01:51+00:00",
+  "tiktok": {
+   "publish_id": "7707189446071913750",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7707189446071913750",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
+  }
  }
 ]
