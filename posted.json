@@ -331,6 +331,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707189446071913750",
    "via": "chrome",
    "posted_at": "2026-11-12"
+  },
+  "youtube": {
+   "id": "3C8yJpwLAhI",
+   "url": "https://youtube.com/shorts/3C8yJpwLAhI",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
   }
  },
  {
@@ -343,6 +349,12 @@
   "tiktok": {
    "publish_id": "7707201462098513174",
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707201462098513174",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
+  },
+  "youtube": {
+   "id": "IFW3lD3Yi_w",
+   "url": "https://youtube.com/shorts/IFW3lD3Yi_w",
    "via": "chrome",
    "posted_at": "2026-11-12"
   }
@@ -359,6 +371,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707266034029612291",
    "via": "chrome",
    "posted_at": "2026-11-12"
+  },
+  "youtube": {
+   "id": "_OMP2IRGXQE",
+   "url": "https://youtube.com/shorts/_OMP2IRGXQE",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
   }
  },
  {
@@ -367,6 +385,18 @@
   "title": "Fast Car",
   "media_id": "17983669428067665",
   "permalink": "https://www.instagram.com/reel/DfpcGrDuWZR/",
-  "posted_at": "2026-11-12T16:03:11+00:00"
+  "posted_at": "2026-11-12T16:03:11+00:00",
+  "youtube": {
+   "id": "cpMYat2ZQ8M",
+   "url": "https://youtube.com/shorts/cpMYat2ZQ8M",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
+  },
+  "tiktok": {
+   "publish_id": "7707326113487260950",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7707326113487260950",
+   "via": "chrome",
+   "posted_at": "2026-11-12"
+  }
  }
 ]
