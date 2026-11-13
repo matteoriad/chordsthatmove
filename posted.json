@@ -411,6 +411,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707387052169399574",
    "via": "chrome",
    "posted_at": "2026-11-12"
+  },
+  "youtube": {
+   "id": "xZw9xjWKV4k",
+   "url": "https://youtube.com/shorts/xZw9xjWKV4k",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
   }
  },
  {
@@ -423,6 +429,12 @@
   "tiktok": {
    "publish_id": "7707448992052956438",
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707448992052956438",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
+  },
+  "youtube": {
+   "id": "oOpMTtNHuak",
+   "url": "https://youtube.com/shorts/oOpMTtNHuak",
    "via": "chrome",
    "posted_at": "2026-11-13"
   }
@@ -439,6 +451,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707510759693110550",
    "via": "chrome",
    "posted_at": "2026-11-13"
+  },
+  "youtube": {
+   "id": "4HGNoT5DMnE",
+   "url": "https://youtube.com/shorts/4HGNoT5DMnE",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
   }
  },
  {
@@ -451,6 +469,12 @@
   "tiktok": {
    "publish_id": "7707573013390052630",
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707573013390052630",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
+  },
+  "youtube": {
+   "id": "6uh_UKuCWEo",
+   "url": "https://youtube.com/shorts/6uh_UKuCWEo",
    "via": "chrome",
    "posted_at": "2026-11-13"
   }
@@ -467,6 +491,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7707634655385652503",
    "via": "chrome",
    "posted_at": "2026-11-13"
+  },
+  "youtube": {
+   "id": "bNGSOMpRxGk",
+   "url": "https://youtube.com/shorts/bNGSOMpRxGk",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
   }
  },
  {
@@ -475,6 +505,18 @@
   "title": "The Girl from Ipanema",
   "media_id": "18119586415824858",
   "permalink": "https://www.instagram.com/reel/DfsA9AmiBd1/",
-  "posted_at": "2026-11-13T16:03:45+00:00"
+  "posted_at": "2026-11-13T16:03:45+00:00",
+  "youtube": {
+   "id": "OfnCSmdK7DA",
+   "url": "https://youtube.com/shorts/OfnCSmdK7DA",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
+  },
+  "tiktok": {
+   "publish_id": "7707700050843028758",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7707700050843028758",
+   "via": "chrome",
+   "posted_at": "2026-11-13"
+  }
  }
 ]
