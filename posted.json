@@ -611,6 +611,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7708005303198944534",
    "via": "chrome",
    "posted_at": "2026-11-14"
+  },
+  "youtube": {
+   "id": "8nX2C1YyTg0",
+   "url": "https://youtube.com/shorts/8nX2C1YyTg0",
+   "via": "chrome",
+   "posted_at": "2026-11-14"
   }
  },
  {
@@ -625,6 +631,12 @@
    "url": "https://www.tiktok.com/@chordsthatmove/video/7708067247222295830",
    "via": "chrome",
    "posted_at": "2026-11-14"
+  },
+  "youtube": {
+   "id": "YNTr5fmTFWc",
+   "url": "https://youtube.com/shorts/YNTr5fmTFWc",
+   "via": "chrome",
+   "posted_at": "2026-11-14"
   }
  },
  {
@@ -633,6 +645,18 @@
   "title": "Wish You Were Here",
   "media_id": "17965031064235028",
   "permalink": "https://www.instagram.com/reel/DfvBF8OhkwK/",
-  "posted_at": "2026-11-14T20:02:17+00:00"
+  "posted_at": "2026-11-14T20:02:17+00:00",
+  "youtube": {
+   "id": "yzQlB-jxft8",
+   "url": "https://youtube.com/shorts/yzQlB-jxft8",
+   "via": "chrome",
+   "posted_at": "2026-11-14"
+  },
+  "tiktok": {
+   "publish_id": "7708129899575250198",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7708129899575250198",
+   "via": "chrome",
+   "posted_at": "2026-11-14"
+  }
  }
 ]
