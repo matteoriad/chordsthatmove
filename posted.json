@@ -665,6 +665,18 @@
   "title": "In My Life",
   "media_id": "18116883185123428",
   "permalink": "https://www.instagram.com/reel/DfvcpzBMug-/",
-  "posted_at": "2026-11-15T00:03:18+00:00"
+  "posted_at": "2026-11-15T00:03:18+00:00",
+  "youtube": {
+   "id": "a_lDqeIDWDk",
+   "url": "https://youtube.com/shorts/a_lDqeIDWDk",
+   "via": "chrome",
+   "posted_at": "2026-11-15"
+  },
+  "tiktok": {
+   "publish_id": "7708191200653692182",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7708191200653692182",
+   "via": "chrome",
+   "posted_at": "2026-11-15"
+  }
  }
 ]
