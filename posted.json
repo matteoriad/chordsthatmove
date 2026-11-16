@@ -865,14 +865,38 @@
   "title": "In the Air Tonight",
   "media_id": "18015849593763697",
   "permalink": "https://www.instagram.com/reel/DfzvQWVJhYl/",
-  "posted_at": "2026-11-16T16:02:42+00:00"
+  "posted_at": "2026-11-16T16:02:42+00:00",
+  "youtube": {
+   "id": "cUV0AxV6hZ4",
+   "url": "https://youtube.com/shorts/cUV0AxV6hZ4",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  },
+  "tiktok": {
+   "publish_id": "7708879473155968279",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7708879473155968279",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  }
  },
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
-  "posted_at": "2026-11-16T20:31:48+00:00"
+  "posted_at": "2026-11-16T20:31:48+00:00",
+  "youtube": {
+   "id": "27p79wlHScE",
+   "url": "https://youtube.com/shorts/27p79wlHScE",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  },
+  "tiktok": {
+   "publish_id": "7708879667578572054",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7708879667578572054",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  }
  }
 ]
