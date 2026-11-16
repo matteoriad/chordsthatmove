@@ -805,6 +805,18 @@
   "title": "Hello",
   "media_id": "18128149238296230",
   "permalink": "https://www.instagram.com/reel/Dfycu1swzj0/",
-  "posted_at": "2026-11-16T04:01:29+00:00"
+  "posted_at": "2026-11-16T04:01:29+00:00",
+  "youtube": {
+   "id": "MyRgg6J-eQA",
+   "url": "https://youtube.com/shorts/MyRgg6J-eQA",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  },
+  "tiktok": {
+   "publish_id": "7708623733543570711",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7708623733543570711",
+   "via": "chrome",
+   "posted_at": "2026-11-16"
+  }
  }
 ]
