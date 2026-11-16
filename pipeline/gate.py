@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Decide whether this workflow run should post.
 
-Six posts a day, every 4 hours: 01:00, 05:00, 09:00, 13:00, 17:00 and 21:00 Berlin.
+Two posts a day: 09:30 and 21:30 Berlin.
 Cron is UTC only and GitHub drops runs at the top of the hour under load, so the
 workflow fires at :41 every hour (covers CET and CEST). A run landing in the hour
 before a slot waits until the slot and posts; runs in the two hours after a slot
@@ -16,9 +16,9 @@ from zoneinfo import ZoneInfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BER = ZoneInfo("Europe/Berlin")
-SLOTS = (1, 5, 9, 13, 17, 21)   # posting hours, Berlin time (every 4 h)
-BACKUP_HOURS = 2         # how long after a slot a missed post may still go out
-MIN_GAP = datetime.timedelta(hours=3)   # must stay below the 4 h slot spacing
+SLOTS = ((9, 30), (21, 30))   # posting times (hour, minute), Berlin time
+BACKUP = datetime.timedelta(hours=2)   # how long after a slot a missed post may still go out
+MIN_GAP = datetime.timedelta(hours=6)   # must stay below the 12 h slot spacing
 
 
 def out(go, why):
@@ -48,23 +48,26 @@ def main():
     now = datetime.datetime.now(BER)
     posted = latest_posted()
     last = max((datetime.datetime.fromisoformat(p["posted_at"]) for p in posted), default=None)
-    hour = now.replace(minute=0, second=0, microsecond=0)
-    for slot in SLOTS:
-        if now.hour == (slot - 1) % 24:
-            slot_at, late = hour + datetime.timedelta(hours=1), False
-        elif 0 <= (now.hour - slot) % 24 <= BACKUP_HOURS:
-            slot_at, late = hour - datetime.timedelta(hours=(now.hour - slot) % 24), True
-        else:
-            continue
-        # One post per slot: skip only if something already went out for THIS slot (from the
-        # hour before it on). A late backup post for the previous slot doesn't cancel this one.
-        if last and last >= slot_at - datetime.timedelta(hours=1):
-            return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin for the {slot:02d}:00 slot: skipping.")
-        if late:
-            return out(True, f"{now:%H:%M} Berlin: the {slot:02d}:00 post was missed, posting now as backup.")
-        print(f"{now:%H:%M} Berlin: waiting {(slot_at - now).total_seconds() / 60:.0f} min until {slot:02d}:00.")
-        time.sleep(max(0, (slot_at - now).total_seconds()))
-        return out(True, f"{slot:02d}:00 Berlin: posting.")
+    today = now.replace(second=0, microsecond=0)
+    for h, m in SLOTS:
+        for day in (-1, 0, 1):
+            slot_at = today.replace(hour=h, minute=m) + datetime.timedelta(days=day)
+            if slot_at - datetime.timedelta(hours=1) <= now < slot_at:
+                late = False
+            elif slot_at <= now <= slot_at + BACKUP:
+                late = True
+            else:
+                continue
+            name = f"{h:02d}:{m:02d}"
+            # One post per slot: skip only if something already went out for THIS slot (from the
+            # hour before it on). A late backup post for the previous slot doesn't cancel this one.
+            if last and last >= slot_at - datetime.timedelta(hours=1):
+                return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin for the {name} slot: skipping.")
+            if late:
+                return out(True, f"{now:%H:%M} Berlin: the {name} post was missed, posting now as backup.")
+            print(f"{now:%H:%M} Berlin: waiting {(slot_at - now).total_seconds() / 60:.0f} min until {name}.")
+            time.sleep(max(0, (slot_at - now).total_seconds()))
+            return out(True, f"{name} Berlin: posting.")
     if last and now - last < MIN_GAP:
         return out(False, f"Already posted at {last.astimezone(BER):%H:%M} Berlin: skipping.")
     if event == "push":   # post-now outside any window: post right away
