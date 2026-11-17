@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -905,6 +905,18 @@
   "title": "Mr. Brightside",
   "media_id": "18123179659746696",
   "permalink": "https://www.instagram.com/reel/Df1ghRwgQH4/",
-  "posted_at": "2026-11-17T08:32:21+00:00"
+  "posted_at": "2026-11-17T08:32:21+00:00",
+  "youtube": {
+   "id": "dl6oUPTtnu4",
+   "url": "https://youtube.com/shorts/dl6oUPTtnu4",
+   "via": "chrome",
+   "posted_at": "2026-11-17"
+  },
+  "tiktok": {
+   "publish_id": "7709064771340979478",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7709064771340979478",
+   "via": "chrome",
+   "posted_at": "2026-11-17"
+  }
  }
 ]
