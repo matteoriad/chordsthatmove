@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -918,5 +918,13 @@
    "via": "chrome",
    "posted_at": "2026-11-17"
   }
+ },
+ {
+  "episode": 47,
+  "slug": "ep47-birds-of-a-feather",
+  "title": "Birds of a Feather",
+  "media_id": "17981872886923129",
+  "permalink": "https://www.instagram.com/reel/Df2y6glT0ei/",
+  "posted_at": "2026-11-17T20:32:17+00:00"
  }
 ]
