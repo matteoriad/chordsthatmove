@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -945,6 +945,18 @@
   "title": "The Dock of the Bay",
   "media_id": "18163583305497586",
   "permalink": "https://www.instagram.com/reel/Df4GZLqCO2P/",
-  "posted_at": "2026-11-18T08:41:53+00:00"
+  "posted_at": "2026-11-18T08:41:53+00:00",
+  "youtube": {
+   "id": "I2wupTIJEVg",
+   "url": "https://youtube.com/shorts/I2wupTIJEVg",
+   "via": "chrome",
+   "posted_at": "2026-11-18"
+  },
+  "tiktok": {
+   "publish_id": "7709435627137142038",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7709435627137142038",
+   "via": "chrome",
+   "posted_at": "2026-11-18"
+  }
  }
 ]
