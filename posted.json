@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -958,5 +958,13 @@
    "via": "chrome",
    "posted_at": "2026-11-18"
   }
+ },
+ {
+  "episode": 49,
+  "slug": "ep49-never-gonna-give-you-up",
+  "title": "Never Gonna Give You Up",
+  "media_id": "18193245460410427",
+  "permalink": "https://www.instagram.com/reel/Df5Xsg4OKog/",
+  "posted_at": "2026-11-18T20:32:10+00:00"
  }
 ]
