@@ -1,0 +1,121 @@
+{
+ "title": "Comfortably Numb",
+ "artist": "Pink Floyd",
+ "key": "D major",
+ "bpm": 63,
+ "episode": 58,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Comfortably Numb feels like *floating away*",
+ "hook_focus": 4,
+ "cover_text": "The chord that *floats you away*",
+ "question": "Gilmour's solo or the chorus: which hits harder? 👇",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D major*: the chorus opens up.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*A*: steady, like a slow breath.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back to *D*. Calm, almost too calm.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*A* again. Drifting.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "♭VII",
+   "tag": "borrowed",
+   "bars": 1,
+   "text": "C♯ falls to C: *the floor drops away*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "weightless",
+   "bars": 1,
+   "text": "*G*: you're weightless now.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "♭VII",
+   "tag": "borrowed",
+   "bars": 1,
+   "text": "*C* again, further out.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "weightless",
+   "bars": 1,
+   "text": "*G*: numb, and floating away.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  }
+ ]
+}

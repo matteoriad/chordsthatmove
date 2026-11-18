@@ -1,0 +1,125 @@
+{
+ "title": "While My Guitar Gently Weeps",
+ "artist": "The Beatles",
+ "key": "A minor",
+ "bpm": 114,
+ "episode": 59,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords sound like *slow tears*?",
+ "hook_focus": 2,
+ "cover_text": "A bass line that *falls like tears*",
+ "question": "Which chord gave it away for you? 👇",
+ "hashtag": "whilemyguitargentlyweeps",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A minor*: still and heavy.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Am/G",
+   "roman": "i/♭7",
+   "tag": "bass step",
+   "bars": 1,
+   "text": "The bass *drops to G*. Something gives.",
+   "notes": [
+    "G2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Am/F#",
+   "roman": "i/6",
+   "tag": "dorian",
+   "bars": 1,
+   "text": "*F♯ in the bass*: a bittersweet ache.",
+   "notes": [
+    "F#2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "VI",
+   "tag": "landing",
+   "bars": 1,
+   "text": "E slips to F: *the fall lands softly*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back to *A minor*. Again.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "step down",
+   "bars": 1,
+   "text": "*G*: one more step down…",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "dorian",
+   "bars": 1,
+   "text": "*D major*: F♯, a glimmer of light.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "E pulls home. *The tears keep falling*.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  }
+ ]
+}

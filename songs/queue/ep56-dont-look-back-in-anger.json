@@ -1,0 +1,112 @@
+{
+ "title": "Don't Look Back in Anger",
+ "artist": "Oasis",
+ "key": "C major",
+ "bpm": 82,
+ "episode": 56,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Don't Look Back in Anger feels like *letting go*",
+ "hook_focus": 3,
+ "cover_text": "The chord that *lets the anger go*",
+ "question": "Did you learn this one on guitar? Be honest 👇",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*C major*: bright, open, home.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "lift",
+   "bars": 0.5,
+   "text": "Up to *G*. Still easy.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Am",
+   "roman": "vi",
+   "tag": "relative minor",
+   "bars": 0.5,
+   "text": "*A minor*: a flicker of sadness.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "E",
+   "roman": "III",
+   "tag": "secondary dominant",
+   "bars": 0.5,
+   "text": "*E major*, not E minor: G♯ stings.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "release",
+   "bars": 0.5,
+   "text": "G♯ lifts to A: *F softens the blow*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.5,
+   "text": "*G* pushes forward again.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home on C: *you let it go*.",
+   "ending": true,
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  }
+ ]
+}

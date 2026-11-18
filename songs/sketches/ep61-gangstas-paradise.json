@@ -1,0 +1,46 @@
+{
+ "title": "Gangsta's Paradise",
+ "artist": "Coolio",
+ "key": "C minor",
+ "bpm": 80,
+ "episode": 61,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords feel like *no way out*?",
+ "hook_focus": 2,
+ "cover_text": "Four chords, *no way out*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "chords": [
+  {
+   "name": "Ab",
+   "roman": "VI",
+   "tag": "start",
+   "bars": 0.5,
+   "text": "It starts on *A♭*: heavy, not home."
+  },
+  {
+   "name": "Fm",
+   "roman": "iv",
+   "tag": "minor iv",
+   "bars": 0.5,
+   "text": "*F minor*: darker still.",
+   "focus_note": "F"
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "harmonic minor",
+   "bars": 0.5,
+   "text": "C slips to *B♮*: G major pulls home.",
+   "focus_note": "B"
+  },
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "C minor, then round again: *no way out*."
+  }
+ ]
+}

@@ -1,0 +1,126 @@
+{
+ "title": "Fly Me to the Moon",
+ "artist": "Frank Sinatra",
+ "key": "C major",
+ "bpm": 120,
+ "episode": 60,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Fly Me to the Moon feels like *free fall*",
+ "hook_focus": 6,
+ "cover_text": "Chords that *fall in a circle*",
+ "question": "Sinatra or the anime version: which got you? 👇",
+ "chords": [
+  {
+   "name": "Am7",
+   "roman": "vi7",
+   "tag": "start",
+   "bars": 1,
+   "text": "*Am7*: we start mid-air, not home.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Dm7",
+   "roman": "ii7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Down a fifth: *Dm7*. Falling.",
+   "notes": [
+    "D3",
+    "C4",
+    "F4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "G7",
+   "roman": "V7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Another fifth: *G7*. Gravity builds.",
+   "notes": [
+    "G2",
+    "B3",
+    "F4",
+    "G4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Cmaj7",
+   "roman": "Imaj7",
+   "tag": "home",
+   "bars": 1,
+   "text": "*Cmaj7*: home, but we don't stop.",
+   "notes": [
+    "C3",
+    "B3",
+    "E4",
+    "G4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Fmaj7",
+   "roman": "IVmaj7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Still falling: *Fmaj7*.",
+   "notes": [
+    "F2",
+    "C4",
+    "E4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Bdim",
+   "roman": "vii°",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "*B diminished*: the floor gets thin.",
+   "notes": [
+    "B2",
+    "D4",
+    "F4",
+    "B4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "E7",
+   "roman": "V7/vi",
+   "tag": "secondary dominant",
+   "bars": 1,
+   "text": "*E7*: G♯ swings us back around.",
+   "notes": [
+    "E2",
+    "D4",
+    "G#4",
+    "B4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Am7",
+   "roman": "vi7",
+   "tag": "start",
+   "bars": 1,
+   "text": "Am7 again: *still in free fall*.",
+   "ending": true,
+   "notes": [
+    "A2",
+    "E4",
+    "G4",
+    "C5"
+   ]
+  }
+ ]
+}

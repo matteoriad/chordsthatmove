@@ -1,0 +1,78 @@
+{
+ "title": "Fly Me to the Moon",
+ "artist": "Frank Sinatra",
+ "key": "C major",
+ "bpm": 120,
+ "episode": 60,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Fly Me to the Moon feels like *free fall*",
+ "hook_focus": 6,
+ "cover_text": "Chords that *fall in a circle*",
+ "question": "Sinatra or the anime version: which got you? 👇",
+ "chords": [
+  {
+   "name": "Am7",
+   "roman": "vi7",
+   "tag": "start",
+   "bars": 1,
+   "text": "*Am7*: we start mid-air, not home."
+  },
+  {
+   "name": "Dm7",
+   "roman": "ii7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Down a fifth: *Dm7*. Falling.",
+   "focus_note": "F"
+  },
+  {
+   "name": "G7",
+   "roman": "V7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Another fifth: *G7*. Gravity builds.",
+   "focus_note": "B"
+  },
+  {
+   "name": "Cmaj7",
+   "roman": "Imaj7",
+   "tag": "home",
+   "bars": 1,
+   "text": "*Cmaj7*: home, but we don't stop.",
+   "focus_note": "E"
+  },
+  {
+   "name": "Fmaj7",
+   "roman": "IVmaj7",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "Still falling: *Fmaj7*.",
+   "focus_note": "A"
+  },
+  {
+   "name": "Bdim",
+   "roman": "vii°",
+   "tag": "fifth down",
+   "bars": 1,
+   "text": "*B diminished*: the floor gets thin.",
+   "focus_note": "B"
+  },
+  {
+   "name": "E7",
+   "roman": "V7/vi",
+   "tag": "secondary dominant",
+   "bars": 1,
+   "text": "*E7*: G♯ swings us back around.",
+   "focus_note": "G#"
+  },
+  {
+   "name": "Am7",
+   "roman": "vi7",
+   "tag": "start",
+   "bars": 1,
+   "text": "Am7 again: *still in free fall*.",
+   "ending": true
+  }
+ ]
+}

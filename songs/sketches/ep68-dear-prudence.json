@@ -1,0 +1,43 @@
+{
+ "title": "Dear Prudence",
+ "artist": "The Beatles",
+ "key": "D major",
+ "bpm": 74,
+ "episode": 68,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Dear Prudence feels like *a deep trance*",
+ "hook_focus": 3,
+ "cover_text": "Only the bass moves: *a trance*",
+ "question": "Do you play this fingerpicked or strummed? 👇",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*D major*, ringing on and on."
+  },
+  {
+   "name": "D/C",
+   "roman": "I/♭7",
+   "tag": "bass step",
+   "bars": 0.5,
+   "text": "The bass *slips to C*. The ground tilts."
+  },
+  {
+   "name": "D/B",
+   "roman": "I/6",
+   "tag": "bass step",
+   "bars": 0.5,
+   "text": "Down to *B*: softer, dreamier."
+  },
+  {
+   "name": "D/Bb",
+   "roman": "I/♭6",
+   "tag": "chromatic",
+   "bars": 0.5,
+   "text": "B♭: deeper *into the trance*."
+  }
+ ]
+}

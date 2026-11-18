@@ -1,0 +1,128 @@
+{
+ "title": "Light My Fire",
+ "artist": "The Doors",
+ "key": "A major",
+ "bpm": 128,
+ "episode": 69,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords feel like *a fuse burning*?",
+ "hook_focus": 6,
+ "cover_text": "A chain of chords *burning down*",
+ "question": "Got it within 3 chords? Be honest 👇",
+ "chords": [
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "spark",
+   "bars": 0.5,
+   "text": "*G*: no key yet. Just a spark.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "catch",
+   "bars": 0.5,
+   "text": "Up to *D*. It catches.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "F",
+   "roman": "♭VI",
+   "tag": "jump",
+   "bars": 0.5,
+   "text": "*F*: a sudden jump off the map.",
+   "notes": [
+    "F2",
+    "A3",
+    "C4",
+    "F4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Bb",
+   "roman": "♭II",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Up a fourth: *B♭*.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Eb",
+   "roman": "♭V",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Up a fourth: *E♭*. Burning down…",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Ab",
+   "roman": "VII",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Another: *A♭*. Nearly there…",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Half step up: *A major*. Boom.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Am7",
+   "roman": "i7",
+   "tag": "verse",
+   "bars": 1,
+   "text": "Into the verse: *the fuse has hit*.",
+   "ending": true,
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "G4"
+   ],
+   "focus": 1
+  }
+ ]
+}

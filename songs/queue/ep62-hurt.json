@@ -1,0 +1,68 @@
+{
+ "title": "Hurt",
+ "artist": "Johnny Cash",
+ "key": "A minor",
+ "bpm": 91,
+ "episode": 62,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Hurt sounds like *a wound that won't heal*",
+ "hook_focus": 2,
+ "cover_text": "The loop that *won't let it heal*",
+ "question": "Johnny Cash or Nine Inch Nails version? 👇",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A minor*: quiet, close to the bone.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "The bass climbs to *C*. A little hope.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Dsus2",
+   "roman": "IVsus2",
+   "tag": "hollow",
+   "bars": 0.5,
+   "text": "*Dsus2*: no third. Hollow, numb.",
+   "notes": [
+    "D3",
+    "D4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Then it falls back: *the wound won't heal*.",
+   "ending": true,
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,67 @@
+{
+ "title": "Paint It Black",
+ "artist": "The Rolling Stones",
+ "key": "E minor",
+ "bpm": 157,
+ "episode": 64,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Paint It Black feels like *grief taking over*",
+ "hook_focus": 5,
+ "cover_text": "Two bright chords that *make it darker*",
+ "question": "Did you learn this riff on guitar? Be honest 👇",
+ "chords": [
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*E minor*: dark from the start."
+  },
+  {
+   "name": "D",
+   "roman": "♭VII",
+   "tag": "step down",
+   "bars": 0.5,
+   "text": "*D*: a step down."
+  },
+  {
+   "name": "G",
+   "roman": "III",
+   "tag": "relative major",
+   "bars": 0.5,
+   "text": "*G*: a flash of light…"
+  },
+  {
+   "name": "D",
+   "roman": "♭VII",
+   "tag": "step down",
+   "bars": 0.5,
+   "text": "…then back to *D*."
+  },
+  {
+   "name": "A",
+   "roman": "IV",
+   "tag": "dorian",
+   "bars": 1,
+   "text": "*A major*: C♯, not C. A strange glow.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "B7",
+   "roman": "V7",
+   "tag": "harmonic minor",
+   "bars": 1,
+   "text": "*B7*: D♯ drags you home.",
+   "focus_note": "D#"
+  },
+  {
+   "name": "Em",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home on E minor: *grief takes over*.",
+   "ending": true
+  }
+ ]
+}

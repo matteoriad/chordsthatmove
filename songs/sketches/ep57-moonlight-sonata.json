@@ -1,0 +1,62 @@
+{
+ "title": "Moonlight Sonata",
+ "artist": "Beethoven",
+ "key": "C♯ minor",
+ "bpm": 54,
+ "episode": 57,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords feel like *a lonely night*?",
+ "hook_focus": 3,
+ "cover_text": "The chord that *makes the night darker*",
+ "question": "Got it within 3 chords? Be honest 👇",
+ "chords": [
+  {
+   "name": "C#m",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*C♯ minor*: quiet and dark."
+  },
+  {
+   "name": "C#m/B",
+   "roman": "i/♭7",
+   "tag": "bass step",
+   "bars": 1,
+   "text": "The bass *sinks to B*. Deeper."
+  },
+  {
+   "name": "A",
+   "roman": "VI",
+   "tag": "glow",
+   "bars": 0.5,
+   "text": "*A major*: a brief, warm glow.",
+   "focus_note": "A"
+  },
+  {
+   "name": "D/F#",
+   "roman": "♭II6",
+   "tag": "neapolitan",
+   "bars": 0.5,
+   "text": "*D/F♯*, the Neapolitan: pure shadow.",
+   "focus_note": "D"
+  },
+  {
+   "name": "G#7",
+   "roman": "V7",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*G♯7*: B♯ leans hard toward home.",
+   "focus_note": "B#"
+  },
+  {
+   "name": "C#m",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home in C♯ minor: *a lonely night*.",
+   "ending": true
+  }
+ ]
+}

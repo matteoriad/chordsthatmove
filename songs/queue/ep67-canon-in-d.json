@@ -1,0 +1,121 @@
+{
+ "title": "Canon in D",
+ "artist": "Pachelbel",
+ "key": "D major",
+ "bpm": 60,
+ "episode": 67,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords sound like *a wedding*?",
+ "hook_focus": 7,
+ "cover_text": "Eight chords for *every wedding*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "hashtag": "canonind",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.25,
+   "text": "*D major*: bright, ceremonial.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Bass down a fourth: *A*. One step.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "Bm",
+   "roman": "vi",
+   "tag": "step up",
+   "bars": 0.25,
+   "text": "Up one: *B minor*. Another step.",
+   "notes": [
+    "B2",
+    "D4",
+    "F#4",
+    "B4"
+   ]
+  },
+  {
+   "name": "F#m",
+   "roman": "iii",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Down a fourth: *F♯ minor*. Softer.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "step up",
+   "bars": 0.25,
+   "text": "Up one: *G*. Slow and steady.",
+   "notes": [
+    "G2",
+    "D4",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Down a fourth: *D*, home.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "lift",
+   "bars": 0.25,
+   "text": "*G* again, lifting…",
+   "notes": [
+    "G2",
+    "D4",
+    "G4",
+    "B4"
+   ]
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.25,
+   "text": "A walks you *down the aisle*.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}

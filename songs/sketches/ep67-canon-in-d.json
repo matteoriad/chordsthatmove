@@ -1,0 +1,73 @@
+{
+ "title": "Canon in D",
+ "artist": "Pachelbel",
+ "key": "D major",
+ "bpm": 60,
+ "episode": 67,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Why do these chords sound like *a wedding*?",
+ "hook_focus": 7,
+ "cover_text": "Eight chords for *every wedding*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "hashtag": "canonind",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.25,
+   "text": "*D major*: bright, ceremonial."
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Bass down a fourth: *A*. One step."
+  },
+  {
+   "name": "Bm",
+   "roman": "vi",
+   "tag": "step up",
+   "bars": 0.25,
+   "text": "Up one: *B minor*. Another step."
+  },
+  {
+   "name": "F#m",
+   "roman": "iii",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Down a fourth: *F♯ minor*. Softer."
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "step up",
+   "bars": 0.25,
+   "text": "Up one: *G*. Slow and steady."
+  },
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "fourth down",
+   "bars": 0.25,
+   "text": "Down a fourth: *D*, home."
+  },
+  {
+   "name": "G",
+   "roman": "IV",
+   "tag": "lift",
+   "bars": 0.25,
+   "text": "*G* again, lifting…"
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 0.25,
+   "text": "A walks you *down the aisle*."
+  }
+ ]
+}
