@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -998,5 +998,13 @@
    "via": "chrome",
    "posted_at": "2026-11-19"
   }
+ },
+ {
+  "episode": 51,
+  "slug": "ep51-livin-on-a-prayer",
+  "title": "Livin' on a Prayer",
+  "media_id": "18160578469506655",
+  "permalink": "https://www.instagram.com/reel/Df789_EtUT_/",
+  "posted_at": "2026-11-19T20:36:22+00:00"
  }
 ]
