@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -978,5 +978,13 @@
    "via": "chrome",
    "posted_at": "2026-11-18"
   }
+ },
+ {
+  "episode": 50,
+  "slug": "ep50-billie-jean",
+  "title": "Billie Jean",
+  "media_id": "18034803419880244",
+  "permalink": "https://www.instagram.com/reel/Df6qE1gv_fx/",
+  "posted_at": "2026-11-19T08:32:03+00:00"
  }
 ]
