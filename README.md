@@ -121,6 +121,13 @@ chord, a "your turn" line at the end); build the queue file as usual. The outro 
 chordsthatmove.com/jam, and the caption carries a link that opens the tool with this exact
 progression, key and tempo.
 
+## Themes
+Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
+odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set
+`"theme": "chalk"` (night, riso, chalk, blueprint, graph, score, paper) in a sketch to pick one.
+The default pink accent follows the theme; a custom `accent` stays as it is. The colours are in
+`brandreel.THEMES` and match the app's `globals.css`.
+
 ## Timing (whole bars)
 Each chord in a sketch has `"bars"`: how long it lasts in the original song in 4/4 bars
 (1, 2, 0.5 = two beats, 0.25 = one beat). A final return-home chord gets `"ending": true`.
