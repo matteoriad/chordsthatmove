@@ -1,4 +1,4 @@
-/* chords that move – Jam tool ad reel flow (v2.1)
+/* chords that move – Jam tool ad reel flow (v3)
  * Runs entirely in Chrome on https://chordsthatmove.com/jam via the Claude in Chrome javascript tool.
  *
  * Steps:
@@ -21,10 +21,14 @@
  * v2.1 (20 Nov 2026):
  *   - Export: the beta export records in the browser. "Export reel" opens a sheet, "Record reel" draws the reel
  *     live in a small preview; we film a few seconds of that and press Cancel, so no export is counted.
+ * v3 (20 Nov 2026, Matteo: "Untitled jam" is not OK for an ad, make it flashier):
+ *   - The jam types its own title ("My next jam") in the first second; opens on Reel pad (the reels' sound).
+ *   - Punch-in camera bumps on the drum drops.
  *   - Texture sound "classic" no longer exists: reset uses "between". Texture is an on/off toggle button
  *     (the pattern menu has no "off"): the first texture drop presses it.
  */
-const JAM_URL = 'https://chordsthatmove.com/jam?k=C-major&bpm=100&s=pad&c=Am%3A1_F%3A1_C%3A1_G%3A1_Am%3A1_F%3A1_G%3A1_E%3A1';
+const TITLE = 'My next jam';
+const JAM_URL = 'https://chordsthatmove.com/jam?t=Untitled&k=C-major&bpm=100&s=sample%3Areel-pad&c=Am%3A1_F%3A1_C%3A1_G%3A1_Am%3A1_F%3A1_G%3A1_E%3A1';
 
 /* ---------- helpers ---------- */
 const W_ = ms => new Promise(r => setTimeout(r, ms));
@@ -37,7 +41,8 @@ const R = {
   metro: () => B_().find(b => L_(b) === 'Metronome'),
   export: () => B_().find(b => L_(b).startsWith('Export reel')),
   record: () => B_().find(b => L_(b).startsWith('Record reel')),
-  cancel: () => B_().find(b => L_(b) === 'Cancel' && b.offsetParent !== null),   // the visible one in the export sheet
+  cancel: () => B_().find(b => L_(b) === 'Cancel' && b.offsetParent !== null),
+  title: () => document.getElementById('jam-title'),   // the visible one in the export sheet
   // selects are native <select> inside a <label>; the label text contains the hidden name, e.g. "Drum style"
   sel: name => [...document.querySelectorAll('select')].find(s => s.parentElement.textContent.includes(name)),
   label: name => () => R.sel(name).parentElement,
@@ -50,6 +55,16 @@ const setSel = (name, v) => {
   s.dispatchEvent(new Event('change', { bubbles: true }));
 };
 window.__setSel = setSel;
+const setText = (el, v) => {
+  const proto = el.tagName === 'TEXTAREA' ? HTMLTextAreaElement.prototype : HTMLInputElement.prototype;
+  Object.getOwnPropertyDescriptor(proto, 'value').set.call(el, v);
+  el.dispatchEvent(new Event('input', { bubbles: true }));
+};
+async function typeTitle(el) {   // letter by letter, like someone naming their jam
+  el.focus(); setText(el, '');
+  for (let i = 1; i <= TITLE.length; i++) { setText(el, TITLE.slice(0, i)); await W_(55); }
+  el.blur();
+}
 const pressed = b => b.getAttribute('aria-pressed') === 'true';
 const rectOf = e => { const r = e.getBoundingClientRect(); return { x: r.x, y: r.y, w: r.width, h: r.height }; };
 
@@ -69,7 +84,8 @@ async function resetState() {
 /* ---------- schedule (seconds from recording start; 1 bar = 2.4 s at 100 bpm, Play at 1.0) ---------- */
 const SCHEDULE = [
   // [t, name, target element getter, action, callout label, callout end]
-  [1.0,  'play',       R.play,                  e => e.click(),                          '▶  PLAY',               2.8],
+  [0.2,  'title',      R.title,                 e => typeTitle(e),                       'NAME  ·  YOUR JAM',     1.0],
+  [1.2,  'play',       R.play,                  e => e.click(),                          '▶  PLAY',               2.8],
   [5.6,  'drums_on',   R.drums,                 e => e.click(),                          'DRUMS  ·  ON',          7.6],
   [10.0, 'tex_sound',  R.label('Texture sound'), () => setSel('Texture sound','clean-pluck'), 'TEXTURE  ·  CLEAN PLUCK', 10.5],
   [10.6, 'texture',    R.tex,                   e => { if (!pressed(e)) e.click(); },     'TEXTURE  ·  ARPEGGIO',  12.6],
@@ -174,7 +190,7 @@ window.__render = async function (opts = {}) {
   const cursorAt = t => { let x = CW[0][2], y = CW[0][3], hid = 0; for (let i = 1; i < CW.length; i++) { const [d, a, tx, ty, h] = CW[i]; if (t < d) break; const p = ease(clamp((t - d) / (a - d), 0, 1)); x = x + (tx - x) * p; y = y + (ty - y) * p; hid = h ? 1 : 0; } return [x, y, hid]; };
   const clicks = S.log.filter(l => l.label).map(l => ({ n: l.name, l: l.label, t: l.t, r: l.rect, e: l.end }));
 
-  const HL = [[0, 4.6, ['Build chords', 'that move.']], [4.6, 9.4, ['Drop the', 'drums in.']], [9.4, 14.4, ['Layer a', 'soft texture.']],
+  const HL = [[0, 4.6, ['Your next jam', 'starts here.']], [4.6, 9.4, ['Drop the', 'drums in.']], [9.4, 14.4, ['Layer a', 'soft texture.']],
     [14.4, 18.2, ['Cut the drums.', 'Feel the tension.']], [18.2, 24.0, ['Bring it back.', 'Funkier.']],
     [24.0, 28.4, ['Watch every', 'voice move.']], [28.4, EC, ['Export it', 'as a reel.']]];
   const MONO = '"JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace';
@@ -191,7 +207,9 @@ window.__render = async function (opts = {}) {
     for (const [a, b, lines] of HL) { if (t < a - 0.05 || t > b + 0.05) continue; const fi = clamp((t - a) / 0.35, 0, 1), fo = clamp((b - t) / 0.3, 0, 1); ctx.globalAlpha = ease(Math.min(fi, fo)); ctx.fillStyle = C.fg; ctx.font = '700 84px Inter'; ctx.textAlign = 'center'; lines.forEach((ln, i) => ctx.fillText(ln, 540, 300 + i * 98 + (1 - ease(fi)) * 24)); ctx.globalAlpha = 1; }
     // camera
     const [cx, cy, hid] = cursorAt(t);
-    let z = kf(ZK, t); const k = clamp((z - 1) / 0.8, 0, 1);
+    let z = kf(ZK, t);
+    for (const n of ['drums_on', 'style']) if (log[n]) { const d = t - log[n].t; if (d > 0 && d < 0.5) z *= 1 + 0.08 * Math.sin(Math.PI * d / 0.5); }   // punch on the drop
+    const k = clamp((z - 1) / 0.8, 0, 1);
     let fx = OC[0] + (cx - OC[0]) * k, fy = OC[1] + (cy - OC[1]) * k;
     if (smooth) { const dt = cam.t == null ? 1 : clamp(t - cam.t, 0, 0.2); const a = 1 - Math.exp(-dt * 7); if (cam.t == null) { cam.z = z; cam.x = fx; cam.y = fy; } else { cam.z += (z - cam.z) * a; cam.x += (fx - cam.x) * a; cam.y += (fy - cam.y) * a; } cam.t = t; z = cam.z; fx = cam.x; fy = cam.y; }
     const rw = OW / z, rh = OH / z; fx = clamp(fx, rw / 2, VW - rw / 2); fy = clamp(fy, rh / 2, VH - rh / 2);
