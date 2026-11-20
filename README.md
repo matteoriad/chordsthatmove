@@ -121,6 +121,19 @@ chord, a "your turn" line at the end); build the queue file as usual. The outro 
 chordsthatmove.com/jam, and the caption carries a link that opens the tool with this exact
 progression, key and tempo.
 
+## Your own sounds (sample packs)
+Record a sound (Moog, GarageBand …) as one file per note, named after the note: `C3.wav`, `D#3.wav`,
+`F#3.wav`, `A3.wav` … (every 3 semitones from C2 to C5 is enough, ~4 s each, dry). Then:
+
+```
+python3 sounds/samples.py make ~/Desktop/moog-pad moog-pad "Moog pad" pad
+```
+
+That writes `sounds/moog-pad/` (trimmed, normalised WAVs for the reels, MP3s for the app, and
+`pack.json`). Use it in one episode with `"sound": "moog-pad"` (pad) or `"arp_sound": "…"` (the
+arpeggio), or for every reel with `sounds/default.json`: `{"pad": "moog-pad"}`. The jam app picks
+the same packs up with `npm run sounds` (in chordsthatmove_app).
+
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
 odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set

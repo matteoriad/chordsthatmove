@@ -20,6 +20,8 @@ import cairo
 from PIL import Image, ImageDraw, ImageFont
 from scipy import signal
 from scipy.io import wavfile
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "sounds"))
+import samples  # noqa: E402  (your recorded sound packs)
 
 W, H, FPS, SR = 1080, 1920, 30, 44100
 LEAD_IN, TAIL = 0.4, 2.8
@@ -139,6 +141,9 @@ def delayed(x, sec):
 def rms(x): return np.sqrt(np.mean(x ** 2)) + 1e-9
 
 
+def log_sound(role, pack): print(f"{role} sound: {pack['meta'].get('label', pack['meta']['id'])}", flush=True)
+
+
 def synth(song, path):
     n = int(song.total * SR)
     pad, bass = np.zeros(n), np.zeros(n)
@@ -159,10 +164,17 @@ def synth(song, path):
     # pad ducks on every beat so the arp punches through
     ph = ((tt - LEAD_IN) / song.beat) % 1
     pad *= 1 - 0.15 * np.exp(-ph * 5) * (tt > LEAD_IN)
+    # your own recorded sound replaces the saw pad (sounds/samples.py; "sound" in the episode)
+    pad_pack = samples.load(song.spec.get("sound") or samples.default("pad"))
+    if pad_pack:
+        pad = 0.5 * samples.layer(song, pad_pack, n, range(1, song.nv)) * env
+        log_sound("pad", pad_pack)
     pad = signal.sosfilt(signal.butter(3, 1800, "low", fs=SR, output="sos"), pad)
     bass = signal.sosfilt(signal.butter(3, 360, "low", fs=SR, output="sos"), bass)
     bass *= 1 - 0.12 * np.exp(-ph * 5) * (tt > LEAD_IN)
-    arp = arp_layer(song, n)
+    arp_pack = samples.load(song.spec.get("arp_sound") or samples.default("arp"))
+    arp = samples.arp(song, arp_pack, n) if arp_pack else arp_layer(song, n)
+    if arp_pack: log_sound("arp", arp_pack)
     arp *= 0.32 * rms(pad) / rms(arp)       # subtle: sits under the pad
     # ping-pong echoes at a dotted eighth
     d8 = 0.75 * song.beat
