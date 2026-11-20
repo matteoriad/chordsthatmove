@@ -406,10 +406,10 @@ class Reel:
             cr.set_source_rgb(*rgb1(PAPER)); rrect(cr, L, y_bar, max(4, (R - L) * frac), 4, 2); cr.fill()
         # ---- voice lines ----
         PX, PH = 110, 640
-        pre = 0.0   # 1 during the hook: playhead on the left, upcoming lines bright (a preview of the whole loop)
-        if loops(sp) and self.hook_end:
-            pre = 1 - ease((now - (self.hook_end - 0.5)) / 0.7)
-            PH = int(round(640 - 400 * pre))
+        pre = 0.0   # 1 during the hook: upcoming lines bright (a preview of the whole loop)
+        if loops(sp):
+            PH = 420   # loop mode: one fixed playhead position for the whole reel (a moving one irritated)
+            if self.hook_end: pre = 1 - ease((now - (self.hook_end - 0.5)) / 0.7)
         t_left, t_right = now - PH / PX, now + (W - PH) / PX
         ts = np.linspace(max(t_left, 0), min(t_right, s.end), 360)
         xs = PH + (ts - now) * PX
