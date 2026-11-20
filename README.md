@@ -134,6 +134,11 @@ That writes `sounds/moog-pad/` (trimmed, normalised WAVs for the reels, MP3s for
 arpeggio), or for every reel with `sounds/default.json`: `{"pad": "moog-pad"}`. The jam app picks
 the same packs up with `npm run sounds` (in chordsthatmove_app).
 
+## Sound style
+Reels use the "lush" pad (five detuned saws per voice, a filter that swells open on every chord, a
+longer reverb, a rounder arpeggio). Set the repo variable / env `REEL_SOUND=classic` to go back to
+the original sound. A sample pack (`"sound"`) replaces the pad either way.
+
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
 odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set
