@@ -1,0 +1,24 @@
+{
+ "id": "reel-pad",
+ "label": "Reel pad",
+ "role": "pad",
+ "attack": 0.02,
+ "release": 0.9,
+ "gain_db": -4,
+ "loop": true,
+ "notes": {
+  "C2": "C2.wav",
+  "D#2": "D#2.wav",
+  "F#2": "F#2.wav",
+  "A2": "A2.wav",
+  "C3": "C3.wav",
+  "D#3": "D#3.wav",
+  "F#3": "F#3.wav",
+  "A3": "A3.wav",
+  "C4": "C4.wav",
+  "D#4": "D#4.wav",
+  "F#4": "F#4.wav",
+  "A4": "A4.wav",
+  "C5": "C5.wav"
+ }
+}

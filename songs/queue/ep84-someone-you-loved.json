@@ -1,0 +1,70 @@
+{
+ "title": "Someone You Loved",
+ "artist": "Lewis Capaldi",
+ "key": "Db major",
+ "bpm": 110,
+ "episode": 84,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why this chorus *hurts* so much",
+ "hook_focus": 2,
+ "cover_text": "The chord where *it slips away*",
+ "question": "Which line hits hardest for you? 👇",
+ "chords": [
+  {
+   "name": "Db",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D♭ major*: you had it.",
+   "notes": [
+    "Db3",
+    "Db4",
+    "F4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "V",
+   "tag": "reach",
+   "bars": 1,
+   "text": "*A♭*: reaching…",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Bbm",
+   "roman": "vi",
+   "tag": "slip",
+   "bars": 1,
+   "text": "*B♭ minor*: it slips away.",
+   "notes": [
+    "Bb2",
+    "Db4",
+    "F4",
+    "Bb4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Gb",
+   "roman": "IV",
+   "tag": "miss",
+   "bars": 1,
+   "text": "*G♭*: just missing them.",
+   "notes": [
+    "Gb2",
+    "Db4",
+    "Gb4",
+    "Bb4"
+   ],
+   "focus": 2
+  }
+ ]
+}

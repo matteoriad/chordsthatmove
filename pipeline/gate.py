@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Decide whether this workflow run should post.
 
-Two posts a day: 09:30 and 21:30 Berlin.
+Four posts a day: 08:30, 12:30, 17:30 and 21:30 Berlin.
 Cron is UTC only and GitHub drops runs at the top of the hour under load, so the
 workflow fires at :41 every hour (covers CET and CEST). A run landing in the hour
 before a slot waits until the slot and posts; runs in the two hours after a slot
@@ -10,20 +10,29 @@ backup post never cancels the next slot).
 "Post now" pushes (the Claude scheduled task) follow the same rules: skip if
 already posted, wait for the slot if early. Manual runs from the Actions tab
 always go.
+Slots listed under "own" in schedule.json belong to Matteo's own videos (posted by hand):
+the automated reel skips them.
 """
 import datetime, json, os, subprocess, time
 from zoneinfo import ZoneInfo
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BER = ZoneInfo("Europe/Berlin")
-SLOTS = ((9, 30), (21, 30))   # posting times (hour, minute), Berlin time
+SLOTS = ((8, 30), (12, 30), (17, 30), (21, 30))   # posting times (hour, minute), Berlin time
 BACKUP = datetime.timedelta(hours=2)   # how long after a slot a missed post may still go out
-MIN_GAP = datetime.timedelta(hours=6)   # must stay below the 12 h slot spacing
+MIN_GAP = datetime.timedelta(hours=3)   # must stay below the 4 h spacing of the closest slots
 
 
 def out(go, why):
     print(why)
     with open(os.environ["GITHUB_OUTPUT"], "a") as f: f.write(f"go={'true' if go else 'false'}\n")
+
+
+def own_slots():
+    """Slots reserved for hand-posted videos, as "YYYY-MM-DD HH:MM" Berlin strings."""
+    p = os.path.join(ROOT, "schedule.json")
+    if not os.path.exists(p): return set()
+    return {e["slot"] for e in json.load(open(p)).get("own", [])}
 
 
 def latest_posted():
@@ -59,6 +68,8 @@ def main():
             else:
                 continue
             name = f"{h:02d}:{m:02d}"
+            if f"{slot_at:%Y-%m-%d} {name}" in own_slots():
+                return out(False, f"The {slot_at:%Y-%m-%d} {name} slot is for your own video (schedule.json): skipping.")
             # One post per slot: skip only if something already went out for THIS slot (from the
             # hour before it on). A late backup post for the previous slot doesn't cancel this one.
             if last and last >= slot_at - datetime.timedelta(hours=1):

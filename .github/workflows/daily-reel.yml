@@ -2,7 +2,7 @@ name: Daily reel
 
 on:
   schedule:
-    # Targets: 09:30 and 21:30 Berlin. Cron is UTC and GitHub drops
+    # Targets: 08:30, 12:30, 17:30 and 21:30 Berlin. Cron is UTC and GitHub drops
     # runs at the top of the hour, so fire at :41 every hour (covers CET and CEST);
     # pipeline/gate.py waits for the slot and makes sure only one run posts per slot
     # (the others are backups or skip).
@@ -27,6 +27,7 @@ on:
 
 permissions:
   contents: write
+  issues: write   # post.py opens a "Queue is running low" issue under a week of episodes
 
 concurrency: daily-reel
 
@@ -38,7 +39,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Posting window (09:30 and 21:30 Berlin)
+      - name: Posting window (08:30, 12:30, 17:30, 21:30 Berlin)
         id: gate
         env:
           EVENT: ${{ github.event_name }}
@@ -82,7 +83,11 @@ jobs:
           IG_USER_ID: ${{ secrets.IG_USER_ID }}
           IG_ACCESS_TOKEN: ${{ secrets.IG_ACCESS_TOKEN }}
           GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
+          GH_TOKEN: ${{ github.token }}
           IG_LOGIN: ${{ vars.IG_LOGIN }}
+          REEL_SOUND: ${{ vars.REEL_SOUND }}
+          REEL_LOOP: ${{ vars.REEL_LOOP }}
+          IG_STORY: ${{ vars.IG_STORY }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           EPISODE: ${{ inputs.episode }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

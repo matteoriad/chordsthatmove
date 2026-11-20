@@ -58,10 +58,47 @@ def queue():
 def plain(text): return text.replace("*", "")
 
 
+def loop_of(spec):
+    """The progression as the jam tool loops it: every chord except a closing "ending" one, in bars."""
+    if spec.get("loop") and isinstance(spec["loop"], list): return spec["loop"]
+    return [{"name": c["name"], "bars": c["bars"] if "bars" in c else c.get("beats", 4) / 4}
+            for c in spec["chords"] if not c.get("ending")]
+
+
+def jam_link(spec, loop=None, source=None):
+    """chordsthatmove.com/jam with this progression, key and tempo in the URL (the app's format).
+    `source` adds utm tags so the app can tell where visitors came from."""
+    from urllib.parse import urlencode
+    loop = loop or loop_of(spec)
+    title = "Guess the song" if spec.get("guess") else spec["title"]   # never spoil the answer
+    q = {"t": title, "k": spec["key"].replace(" ", "-"), "bpm": spec["bpm"],
+         "c": "_".join(f"{c['name']}:{c['bars']:g}" for c in loop)}
+    if source: q.update(utm_source=source, utm_medium="description", utm_campaign=f"ep{int(spec.get('episode') or 0):02d}")
+    return "https://chordsthatmove.com/jam?" + urlencode(q, safe=":_")
+
+
+def with_tool_link(text, spec, source):
+    """YouTube/TikTok: a line under the first paragraph that opens this progression in the jam tool
+    (clickable on YouTube). Jam reels already carry their link."""
+    if spec.get("jam"): return text.replace(jam_link(spec), jam_link(spec, source=source))
+    first, _, rest = text.partition("\n\n")
+    line = f"▶ Play this progression with drums and your own sound, free: {jam_link(spec, source=source)}"
+    return f"{first}\n{line}\n\n{rest}" if rest else f"{first}\n{line}"
+
+
 def caption(spec):
     chords = [c["name"] for c in spec["chords"]]
     romans = [c.get("roman", "") for c in spec["chords"]]
     tag = spec.get("hashtag") or re.sub(r"[^a-z0-9]", "", spec["title"].lower())
+    if spec.get("jam"):   # jam-along: the progression, the scale, and the tool with it loaded
+        loop = spec.get("loop") or [{"name": c["name"], "bars": c.get("bars", 1)} for c in spec["chords"]]
+        return (f"{plain(spec['hook'])} 🎹\n\n"
+                f"Chords: {' → '.join(c['name'] for c in loop)} · {spec['bpm']} bpm\n"
+                f"Scale: {spec.get('scale', spec['key'])} ({' '.join(spec.get('scale_notes', []))})\n\n"
+                f"Play it with drums and your own sound, free: {jam_link(spec, loop)}\n"
+                f"(link in bio → Jam)\n\n"
+                f"{plain(spec.get('question') or 'Post your jam and tag @chordsthatmove 🎹')}\n\n"
+                f"#jamtrack #backingtrack #improvisation #musictheory #chordprogression #synth #keys")
     if spec.get("guess"):   # guess mode: nothing in the first lines gives the song away
         return (f"{plain(spec['hook'])} Guess the song 🎶\n\n"
                 f"{plain(spec.get('question') or 'Did you get it before the reveal? Be honest 👇')}\n\n"
@@ -125,6 +162,28 @@ def publish_reel(video, cover_url, text, user, token, hosted_video_url=None):
     return mid, info.get("permalink")
 
 
+def publish_story(video, user, token):
+    """Also share the reel to the Story, so followers see the new episode at the top of their feed.
+    Instagram only allows this through the API for Business accounts (not Creator); any failure is
+    logged and skipped, never failing the run. Repo variable IG_STORY=off turns it off."""
+    if (os.environ.get("IG_STORY") or "on").lower() in ("off", "0", "false", "no"):
+        return None
+    try:
+        c = ig("POST", f"{API}/{user}/media", data={"media_type": "STORIES", "upload_type": "resumable",
+                                                    "access_token": token})
+        cid = c["id"]; size = os.path.getsize(video)
+        with open(video, "rb") as f:
+            ig("POST", c.get("uri") or f"{RUPLOAD}/{cid}", data=f.read(), headers={
+                "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)})
+        wait_processed(cid, token)
+        sid = ig("POST", f"{API}/{user}/media_publish", data={"creation_id": cid, "access_token": token})["id"]
+        log("story published", sid)
+        return sid
+    except (SystemExit, Exception) as e:   # ig() raises SystemExit on API errors
+        log(f"story skipped: {e}")
+        return None
+
+
 def refresh_token(token):
     try:
         r = requests.get("https://graph.instagram.com/refresh_access_token",
@@ -139,6 +198,29 @@ def refresh_token(token):
                         "--repo", os.environ["GITHUB_REPOSITORY"]],
                        env={**os.environ, "GH_TOKEN": os.environ["GH_ADMIN_TOKEN"]}, check=True)
         log("stored refreshed token in repo secret")
+
+
+LOW_QUEUE = 28   # a week at four automated posts a day
+
+
+def warn_if_low(left):
+    """Open one GitHub issue (GitHub emails it) when the queue covers about a week or less.
+    Never fails the run: the post already went out."""
+    if left >= LOW_QUEUE or not os.environ.get("GH_TOKEN") or not os.environ.get("GITHUB_REPOSITORY"):
+        return
+    repo, title = os.environ["GITHUB_REPOSITORY"], "Queue is running low"
+    try:
+        found = subprocess.run(["gh", "issue", "list", "-R", repo, "--state", "open", "--search", f"in:title {title}",
+                                "--json", "number", "-q", "length"], capture_output=True, text=True, check=True).stdout.strip()
+        if found and found != "0":
+            log("low-queue issue already open"); return
+        body = (f"Only **{left} episodes** are left in `songs/queue/`, about a week of posts or less.\n\n"
+                "Add song sketches or jams (see README: Adding songs, \"Jam over this\" reels) and build their queue "
+                "files. Close this issue once the queue is topped up.")
+        subprocess.run(["gh", "issue", "create", "-R", repo, "--title", title, "--body", body], check=True)
+        log(f"opened a '{title}' issue ({left} left)")
+    except Exception as e:
+        log("could not open the low-queue issue:", e)
 
 
 def main():
@@ -182,7 +264,11 @@ def main():
     mid, link = publish_reel(video, cover_url, text, user, token, hosted_video_url)
     log("published", mid, link)
     state.append({"episode": ep, "slug": slug, "title": spec["title"], "media_id": mid, "permalink": link,
+                  "theme": brandreel.theme_for(spec),   # for the weekly report (pipeline/insights.py)
+                  **{k: v for k, v in brandreel.sr.sound_for(reel_r.spec).items() if k in ("held", "texture")},
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
+    story = publish_story(video, user, token)
+    if story: state[-1]["story_id"] = story
     json.dump(state, open(STATE, "w"), indent=1)
     commit_push("posted.json", f"posted episode {ep}: {spec['title']}")
     import crosspost   # YouTube Shorts + TikTok (skipped if their secrets aren't set)
@@ -191,6 +277,7 @@ def main():
         commit_push("posted.json", f"cross-posted episode {ep}: {spec['title']}")
     left = len([x for x in q if x[0] not in done and x[0] != ep])
     log(f"{left} episodes left in the queue")
+    warn_if_low(left)
     if LOGIN == "instagram": refresh_token(token)   # Facebook-login Page tokens don't expire
 
 

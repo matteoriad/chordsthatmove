@@ -18,7 +18,37 @@ import songreel as sr
 
 sr.LEAD_IN = 0.0       # the song plays from the very first frame
 sr.GLIDE = 0.18          # brand rule: soft S-curve over ~180 ms
-sr.TAIL = 4.0            # room for the outro
+sr.TAIL = 4.0            # room for the outro (loop mode: the reverb tail, wrapped to the start)
+LOOP = (os.environ.get("REEL_LOOP") or "1") != "0"   # loopable reels without the end card (2026-11-20)
+# layout (2026-11-20: the voice lines are the focus; text is smaller)
+# v3 (same day, second round): text smaller still, lines bigger still
+Y_CHORD = 540            # big chord baseline
+CHORD_MAX, CHORD_MIN = 110, 84
+CAP_Y, CAP_SIZE, CAP_LH = 600, 32, 40
+LAB_Y = 690              # chord labels above the lines
+UT, UB, BT, BB = 735, 1370, 1415, 1545   # upper-voice lane, bass lane
+PH_TOP, PH_BOT = 705, 1575
+CHIP_Y = 1610
+HOOK_SIZE, HOOK_Y = 64, 480
+LW, LW_MOVE, DOT, GLOW = 8, 4, 10, 54       # line width (+ while moving), dot radius, glow radius
+LAB_SIZE = 24
+LAYOUT = "classic"
+LAYOUTS = {   # "lines": no stepper or big chord, the lines take more than half the frame
+    "classic": dict(CAP_Y=600, LAB_Y=690, UT=735, UB=1370, BT=1415, BB=1545, PH_TOP=705, PH_BOT=1575, LAB_SIZE=24),
+    "lines": dict(CAP_Y=420, LAB_Y=548, UT=610, UB=1350, BT=1400, BB=1545, PH_TOP=575, PH_BOT=1575, LAB_SIZE=40),
+}
+
+
+def layout_for(spec):
+    """spec["layout"] if set; otherwise every third episode uses "lines", so the feed doesn't repeat."""
+    if spec.get("layout") in LAYOUTS: return spec["layout"]
+    return "lines" if int(spec.get("episode") or 0) % 3 == 0 else "classic"
+
+
+def set_layout(name):
+    global LAYOUT
+    LAYOUT = name
+    globals().update(LAYOUTS[name])
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -30,6 +60,97 @@ SOPRANO, ALTO, TENOR, BASS = (92, 200, 240), (169, 155, 255), (255, 122, 168), (
 VOICES = [BASS, TENOR, ALTO, SOPRANO]          # index 0 = lowest note
 L, R = 72, 940                                  # safe-zone content edges
 
+PLAYHEAD, FUTURE, THEME, TEXTURE, DEFAULT_ACCENT = (255, 255, 255), "solid", "night", {}, (255, 122, 168)
+
+# ---- themes (the jam app's looks: src/lib/theme/themes.ts + the html[data-theme] blocks in globals.css) ----
+def _h(x): x = x.lstrip("#"); return tuple(int(x[i:i + 2], 16) for i in (0, 2, 4))
+THEMES = {   # bg surface line border fg soft muted dim faint accent playhead | bass tenor alto soprano | future line
+    "night": ("#0B0B10 #15151D #22222C #2A2A36 #F2F2F5 #B4B4C0 #8A8A99 #6E6E7C #4E4E5A #FF7AA8 #FFFFFF",
+              "#F5B54A #FF7AA8 #A99BFF #5CC8F0", "solid"),
+    "riso": ("#F2EEE5 #E9E4D8 #D8D2C3 #CFC8B6 #1B1B2F #3D3D52 #55556A #8A8A96 #B5B1A6 #C81E78 #1B1B2F",
+             "#F2A60C #F0409A #7A56B8 #0077C0", "solid"),
+    "chalk": ("#222B29 #2C3634 #3A4643 #46524F #ECEBE6 #C9C9C2 #A3ABA6 #7F8984 #566360 #FF9BBA #F2F2EE",
+              "#FFC870 #FF9AB8 #BFB2FF #7FD3F7", "solid"),
+    "blueprint": ("#1A4577 #1F4F87 #2D5F9B #4C7DB8 #F4F8FF #D2E2F7 #B0C7E7 #86A6D1 #5F86B8 #FFA3C4 #FFFFFF",
+                  "#FFCB6B #FF9EC0 #C8B8FF #8DD8FF", "dashed"),
+    "graph": ("#EFF0E4 #E6E8D8 #D3D9C2 #C4CCB0 #1A241E #36423A #52605A #8A948C #B4BBA8 #B4235A #1A241E",
+              "#C47F14 #C2306B #5B45C8 #1B6F96", "solid"),
+    "score": ("#EBE0C8 #E2D6BB #D2C4A4 #C4B592 #231C16 #3F342A #5E5040 #8C7C66 #B8A88A #A82462 #231C16",
+              "#A86A0C #BE3068 #5A46C8 #1F6E96", "dotted"),
+    "paper": ("#E3DFD4 #DAD6CA #CBC7B9 #BDB9AA #1C1A18 #3A3733 #57534C #8A867D #B2AEA2 #A81F55 #1C1A18",
+              "#C98A12 #D43A78 #6B52D6 #2386B6", "solid"),
+}
+ROTATION = ["riso", "chalk", "blueprint", "graph", "score", "paper"]
+
+
+def theme_for(spec):
+    """spec["theme"] if set; otherwise Night on even episodes and the other looks in turn on odd ones,
+    so every other post keeps the brand look and the feed still reads as one page."""
+    if spec.get("theme") in THEMES: return spec["theme"]
+    ep = int(spec.get("episode") or 0)
+    return "night" if ep % 2 == 0 else ROTATION[(ep // 2) % len(ROTATION)]
+
+
+def texture(name, w, h):
+    """The theme's background texture as a cairo ARGB surface (None for a flat background)."""
+    if name == "night": return None
+    if name in ("chalk", "paper"):
+        from scipy.ndimage import gaussian_filter
+        rng = np.random.default_rng(4 if name == "chalk" else 9)
+        n = gaussian_filter(rng.standard_normal((h, w)), (0.6, 14) if name == "chalk" else (2.5, 6))
+        n = (n - n.mean()) / (n.std() + 1e-9)
+        a = np.clip((n - 0.6) * 0.10, 0, 0.22 if name == "chalk" else 0.16)
+        col = (255, 255, 255) if name == "chalk" else (77, 69, 56)
+        stride = cairo.ImageSurface.format_stride_for_width(cairo.FORMAT_ARGB32, w)
+        buf = np.zeros((h, stride // 4, 4), np.uint8)
+        for i, c in enumerate(col[::-1]): buf[:, :w, i] = (c * a).astype(np.uint8)   # BGRA, premultiplied
+        buf[:, :w, 3] = (255 * a).astype(np.uint8)
+        return cairo.ImageSurface.create_for_data(bytearray(buf.tobytes()), cairo.FORMAT_ARGB32, w, h, stride)
+    surf = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h); cr = cairo.Context(surf)
+
+    def grid(rgb, big, small, a_big, a_small):
+        for step, a in ((small, a_small), (big, a_big)):
+            cr.set_source_rgba(*[v / 255 for v in rgb], a); cr.set_line_width(2 if step == big else 1.5)
+            for x in range(0, w + 1, step): cr.move_to(x + 0.5, 0); cr.line_to(x + 0.5, h)
+            for y in range(0, h + 1, step): cr.move_to(0, y + 0.5); cr.line_to(w, y + 0.5)
+            cr.stroke()
+    if name == "blueprint": grid((255, 255, 255), 240, 48, 0.10, 0.04)
+    elif name == "graph": grid((60, 140, 90), 192, 38, 0.22, 0.10)
+    elif name == "score":   # staves of five lines
+        cr.set_source_rgba(140 / 255, 116 / 255, 81 / 255, 0.35); cr.set_line_width(1.5)
+        for top in range(64, h, 288):
+            for k in range(5): cr.move_to(0, top + k * 27 + 0.5); cr.line_to(w, top + k * 27 + 0.5)
+        cr.stroke()
+    elif name == "riso":   # halftone dots fading out from the top right
+        dots = cairo.ImageSurface(cairo.FORMAT_ARGB32, w, h); dc = cairo.Context(dots)
+        dc.set_source_rgba(240 / 255, 64 / 255, 154 / 255, 0.5)
+        for y in range(8, h, 16):
+            for x in range(8, w, 16): dc.arc(x, y, 2.2, 0, 6.2832); dc.fill()
+        g = cairo.RadialGradient(w * 0.88, 115, 0, w * 0.88, 115, 1100)
+        g.add_color_stop_rgba(0, 1, 1, 1, 1); g.add_color_stop_rgba(1, 1, 1, 1, 0)
+        cr.set_source_surface(dots); cr.mask(g)
+    surf.flush()
+    return surf
+
+
+def set_theme(name):
+    """Switch every colour token (module globals, read at draw time) to a theme."""
+    global INK, SURFACE, LINE, BORDER, PAPER, SOFT, MUTED, DIM, FAINT, PLAYHEAD
+    global BASS, TENOR, ALTO, SOPRANO, VOICES, FUTURE, THEME, TEXTURE, DEFAULT_ACCENT
+    base, voices, FUTURE = THEMES[name]
+    (INK, SURFACE, LINE, BORDER, PAPER, SOFT, MUTED, DIM, FAINT, DEFAULT_ACCENT, PLAYHEAD) = [_h(x) for x in base.split()]
+    BASS, TENOR, ALTO, SOPRANO = [_h(x) for x in voices.split()]
+    VOICES = [BASS, TENOR, ALTO, SOPRANO]
+    THEME, TEXTURE = name, {}
+
+
+def paint_bg(cr, w=None, h=None):
+    w, h = w or W, h or H
+    cr.set_source_rgb(*rgb1(INK)); cr.paint()
+    if (w, h) not in TEXTURE: TEXTURE[(w, h)] = texture(THEME, w, h)
+    if TEXTURE[(w, h)] is not None: cr.set_source_surface(TEXTURE[(w, h)]); cr.paint()
+
+
 INTER = HERE + "/fonts/Inter-"
 SEMI, MED = INTER + "SemiBold.otf", INTER + "Medium.otf"
 MONO, MONO_M = HERE + "/fonts/JetBrainsMono-Regular.ttf", HERE + "/fonts/JetBrainsMono-Medium.ttf"
@@ -37,7 +158,8 @@ FALLBACK = HERE + "/fonts/DejaVuSans.ttf"
 
 
 def hexrgb(h): h = h.lstrip("#"); return tuple(int(h[i:i + 2], 16) for i in (0, 2, 4))
-def mixc(c, a, bg=INK): a = max(0.0, min(1.0, a)); return tuple(int(c[i] * a + bg[i] * (1 - a)) for i in range(3))
+def mixc(c, a, bg=None):
+    bg = INK if bg is None else bg; a = max(0.0, min(1.0, a)); return tuple(int(c[i] * a + bg[i] * (1 - a)) for i in range(3))
 def ease(x): x = max(0.0, min(1.0, x)); return 1 - (1 - x) ** 3
 def rgb1(c): return [v / 255 for v in c]
 
@@ -154,6 +276,10 @@ INTERVALS = {1: "half step", 2: "whole step", 3: "minor 3rd", 4: "major 3rd", 5:
              6: "tritone", 7: "perfect 5th", 12: "octave"}
 
 
+def loops(spec):
+    return LOOP and spec.get("loop", True)
+
+
 def expand(spec):
     """Musical timing. Chords given in real bars ("bars", may be 0.5 / 0.25) become:
     a whole-bar intro on the first chord (the hook plays over it), the loop with every
@@ -164,13 +290,15 @@ def expand(spec):
         return spec
     bpb = spec.get("beats_per_bar", 4)
     bar = bpb * 60 / spec["bpm"]
-    MIN = spec.get("min_chord_seconds", 2.4)
+    MIN = spec.get("min_chord_seconds", 2.0 if loops(spec) else 2.4)   # long enough to hear each chord
     chords = [dict(c) for c in spec["chords"]]
     ending = chords.pop() if chords[-1].get("ending") else None
+    if loops(spec): ending = None   # the loop goes straight back to the first chord
     k = spec.get("stretch") or 1
+    grid = 1 / bpb if loops(spec) else 1   # loop mode: chords may land on any beat, not only whole bars
     while not spec.get("stretch") and k < 8 and (
             min(c["bars"] for c in chords) * k * bar < MIN
-            or any(abs(c["bars"] * k - round(c["bars"] * k)) > 1e-6 for c in chords)):
+            or any(abs(c["bars"] * k / grid - round(c["bars"] * k / grid)) > 1e-6 for c in chords)):
         k *= 2
 
     def pow2_bars(sec):
@@ -179,6 +307,13 @@ def expand(spec):
         return n
 
     first = chords[0]
+    if loops(spec):   # no long held intro: movement from the first second, the hook over the first bar
+        beat = 60 / spec["bpm"]
+        cap = max(bpb, int(4.5 / beat))   # no straight line longer than ~4.5 s: viewers scroll away
+        out = [{**c, "beats": min(cap, int(round(c["bars"] * k * bpb)))} for c in chords]
+        if sum(c["beats"] for c in out) * beat < 12:   # short loops play twice (captions on the first pass)
+            out = out + [{**c, "_repeat": True} for c in out]
+        return {**spec, "chords": out, "hook_beats": bpb, "_intro": 0, "_stretch": k}
     intro_bars = pow2_bars(spec.get("hook_seconds", 3.6))
     out = [{"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
             "notes": first["notes"], "beats": intro_bars * bpb, "intro": True}]
@@ -187,7 +322,7 @@ def expand(spec):
     if ending is not None:
         nb = max(pow2_bars(2.0), int(round(ending.get("bars", 1))))
         out.append({**ending, "beats": nb * bpb})
-    elif chords[-1]["name"] != first["name"]:
+    elif chords[-1]["name"] != first["name"] and not loops(spec):
         out.append({"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
                     "notes": first["notes"], "beats": pow2_bars(2.0) * bpb, "ending": True})
     return {**spec, "chords": out, "hook_beats": intro_bars * bpb, "_intro": 1, "_stretch": k}
@@ -195,9 +330,13 @@ def expand(spec):
 
 class Reel:
     def __init__(self, spec):
+        set_theme(theme_for(spec))
+        set_layout(layout_for(spec) if loops(spec) else "classic")
         self.spec = spec = expand(spec)
+        sr.GLIDE = sr.glide_for(spec, sr.profile_for(spec)) if loops(spec) else 0.18   # per song since 2026-11-20
         self.song = s = sr.Song(spec)
-        self.accent = hexrgb(spec.get("accent", "#FF7AA8"))
+        acc = spec.get("accent", "#FF7AA8")
+        self.accent = DEFAULT_ACCENT if acc.upper() == "#FF7AA8" else hexrgb(acc)   # the brand pink follows the theme
         self.hook_end = s.hook_end or sr.LEAD_IN
         self.outro_start = s.end + 0.3
         self.voice_cols = [VOICES[min(i, 3)] if s.nv <= 4 else VOICES[i % 4] for i in range(s.nv)]
@@ -218,6 +357,15 @@ class Reel:
         self.vels = [np.array([e[3] for e in s.arp if e[1] == v]) for v in range(s.nv)]
         up = s.pitch[:, 1:].flatten(); bs = s.pitch[:, 0]
         self.urange, self.brange = (up.min() - 1, up.max() + 1), (bs.min() - 1, bs.max() + 1)
+
+    def explains(self, ci):
+        """Explain only what's interesting: the chords listed in "explain" (indices into the sketch's
+        chords), else just the hook's focus chord. Without loop mode every chord keeps its caption."""
+        sp = self.spec
+        if not loops(sp): return True
+        i = ci - sp.get("_intro", 0)
+        if sp["chords"][ci].get("_repeat"): return False
+        return i in (sp["explain"] if isinstance(sp.get("explain"), list) else [sp.get("hook_focus", len(sp["chords"]) - 1)])
 
     # pitch → y in two lanes (upper voices roomy, bass compact)
     def ymap(self, v, p, ut, ub, bt, bb):
@@ -247,18 +395,21 @@ class Reel:
         ci = s.chord_at(now); ch = sp["chords"][ci]
         since = now - max(s.starts[ci], self.hook_end)
         surf = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H); cr = cairo.Context(surf)
-        cr.set_source_rgb(*rgb1(INK)); cr.paint()
+        paint_bg(cr)
         logo(cr, L, 240 - 18, 36, 9)
         # stepper bar
         y_bar = 427
         frac = np.clip((now - s.starts[0]) / (s.end - s.starts[0]), 0, 1)
-        if not hook:
+        if not hook and LAYOUT == "classic":
             cr.set_source_rgb(*rgb1(LINE)); rrect(cr, L, y_bar, R - L, 4, 2); cr.fill()
-        if frac > 0.002 and not hook:
+        if frac > 0.002 and not hook and LAYOUT == "classic":
             cr.set_source_rgb(*rgb1(PAPER)); rrect(cr, L, y_bar, max(4, (R - L) * frac), 4, 2); cr.fill()
         # ---- voice lines ----
         PX, PH = 110, 640
-        UT, UB, BT, BB = 1160, 1390, 1430, 1500
+        pre = 0.0   # 1 during the hook: upcoming lines bright (a preview of the whole loop)
+        if loops(sp):
+            PH = 420   # loop mode: one fixed playhead position for the whole reel (a moving one irritated)
+            if self.hook_end: pre = 1 - ease((now - (self.hook_end - 0.5)) / 0.7)
         t_left, t_right = now - PH / PX, now + (W - PH) / PX
         ts = np.linspace(max(t_left, 0), min(t_right, s.end), 360)
         xs = PH + (ts - now) * PX
@@ -274,8 +425,11 @@ class Reel:
                 if len(idx) < 2: continue
                 if not fut and idx[-1] + 1 < len(ts): idx = np.append(idx, idx[-1] + 1)
                 e = emph[v]
-                a, lw = (0.22, 4) if fut else (0.75 + 0.25 * e, 4 + 2 * e)
+                a, lw = (0.22, LW - 2) if fut else (0.75 + 0.25 * e, LW + LW_MOVE * e)
+                if fut and THEME != "night": a = 0.35   # textured and light backgrounds need more ink
+                if fut: a = a + (0.7 - a) * pre
                 cr.set_source_rgba(*col, a); cr.set_line_width(lw)
+                cr.set_dash({"dashed": [14, 10], "dotted": [0.1, 12]}.get(FUTURE, []) if fut else [])
                 cr.move_to(xs[idx[0]], ys[idx[0]])
                 for j in idx[1:]: cr.line_to(xs[j], ys[j])
                 cr.stroke()
@@ -283,16 +437,19 @@ class Reel:
                 hy = float(self.ymap(v, s.voice_curve(v, np.array([now]))[0], UT, UB, BT, BB))
                 heads.append((v, hy))
         cr.set_source_rgba(*rgb1(PAPER), 0.35); cr.set_line_width(2)
-        cr.move_to(PH, 1136); cr.line_to(PH, 1540); cr.stroke()
+        cr.move_to(PH, PH_TOP + (90 if hook and LAYOUT == "lines" else 0)); cr.line_to(PH, PH_BOT); cr.stroke()
         for v, hy in heads:
             e, fl = emph[v], self.flash(v, now)
-            glow(cr, PH, hy, (34 + 14 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
-            cr.set_source_rgb(1, 1, 1); cr.arc(PH, hy, 6 + 3 * e, 0, 6.2832); cr.fill()
+            glow(cr, PH, hy, (GLOW + 20 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
+            cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(PH, hy, DOT + 4 * e, 0, 6.2832); cr.fill()
         # chip (moving note)
         fv = self.focus[ci]
         chip = None
-        cap_toks = tokens(ch.get("text", ""), PAPER, self.voice_cols[fv] if fv is not None else self.accent)
-        cap_lines = wrap(cap_toks, MED, 46, -0.02, R - L)
+        text = ch.get("text", "") if self.explains(ci) else ""
+        if sp.get("guess") and loops(sp) and ci == len(sp["chords"]) - 1:   # the reveal (no end card in loop mode)
+            text = f"It's *{sp['title']}* — {sp['artist']}"
+        cap_toks = tokens(text, PAPER, self.voice_cols[fv] if fv is not None else self.accent)
+        cap_lines = wrap(cap_toks, MED, CAP_SIZE, -0.02, R - L)[:2]
         if fv is not None and ci > 0 and not hook and s.pitch[ci, fv] != s.pitch[ci - 1, fv]:
             a_ = sp["chords"][ci - 1]["notes"][fv]; b_ = ch["notes"][fv]
             semis = int(s.pitch[ci, fv] - s.pitch[ci - 1, fv])
@@ -300,7 +457,7 @@ class Reel:
             t2 = f"{'↑' if semis > 0 else '↓'} {INTERVALS.get(abs(semis), f'{abs(semis)} semitones')}"
             w1, w2 = tx.width(t1, MONO, 24), tx.width(t2, MONO, 22)
             cw_ = 22 + 12 + 14 + w1 + 14 + w2 + 22
-            cy = max(1010, 830 + len(cap_lines) * 57.5 + 30)
+            cy = CHIP_Y
             ca = ease((since - 0.35) / 0.3)
             if ca > 0:
                 cr.set_source_rgb(*rgb1(mixc(SURFACE, ca))); rrect(cr, L, cy, cw_, 56, 28); cr.fill_preserve()
@@ -316,14 +473,14 @@ class Reel:
         if hook:
             label = "GUESS THE SONG" if sp.get("guess") else f"{sp['artist'].upper()} — {sp['title'].upper()}"
             pw = tx.width(label, MONO, 22, 0.12) + 44
-            d.rounded_rectangle([L, 420, L + pw, 470], radius=25, outline=(46, 46, 58), width=2)
-            tx.draw(d, L + 22, tx.base(420, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
-            for li, line in enumerate(wrap(tokens(sp["hook"], PAPER, self.accent), SEMI, 104, -0.045, R - L)):
-                b = tx.base(510 + li * 104, SEMI, 104, 1.0)
-                for w, c, x in line: tx.draw(d, L + x, b, w, SEMI, 104, c, -0.045)
+            d.rounded_rectangle([L, 400, L + pw, 450], radius=25, outline=BORDER, width=2)
+            tx.draw(d, L + 22, tx.base(400, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
+            for li, line in enumerate(wrap(tokens(sp["hook"], PAPER, self.accent), SEMI, HOOK_SIZE, -0.045, R - L)[:3]):
+                b = tx.base(HOOK_Y + li * HOOK_SIZE * 1.02, SEMI, HOOK_SIZE, 1.0)
+                for w, c, x in line: tx.draw(d, L + x, b, w, SEMI, HOOK_SIZE, c, -0.045)
             cap_lines = []
         # stepper
-        n = len(self.names) if not hook else 0
+        n = len(self.names) if not hook and LAYOUT == "classic" else 0
         colw = (R - L - 12 * (n - 1)) / max(n, 1)
         for i, (nm, rom) in enumerate(self.names[:n]):
             on = nm == ch["name"]
@@ -335,16 +492,17 @@ class Reel:
         a = k; dy = 12 * (1 - k)
         name = pretty_chord(ch["name"])
         pill_w = (tx.width(ch.get("roman", ""), MONO_M, 24) + 36 + 28) if ch.get("roman") else 0
-        csz = 280
-        while csz > 150 and tx.width(name, SEMI, csz, -0.06) + max(pill_w, 150 if ch.get("tag") else 0) > R - L:
+        csz = CHORD_MAX
+        while csz > CHORD_MIN and tx.width(name, SEMI, csz, -0.06) + max(pill_w, 150 if ch.get("tag") else 0) > R - L:
             csz -= 10
-        cb = 540 + 205 + dy
+        cb = Y_CHORD + dy
         wname = tx.width(name, SEMI, csz, -0.06)
-        if not hook: tx.draw(d, L, cb, name, SEMI, csz, mixc(PAPER, a), -0.06)
-        if ch.get("roman") and not hook:
+        big = not hook and LAYOUT == "classic"
+        if big: tx.draw(d, L, cb, name, SEMI, csz, mixc(PAPER, a), -0.06)
+        if ch.get("roman") and big:
             px = L + wname + 28
             pw = tx.width(ch["roman"], MONO_M, 24) + 36
-            ptop = 540 + 238 - 14 - (45 + 10 + 24) + dy
+            ptop = cb - 82
             d.rounded_rectangle([px, ptop, px + pw, ptop + 45], radius=22, fill=mixc(self.accent, a))
             tx.draw(d, px + 18, tx.base(ptop, MONO_M, 24, 45 / 24), ch["roman"], MONO_M, 24, INK)
             if ch.get("tag"):
@@ -352,10 +510,10 @@ class Reel:
         # caption, word by word
         k_word = 0
         for li, line in enumerate(cap_lines):
-            b = tx.base(830 + li * 57.5, MED, 46, 1.25)
+            b = tx.base(CAP_Y + li * CAP_LH, MED, CAP_SIZE, 1.25)
             for w, c, x in line:
                 wa = ease((since - 0.15 - k_word * 0.04) / 0.22); k_word += 1
-                if wa > 0: tx.draw(d, L + x, b, w, MED, 46, mixc(c, wa), -0.02)
+                if wa > 0: tx.draw(d, L + x, b, w, MED, CAP_SIZE, mixc(c, wa), -0.02)
         if chip:
             cy, ca, t1, t2, w1 = chip
             b = tx.base(cy, MONO, 24, 56 / 24)
@@ -369,26 +527,26 @@ class Reel:
                 labs[-1][3] = i; continue
             labs.append([max(L, lx), pretty_chord(c["name"]), i, i])
         for j in range(len(labs) - 2, -1, -1):
-            wj = tx.width(labs[j][1], MONO, 22)
+            wj = tx.width(labs[j][1], MONO, LAB_SIZE)
             labs[j][0] = min(labs[j][0], labs[j + 1][0] - wj - 30)
         for lx, nm, i, i_end in labs:
-            if lx > R + 40: continue
+            if lx > R + 40 or (hook and LAYOUT == "lines"): continue   # the hook sits where the labels go
             fade = np.clip((lx - (L - 30)) / 30, 0, 1)
             col = PAPER if i <= ci <= i_end else (DIM if i_end < ci else FAINT)
-            if fade > 0: tx.draw(d, lx, 1126, nm, MONO, 22, mixc(col, fade))
+            if fade > 0: tx.draw(d, lx, LAB_Y, nm, SEMI if LAYOUT == "lines" else MONO, LAB_SIZE, mixc(col, fade))
         for v, hy in heads:
             note = sr.pretty(ch["notes"][v])
             if emph[v] > 0.5:
-                tx.draw(d, PH + 24, hy - 14, note, MONO_M, 34, self.voice_cols[v])
+                tx.draw(d, PH + 28, hy - 16, note, MONO_M, 36, self.voice_cols[v])
             else:
-                tx.draw(d, PH + 20, hy - 10, note, MONO, 24, self.voice_cols[v])
+                tx.draw(d, PH + 24, hy - 12, note, MONO, 26, self.voice_cols[v])
         return img
 
     def outro(self, now):
         sp = self.spec
         k = ease((now - self.outro_start) / 0.6)
         surf = cairo.ImageSurface(cairo.FORMAT_RGB24, W, H); cr = cairo.Context(surf)
-        cr.set_source_rgb(*rgb1(INK)); cr.paint()
+        paint_bg(cr)
         cr.save(); cr.translate(0, 300)
         cr.set_source_rgba(*rgb1(PAPER), 0.3); cr.set_line_width(2); cr.move_to(700, 10); cr.line_to(700, 410); cr.stroke()
         cr.set_line_width(14); cr.set_line_cap(cairo.LINE_CAP_ROUND)
@@ -402,7 +560,7 @@ class Reel:
         cr.restore()
         if reveal > 700:
             p = ease((reveal - 700) / 120)
-            cr.set_source_rgb(1, 1, 1)
+            cr.set_source_rgb(*rgb1(PLAYHEAD))
             for y in (80, 150, 260, 360): cr.arc(700, y, 16 * p, 0, 6.2832); cr.fill()
         cr.restore()
         img = to_pil(surf); d = ImageDraw.Draw(img)
@@ -415,6 +573,14 @@ class Reel:
                 y += 108
             tx.draw(d, L, tx.base(y + 20, MONO, 30), sp["artist"].upper(), MONO, 30, PAPER, 0.12)
             tx.draw(d, L, tx.base(1220, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
+            return img
+        if sp.get("jam"):   # send people to the tool with this progression
+            tx.draw(d, L, tx.base(800, MONO, 26), "BUILD YOUR OWN JAM", MONO, 26, MUTED, 0.14)
+            b = tx.base(850, SEMI, 104, 1.0)
+            tx.draw(d, L, b, "chordsthatmove", SEMI, 104, PAPER, -0.045)
+            tx.draw(d, L, b + 108, ".com/jam", SEMI, 104, self.accent, -0.045)
+            tx.draw(d, L, tx.base(1180, MED, 40), "Free · in your browser · link in bio", MED, 40, SOFT)
+            tx.draw(d, L, tx.base(1260, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
             return img
         b = tx.base(820, SEMI, 112, 0.95)
         tx.draw(d, L, b, "chords", SEMI, 112, PAPER, -0.045)
@@ -432,7 +598,7 @@ class Reel:
         s, sp = self.song, self.spec
         CW, CH, PX_, PY = 1080, 1350, 96, 104
         surf = cairo.ImageSurface(cairo.FORMAT_RGB24, CW, CH); cr = cairo.Context(surf)
-        cr.set_source_rgb(*rgb1(INK)); cr.paint()
+        paint_bg(cr, CW, CH)
         off = sp.get("_intro", 0)              # skip the intro chord added by expand()
         cols = list(sp["chords"][off:])
         if len(cols) > 1 and cols[-1]["name"] == cols[0]["name"]: cols = cols[:-1]
@@ -450,7 +616,7 @@ class Reel:
                 cr.line_to(xb - 14, y0); cr.curve_to(xb, y0, xb, y1, xb + 14, y1)
             cr.line_to(gx + gw - 8, yv(v, n - 1)); cr.stroke()
         fv = self.focus[fi + off] if self.focus[fi + off] is not None else 2 % s.nv
-        cr.set_source_rgb(1, 1, 1); cr.arc(gx + fi * cw + 30, yv(fv, fi), 10, 0, 6.2832); cr.fill()
+        cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(gx + fi * cw + 30, yv(fv, fi), 10, 0, 6.2832); cr.fill()
         logo(cr, CW - PX_ - 72, CH - PY - 72, 72, 8)
         buf = np.frombuffer(surf.get_data(), np.uint8).reshape(CH, surf.get_stride() // 4, 4)[:, :CW]
         img = Image.fromarray(buf[:, :, [2, 1, 0]].copy()); d = ImageDraw.Draw(img)
@@ -493,6 +659,10 @@ class Reel:
             return self.hook(now)
         if now < self.hook_end + X / 2:
             return Image.blend(self.hook(now), self.chord(now), ease((now - self.hook_end + X / 2) / X))
+        if loops(self.spec):   # last 0.35 s blend into the first frame, so the replay starts seamlessly
+            end = self.song.end
+            if now < end - X: return self.chord(now)
+            return Image.blend(self.chord(min(now, end - 1e-3)), self.hook(0.0), ease((now - (end - X)) / X))
         if now < self.outro_start:
             return self.chord(now)
         if now < self.outro_start + 0.45:
@@ -509,15 +679,32 @@ def stills(spec, outdir, times):
         p = os.path.join(outdir, f"frame_{t:05.2f}.jpg"); r.frame(t).save(p, quality=90); print(p)
 
 
+def wrap_audio(path, seconds):
+    """Cut the audio to the loop length and add what rings on after it (reverb, echoes, the pad's
+    release) back onto the start, so the replay continues without a cut."""
+    from scipy.io import wavfile
+    rate, x = wavfile.read(path)
+    x = x.astype(np.float64)
+    n = int(round(seconds * rate))
+    head, tail = x[:n].copy(), x[n:n * 2]
+    head[:len(tail)] += tail
+    head *= min(1.0, 0.89 * 32767 / max(1.0, np.max(np.abs(head))))
+    wavfile.write(path, rate, head.astype(np.int16))
+
+
 def render(spec, out):
     r = Reel(spec); s = r.song
     base = os.path.splitext(out)[0]
     wav, silent, tmp = base + ".wav", base + ".video.tmp.mp4", base + ".tmp.mp4"
     sr.synth(s, wav)
+    n_frames = int(s.total * FPS)
+    if loops(r.spec):
+        n_frames = int(round(s.end * FPS))
+        wrap_audio(wav, n_frames / FPS)
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
                            "-crf", "19", "-pix_fmt", "yuv420p", silent], stdin=subprocess.PIPE)
-    for i in range(int(s.total * FPS)):
+    for i in range(n_frames):
         ff.stdin.write(r.frame(i / FPS).tobytes())
     ff.stdin.close()
     if ff.wait() != 0: sys.exit("video encode failed")

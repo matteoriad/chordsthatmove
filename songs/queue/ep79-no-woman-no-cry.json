@@ -1,0 +1,124 @@
+{
+ "title": "No Woman, No Cry",
+ "artist": "Bob Marley",
+ "key": "C major",
+ "bpm": 78,
+ "episode": 79,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The most *comforting* bass line ever?",
+ "hook_focus": 1,
+ "cover_text": "The bass that *walks you home*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "guess": true,
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*C major*: safe.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G/B",
+   "roman": "V/3",
+   "tag": "step",
+   "bars": 0.5,
+   "text": "Bass steps down to *B*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Am",
+   "roman": "vi",
+   "tag": "sad",
+   "bars": 0.5,
+   "text": "*A minor*: the hard part.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "warm",
+   "bars": 0.5,
+   "text": "*F major*: a warm hand.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "Home again…",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "warm",
+   "bars": 0.5,
+   "text": "*F*: comfort.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*C*: steady.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "promise",
+   "bars": 0.5,
+   "text": "*G major*: it will be okay.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ],
+   "focus": 1
+  }
+ ]
+}

@@ -6,10 +6,11 @@
  "episode": 55,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
- "hook": "Why do these chords feel like *nothing's left*?",
+ "hook": "4 chords that *wrecked* a generation",
  "hook_focus": 3,
  "cover_text": "The chord with *nothing left*",
  "question": "Did you get it before the reveal? Be honest 👇",
+ "guess": true,
  "chords": [
   {
    "name": "C",
@@ -64,6 +65,5 @@
    ],
    "focus": 2
   }
- ],
- "guess": true
+ ]
 }

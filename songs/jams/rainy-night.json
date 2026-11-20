@@ -1,0 +1,37 @@
+{
+ "title": "Rainy night",
+ "key": "A minor",
+ "scale": "A minor pentatonic",
+ "scale_notes": [
+  "A",
+  "C",
+  "D",
+  "E",
+  "G"
+ ],
+ "bpm": 84,
+ "hook": "Your next jam: *rainy night* in A minor",
+ "cover_text": "Five notes. *No wrong ones.*",
+ "chords": [
+  [
+   "Am",
+   "i",
+   1
+  ],
+  [
+   "F",
+   "VI",
+   1
+  ],
+  [
+   "C",
+   "III",
+   1
+  ],
+  [
+   "G",
+   "VII",
+   1
+  ]
+ ]
+}

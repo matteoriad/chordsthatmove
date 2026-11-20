@@ -1,0 +1,47 @@
+{
+ "title": "All of Me",
+ "artist": "John Legend",
+ "key": "Ab major",
+ "bpm": 63,
+ "episode": 85,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Starts on the *sad chord*, ends in love",
+ "hook_focus": 0,
+ "cover_text": "It starts on *the sad chord*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "chords": [
+  {
+   "name": "Fm",
+   "roman": "vi",
+   "tag": "tender",
+   "bars": 1,
+   "text": "*F minor* first: tender, not sad."
+  },
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "open",
+   "bars": 1,
+   "text": "*D♭*: opening up.",
+   "focus_note": "Ab"
+  },
+  {
+   "name": "Ab",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A♭*: home, finally.",
+   "focus_note": "C"
+  },
+  {
+   "name": "Eb",
+   "roman": "V",
+   "tag": "promise",
+   "bars": 1,
+   "text": "*E♭*: a promise.",
+   "focus_note": "G"
+  }
+ ],
+ "guess": true
+}
