@@ -290,7 +290,7 @@ def expand(spec):
         return spec
     bpb = spec.get("beats_per_bar", 4)
     bar = bpb * 60 / spec["bpm"]
-    MIN = spec.get("min_chord_seconds", 1.3 if loops(spec) else 2.4)   # bigger lines read faster
+    MIN = spec.get("min_chord_seconds", 2.0 if loops(spec) else 2.4)   # long enough to hear each chord
     chords = [dict(c) for c in spec["chords"]]
     ending = chords.pop() if chords[-1].get("ending") else None
     if loops(spec): ending = None   # the loop goes straight back to the first chord
@@ -333,6 +333,7 @@ class Reel:
         set_theme(theme_for(spec))
         set_layout(layout_for(spec) if loops(spec) else "classic")
         self.spec = spec = expand(spec)
+        sr.GLIDE = sr.glide_for(spec, sr.profile_for(spec)) if loops(spec) else 0.18   # per song since 2026-11-20
         self.song = s = sr.Song(spec)
         acc = spec.get("accent", "#FF7AA8")
         self.accent = DEFAULT_ACCENT if acc.upper() == "#FF7AA8" else hexrgb(acc)   # the brand pink follows the theme

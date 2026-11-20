@@ -154,6 +154,14 @@ the hook the playhead starts on the left and the upcoming lines are bright, so t
 already shows the whole progression. Only the chords in `"explain"` (indices) get a caption,
 otherwise just the hook's focus chord. Loops shorter than 12 s play twice.
 
+## Sound profiles and glide
+Each reel picks a sound from its chords, key and tempo (`songreel.profile_for`; set
+`"sound_profile"` in a sketch to choose): **keys** (electric piano, many 7th/6th chords), **pluck**
+(fast songs, arpeggio in front), **warm** (slow minor songs, darker pad, no arpeggio), **organ** and
+**lush** (rotating among the rest). The glide between notes follows the chord length and the mood
+(about 0.25–0.7 s; `"glide"` in a sketch overrides). In loop mode chords last at least 2 s and at
+most ~4.5 s.
+
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
 odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set

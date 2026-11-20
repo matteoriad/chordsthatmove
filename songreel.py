@@ -147,7 +147,71 @@ def log_sound(role, pack): print(f"{role} sound: {pack['meta'].get('label', pack
 STYLE = os.environ.get("REEL_SOUND") or "lush"   # "lush" (2026-11-20) or "classic" (the original pad)
 
 
-def lush_pad(song, tt, env):
+# Sound profiles (2026-11-20): not every reel should sound the same. Chosen per song by profile_for().
+PROFILES = {
+    "lush":  dict(arp=0.32, pad=1.0),    # wide detuned pad + soft arpeggio (the default)
+    "warm":  dict(arp=0.0, pad=1.0),     # darker pad, no arpeggio: slow, sad songs
+    "pluck": dict(arp=0.62, pad=0.75),   # lighter pad, the arpeggio in front: fast songs
+    "keys":  dict(arp=0.18, pad=1.0),    # electric-piano tone, re-struck each chord: jazz and soul
+    "organ": dict(arp=0.0, pad=1.0),     # drawbar organ with a rotary wobble
+}
+JAZZY = ("7", "maj7", "m7", "6", "m6", "7sus4", "add9")
+
+
+def profile_for(spec):
+    """spec["sound_profile"] if set, else from the chords, key and tempo."""
+    if spec.get("sound_profile") in PROFILES: return spec["sound_profile"]
+    names = [c["name"].split("/")[0] for c in spec["chords"]]
+    quals = [re.sub(r"^[A-G][#b]?", "", n) for n in names]
+    jazzy = sum(q in JAZZY for q in quals) / max(1, len(quals))
+    minor = "minor" in spec.get("key", "").lower()
+    if jazzy >= 0.4: return "keys"
+    if spec["bpm"] >= 115: return "pluck"
+    if minor and spec["bpm"] < 80: return "warm"
+    return ("lush", "lush", "organ")[int(spec.get("episode") or 0) % 3]
+
+
+def keys_pad(song, tt, env):
+    """Electric-piano-like: sine plus a bell-ish 2nd/3rd harmonic that decays, re-struck on every chord."""
+    since = np.zeros(len(tt))
+    for st in song.starts: since = np.where(tt >= st, tt - st, since)
+    strike = np.exp(-since / 1.4) * 0.75 + 0.25
+    bell = np.exp(-since / 0.25)
+    sides = []
+    for spread in (-4, 4):   # a few cents apart left/right
+        acc = np.zeros(len(tt))
+        for v in range(1, song.nv):
+            f = 440 * 2 ** ((song.voice_curve(v, tt) - 69 + spread / 100) / 12)
+            ph = 2 * np.pi * np.cumsum(f) / SR
+            acc += np.sin(ph + 0.8 * bell * np.sin(2 * ph)) + 0.12 * np.sin(3 * ph) * bell
+        sides.append(acc * strike * env)
+    return sides
+
+
+def organ_pad(song, tt, env):
+    """Drawbar organ (harmonics 1 2 3 4 6 8) with a rotary-style wobble that moves left and right."""
+    bars = ((1, 1.0), (2, 0.7), (3, 0.5), (4, 0.35), (6, 0.2), (8, 0.15))
+    acc = np.zeros(len(tt))
+    for v in range(1, song.nv):
+        ph = 2 * np.pi * np.cumsum(440 * 2 ** ((song.voice_curve(v, tt) - 69) / 12)) / SR
+        acc += sum(a * np.sin(k * ph) for k, a in bars)
+    rot = np.sin(2 * np.pi * 5.6 * tt)
+    acc = signal.sosfilt(signal.butter(2, 3500, "low", fs=SR, output="sos"), acc * env)
+    return [acc * (1 + 0.18 * rot), acc * (1 - 0.18 * rot)]
+
+
+def glide_for(spec, profile):
+    """Seconds each voice takes to slide to its next note: longer chords and calmer songs glide slower.
+    spec["glide"] overrides."""
+    if spec.get("glide"): return float(spec["glide"])
+    beat = 60 / spec["bpm"]
+    lens = sorted(c.get("beats", 4) * beat for c in spec["chords"])
+    med = lens[len(lens) // 2]
+    g = float(np.clip(0.1 + 0.12 * med, 0.18, 0.55))
+    return round(g * {"warm": 1.3, "pluck": 0.75, "keys": 0.9}.get(profile, 1.0), 3)
+
+
+def lush_pad(song, tt, env, bright=3200, base=0.3):
     """Five detuned saws per voice, spread left/right, through a filter that swells open on every
     chord (a dark and a bright copy crossfaded, so it stays cheap). Returns (left, right)."""
     rng = np.random.default_rng(7)
@@ -161,15 +225,18 @@ def lush_pad(song, tt, env):
             acc += 0.35 * np.sin(2 * np.pi * (cyc * 0.5 + rng.random()))   # soft sub-octave body
         sides.append(acc * env)
     dark = [signal.sosfilt(signal.butter(2, 650, "low", fs=SR, output="sos"), x) for x in sides]
-    bright = [signal.sosfilt(signal.butter(2, 3200, "low", fs=SR, output="sos"), x) for x in sides]
+    bright = [signal.sosfilt(signal.butter(2, bright, "low", fs=SR, output="sos"), x) for x in sides]
     # swell: opens over ~0.6 of a chord, eases back; a slow 0.13 Hz drift keeps long chords alive
     open_ = np.zeros(len(tt))
     for i, st in enumerate(song.starts):
         en = song.starts[i + 1] if i + 1 < len(song.starts) else song.end
         m = (tt >= st) & (tt < en + 0.5)
-        x = (tt[m] - st) / max(0.3, 0.6 * (en - st))
-        open_[m] = np.maximum(open_[m], np.sin(np.pi * np.clip(x, 0, 1)) ** 1.5)
-    k = 0.3 + 0.6 * open_ + 0.1 * np.sin(2 * np.pi * 0.13 * tt)
+        # smooth: from half open, rise over the first 45% of the chord, then ease back only slightly
+        # (the old swell peaked early and dropped off, which sounded loud-then-quiet)
+        x = np.clip((tt[m] - st) / max(0.4, en - st), 0, 1)
+        rise = np.clip(x / 0.45, 0, 1); rise = rise * rise * (3 - 2 * rise)
+        open_[m] = np.maximum(open_[m], 0.55 + 0.45 * rise - 0.25 * np.clip((x - 0.45) / 0.55, 0, 1))
+    k = base + 0.6 * open_ + 0.1 * np.sin(2 * np.pi * 0.13 * tt)
     return [0.16 * (d * (1 - k) + b * k) for d, b in zip(dark, bright)]
 
 
@@ -200,11 +267,14 @@ def synth(song, path):
         log_sound("pad", pad_pack)
     pad = signal.sosfilt(signal.butter(3, 1800, "low", fs=SR, output="sos"), pad)
     pads = [pad, pad]
+    profile = profile_for(song.spec) if STYLE == "lush" else "classic"
+    print(f"sound profile: {profile}", flush=True)
     if STYLE == "lush" and not pad_pack:
-        L_, R_ = lush_pad(song, tt, env)
+        L_, R_ = (keys_pad(song, tt, env) if profile == "keys" else organ_pad(song, tt, env) if profile == "organ"
+                  else lush_pad(song, tt, env, bright=1900, base=0.15) if profile == "warm" else lush_pad(song, tt, env))
         mid, side = 0.5 * (L_ + R_), 0.5 * (L_ - R_)   # natural width: still safe on mono phone speakers
-        duck = 1 - 0.15 * np.exp(-ph * 5) * (tt > LEAD_IN)
-        gain = rms(pad) / rms(mid)                            # same loudness as the classic pad
+        duck = 1 - 0.05 * np.exp(-ph * 5) * (tt > LEAD_IN)   # a much lighter pump than the classic pad
+        gain = rms(pad) / rms(mid) * PROFILES[profile]["pad"]   # same loudness as the classic pad
         pads = [(mid + side) * duck * gain, (mid - side) * duck * gain]
         pad = mid * duck * gain
     bass = signal.sosfilt(signal.butter(3, 360, "low", fs=SR, output="sos"), bass)
@@ -212,7 +282,7 @@ def synth(song, path):
     arp_pack = samples.load(song.spec.get("arp_sound") or samples.default("arp"))
     arp = samples.arp(song, arp_pack, n) if arp_pack else arp_layer(song, n)
     if arp_pack: log_sound("arp", arp_pack)
-    arp *= 0.32 * rms(pad) / rms(arp)       # subtle: sits under the pad
+    arp *= (PROFILES[profile]["arp"] if profile in PROFILES else 0.32) * rms(pad) / rms(arp)   # level per profile
     # ping-pong echoes at a dotted eighth
     d8 = 0.75 * song.beat
     arpL = arp + 0.30 * delayed(arp, 2 * d8)
