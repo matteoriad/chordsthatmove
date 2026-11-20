@@ -53,7 +53,7 @@ def catch_up(state, rendered=None, limit=None, dry=False):
         text = post.caption(spec)
         for name in todo:
             try:
-                res = platforms.PLATFORMS[name][1](video, spec, text)
+                res = platforms.PLATFORMS[name][1](video, spec, post.with_tool_link(text, spec, name))
                 entry[name] = res; changed = True; done[name] += 1
                 log(f"  {name}: {res}")
             except Exception as e:  # keep going; next run retries
