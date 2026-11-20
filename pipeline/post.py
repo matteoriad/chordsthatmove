@@ -162,6 +162,28 @@ def publish_reel(video, cover_url, text, user, token, hosted_video_url=None):
     return mid, info.get("permalink")
 
 
+def publish_story(video, user, token):
+    """Also share the reel to the Story, so followers see the new episode at the top of their feed.
+    Instagram only allows this through the API for Business accounts (not Creator); any failure is
+    logged and skipped, never failing the run. Repo variable IG_STORY=off turns it off."""
+    if (os.environ.get("IG_STORY") or "on").lower() in ("off", "0", "false", "no"):
+        return None
+    try:
+        c = ig("POST", f"{API}/{user}/media", data={"media_type": "STORIES", "upload_type": "resumable",
+                                                    "access_token": token})
+        cid = c["id"]; size = os.path.getsize(video)
+        with open(video, "rb") as f:
+            ig("POST", c.get("uri") or f"{RUPLOAD}/{cid}", data=f.read(), headers={
+                "Authorization": f"OAuth {token}", "offset": "0", "file_size": str(size)})
+        wait_processed(cid, token)
+        sid = ig("POST", f"{API}/{user}/media_publish", data={"creation_id": cid, "access_token": token})["id"]
+        log("story published", sid)
+        return sid
+    except (SystemExit, Exception) as e:   # ig() raises SystemExit on API errors
+        log(f"story skipped: {e}")
+        return None
+
+
 def refresh_token(token):
     try:
         r = requests.get("https://graph.instagram.com/refresh_access_token",
@@ -244,6 +266,8 @@ def main():
     state.append({"episode": ep, "slug": slug, "title": spec["title"], "media_id": mid, "permalink": link,
                   "theme": brandreel.theme_for(spec),   # for the weekly report (pipeline/insights.py)
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
+    story = publish_story(video, user, token)
+    if story: state[-1]["story_id"] = story
     json.dump(state, open(STATE, "w"), indent=1)
     commit_push("posted.json", f"posted episode {ep}: {spec['title']}")
     import crosspost   # YouTube Shorts + TikTok (skipped if their secrets aren't set)
