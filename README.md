@@ -27,7 +27,7 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 2. developers.facebook.com → your app → Use cases → Instagram API → **API setup with Facebook login**
    → **Add required content permissions**.
 3. Open **Tools → Graph API Explorer**. Pick your app under "Meta App", then
-   "User or Page" → **Get User Access Token**. Tick `instagram_basic`, `instagram_content_publish`,
+   "User or Page" → **Get User Access Token**. Tick `instagram_basic`, `instagram_content_publish`, `instagram_manage_insights`,
    `pages_show_list`, `pages_read_engagement`, `business_management` → **Generate Access Token**
    and log in, choosing the chordsthatmove Page and Instagram account.
 4. Make it long-lived: click the ⓘ next to the token → **Open in Access Token Tool** →
@@ -153,6 +153,18 @@ Each chord in a sketch has `"bars"`: how long it lasts in the original song in 4
 (the hook plays over it), the loop stretched evenly by ×2/×4 when chords would be too short
 to read, and a whole-bar ending before the outro. Everything lands on whole bars and keeps
 the record's proportions (Clocks: E♭ 2, B♭m 4, Fm 2). Old episodes with `"beats"` still render as before.
+
+## Weekly report
+Every Monday morning `.github/workflows/weekly-report.yml` runs `pipeline/insights.py`: all reels of
+the last 14 days (at least 48 h old), grouped by format (song breakdown, guess the song, jam over
+this, your own videos), slot and look, with views, reach, saves + shares per 1k views, watch time,
+the top 5 and your follower change. It arrives as a GitHub issue (emailed) and in `reports/`.
+
+**One-time:** the token needs the `instagram_manage_insights` permission. Redo step 2 of the
+Instagram setup (Graph API Explorer → Get User Access Token) with `instagram_manage_insights`
+ticked as well, extend it, read the Page token again with `me/accounts`, and replace the
+`IG_ACCESS_TOKEN` secret. Then Actions → Weekly report → Run workflow to try it.
+Python's `requests` is the only dependency, so the run takes under a minute.
 
 ## Pausing
 Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);
