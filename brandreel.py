@@ -416,6 +416,14 @@ class Reel:
             tx.draw(d, L, tx.base(y + 20, MONO, 30), sp["artist"].upper(), MONO, 30, PAPER, 0.12)
             tx.draw(d, L, tx.base(1220, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
             return img
+        if sp.get("jam"):   # send people to the tool with this progression
+            tx.draw(d, L, tx.base(800, MONO, 26), "BUILD YOUR OWN JAM", MONO, 26, MUTED, 0.14)
+            b = tx.base(850, SEMI, 104, 1.0)
+            tx.draw(d, L, b, "chordsthatmove", SEMI, 104, PAPER, -0.045)
+            tx.draw(d, L, b + 108, ".com/jam", SEMI, 104, self.accent, -0.045)
+            tx.draw(d, L, tx.base(1180, MED, 40), "Free · in your browser · link in bio", MED, 40, SOFT)
+            tx.draw(d, L, tx.base(1260, MONO, 26), sp.get("handle", "@chordsthatmove"), MONO, 26, PAPER)
+            return img
         b = tx.base(820, SEMI, 112, 0.95)
         tx.draw(d, L, b, "chords", SEMI, 112, PAPER, -0.045)
         x = tx.draw(d, L, b + 106, "that ", SEMI, 112, PAPER, -0.045)

@@ -108,6 +108,19 @@ When the queue runs out, the job fails and GitHub emails you.
 
 Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).
 
+## "Jam over this" reels
+A progression to play along with, no song. Write a short file in `songs/jams/` (title, key, scale,
+scale notes, bpm, hook, chords as `[name, roman, bars]`), then:
+
+```
+python3 songs/make_jam.py songs/jams/rainy-night.json 71
+```
+
+It writes `songs/sketches/ep71-jam-rainy-night.json` (the loop three times, the safe notes under each
+chord, a "your turn" line at the end); build the queue file as usual. The outro points to
+chordsthatmove.com/jam, and the caption carries a link that opens the tool with this exact
+progression, key and tempo.
+
 ## Timing (whole bars)
 Each chord in a sketch has `"bars"`: how long it lasts in the original song in 4/4 bars
 (1, 2, 0.5 = two beats, 0.25 = one beat). A final return-home chord gets `"ending": true`.

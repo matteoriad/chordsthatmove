@@ -1,0 +1,213 @@
+{
+ "title": "Rainy night",
+ "artist": "Jam over this",
+ "key": "A minor",
+ "bpm": 84,
+ "episode": 71,
+ "jam": true,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Jam over this: *a rainy night* in A minor",
+ "hook_focus": 1,
+ "cover_text": "Five notes. *No wrong ones.*",
+ "scale": "A minor pentatonic",
+ "scale_notes": [
+  "A",
+  "C",
+  "D",
+  "E",
+  "G"
+ ],
+ "loop": [
+  {
+   "name": "Am",
+   "bars": 1
+  },
+  {
+   "name": "F",
+   "bars": 1
+  },
+  {
+   "name": "C",
+   "bars": 1
+  },
+  {
+   "name": "G",
+   "bars": 1
+  }
+ ],
+ "question": "Post your jam and tag @chordsthatmove 🎹",
+ "hashtag": "jamtrack",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Scale: *A minor pentatonic*. Any of *A C D E G* works.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *F*, land on *F A C*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *C*, land on *C E G*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *G*, land on *G B D*.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Am*, land on *A C E*.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *F*, land on *F A C*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *C*, land on *C E G*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *G*, land on *G B D*.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Am*, land on *A C E*.",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *F*, land on *F A C*.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *C*, land on *C E G*.",
+   "notes": [
+    "C3",
+    "C4",
+    "E4",
+    "G4"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Your turn. *Build your own* jam → link in bio.",
+   "notes": [
+    "G2",
+    "B3",
+    "D4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "ending": true,
+   "text": "Back home. Again? *Hit replay.*",
+   "notes": [
+    "A2",
+    "C4",
+    "E4",
+    "A4"
+   ]
+  }
+ ]
+}

@@ -58,10 +58,27 @@ def queue():
 def plain(text): return text.replace("*", "")
 
 
+def jam_link(spec, loop):
+    """chordsthatmove.com/jam with this progression, key and tempo in the URL (the app's format)."""
+    from urllib.parse import urlencode
+    q = {"t": spec["title"], "k": spec["key"].replace(" ", "-"), "bpm": spec["bpm"],
+         "c": "_".join(f"{c['name']}:{c['bars']:g}" for c in loop)}
+    return "https://chordsthatmove.com/jam?" + urlencode(q, safe=":_")
+
+
 def caption(spec):
     chords = [c["name"] for c in spec["chords"]]
     romans = [c.get("roman", "") for c in spec["chords"]]
     tag = spec.get("hashtag") or re.sub(r"[^a-z0-9]", "", spec["title"].lower())
+    if spec.get("jam"):   # jam-along: the progression, the scale, and the tool with it loaded
+        loop = spec.get("loop") or [{"name": c["name"], "bars": c.get("bars", 1)} for c in spec["chords"]]
+        return (f"{plain(spec['hook'])} 🎹\n\n"
+                f"Chords: {' → '.join(c['name'] for c in loop)} · {spec['bpm']} bpm\n"
+                f"Scale: {spec.get('scale', spec['key'])} ({' '.join(spec.get('scale_notes', []))})\n\n"
+                f"Play it with drums and your own sound, free: {jam_link(spec, loop)}\n"
+                f"(link in bio → Jam)\n\n"
+                f"{plain(spec.get('question') or 'Post your jam and tag @chordsthatmove 🎹')}\n\n"
+                f"#jamtrack #backingtrack #improvisation #musictheory #chordprogression #synth #keys")
     if spec.get("guess"):   # guess mode: nothing in the first lines gives the song away
         return (f"{plain(spec['hook'])} Guess the song 🎶\n\n"
                 f"{plain(spec.get('question') or 'Did you get it before the reveal? Be honest 👇')}\n\n"
