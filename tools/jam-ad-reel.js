@@ -41,8 +41,8 @@ const R = {
   metro: () => B_().find(b => L_(b) === 'Metronome'),
   export: () => B_().find(b => L_(b).startsWith('Export reel')),
   record: () => B_().find(b => L_(b).startsWith('Record reel')),
-  cancel: () => B_().find(b => L_(b) === 'Cancel' && b.offsetParent !== null),
-  title: () => document.getElementById('jam-title'),   // the visible one in the export sheet
+  cancel: () => B_().find(b => L_(b) === 'Cancel' && b.offsetParent !== null),   // the visible one in the export sheet
+  title: () => document.getElementById('jam-title'),
   // selects are native <select> inside a <label>; the label text contains the hidden name, e.g. "Drum style"
   sel: name => [...document.querySelectorAll('select')].find(s => s.parentElement.textContent.includes(name)),
   label: name => () => R.sel(name).parentElement,
