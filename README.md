@@ -116,6 +116,11 @@ Each chord in a sketch has `"bars"`: how long it lasts in the original song in 4
 to read, and a whole-bar ending before the outro. Everything lands on whole bars and keeps
 the record's proportions (Clocks: E♭ 2, B♭m 4, Fm 2). Old episodes with `"beats"` still render as before.
 
+## Your own videos (schedule.json)
+When you post a video by hand, list its slot in `schedule.json` under `"own"`
+(`"2026-11-23 21:30"`, Berlin time, one of the two gate slots). The automated reel skips that
+slot, so the day still has two posts and the queue lasts longer.
+
 ## Pausing
 Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);
 delete it to resume.
