@@ -4,7 +4,7 @@
  "role": "pad",
  "attack": 0.02,
  "release": 0.9,
- "gain_db": 0,
+ "gain_db": -4,
  "loop": true,
  "notes": {
   "C2": "C2.wav",
