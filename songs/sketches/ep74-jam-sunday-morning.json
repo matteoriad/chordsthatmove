@@ -1,0 +1,74 @@
+{
+ "title": "Sunday morning",
+ "artist": "Jam over this",
+ "key": "D major",
+ "bpm": 80,
+ "episode": 74,
+ "jam": true,
+ "stretch": 1,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Jam over this: *a slow Sunday morning*",
+ "hook_focus": 1,
+ "cover_text": "Two chords. *All the time in the world.*",
+ "scale": "D major",
+ "scale_notes": [
+  "D",
+  "E",
+  "F#",
+  "G",
+  "A",
+  "B",
+  "C#"
+ ],
+ "loop": [
+  {
+   "name": "Dmaj7",
+   "bars": 2
+  },
+  {
+   "name": "Gmaj7",
+   "bars": 2
+  }
+ ],
+ "question": "Post your jam and tag @chordsthatmove 🎹",
+ "hashtag": "jamtrack",
+ "chords": [
+  {
+   "name": "Dmaj7",
+   "roman": "Imaj7",
+   "tag": "jam",
+   "bars": 2,
+   "text": "Scale: *D major*. Any of *D E F♯ G A B C♯* works."
+  },
+  {
+   "name": "Gmaj7",
+   "roman": "IVmaj7",
+   "tag": "jam",
+   "bars": 2,
+   "text": "Over *Gmaj7*, land on *G B D F♯*."
+  },
+  {
+   "name": "Dmaj7",
+   "roman": "Imaj7",
+   "tag": "jam",
+   "bars": 2,
+   "text": "Over *Dmaj7*, land on *D F♯ A C♯*."
+  },
+  {
+   "name": "Gmaj7",
+   "roman": "IVmaj7",
+   "tag": "jam",
+   "bars": 2,
+   "text": "Your turn. *Build your own* jam → link in bio."
+  },
+  {
+   "name": "Dmaj7",
+   "roman": "Imaj7",
+   "tag": "home",
+   "bars": 1,
+   "ending": true,
+   "text": "Back home. Again? *Hit replay.*"
+  }
+ ]
+}

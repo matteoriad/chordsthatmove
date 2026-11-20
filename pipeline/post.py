@@ -158,6 +158,29 @@ def refresh_token(token):
         log("stored refreshed token in repo secret")
 
 
+LOW_QUEUE = 20   # about two weeks at two automated posts a day minus your own video slots
+
+
+def warn_if_low(left):
+    """Open one GitHub issue (GitHub emails it) when the queue covers less than two weeks.
+    Never fails the run: the post already went out."""
+    if left >= LOW_QUEUE or not os.environ.get("GH_TOKEN") or not os.environ.get("GITHUB_REPOSITORY"):
+        return
+    repo, title = os.environ["GITHUB_REPOSITORY"], "Queue is running low"
+    try:
+        found = subprocess.run(["gh", "issue", "list", "-R", repo, "--state", "open", "--search", f"in:title {title}",
+                                "--json", "number", "-q", "length"], capture_output=True, text=True, check=True).stdout.strip()
+        if found and found != "0":
+            log("low-queue issue already open"); return
+        body = (f"Only **{left} episodes** are left in `songs/queue/`, less than two weeks of posts.\n\n"
+                "Add song sketches or jams (see README: Adding songs, \"Jam over this\" reels) and build their queue "
+                "files. Close this issue once the queue is topped up.")
+        subprocess.run(["gh", "issue", "create", "-R", repo, "--title", title, "--body", body], check=True)
+        log(f"opened a '{title}' issue ({left} left)")
+    except Exception as e:
+        log("could not open the low-queue issue:", e)
+
+
 def main():
     state = load_state()
     done = {s["episode"] for s in state}
@@ -208,6 +231,7 @@ def main():
         commit_push("posted.json", f"cross-posted episode {ep}: {spec['title']}")
     left = len([x for x in q if x[0] not in done and x[0] != ep])
     log(f"{left} episodes left in the queue")
+    warn_if_low(left)
     if LOGIN == "instagram": refresh_token(token)   # Facebook-login Page tokens don't expire
 
 

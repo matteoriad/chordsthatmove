@@ -1,0 +1,39 @@
+{
+ "title": "Late night",
+ "key": "C major",
+ "scale": "C major",
+ "scale_notes": [
+  "C",
+  "D",
+  "E",
+  "F",
+  "G",
+  "A",
+  "B"
+ ],
+ "bpm": 72,
+ "hook": "Jam over this: *a late-night lo-fi loop*",
+ "cover_text": "Everything *slides down*.",
+ "chords": [
+  [
+   "Fmaj7",
+   "IVmaj7",
+   1
+  ],
+  [
+   "Em7",
+   "iii7",
+   1
+  ],
+  [
+   "Dm7",
+   "ii7",
+   1
+  ],
+  [
+   "Cmaj7",
+   "Imaj7",
+   1
+  ]
+ ]
+}

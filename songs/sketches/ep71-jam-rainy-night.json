@@ -5,6 +5,7 @@
  "bpm": 84,
  "episode": 71,
  "jam": true,
+ "stretch": 1,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Jam over this: *a rainy night* in A minor",
@@ -45,34 +46,6 @@
    "tag": "jam",
    "bars": 1,
    "text": "Scale: *A minor pentatonic*. Any of *A C D E G* works."
-  },
-  {
-   "name": "F",
-   "roman": "VI",
-   "tag": "jam",
-   "bars": 1,
-   "text": "Over *F*, land on *F A C*."
-  },
-  {
-   "name": "C",
-   "roman": "III",
-   "tag": "jam",
-   "bars": 1,
-   "text": "Over *C*, land on *C E G*."
-  },
-  {
-   "name": "G",
-   "roman": "VII",
-   "tag": "jam",
-   "bars": 1,
-   "text": "Over *G*, land on *G B D*."
-  },
-  {
-   "name": "Am",
-   "roman": "i",
-   "tag": "jam",
-   "bars": 1,
-   "text": "Over *Am*, land on *A C E*."
   },
   {
    "name": "F",

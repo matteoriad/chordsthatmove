@@ -1,0 +1,37 @@
+{
+ "title": "Night drive",
+ "key": "C minor",
+ "scale": "C minor pentatonic",
+ "scale_notes": [
+  "C",
+  "Eb",
+  "F",
+  "G",
+  "Bb"
+ ],
+ "bpm": 110,
+ "hook": "Jam over this: *a synthwave night drive*",
+ "cover_text": "Neon, *in C minor*.",
+ "chords": [
+  [
+   "Cm",
+   "i",
+   1
+  ],
+  [
+   "Ab",
+   "VI",
+   1
+  ],
+  [
+   "Eb",
+   "III",
+   1
+  ],
+  [
+   "Bb",
+   "VII",
+   1
+  ]
+ ]
+}

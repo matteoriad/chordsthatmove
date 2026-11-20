@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Write a "Jam over this" sketch: a progression to play along with, no song.
 
-The reel loops the progression three times, the caption under each chord names the notes that
+The reel loops the progression for about 25–35 s (2–4 times), the caption under each chord names the notes that
 land safely on it, and the outro and Instagram caption send people to the jam tool with this
 exact progression loaded.
 
@@ -15,7 +15,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, os.path.dirname(HERE))
 import voicing  # noqa: E402
 
-LOOPS = 3
+TARGET = 26   # seconds of loop; the reel adds the intro bar(s), the ending and the outro
 
 
 def pretty(n): return n.replace("#", "♯").replace("b", "♭") if len(n) > 1 else n
@@ -31,7 +31,13 @@ def tones(name):
     return names
 
 
+def loops_for(jam):
+    sec = sum(b for _, _, b in jam["chords"]) * 4 * 60 / jam["bpm"]
+    return max(2, min(4, round(TARGET / sec)))
+
+
 def sketch(jam, episode):
+    LOOPS = loops_for(jam)
     chords = []
     for loop in range(LOOPS):
         for i, (name, roman, bars) in enumerate(jam["chords"]):
@@ -49,7 +55,7 @@ def sketch(jam, episode):
                    "text": "Back home. Again? *Hit replay.*"})
     return {
         "title": jam["title"], "artist": "Jam over this", "key": jam["key"], "bpm": jam["bpm"],
-        "episode": episode, "jam": True, "accent": jam.get("accent", "#FF7AA8"), "handle": "@chordsthatmove",
+        "episode": episode, "jam": True, "stretch": 1, "accent": jam.get("accent", "#FF7AA8"), "handle": "@chordsthatmove",
         "hook": jam["hook"], "hook_focus": jam.get("hook_focus", 1), "cover_text": jam.get("cover_text", jam["hook"]),
         "scale": jam["scale"], "scale_notes": jam["scale_notes"],
         "loop": [{"name": n, "bars": b} for n, _, b in jam["chords"]],

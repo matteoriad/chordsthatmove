@@ -1,0 +1,70 @@
+{
+ "title": "Perfect",
+ "artist": "Ed Sheeran",
+ "key": "Ab major",
+ "bpm": 63,
+ "episode": 87,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Perfect feels like *a slow dance*",
+ "hook_focus": 1,
+ "cover_text": "Four chords *in three*",
+ "question": "Wedding song or overplayed? Be honest 👇",
+ "chords": [
+  {
+   "name": "Ab",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A♭ major*: barefoot on the grass.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Fm",
+   "roman": "vi",
+   "tag": "close",
+   "bars": 1,
+   "text": "*F minor*: closer now.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "Ab4"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "sway",
+   "bars": 1,
+   "text": "*D♭*: swaying.",
+   "notes": [
+    "Db3",
+    "Db4",
+    "F4",
+    "Ab4"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Eb",
+   "roman": "V",
+   "tag": "turn",
+   "bars": 1,
+   "text": "*E♭*: and turn.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ],
+   "focus": 3
+  }
+ ]
+}

@@ -1,0 +1,102 @@
+{
+ "title": "Funky drive",
+ "artist": "Jam over this",
+ "key": "D minor",
+ "bpm": 96,
+ "episode": 77,
+ "jam": true,
+ "stretch": 1,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Jam over this: *a funky drive* in D Dorian",
+ "hook_focus": 1,
+ "cover_text": "Lean on *the B*.",
+ "scale": "D Dorian",
+ "scale_notes": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "A",
+  "B",
+  "C"
+ ],
+ "loop": [
+  {
+   "name": "Dm7",
+   "bars": 1
+  },
+  {
+   "name": "G7",
+   "bars": 1
+  }
+ ],
+ "question": "Post your jam and tag @chordsthatmove 🎹",
+ "hashtag": "jamtrack",
+ "chords": [
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Scale: *D Dorian*. Any of *D E F G A B C* works."
+  },
+  {
+   "name": "G7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *G7*, land on *G B D F*."
+  },
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Dm7*, land on *D F A C*."
+  },
+  {
+   "name": "G7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *G7*, land on *G B D F*."
+  },
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Dm7*, land on *D F A C*."
+  },
+  {
+   "name": "G7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *G7*, land on *G B D F*."
+  },
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Dm7*, land on *D F A C*."
+  },
+  {
+   "name": "G7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Your turn. *Build your own* jam → link in bio."
+  },
+  {
+   "name": "Dm7",
+   "roman": "i7",
+   "tag": "home",
+   "bars": 1,
+   "ending": true,
+   "text": "Back home. Again? *Hit replay.*"
+  }
+ ]
+}

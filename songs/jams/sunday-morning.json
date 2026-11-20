@@ -1,0 +1,29 @@
+{
+ "title": "Sunday morning",
+ "key": "D major",
+ "scale": "D major",
+ "scale_notes": [
+  "D",
+  "E",
+  "F#",
+  "G",
+  "A",
+  "B",
+  "C#"
+ ],
+ "bpm": 80,
+ "hook": "Jam over this: *a slow Sunday morning*",
+ "cover_text": "Two chords. *All the time in the world.*",
+ "chords": [
+  [
+   "Dmaj7",
+   "Imaj7",
+   2
+  ],
+  [
+   "Gmaj7",
+   "IVmaj7",
+   2
+  ]
+ ]
+}

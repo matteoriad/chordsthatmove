@@ -104,7 +104,7 @@ python3 -c "import json,voicing,sys; p=sys.argv[1]; json.dump(voicing.build(json
 
 Preview without posting: `python3 brandreel.py render songs/queue/ep15-your-song.json test.mp4`
 and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
-When the queue runs out, the job fails and GitHub emails you.
+When fewer than 20 episodes are left (about two weeks), the run opens a "Queue is running low" issue, which GitHub emails you. When the queue runs out, the job fails and GitHub emails you.
 
 Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).
 
@@ -116,7 +116,7 @@ scale notes, bpm, hook, chords as `[name, roman, bars]`), then:
 python3 songs/make_jam.py songs/jams/rainy-night.json 71
 ```
 
-It writes `songs/sketches/ep71-jam-rainy-night.json` (the loop three times, the safe notes under each
+It writes `songs/sketches/ep71-jam-rainy-night.json` (the loop for about 25–35 s, the safe notes under each
 chord, a "your turn" line at the end); build the queue file as usual. The outro points to
 chordsthatmove.com/jam, and the caption carries a link that opens the tool with this exact
 progression, key and tempo.

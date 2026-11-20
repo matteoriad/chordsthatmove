@@ -1,0 +1,214 @@
+{
+ "title": "Night drive",
+ "artist": "Jam over this",
+ "key": "C minor",
+ "bpm": 110,
+ "episode": 86,
+ "jam": true,
+ "stretch": 1,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Jam over this: *a synthwave night drive*",
+ "hook_focus": 1,
+ "cover_text": "Neon, *in C minor*.",
+ "scale": "C minor pentatonic",
+ "scale_notes": [
+  "C",
+  "Eb",
+  "F",
+  "G",
+  "Bb"
+ ],
+ "loop": [
+  {
+   "name": "Cm",
+   "bars": 1
+  },
+  {
+   "name": "Ab",
+   "bars": 1
+  },
+  {
+   "name": "Eb",
+   "bars": 1
+  },
+  {
+   "name": "Bb",
+   "bars": 1
+  }
+ ],
+ "question": "Post your jam and tag @chordsthatmove 🎹",
+ "hashtag": "jamtrack",
+ "chords": [
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Scale: *C minor pentatonic*. Any of *C E♭ F G B♭* works.",
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A♭*, land on *A♭ C E♭*.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *E♭*, land on *E♭ G B♭*.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bb",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *B♭*, land on *B♭ D F*.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ]
+  },
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Cm*, land on *C E♭ G*.",
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A♭*, land on *A♭ C E♭*.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *E♭*, land on *E♭ G B♭*.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bb",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *B♭*, land on *B♭ D F*.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ]
+  },
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *Cm*, land on *C E♭ G*.",
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "VI",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A♭*, land on *A♭ C E♭*.",
+   "notes": [
+    "Ab2",
+    "C4",
+    "Eb4",
+    "Ab4"
+   ]
+  },
+  {
+   "name": "Eb",
+   "roman": "III",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *E♭*, land on *E♭ G B♭*.",
+   "notes": [
+    "Eb3",
+    "Bb3",
+    "Eb4",
+    "G4"
+   ]
+  },
+  {
+   "name": "Bb",
+   "roman": "VII",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Your turn. *Build your own* jam → link in bio.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4"
+   ]
+  },
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "ending": true,
+   "text": "Back home. Again? *Hit replay.*",
+   "notes": [
+    "C3",
+    "C4",
+    "Eb4",
+    "G4"
+   ]
+  }
+ ]
+}

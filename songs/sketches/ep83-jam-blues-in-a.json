@@ -1,0 +1,137 @@
+{
+ "title": "Blues in A",
+ "artist": "Jam over this",
+ "key": "A major",
+ "bpm": 100,
+ "episode": 83,
+ "jam": true,
+ "stretch": 1,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Jam over this: *a blues in A*",
+ "hook_focus": 1,
+ "cover_text": "Six notes. *Bend them.*",
+ "scale": "A blues",
+ "scale_notes": [
+  "A",
+  "C",
+  "D",
+  "Eb",
+  "E",
+  "G"
+ ],
+ "loop": [
+  {
+   "name": "A7",
+   "bars": 1
+  },
+  {
+   "name": "D7",
+   "bars": 1
+  },
+  {
+   "name": "A7",
+   "bars": 1
+  },
+  {
+   "name": "E7",
+   "bars": 1
+  }
+ ],
+ "question": "Post your jam and tag @chordsthatmove 🎹",
+ "hashtag": "jamtrack",
+ "chords": [
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Scale: *A blues*. Any of *A C D E♭ E G* works."
+  },
+  {
+   "name": "D7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *D7*, land on *D F♯ A C*."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A7*, land on *A C♯ E G*."
+  },
+  {
+   "name": "E7",
+   "roman": "V7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *E7*, land on *E G♯ B D*."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A7*, land on *A C♯ E G*."
+  },
+  {
+   "name": "D7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *D7*, land on *D F♯ A C*."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A7*, land on *A C♯ E G*."
+  },
+  {
+   "name": "E7",
+   "roman": "V7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *E7*, land on *E G♯ B D*."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A7*, land on *A C♯ E G*."
+  },
+  {
+   "name": "D7",
+   "roman": "IV7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *D7*, land on *D F♯ A C*."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Over *A7*, land on *A C♯ E G*."
+  },
+  {
+   "name": "E7",
+   "roman": "V7",
+   "tag": "jam",
+   "bars": 1,
+   "text": "Your turn. *Build your own* jam → link in bio."
+  },
+  {
+   "name": "A7",
+   "roman": "I7",
+   "tag": "home",
+   "bars": 1,
+   "ending": true,
+   "text": "Back home. Again? *Hit replay.*"
+  }
+ ]
+}

@@ -1,0 +1,38 @@
+{
+ "title": "Blues in A",
+ "key": "A major",
+ "scale": "A blues",
+ "scale_notes": [
+  "A",
+  "C",
+  "D",
+  "Eb",
+  "E",
+  "G"
+ ],
+ "bpm": 100,
+ "hook": "Jam over this: *a blues in A*",
+ "cover_text": "Six notes. *Bend them.*",
+ "chords": [
+  [
+   "A7",
+   "I7",
+   1
+  ],
+  [
+   "D7",
+   "IV7",
+   1
+  ],
+  [
+   "A7",
+   "I7",
+   1
+  ],
+  [
+   "E7",
+   "V7",
+   1
+  ]
+ ]
+}

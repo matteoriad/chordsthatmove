@@ -1,0 +1,29 @@
+{
+ "title": "Funky drive",
+ "key": "D minor",
+ "scale": "D Dorian",
+ "scale_notes": [
+  "D",
+  "E",
+  "F",
+  "G",
+  "A",
+  "B",
+  "C"
+ ],
+ "bpm": 96,
+ "hook": "Jam over this: *a funky drive* in D Dorian",
+ "cover_text": "Lean on *the B*.",
+ "chords": [
+  [
+   "Dm7",
+   "i7",
+   1
+  ],
+  [
+   "G7",
+   "IV7",
+   1
+  ]
+ ]
+}

@@ -1,0 +1,69 @@
+{
+ "title": "Someone Like You",
+ "artist": "Adele",
+ "key": "A major",
+ "bpm": 67,
+ "episode": 72,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Why Someone Like You feels like *letting go for good*",
+ "hook_focus": 1,
+ "cover_text": "The bass that *won't let go*",
+ "question": "Who else can't get through this one? 👇",
+ "chords": [
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home: *A major*. Warm, but fragile.",
+   "notes": [
+    "A2",
+    "C#4",
+    "E4",
+    "A4"
+   ]
+  },
+  {
+   "name": "E/G#",
+   "roman": "V/3",
+   "tag": "sinking",
+   "bars": 1,
+   "text": "The bass slips *down* to G♯. Sinking.",
+   "notes": [
+    "G#2",
+    "B3",
+    "E4",
+    "G#4"
+   ]
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "memory",
+   "bars": 1,
+   "text": "*F♯ minor*: the memory still hurts.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "hope",
+   "bars": 1,
+   "text": "*D major*: still hoping, just a little.",
+   "notes": [
+    "D3",
+    "D4",
+    "F#4",
+    "A4"
+   ],
+   "focus": 2
+  }
+ ]
+}
