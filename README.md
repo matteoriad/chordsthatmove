@@ -139,6 +139,14 @@ Reels use the "lush" pad (five detuned saws per voice, a filter that swells open
 longer reverb, a rounder arpeggio). Set the repo variable / env `REEL_SOUND=classic` to go back to
 the original sound. A sample pack (`"sound"`) replaces the pad either way.
 
+## Reel format (loopable, lines first)
+Since 20 Nov 2026 the voice lines take the middle of the frame (about 1.7× taller, thicker lines,
+bigger dots), with a smaller chord name and captions above. Reels **loop**: no end card, the last
+chord leads straight back to the first, the last 0.35 s blends into the opening frame, and the
+reverb tail is wrapped onto the start, so Instagram's replay continues without a cut. Guess the
+song reveals the answer in the last chord's caption. `REEL_LOOP=0` (or `"loop": false` in a sketch)
+brings back the end card. Layout numbers are the constants at the top of `brandreel.py`.
+
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
 odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set

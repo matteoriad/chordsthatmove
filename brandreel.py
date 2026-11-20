@@ -18,7 +18,17 @@ import songreel as sr
 
 sr.LEAD_IN = 0.0       # the song plays from the very first frame
 sr.GLIDE = 0.18          # brand rule: soft S-curve over ~180 ms
-sr.TAIL = 4.0            # room for the outro
+sr.TAIL = 4.0            # room for the outro (loop mode: the reverb tail, wrapped to the start)
+LOOP = (os.environ.get("REEL_LOOP") or "1") != "0"   # loopable reels without the end card (2026-11-20)
+# layout (2026-11-20: the voice lines are the focus; text is smaller)
+Y_CHORD = 600            # big chord baseline
+CHORD_MAX, CHORD_MIN = 150, 110
+CAP_Y, CAP_SIZE, CAP_LH = 672, 38, 47
+LAB_Y = 806              # chord labels above the lines
+UT, UB, BT, BB = 850, 1380, 1425, 1530   # upper-voice lane, bass lane
+PH_TOP, PH_BOT = 820, 1560
+CHIP_Y = 1600
+HOOK_SIZE, HOOK_Y = 84, 500
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -246,6 +256,10 @@ INTERVALS = {1: "half step", 2: "whole step", 3: "minor 3rd", 4: "major 3rd", 5:
              6: "tritone", 7: "perfect 5th", 12: "octave"}
 
 
+def loops(spec):
+    return LOOP and spec.get("loop", True)
+
+
 def expand(spec):
     """Musical timing. Chords given in real bars ("bars", may be 0.5 / 0.25) become:
     a whole-bar intro on the first chord (the hook plays over it), the loop with every
@@ -259,6 +273,7 @@ def expand(spec):
     MIN = spec.get("min_chord_seconds", 2.4)
     chords = [dict(c) for c in spec["chords"]]
     ending = chords.pop() if chords[-1].get("ending") else None
+    if loops(spec): ending = None   # the loop goes straight back to the first chord
     k = spec.get("stretch") or 1
     while not spec.get("stretch") and k < 8 and (
             min(c["bars"] for c in chords) * k * bar < MIN
@@ -279,7 +294,7 @@ def expand(spec):
     if ending is not None:
         nb = max(pow2_bars(2.0), int(round(ending.get("bars", 1))))
         out.append({**ending, "beats": nb * bpb})
-    elif chords[-1]["name"] != first["name"]:
+    elif chords[-1]["name"] != first["name"] and not loops(spec):
         out.append({"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
                     "notes": first["notes"], "beats": pow2_bars(2.0) * bpb, "ending": True})
     return {**spec, "chords": out, "hook_beats": intro_bars * bpb, "_intro": 1, "_stretch": k}
@@ -352,7 +367,6 @@ class Reel:
             cr.set_source_rgb(*rgb1(PAPER)); rrect(cr, L, y_bar, max(4, (R - L) * frac), 4, 2); cr.fill()
         # ---- voice lines ----
         PX, PH = 110, 640
-        UT, UB, BT, BB = 1160, 1390, 1430, 1500
         t_left, t_right = now - PH / PX, now + (W - PH) / PX
         ts = np.linspace(max(t_left, 0), min(t_right, s.end), 360)
         xs = PH + (ts - now) * PX
@@ -368,7 +382,7 @@ class Reel:
                 if len(idx) < 2: continue
                 if not fut and idx[-1] + 1 < len(ts): idx = np.append(idx, idx[-1] + 1)
                 e = emph[v]
-                a, lw = (0.22, 4) if fut else (0.75 + 0.25 * e, 4 + 2 * e)
+                a, lw = (0.22, 5) if fut else (0.75 + 0.25 * e, 6 + 3 * e)
                 if fut and THEME != "night": a = 0.35   # textured and light backgrounds need more ink
                 cr.set_source_rgba(*col, a); cr.set_line_width(lw)
                 cr.set_dash({"dashed": [14, 10], "dotted": [0.1, 12]}.get(FUTURE, []) if fut else [])
@@ -379,16 +393,19 @@ class Reel:
                 hy = float(self.ymap(v, s.voice_curve(v, np.array([now]))[0], UT, UB, BT, BB))
                 heads.append((v, hy))
         cr.set_source_rgba(*rgb1(PAPER), 0.35); cr.set_line_width(2)
-        cr.move_to(PH, 1136); cr.line_to(PH, 1540); cr.stroke()
+        cr.move_to(PH, PH_TOP); cr.line_to(PH, PH_BOT); cr.stroke()
         for v, hy in heads:
             e, fl = emph[v], self.flash(v, now)
-            glow(cr, PH, hy, (34 + 14 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
-            cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(PH, hy, 6 + 3 * e, 0, 6.2832); cr.fill()
+            glow(cr, PH, hy, (44 + 18 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
+            cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(PH, hy, 8 + 4 * e, 0, 6.2832); cr.fill()
         # chip (moving note)
         fv = self.focus[ci]
         chip = None
-        cap_toks = tokens(ch.get("text", ""), PAPER, self.voice_cols[fv] if fv is not None else self.accent)
-        cap_lines = wrap(cap_toks, MED, 46, -0.02, R - L)
+        text = ch.get("text", "")
+        if sp.get("guess") and loops(sp) and ci == len(sp["chords"]) - 1:   # the reveal (no end card in loop mode)
+            text = f"It's *{sp['title']}* — {sp['artist']}"
+        cap_toks = tokens(text, PAPER, self.voice_cols[fv] if fv is not None else self.accent)
+        cap_lines = wrap(cap_toks, MED, CAP_SIZE, -0.02, R - L)[:2]
         if fv is not None and ci > 0 and not hook and s.pitch[ci, fv] != s.pitch[ci - 1, fv]:
             a_ = sp["chords"][ci - 1]["notes"][fv]; b_ = ch["notes"][fv]
             semis = int(s.pitch[ci, fv] - s.pitch[ci - 1, fv])
@@ -396,7 +413,7 @@ class Reel:
             t2 = f"{'↑' if semis > 0 else '↓'} {INTERVALS.get(abs(semis), f'{abs(semis)} semitones')}"
             w1, w2 = tx.width(t1, MONO, 24), tx.width(t2, MONO, 22)
             cw_ = 22 + 12 + 14 + w1 + 14 + w2 + 22
-            cy = max(1010, 830 + len(cap_lines) * 57.5 + 30)
+            cy = CHIP_Y
             ca = ease((since - 0.35) / 0.3)
             if ca > 0:
                 cr.set_source_rgb(*rgb1(mixc(SURFACE, ca))); rrect(cr, L, cy, cw_, 56, 28); cr.fill_preserve()
@@ -412,11 +429,11 @@ class Reel:
         if hook:
             label = "GUESS THE SONG" if sp.get("guess") else f"{sp['artist'].upper()} — {sp['title'].upper()}"
             pw = tx.width(label, MONO, 22, 0.12) + 44
-            d.rounded_rectangle([L, 420, L + pw, 470], radius=25, outline=BORDER, width=2)
-            tx.draw(d, L + 22, tx.base(420, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
-            for li, line in enumerate(wrap(tokens(sp["hook"], PAPER, self.accent), SEMI, 104, -0.045, R - L)):
-                b = tx.base(510 + li * 104, SEMI, 104, 1.0)
-                for w, c, x in line: tx.draw(d, L + x, b, w, SEMI, 104, c, -0.045)
+            d.rounded_rectangle([L, 400, L + pw, 450], radius=25, outline=BORDER, width=2)
+            tx.draw(d, L + 22, tx.base(400, MONO, 22, 50 / 22), label, MONO, 22, SOFT, 0.12)
+            for li, line in enumerate(wrap(tokens(sp["hook"], PAPER, self.accent), SEMI, HOOK_SIZE, -0.045, R - L)[:3]):
+                b = tx.base(HOOK_Y + li * HOOK_SIZE * 1.02, SEMI, HOOK_SIZE, 1.0)
+                for w, c, x in line: tx.draw(d, L + x, b, w, SEMI, HOOK_SIZE, c, -0.045)
             cap_lines = []
         # stepper
         n = len(self.names) if not hook else 0
@@ -431,16 +448,16 @@ class Reel:
         a = k; dy = 12 * (1 - k)
         name = pretty_chord(ch["name"])
         pill_w = (tx.width(ch.get("roman", ""), MONO_M, 24) + 36 + 28) if ch.get("roman") else 0
-        csz = 280
-        while csz > 150 and tx.width(name, SEMI, csz, -0.06) + max(pill_w, 150 if ch.get("tag") else 0) > R - L:
+        csz = CHORD_MAX
+        while csz > CHORD_MIN and tx.width(name, SEMI, csz, -0.06) + max(pill_w, 150 if ch.get("tag") else 0) > R - L:
             csz -= 10
-        cb = 540 + 205 + dy
+        cb = Y_CHORD + dy
         wname = tx.width(name, SEMI, csz, -0.06)
         if not hook: tx.draw(d, L, cb, name, SEMI, csz, mixc(PAPER, a), -0.06)
         if ch.get("roman") and not hook:
             px = L + wname + 28
             pw = tx.width(ch["roman"], MONO_M, 24) + 36
-            ptop = 540 + 238 - 14 - (45 + 10 + 24) + dy
+            ptop = cb - 82
             d.rounded_rectangle([px, ptop, px + pw, ptop + 45], radius=22, fill=mixc(self.accent, a))
             tx.draw(d, px + 18, tx.base(ptop, MONO_M, 24, 45 / 24), ch["roman"], MONO_M, 24, INK)
             if ch.get("tag"):
@@ -448,10 +465,10 @@ class Reel:
         # caption, word by word
         k_word = 0
         for li, line in enumerate(cap_lines):
-            b = tx.base(830 + li * 57.5, MED, 46, 1.25)
+            b = tx.base(CAP_Y + li * CAP_LH, MED, CAP_SIZE, 1.25)
             for w, c, x in line:
                 wa = ease((since - 0.15 - k_word * 0.04) / 0.22); k_word += 1
-                if wa > 0: tx.draw(d, L + x, b, w, MED, 46, mixc(c, wa), -0.02)
+                if wa > 0: tx.draw(d, L + x, b, w, MED, CAP_SIZE, mixc(c, wa), -0.02)
         if chip:
             cy, ca, t1, t2, w1 = chip
             b = tx.base(cy, MONO, 24, 56 / 24)
@@ -471,13 +488,13 @@ class Reel:
             if lx > R + 40: continue
             fade = np.clip((lx - (L - 30)) / 30, 0, 1)
             col = PAPER if i <= ci <= i_end else (DIM if i_end < ci else FAINT)
-            if fade > 0: tx.draw(d, lx, 1126, nm, MONO, 22, mixc(col, fade))
+            if fade > 0: tx.draw(d, lx, LAB_Y, nm, MONO, 24, mixc(col, fade))
         for v, hy in heads:
             note = sr.pretty(ch["notes"][v])
             if emph[v] > 0.5:
-                tx.draw(d, PH + 24, hy - 14, note, MONO_M, 34, self.voice_cols[v])
+                tx.draw(d, PH + 28, hy - 16, note, MONO_M, 36, self.voice_cols[v])
             else:
-                tx.draw(d, PH + 20, hy - 10, note, MONO, 24, self.voice_cols[v])
+                tx.draw(d, PH + 24, hy - 12, note, MONO, 26, self.voice_cols[v])
         return img
 
     def outro(self, now):
@@ -597,6 +614,10 @@ class Reel:
             return self.hook(now)
         if now < self.hook_end + X / 2:
             return Image.blend(self.hook(now), self.chord(now), ease((now - self.hook_end + X / 2) / X))
+        if loops(self.spec):   # last 0.35 s blend into the first frame, so the replay starts seamlessly
+            end = self.song.end
+            if now < end - X: return self.chord(now)
+            return Image.blend(self.chord(min(now, end - 1e-3)), self.hook(0.0), ease((now - (end - X)) / X))
         if now < self.outro_start:
             return self.chord(now)
         if now < self.outro_start + 0.45:
@@ -613,15 +634,32 @@ def stills(spec, outdir, times):
         p = os.path.join(outdir, f"frame_{t:05.2f}.jpg"); r.frame(t).save(p, quality=90); print(p)
 
 
+def wrap_audio(path, seconds):
+    """Cut the audio to the loop length and add what rings on after it (reverb, echoes, the pad's
+    release) back onto the start, so the replay continues without a cut."""
+    from scipy.io import wavfile
+    rate, x = wavfile.read(path)
+    x = x.astype(np.float64)
+    n = int(round(seconds * rate))
+    head, tail = x[:n].copy(), x[n:n * 2]
+    head[:len(tail)] += tail
+    head *= min(1.0, 0.89 * 32767 / max(1.0, np.max(np.abs(head))))
+    wavfile.write(path, rate, head.astype(np.int16))
+
+
 def render(spec, out):
     r = Reel(spec); s = r.song
     base = os.path.splitext(out)[0]
     wav, silent, tmp = base + ".wav", base + ".video.tmp.mp4", base + ".tmp.mp4"
     sr.synth(s, wav)
+    n_frames = int(s.total * FPS)
+    if loops(r.spec):
+        n_frames = int(round(s.end * FPS))
+        wrap_audio(wav, n_frames / FPS)
     ff = subprocess.Popen(["ffmpeg", "-y", "-loglevel", "error", "-f", "rawvideo", "-pix_fmt", "rgb24",
                            "-s", f"{W}x{H}", "-r", str(FPS), "-i", "-", "-c:v", "libx264", "-preset", "veryfast",
                            "-crf", "19", "-pix_fmt", "yuv420p", silent], stdin=subprocess.PIPE)
-    for i in range(int(s.total * FPS)):
+    for i in range(n_frames):
         ff.stdin.write(r.frame(i / FPS).tobytes())
     ff.stdin.close()
     if ff.wait() != 0: sys.exit("video encode failed")

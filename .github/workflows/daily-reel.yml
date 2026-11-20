@@ -86,6 +86,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           IG_LOGIN: ${{ vars.IG_LOGIN }}
           REEL_SOUND: ${{ vars.REEL_SOUND }}
+          REEL_LOOP: ${{ vars.REEL_LOOP }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           EPISODE: ${{ inputs.episode }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
