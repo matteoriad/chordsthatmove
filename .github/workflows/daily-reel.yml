@@ -85,6 +85,7 @@ jobs:
           GH_ADMIN_TOKEN: ${{ secrets.GH_ADMIN_TOKEN }}
           GH_TOKEN: ${{ github.token }}
           IG_LOGIN: ${{ vars.IG_LOGIN }}
+          REEL_SOUND: ${{ vars.REEL_SOUND }}
           DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run || false }}
           EPISODE: ${{ inputs.episode }}
           YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}

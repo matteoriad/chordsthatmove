@@ -144,7 +144,7 @@ def rms(x): return np.sqrt(np.mean(x ** 2)) + 1e-9
 def log_sound(role, pack): print(f"{role} sound: {pack['meta'].get('label', pack['meta']['id'])}", flush=True)
 
 
-STYLE = os.environ.get("REEL_SOUND", "lush")   # "lush" (2026-11-20) or "classic" (the original pad)
+STYLE = os.environ.get("REEL_SOUND") or "lush"   # "lush" (2026-11-20) or "classic" (the original pad)
 
 
 def lush_pad(song, tt, env):
