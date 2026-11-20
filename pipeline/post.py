@@ -58,12 +58,32 @@ def queue():
 def plain(text): return text.replace("*", "")
 
 
-def jam_link(spec, loop):
-    """chordsthatmove.com/jam with this progression, key and tempo in the URL (the app's format)."""
+def loop_of(spec):
+    """The progression as the jam tool loops it: every chord except a closing "ending" one, in bars."""
+    if spec.get("loop") and isinstance(spec["loop"], list): return spec["loop"]
+    return [{"name": c["name"], "bars": c["bars"] if "bars" in c else c.get("beats", 4) / 4}
+            for c in spec["chords"] if not c.get("ending")]
+
+
+def jam_link(spec, loop=None, source=None):
+    """chordsthatmove.com/jam with this progression, key and tempo in the URL (the app's format).
+    `source` adds utm tags so the app can tell where visitors came from."""
     from urllib.parse import urlencode
-    q = {"t": spec["title"], "k": spec["key"].replace(" ", "-"), "bpm": spec["bpm"],
+    loop = loop or loop_of(spec)
+    title = "Guess the song" if spec.get("guess") else spec["title"]   # never spoil the answer
+    q = {"t": title, "k": spec["key"].replace(" ", "-"), "bpm": spec["bpm"],
          "c": "_".join(f"{c['name']}:{c['bars']:g}" for c in loop)}
+    if source: q.update(utm_source=source, utm_medium="description", utm_campaign=f"ep{int(spec.get('episode') or 0):02d}")
     return "https://chordsthatmove.com/jam?" + urlencode(q, safe=":_")
+
+
+def with_tool_link(text, spec, source):
+    """YouTube/TikTok: a line under the first paragraph that opens this progression in the jam tool
+    (clickable on YouTube). Jam reels already carry their link."""
+    if spec.get("jam"): return text.replace(jam_link(spec), jam_link(spec, source=source))
+    first, _, rest = text.partition("\n\n")
+    line = f"▶ Play this progression with drums and your own sound, free: {jam_link(spec, source=source)}"
+    return f"{first}\n{line}\n\n{rest}" if rest else f"{first}\n{line}"
 
 
 def caption(spec):
