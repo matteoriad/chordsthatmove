@@ -192,6 +192,11 @@ ticked as well, extend it, read the Page token again with `me/accounts`, and rep
 `IG_ACCESS_TOKEN` secret. Then Actions → Weekly report → Run workflow to try it.
 Python's `requests` is the only dependency, so the run takes under a minute.
 
+## Your own videos (schedule.json)
+When you post a video by hand, list its slot in `schedule.json` under `"own"`
+(`"2026-11-23 21:30"`, Berlin time, one of the two gate slots). The automated reel skips that
+slot, so the day still has two posts and the queue lasts longer.
+
 ## Pausing
 Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);
 delete it to resume.

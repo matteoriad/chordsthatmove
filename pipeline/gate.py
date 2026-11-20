@@ -10,6 +10,8 @@ backup post never cancels the next slot).
 "Post now" pushes (the Claude scheduled task) follow the same rules: skip if
 already posted, wait for the slot if early. Manual runs from the Actions tab
 always go.
+Slots listed under "own" in schedule.json belong to Matteo's own videos (posted by hand):
+the automated reel skips them.
 """
 import datetime, json, os, subprocess, time
 from zoneinfo import ZoneInfo
@@ -24,6 +26,13 @@ MIN_GAP = datetime.timedelta(hours=6)   # must stay below the 12 h slot spacing
 def out(go, why):
     print(why)
     with open(os.environ["GITHUB_OUTPUT"], "a") as f: f.write(f"go={'true' if go else 'false'}\n")
+
+
+def own_slots():
+    """Slots reserved for hand-posted videos, as "YYYY-MM-DD HH:MM" Berlin strings."""
+    p = os.path.join(ROOT, "schedule.json")
+    if not os.path.exists(p): return set()
+    return {e["slot"] for e in json.load(open(p)).get("own", [])}
 
 
 def latest_posted():
@@ -59,6 +68,8 @@ def main():
             else:
                 continue
             name = f"{h:02d}:{m:02d}"
+            if f"{slot_at:%Y-%m-%d} {name}" in own_slots():
+                return out(False, f"The {slot_at:%Y-%m-%d} {name} slot is for your own video (schedule.json): skipping.")
             # One post per slot: skip only if something already went out for THIS slot (from the
             # hour before it on). A late backup post for the previous slot doesn't cancel this one.
             if last and last >= slot_at - datetime.timedelta(hours=1):
