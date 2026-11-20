@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1005,7 +1005,19 @@
   "title": "Livin' on a Prayer",
   "media_id": "18160578469506655",
   "permalink": "https://www.instagram.com/reel/Df789_EtUT_/",
-  "posted_at": "2026-11-19T20:36:22+00:00"
+  "posted_at": "2026-11-19T20:36:22+00:00",
+  "youtube": {
+   "id": "ezL_hQ3A3YE",
+   "url": "https://youtube.com/shorts/ezL_hQ3A3YE",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  },
+  "tiktok": {
+   "publish_id": "7710174983280004374",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7710174983280004374",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  }
  },
  {
   "episode": 52,
@@ -1013,6 +1025,18 @@
   "title": "Megalovania",
   "media_id": "18122667223969459",
   "permalink": "https://www.instagram.com/reel/Df9O5QxzPOQ/",
-  "posted_at": "2026-11-20T08:32:27+00:00"
+  "posted_at": "2026-11-20T08:32:27+00:00",
+  "youtube": {
+   "id": "e9s2vdJv0XU",
+   "url": "https://youtube.com/shorts/e9s2vdJv0XU",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  },
+  "tiktok": {
+   "publish_id": "7710175121121561878",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7710175121121561878",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  }
  }
 ]
