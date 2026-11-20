@@ -147,6 +147,13 @@ reverb tail is wrapped onto the start, so Instagram's replay continues without a
 song reveals the answer in the last chord's caption. `REEL_LOOP=0` (or `"loop": false` in a sketch)
 brings back the end card. Layout numbers are the constants at the top of `brandreel.py`.
 
+Two layouts rotate with the themes: **classic** (chord stepper, chord name, one caption above the
+lines) and, every third episode, **lines** (no stepper or chord name: the lines take more than half
+the frame with large chord labels). `"layout": "lines"` or `"classic"` in a sketch picks one. During
+the hook the playhead starts on the left and the upcoming lines are bright, so the very first frame
+already shows the whole progression. Only the chords in `"explain"` (indices) get a caption,
+otherwise just the hook's focus chord. Loops shorter than 12 s play twice.
+
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on
 odd episodes Riso, Chalkboard, Blueprint, Graph paper, Sheet music and Paper in turn. Set

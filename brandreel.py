@@ -31,6 +31,24 @@ PH_TOP, PH_BOT = 705, 1575
 CHIP_Y = 1610
 HOOK_SIZE, HOOK_Y = 64, 480
 LW, LW_MOVE, DOT, GLOW = 8, 4, 10, 54       # line width (+ while moving), dot radius, glow radius
+LAB_SIZE = 24
+LAYOUT = "classic"
+LAYOUTS = {   # "lines": no stepper or big chord, the lines take more than half the frame
+    "classic": dict(CAP_Y=600, LAB_Y=690, UT=735, UB=1370, BT=1415, BB=1545, PH_TOP=705, PH_BOT=1575, LAB_SIZE=24),
+    "lines": dict(CAP_Y=420, LAB_Y=548, UT=610, UB=1350, BT=1400, BB=1545, PH_TOP=575, PH_BOT=1575, LAB_SIZE=40),
+}
+
+
+def layout_for(spec):
+    """spec["layout"] if set; otherwise every third episode uses "lines", so the feed doesn't repeat."""
+    if spec.get("layout") in LAYOUTS: return spec["layout"]
+    return "lines" if int(spec.get("episode") or 0) % 3 == 0 else "classic"
+
+
+def set_layout(name):
+    global LAYOUT
+    LAYOUT = name
+    globals().update(LAYOUTS[name])
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -313,6 +331,7 @@ def expand(spec):
 class Reel:
     def __init__(self, spec):
         set_theme(theme_for(spec))
+        set_layout(layout_for(spec) if loops(spec) else "classic")
         self.spec = spec = expand(spec)
         self.song = s = sr.Song(spec)
         acc = spec.get("accent", "#FF7AA8")
@@ -380,12 +399,16 @@ class Reel:
         # stepper bar
         y_bar = 427
         frac = np.clip((now - s.starts[0]) / (s.end - s.starts[0]), 0, 1)
-        if not hook:
+        if not hook and LAYOUT == "classic":
             cr.set_source_rgb(*rgb1(LINE)); rrect(cr, L, y_bar, R - L, 4, 2); cr.fill()
-        if frac > 0.002 and not hook:
+        if frac > 0.002 and not hook and LAYOUT == "classic":
             cr.set_source_rgb(*rgb1(PAPER)); rrect(cr, L, y_bar, max(4, (R - L) * frac), 4, 2); cr.fill()
         # ---- voice lines ----
         PX, PH = 110, 640
+        pre = 0.0   # 1 during the hook: playhead on the left, upcoming lines bright (a preview of the whole loop)
+        if loops(sp) and self.hook_end:
+            pre = 1 - ease((now - (self.hook_end - 0.5)) / 0.7)
+            PH = int(round(640 - 400 * pre))
         t_left, t_right = now - PH / PX, now + (W - PH) / PX
         ts = np.linspace(max(t_left, 0), min(t_right, s.end), 360)
         xs = PH + (ts - now) * PX
@@ -403,6 +426,7 @@ class Reel:
                 e = emph[v]
                 a, lw = (0.22, LW - 2) if fut else (0.75 + 0.25 * e, LW + LW_MOVE * e)
                 if fut and THEME != "night": a = 0.35   # textured and light backgrounds need more ink
+                if fut: a = a + (0.7 - a) * pre
                 cr.set_source_rgba(*col, a); cr.set_line_width(lw)
                 cr.set_dash({"dashed": [14, 10], "dotted": [0.1, 12]}.get(FUTURE, []) if fut else [])
                 cr.move_to(xs[idx[0]], ys[idx[0]])
@@ -412,7 +436,7 @@ class Reel:
                 hy = float(self.ymap(v, s.voice_curve(v, np.array([now]))[0], UT, UB, BT, BB))
                 heads.append((v, hy))
         cr.set_source_rgba(*rgb1(PAPER), 0.35); cr.set_line_width(2)
-        cr.move_to(PH, PH_TOP); cr.line_to(PH, PH_BOT); cr.stroke()
+        cr.move_to(PH, PH_TOP + (90 if hook and LAYOUT == "lines" else 0)); cr.line_to(PH, PH_BOT); cr.stroke()
         for v, hy in heads:
             e, fl = emph[v], self.flash(v, now)
             glow(cr, PH, hy, (GLOW + 20 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
@@ -455,7 +479,7 @@ class Reel:
                 for w, c, x in line: tx.draw(d, L + x, b, w, SEMI, HOOK_SIZE, c, -0.045)
             cap_lines = []
         # stepper
-        n = len(self.names) if not hook else 0
+        n = len(self.names) if not hook and LAYOUT == "classic" else 0
         colw = (R - L - 12 * (n - 1)) / max(n, 1)
         for i, (nm, rom) in enumerate(self.names[:n]):
             on = nm == ch["name"]
@@ -472,8 +496,9 @@ class Reel:
             csz -= 10
         cb = Y_CHORD + dy
         wname = tx.width(name, SEMI, csz, -0.06)
-        if not hook: tx.draw(d, L, cb, name, SEMI, csz, mixc(PAPER, a), -0.06)
-        if ch.get("roman") and not hook:
+        big = not hook and LAYOUT == "classic"
+        if big: tx.draw(d, L, cb, name, SEMI, csz, mixc(PAPER, a), -0.06)
+        if ch.get("roman") and big:
             px = L + wname + 28
             pw = tx.width(ch["roman"], MONO_M, 24) + 36
             ptop = cb - 82
@@ -501,13 +526,13 @@ class Reel:
                 labs[-1][3] = i; continue
             labs.append([max(L, lx), pretty_chord(c["name"]), i, i])
         for j in range(len(labs) - 2, -1, -1):
-            wj = tx.width(labs[j][1], MONO, 22)
+            wj = tx.width(labs[j][1], MONO, LAB_SIZE)
             labs[j][0] = min(labs[j][0], labs[j + 1][0] - wj - 30)
         for lx, nm, i, i_end in labs:
-            if lx > R + 40: continue
+            if lx > R + 40 or (hook and LAYOUT == "lines"): continue   # the hook sits where the labels go
             fade = np.clip((lx - (L - 30)) / 30, 0, 1)
             col = PAPER if i <= ci <= i_end else (DIM if i_end < ci else FAINT)
-            if fade > 0: tx.draw(d, lx, LAB_Y, nm, MONO, 24, mixc(col, fade))
+            if fade > 0: tx.draw(d, lx, LAB_Y, nm, SEMI if LAYOUT == "lines" else MONO, LAB_SIZE, mixc(col, fade))
         for v, hy in heads:
             note = sr.pretty(ch["notes"][v])
             if emph[v] > 0.5:
