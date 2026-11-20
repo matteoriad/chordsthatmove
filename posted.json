@@ -1049,7 +1049,19 @@
   "held": "amb-grains",
   "texture": "none",
   "posted_at": "2026-11-20T18:01:28+00:00",
-  "story_id": "17989772766089416"
+  "story_id": "17989772766089416",
+  "youtube": {
+   "id": "nxjw14Wc-Vk",
+   "url": "https://youtube.com/shorts/nxjw14Wc-Vk",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  },
+  "tiktok": {
+   "publish_id": "7710363789954190614",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7710363789954190614",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  }
  },
  {
   "episode": 54,
@@ -1061,6 +1073,18 @@
   "held": "dream-lofi",
   "texture": "tex-synth",
   "posted_at": "2026-11-20T20:31:43+00:00",
-  "story_id": "18133225738761385"
+  "story_id": "18133225738761385",
+  "youtube": {
+   "id": "MJpLL5ijDw8",
+   "url": "https://youtube.com/shorts/MJpLL5ijDw8",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  },
+  "tiktok": {
+   "publish_id": "7710363932019445014",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7710363932019445014",
+   "via": "chrome",
+   "posted_at": "2026-11-20"
+  }
  }
 ]
