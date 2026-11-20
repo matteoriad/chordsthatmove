@@ -64,7 +64,8 @@ def classify(media, posted, specs):
     if not p: return "own", None
     spec = specs.get(p["slug"], {})
     fmt = "jam" if spec.get("jam") else "guess" if spec.get("guess") else "song"
-    return fmt, {**spec, "_theme": p.get("theme", "night")}   # posts before 2026-11-20 were all Night
+    return fmt, {**spec, "_theme": p.get("theme", "night"), "_sound": p.get("held", "old pad"),
+                 "_texture": p.get("texture", "old pluck")}   # posts before 2026-11-20: Night, old sound
 
 
 def slot(ts):
@@ -106,6 +107,7 @@ def build_report(now=None):
                      "views": v.get("views", 0), "reach": v.get("reach", 0), "saved": v.get("saved", 0),
                      "shares": v.get("shares", 0), "likes": v.get("likes", 0), "comments": v.get("comments", 0),
                      "watch": v.get("ig_reels_avg_watch_time"), "skip": v.get("reels_skip_rate"),
+                     "sound": spec["_sound"] if spec else "–", "texture": spec["_texture"] if spec else "–",
                      "permalink": m.get("permalink", ""), "ts": m["ts"]})
     followers = get(os.environ["IG_USER_ID"], fields="followers_count").get("followers_count")
     hist_path = os.path.join(ROOT, "reports", "followers.json")
@@ -120,6 +122,8 @@ def build_report(now=None):
         lines += ["## By format", summarise(rows, lambda r: r["format"]), "",
                   "## By slot (Berlin)", summarise(rows, lambda r: r["slot"]), "",
                   "## By look (automated reels)", summarise([r for r in rows if r["look"] != "–"], lambda r: r["look"]), "",
+                  "## By sound (automated reels)", summarise([r for r in rows if r["sound"] != "–"], lambda r: r["sound"]), "",
+                  "## By texture (automated reels)", summarise([r for r in rows if r["texture"] != "–"], lambda r: r["texture"]), "",
                   "## Top 5 by views", "| Reel | Format | Views | Saves | Shares | Skip rate |", "|---|---|---|---|---|---|"]
         for r in sorted(rows, key=lambda r: -r["views"])[:5]:
             skip = f"{r['skip']:.0f}%" if isinstance(r["skip"], (int, float)) else "–"

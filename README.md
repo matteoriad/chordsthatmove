@@ -154,13 +154,16 @@ the hook the playhead starts on the left and the upcoming lines are bright, so t
 already shows the whole progression. Only the chords in `"explain"` (indices) get a caption,
 otherwise just the hook's focus chord. Loops shorter than 12 s play twice.
 
-## Sound profiles and glide
-Each reel picks a sound from its chords, key and tempo (`songreel.profile_for`; set
-`"sound_profile"` in a sketch to choose): **keys** (electric piano, many 7th/6th chords), **pluck**
-(fast songs, arpeggio in front), **warm** (slow minor songs, darker pad, no arpeggio), **organ** and
-**lush** (rotating among the rest). The glide between notes follows the chord length and the mood
-(about 0.25–0.7 s; `"glide"` in a sketch overrides). In loop mode chords last at least 2 s and at
-most ~4.5 s.
+## Sounds (Matteo's picks, 20 Nov 2026)
+Each reel picks a held sound and a texture from the picks in `sounds/catalog.py`
+(`songreel.sound_for`): slow minor songs rotate Analog warm, Granular haze, Dream pad and Lush
+strings; fast songs Bright supersaw, Lo-fi synth, Lush strings and Vapor tape; the rest all picks
+including Church organ. Textures rotate Marimba, Harp, Soft keys and Synth pluck, mixed quietly
+under the chords (none on Granular haze). "Breath" is layered quietly on top of Lush, Analog, Dream
+pad and Granular haze for slow or minor songs. Override per sketch with `"sound": "dream-vapor"` or
+`"texture": "tex-harp"` / `"none"`. The glide follows the chord length and mood (`"glide"` overrides).
+`posted.json` records each reel's sound and texture, and the Monday report compares them.
+Audition everything: `python3 sounds/catalog.py OUTDIR`.
 
 ## Themes
 Reels rotate through the jam tool's looks: **Night** (the brand look) on every even episode, and on

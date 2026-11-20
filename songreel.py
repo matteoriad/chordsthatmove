@@ -158,7 +158,41 @@ PROFILES = {
 JAZZY = ("7", "maj7", "m7", "6", "m6", "7sus4", "add9")
 
 
+SLOW_SAD = ["pad-analog", "amb-grains", "dream-pad", "pad-lush"]
+FAST = ["pad-supersaw", "dream-lofi", "pad-lush", "dream-vapor"]
+DEFAULT_ROT = ["pad-lush", "pad-analog", "pad-supersaw", "dream-pad", "dream-vapor", "dream-lofi", "org-church"]
+
+
+def sound_for(spec):
+    """The held sound, texture and breath layer for a reel, from Matteo's picks (sounds/catalog.py).
+    Rotates by episode within a mood group so consecutive reels sound different.
+    Overrides: spec["sound"] (a catalogue id, e.g. "dream-vapor"), spec["texture"] ("tex-harp" or "none")."""
+    import catalog
+    ep = int(spec.get("episode") or 0)
+    minor = "minor" in spec.get("key", "").lower()
+    if spec.get("sound") in catalog.GEN: held = spec["sound"]
+    elif minor and spec["bpm"] < 85: held = SLOW_SAD[ep % len(SLOW_SAD)]
+    elif spec["bpm"] >= 110: held = FAST[ep % len(FAST)]
+    else: held = DEFAULT_ROT[ep % len(DEFAULT_ROT)]
+    tex = spec.get("texture")
+    if tex not in catalog.TEX and tex != "none":
+        tex = "none" if held == "amb-grains" else catalog.PICKED_TEX[(ep // 2) % len(catalog.PICKED_TEX)]
+    breath = held in catalog.BREATH_UNDER and (minor or spec["bpm"] < 90)
+    return {"held": held, "texture": tex, "breath": breath}
+
+
 def profile_for(spec):
+    """Old profile names, kept for the glide rule: maps the picked sound to a profile."""
+    try:
+        held = sound_for(spec)["held"]
+        return {"amb-grains": "warm", "pad-analog": "warm", "pad-supersaw": "pluck", "dream-lofi": "pluck",
+                "org-church": "organ"}.get(held, "lush")
+    except Exception:
+        pass
+    return _profile_for_old(spec)
+
+
+def _profile_for_old(spec):
     """spec["sound_profile"] if set, else from the chords, key and tempo."""
     if spec.get("sound_profile") in PROFILES: return spec["sound_profile"]
     names = [c["name"].split("/")[0] for c in spec["chords"]]
@@ -268,10 +302,20 @@ def synth(song, path):
     pad = signal.sosfilt(signal.butter(3, 1800, "low", fs=SR, output="sos"), pad)
     pads = [pad, pad]
     profile = profile_for(song.spec) if STYLE == "lush" else "classic"
-    print(f"sound profile: {profile}", flush=True)
+    picked = sound_for(song.spec) if STYLE == "lush" and not pad_pack else None
+    tex_ch = None
+    if picked:
+        import catalog
+        catalog.use(song, n)
+        L_, R_ = catalog.GEN[picked["held"]]()
+        if picked["breath"]:   # "Breath" only as a quiet layer on top
+            bL, bR = catalog.amb_air()
+            g = 0.16 * rms(L_) / rms(bL)
+            L_, R_ = L_ + g * bL, R_ + g * bR
+        if picked["texture"] != "none":
+            tex_ch = catalog.texture(*catalog.TEX[picked["texture"]])
+        print(f"sound: {picked['held']}{' + breath' if picked['breath'] else ''} · texture: {picked['texture']}", flush=True)
     if STYLE == "lush" and not pad_pack:
-        L_, R_ = (keys_pad(song, tt, env) if profile == "keys" else organ_pad(song, tt, env) if profile == "organ"
-                  else lush_pad(song, tt, env, bright=1900, base=0.15) if profile == "warm" else lush_pad(song, tt, env))
         mid, side = 0.5 * (L_ + R_), 0.5 * (L_ - R_)   # natural width: still safe on mono phone speakers
         duck = 1 - 0.05 * np.exp(-ph * 5) * (tt > LEAD_IN)   # a much lighter pump than the classic pad
         gain = rms(pad) / rms(mid) * PROFILES[profile]["pad"]   # same loudness as the classic pad
@@ -287,6 +331,13 @@ def synth(song, path):
     d8 = 0.75 * song.beat
     arpL = arp + 0.30 * delayed(arp, 2 * d8)
     arpR = arp + 0.38 * delayed(arp, d8) + 0.16 * delayed(arp, 3 * d8)
+    if picked:   # the picked texture (its own echoes), mixed subtly under the chords
+        if tex_ch is None:
+            arp, arpL, arpR = arp * 0, arpL * 0, arpR * 0
+        else:
+            g = 0.2 * rms(pad) / rms(tex_ch[0])
+            arpL, arpR = tex_ch[0] * g, tex_ch[1] * g
+            arp = 0.5 * (arpL + arpR)
     lush = STYLE == "lush"
     irn = int((4.0 if lush else 2.8) * SR)
     decay = np.exp(-np.arange(irn) / SR / (1.25 if lush else 0.75))

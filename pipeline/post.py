@@ -223,6 +223,7 @@ def main():
     log("published", mid, link)
     state.append({"episode": ep, "slug": slug, "title": spec["title"], "media_id": mid, "permalink": link,
                   "theme": brandreel.theme_for(spec),   # for the weekly report (pipeline/insights.py)
+                  **{k: v for k, v in brandreel.sr.sound_for(reel_r.spec).items() if k in ("held", "texture")},
                   "posted_at": datetime.datetime.now(datetime.timezone.utc).isoformat(timespec="seconds")})
     json.dump(state, open(STATE, "w"), indent=1)
     commit_push("posted.json", f"posted episode {ep}: {spec['title']}")

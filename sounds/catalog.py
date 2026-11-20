@@ -30,16 +30,22 @@ def make_song():
     return sr.Song(spec)
 
 
-SONG = make_song()
-N = int(SONG.total * SR)
-T = np.arange(N) / SR
-END = SONG.end
-STARTS = np.array(SONG.starts)
-since = np.zeros(N); clen = np.zeros(N)
-for i, st in enumerate(STARTS):
-    en = STARTS[i + 1] if i + 1 < len(STARTS) else END
-    m = T >= st; since[m] = T[m] - st; clen[m] = en - st
-ENV = np.clip(T / 0.05, 0, 1) * np.where(T < END, 1.0, np.exp(-(T - END) / 0.5))
+SONG = N = T = END = STARTS = since = clen = ENV = None
+
+
+def use(song, n=None):
+    """Point every generator below at a song (the catalogue loop, or a reel from songreel.synth)."""
+    global SONG, N, T, END, STARTS, since, clen, ENV
+    SONG = song
+    N = n or int(song.total * SR)
+    T = np.arange(N) / SR
+    END = song.end
+    STARTS = np.array(song.starts)
+    since = np.zeros(N); clen = np.zeros(N)
+    for i, st in enumerate(STARTS):
+        en = STARTS[i + 1] if i + 1 < len(STARTS) else END
+        m = T >= st; since[m] = T[m] - st; clen[m] = en - st
+    ENV = np.clip((T - STARTS[0]) / 0.05, 0, 1) * np.where(T < END, 1.0, np.exp(-(T - END) / 0.5))
 
 
 def midi_curve(v): return SONG.voice_curve(v, T)
@@ -339,7 +345,17 @@ def write(path, st):
     os.remove(wav)
 
 
+GEN = {cid: fn for _, cid, _, _, fn in HELD}
+TEX = {cid: (kind, octv) for cid, _, _, kind, octv in TEXTURES}
+
+# Matteo's picks (20 Nov 2026). The reels rotate through them; the app gets one pack each.
+PICKED_HELD = ["pad-lush", "pad-analog", "pad-supersaw", "org-church", "dream-pad", "dream-vapor", "dream-lofi", "amb-grains"]
+PICKED_TEX = ["tex-marimba", "tex-harp", "tex-softkeys", "tex-synth"]
+BREATH_UNDER = {"pad-lush", "pad-analog", "dream-pad", "amb-grains"}   # "Breath" layered quietly on these only
+
+
 if __name__ == "__main__":
+    use(make_song())
     out = sys.argv[1] if len(sys.argv) > 1 else "catalog"
     os.makedirs(out, exist_ok=True)
     items = []
