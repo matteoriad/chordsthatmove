@@ -61,6 +61,7 @@ def sketch(jam, episode):
         "loop": [{"name": n, "bars": b} for n, _, b in jam["chords"]],
         "question": jam.get("question", "Post your jam and tag @chordsthatmove 🎹"),
         "hashtag": "jamtrack", "chords": chords,
+        "explain": [0, len(chords) - 2, len(chords) - 1],   # the scale tip and the "your turn" line
     }
 
 

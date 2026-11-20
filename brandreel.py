@@ -21,14 +21,16 @@ sr.GLIDE = 0.18          # brand rule: soft S-curve over ~180 ms
 sr.TAIL = 4.0            # room for the outro (loop mode: the reverb tail, wrapped to the start)
 LOOP = (os.environ.get("REEL_LOOP") or "1") != "0"   # loopable reels without the end card (2026-11-20)
 # layout (2026-11-20: the voice lines are the focus; text is smaller)
-Y_CHORD = 600            # big chord baseline
-CHORD_MAX, CHORD_MIN = 150, 110
-CAP_Y, CAP_SIZE, CAP_LH = 672, 38, 47
-LAB_Y = 806              # chord labels above the lines
-UT, UB, BT, BB = 850, 1380, 1425, 1530   # upper-voice lane, bass lane
-PH_TOP, PH_BOT = 820, 1560
-CHIP_Y = 1600
-HOOK_SIZE, HOOK_Y = 84, 500
+# v3 (same day, second round): text smaller still, lines bigger still
+Y_CHORD = 540            # big chord baseline
+CHORD_MAX, CHORD_MIN = 110, 84
+CAP_Y, CAP_SIZE, CAP_LH = 600, 32, 40
+LAB_Y = 690              # chord labels above the lines
+UT, UB, BT, BB = 735, 1370, 1415, 1545   # upper-voice lane, bass lane
+PH_TOP, PH_BOT = 705, 1575
+CHIP_Y = 1610
+HOOK_SIZE, HOOK_Y = 64, 480
+LW, LW_MOVE, DOT, GLOW = 8, 4, 10, 54       # line width (+ while moving), dot radius, glow radius
 W, H, FPS = 1080, 1920, 30
 HERE = os.path.dirname(os.path.abspath(__file__))
 
@@ -270,14 +272,15 @@ def expand(spec):
         return spec
     bpb = spec.get("beats_per_bar", 4)
     bar = bpb * 60 / spec["bpm"]
-    MIN = spec.get("min_chord_seconds", 2.4)
+    MIN = spec.get("min_chord_seconds", 1.3 if loops(spec) else 2.4)   # bigger lines read faster
     chords = [dict(c) for c in spec["chords"]]
     ending = chords.pop() if chords[-1].get("ending") else None
     if loops(spec): ending = None   # the loop goes straight back to the first chord
     k = spec.get("stretch") or 1
+    grid = 1 / bpb if loops(spec) else 1   # loop mode: chords may land on any beat, not only whole bars
     while not spec.get("stretch") and k < 8 and (
             min(c["bars"] for c in chords) * k * bar < MIN
-            or any(abs(c["bars"] * k - round(c["bars"] * k)) > 1e-6 for c in chords)):
+            or any(abs(c["bars"] * k / grid - round(c["bars"] * k / grid)) > 1e-6 for c in chords)):
         k *= 2
 
     def pow2_bars(sec):
@@ -286,6 +289,13 @@ def expand(spec):
         return n
 
     first = chords[0]
+    if loops(spec):   # no long held intro: movement from the first second, the hook over the first bar
+        beat = 60 / spec["bpm"]
+        cap = max(bpb, int(4.5 / beat))   # no straight line longer than ~4.5 s: viewers scroll away
+        out = [{**c, "beats": min(cap, int(round(c["bars"] * k * bpb)))} for c in chords]
+        if sum(c["beats"] for c in out) * beat < 12:   # short loops play twice (captions on the first pass)
+            out = out + [{**c, "_repeat": True} for c in out]
+        return {**spec, "chords": out, "hook_beats": bpb, "_intro": 0, "_stretch": k}
     intro_bars = pow2_bars(spec.get("hook_seconds", 3.6))
     out = [{"name": first["name"], "roman": first.get("roman", ""), "tag": first.get("tag", ""),
             "notes": first["notes"], "beats": intro_bars * bpb, "intro": True}]
@@ -327,6 +337,15 @@ class Reel:
         self.vels = [np.array([e[3] for e in s.arp if e[1] == v]) for v in range(s.nv)]
         up = s.pitch[:, 1:].flatten(); bs = s.pitch[:, 0]
         self.urange, self.brange = (up.min() - 1, up.max() + 1), (bs.min() - 1, bs.max() + 1)
+
+    def explains(self, ci):
+        """Explain only what's interesting: the chords listed in "explain" (indices into the sketch's
+        chords), else just the hook's focus chord. Without loop mode every chord keeps its caption."""
+        sp = self.spec
+        if not loops(sp): return True
+        i = ci - sp.get("_intro", 0)
+        if sp["chords"][ci].get("_repeat"): return False
+        return i in (sp["explain"] if isinstance(sp.get("explain"), list) else [sp.get("hook_focus", len(sp["chords"]) - 1)])
 
     # pitch → y in two lanes (upper voices roomy, bass compact)
     def ymap(self, v, p, ut, ub, bt, bb):
@@ -382,7 +401,7 @@ class Reel:
                 if len(idx) < 2: continue
                 if not fut and idx[-1] + 1 < len(ts): idx = np.append(idx, idx[-1] + 1)
                 e = emph[v]
-                a, lw = (0.22, 5) if fut else (0.75 + 0.25 * e, 6 + 3 * e)
+                a, lw = (0.22, LW - 2) if fut else (0.75 + 0.25 * e, LW + LW_MOVE * e)
                 if fut and THEME != "night": a = 0.35   # textured and light backgrounds need more ink
                 cr.set_source_rgba(*col, a); cr.set_line_width(lw)
                 cr.set_dash({"dashed": [14, 10], "dotted": [0.1, 12]}.get(FUTURE, []) if fut else [])
@@ -396,12 +415,12 @@ class Reel:
         cr.move_to(PH, PH_TOP); cr.line_to(PH, PH_BOT); cr.stroke()
         for v, hy in heads:
             e, fl = emph[v], self.flash(v, now)
-            glow(cr, PH, hy, (44 + 18 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
-            cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(PH, hy, 8 + 4 * e, 0, 6.2832); cr.fill()
+            glow(cr, PH, hy, (GLOW + 20 * e) * (1 + 0.2 * fl), self.voice_cols[v], 0.45 + 0.4 * e + 0.25 * fl)
+            cr.set_source_rgb(*rgb1(PLAYHEAD)); cr.arc(PH, hy, DOT + 4 * e, 0, 6.2832); cr.fill()
         # chip (moving note)
         fv = self.focus[ci]
         chip = None
-        text = ch.get("text", "")
+        text = ch.get("text", "") if self.explains(ci) else ""
         if sp.get("guess") and loops(sp) and ci == len(sp["chords"]) - 1:   # the reveal (no end card in loop mode)
             text = f"It's *{sp['title']}* — {sp['artist']}"
         cap_toks = tokens(text, PAPER, self.voice_cols[fv] if fv is not None else self.accent)
