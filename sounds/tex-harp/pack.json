@@ -1,0 +1,24 @@
+{
+ "id": "tex-harp",
+ "label": "Harp",
+ "role": "arp",
+ "attack": 0.003,
+ "release": 0.4,
+ "gain_db": -5.5,
+ "loop": false,
+ "notes": {
+  "C3": "C3.wav",
+  "D#3": "D#3.wav",
+  "F#3": "F#3.wav",
+  "A3": "A3.wav",
+  "C4": "C4.wav",
+  "D#4": "D#4.wav",
+  "F#4": "F#4.wav",
+  "A4": "A4.wav",
+  "C5": "C5.wav",
+  "D#5": "D#5.wav",
+  "F#5": "F#5.wav",
+  "A5": "A5.wav",
+  "C6": "C6.wav"
+ }
+}
