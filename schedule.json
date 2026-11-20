@@ -1,5 +1,5 @@
 {
- "_note": "Slots under 'own' are for videos Matteo posts by hand; the automated reel skips them. Times are Berlin, and must be one of the gate slots (09:30, 21:30).",
+ "_note": "Slots under 'own' are for videos Matteo posts by hand; the automated reel skips them. Times are Berlin, and must be one of the gate slots (08:30, 12:30, 17:30, 21:30).",
  "own": [
   {"slot": "2026-11-21 21:30", "what": "Jam: Moog over Am–F–C–G"},
   {"slot": "2026-11-23 21:30", "what": "Face cam: why Creep feels like not belonging"},

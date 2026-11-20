@@ -1,6 +1,6 @@
 # chords that move: daily reel pipeline
 
-Twice a day (09:30 and 21:30 Berlin time), GitHub Actions picks the next song in `songs/queue/`,
+Four times a day (08:30, 12:30, 17:30 and 21:30 Berlin time), GitHub Actions picks the next song in `songs/queue/`,
 renders the reel (voice lines + synth audio) and its cover, and publishes it to
 Instagram as a Reel, then to YouTube Shorts and TikTok. Nothing runs on your laptop.
 
@@ -50,7 +50,7 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 ### 4. Test, then go live
 - Actions → **Daily reel** → Run workflow with **dry run** ticked → download the `reel` artifact and check it.
 - Run it again with dry run unticked to post episode 1 right away.
-- From then on it posts by itself twice a day (09:30 and 21:30 Berlin). If a run fails, GitHub emails you.
+- From then on it posts by itself four times a day (08:30, 12:30, 17:30 and 21:30 Berlin). If a run fails, GitHub emails you.
 
 ## YouTube Shorts and TikTok
 
@@ -104,7 +104,7 @@ python3 -c "import json,voicing,sys; p=sys.argv[1]; json.dump(voicing.build(json
 
 Preview without posting: `python3 brandreel.py render songs/queue/ep15-your-song.json test.mp4`
 and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
-When fewer than 20 episodes are left (about two weeks), the run opens a "Queue is running low" issue, which GitHub emails you. When the queue runs out, the job fails and GitHub emails you.
+When fewer than 28 episodes are left (about a week at four a day), the run opens a "Queue is running low" issue, which GitHub emails you. When the queue runs out, the job fails and GitHub emails you.
 
 Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).
 
@@ -194,8 +194,8 @@ Python's `requests` is the only dependency, so the run takes under a minute.
 
 ## Your own videos (schedule.json)
 When you post a video by hand, list its slot in `schedule.json` under `"own"`
-(`"2026-11-23 21:30"`, Berlin time, one of the two gate slots). The automated reel skips that
-slot, so the day still has two posts and the queue lasts longer.
+(`"2026-11-23 21:30"`, Berlin time, one of the four gate slots). The automated reel skips that
+slot, so the queue lasts longer.
 
 ## Pausing
 Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);

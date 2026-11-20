@@ -200,11 +200,11 @@ def refresh_token(token):
         log("stored refreshed token in repo secret")
 
 
-LOW_QUEUE = 20   # about two weeks at two automated posts a day minus your own video slots
+LOW_QUEUE = 28   # a week at four automated posts a day
 
 
 def warn_if_low(left):
-    """Open one GitHub issue (GitHub emails it) when the queue covers less than two weeks.
+    """Open one GitHub issue (GitHub emails it) when the queue covers about a week or less.
     Never fails the run: the post already went out."""
     if left >= LOW_QUEUE or not os.environ.get("GH_TOKEN") or not os.environ.get("GITHUB_REPOSITORY"):
         return
@@ -214,7 +214,7 @@ def warn_if_low(left):
                                 "--json", "number", "-q", "length"], capture_output=True, text=True, check=True).stdout.strip()
         if found and found != "0":
             log("low-queue issue already open"); return
-        body = (f"Only **{left} episodes** are left in `songs/queue/`, less than two weeks of posts.\n\n"
+        body = (f"Only **{left} episodes** are left in `songs/queue/`, about a week of posts or less.\n\n"
                 "Add song sketches or jams (see README: Adding songs, \"Jam over this\" reels) and build their queue "
                 "files. Close this issue once the queue is topped up.")
         subprocess.run(["gh", "issue", "create", "-R", repo, "--title", title, "--body", body], check=True)

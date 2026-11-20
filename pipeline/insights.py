@@ -3,7 +3,7 @@
 
 Every reel of the last 14 days that is at least 48 h old is grouped by
   format  song breakdown · guess the song · jam over this · your own video (not in posted.json)
-  slot    09:30 · 21:30 · other (Berlin)
+  slot    08:30 · 12:30 · 17:30 · 21:30 · other (Berlin)
   look    Night · other theme (as recorded in posted.json when it was posted)
 and the report goes out as a GitHub issue (GitHub emails it) and into reports/YYYY-MM-DD.md.
 Followers are tracked in reports/followers.json, so the report shows the change since last week.
@@ -70,7 +70,7 @@ def classify(media, posted, specs):
 
 def slot(ts):
     t = ts.astimezone(BER)
-    for h, m in ((9, 30), (21, 30)):
+    for h, m in ((8, 30), (12, 30), (17, 30), (21, 30)):
         if abs((t.hour * 60 + t.minute) - (h * 60 + m)) <= 45: return f"{h:02d}:{m:02d}"
     return "other"
 
