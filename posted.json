@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1110,5 +1110,17 @@
    "via": "chrome",
    "posted_at": "2026-11-21"
   }
+ },
+ {
+  "episode": 56,
+  "slug": "ep56-dont-look-back-in-anger",
+  "title": "Don't Look Back in Anger",
+  "media_id": "18470929225142806",
+  "permalink": "https://www.instagram.com/reel/DgAqk9CBePk/",
+  "theme": "night",
+  "held": "pad-lush",
+  "texture": "tex-marimba",
+  "posted_at": "2026-11-21T16:32:10+00:00",
+  "story_id": "17998025997100139"
  }
 ]
