@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1169,7 +1169,19 @@
   "held": "pad-supersaw",
   "texture": "tex-harp",
   "posted_at": "2026-11-22T17:23:45+00:00",
-  "story_id": "18105159695361975"
+  "story_id": "18105159695361975",
+  "youtube": {
+   "id": "YukDGe9_ys0",
+   "url": "https://youtube.com/shorts/YukDGe9_ys0",
+   "via": "chrome",
+   "posted_at": "2026-11-22"
+  },
+  "tiktok": {
+   "publish_id": "7711105957488790807",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7711105957488790807",
+   "via": "chrome",
+   "posted_at": "2026-11-22"
+  }
  },
  {
   "episode": 59,
@@ -1181,6 +1193,18 @@
   "held": "dream-vapor",
   "texture": "tex-harp",
   "posted_at": "2026-11-22T20:32:06+00:00",
-  "story_id": "18099025106405307"
+  "story_id": "18099025106405307",
+  "youtube": {
+   "id": "cnZ_1xW0fo4",
+   "url": "https://youtube.com/shorts/cnZ_1xW0fo4",
+   "via": "chrome",
+   "posted_at": "2026-11-22"
+  },
+  "tiktok": {
+   "publish_id": "7711106091802758422",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7711106091802758422",
+   "via": "chrome",
+   "posted_at": "2026-11-22"
+  }
  }
 ]
