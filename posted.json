@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1158,5 +1158,17 @@
    "via": "chrome",
    "posted_at": "2026-11-22"
   }
+ },
+ {
+  "episode": 58,
+  "slug": "ep58-comfortably-numb",
+  "title": "Comfortably Numb",
+  "media_id": "18032110472871512",
+  "permalink": "https://www.instagram.com/reel/DgDVTuqyja0/",
+  "theme": "night",
+  "held": "pad-supersaw",
+  "texture": "tex-harp",
+  "posted_at": "2026-11-22T17:23:45+00:00",
+  "story_id": "18105159695361975"
  }
 ]
