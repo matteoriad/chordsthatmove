@@ -18,9 +18,11 @@
    "text": "Home: *A minor*. Arms crossed.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
    "bars": 1
   },
@@ -31,9 +33,11 @@
    "text": "*G*: one step down the stairs.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
    "bars": 1
   },
@@ -46,7 +50,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "bars": 1
   },
@@ -59,7 +65,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ],
    "focus": 3,
    "bars": 1
@@ -71,9 +79,11 @@
    "text": "And you're out. *Then it happens again*.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ],
    "bars": 1,
    "ending": true

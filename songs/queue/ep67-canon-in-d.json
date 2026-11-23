@@ -21,9 +21,11 @@
    "text": "*D major*: bright, ceremonial.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -34,9 +36,11 @@
    "text": "Bass down a fourth: *A*. One step.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -47,9 +51,11 @@
    "text": "Up one: *B minor*. Another step.",
    "notes": [
     "B2",
+    "B3",
     "D4",
     "F#4",
-    "B4"
+    "B4",
+    "F#5"
    ]
   },
   {
@@ -62,7 +68,9 @@
     "F#2",
     "C#4",
     "F#4",
-    "A4"
+    "A4",
+    "C#5",
+    "F#5"
    ]
   },
   {
@@ -75,7 +83,9 @@
     "G2",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5",
+    "G5"
    ]
   },
   {
@@ -86,9 +96,11 @@
    "text": "Down a fourth: *D*, home.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -99,9 +111,11 @@
    "text": "*G* again, lifting…",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5"
    ]
   },
   {
@@ -112,9 +126,11 @@
    "text": "A walks you *down the aisle*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   }
  ]

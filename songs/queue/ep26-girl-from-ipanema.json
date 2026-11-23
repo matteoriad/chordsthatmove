@@ -18,9 +18,11 @@
    "text": "Home: *Fmaj7*. Sun, sand, nowhere to be.",
    "notes": [
     "F2",
+    "A3",
     "C4",
-    "E4",
-    "A4"
+    "F4",
+    "C5",
+    "E5"
    ],
    "bars": 2
   },
@@ -31,11 +33,13 @@
    "text": "*B natural* sneaks in: a lift, like a breeze.",
    "notes": [
     "G2",
-    "B3",
+    "G3",
+    "D4",
     "F4",
-    "G4"
+    "B4",
+    "D5"
    ],
-   "focus": 1,
+   "focus": 4,
    "bars": 2
   },
   {
@@ -45,11 +49,13 @@
    "text": "*B slips to B♭*. The breeze drops.",
    "notes": [
     "G2",
-    "Bb3",
+    "G3",
+    "D4",
     "F4",
-    "G4"
+    "Bb4",
+    "D5"
    ],
-   "focus": 1,
+   "focus": 4,
    "bars": 1
   },
   {
@@ -60,10 +66,12 @@
    "notes": [
     "Gb2",
     "Bb3",
+    "Db4",
     "Fb4",
-    "Gb4"
+    "Gb4",
+    "Db5"
    ],
-   "focus": 3,
+   "focus": 4,
    "bars": 1
   },
   {
@@ -74,8 +82,10 @@
    "notes": [
     "F2",
     "A3",
-    "E4",
-    "F4"
+    "C4",
+    "F4",
+    "C5",
+    "E5"
    ],
    "bars": 1,
    "ending": true

@@ -19,9 +19,11 @@
    "text": "Home: *B♭*. Wide open, like a stadium.",
    "notes": [
     "Bb2",
+    "Bb3",
     "D4",
     "F4",
-    "Bb4"
+    "Bb4",
+    "F5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "*G minor*: the warmth turns tender.",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "Bb4"
+    "Bb4",
+    "D5"
    ]
   },
   {
@@ -47,7 +51,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ]
   },
   {
@@ -60,7 +66,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "focus": 2
   },
@@ -75,7 +83,9 @@
     "Bb2",
     "Bb3",
     "D4",
-    "F4"
+    "F4",
+    "Bb4",
+    "F5"
    ]
   }
  ]

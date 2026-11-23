@@ -19,9 +19,11 @@
    "text": "*D major*, ringing on and on.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "The bass *slips to C*. The ground tilts.",
    "notes": [
     "C3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -45,9 +49,11 @@
    "text": "Down to *B*: softer, dreamier.",
    "notes": [
     "B2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -58,9 +64,11 @@
    "text": "B♭: deeper *into the trance*.",
    "notes": [
     "Bb2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   }
  ]

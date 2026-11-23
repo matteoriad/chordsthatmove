@@ -19,9 +19,11 @@
    "text": "*D minor 7*: smooth, but uneasy.",
    "notes": [
     "D3",
+    "A3",
     "C4",
+    "D4",
     "F4",
-    "A4"
+    "D5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "*G minor 7*: deeper into it.",
    "notes": [
     "G2",
+    "G3",
+    "Bb3",
     "D4",
     "F4",
-    "Bb4"
+    "D5"
    ]
   },
   {
@@ -45,9 +49,11 @@
    "text": "*B♭maj7*: lush, almost romantic…",
    "notes": [
     "Bb2",
+    "Bb3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "F5"
    ]
   },
   {
@@ -58,11 +64,13 @@
    "text": "*Am7*, not A7. No C♯: it can't come clean.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "G4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Dm7",
@@ -73,9 +81,11 @@
    "ending": true,
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   }
  ],

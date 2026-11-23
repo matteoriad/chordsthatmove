@@ -20,9 +20,11 @@
    "text": "*C♯ minor*: quiet and dark.",
    "notes": [
     "C#3",
+    "G#3",
     "C#4",
     "E4",
-    "G#4"
+    "G#4",
+    "C#5"
    ]
   },
   {
@@ -33,9 +35,11 @@
    "text": "The bass *sinks to B*. Deeper.",
    "notes": [
     "B2",
+    "G#3",
     "C#4",
     "E4",
-    "G#4"
+    "G#4",
+    "C#5"
    ]
   },
   {
@@ -46,11 +50,13 @@
    "text": "*A major*: a brief, warm glow.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "D/F#",
@@ -60,11 +66,13 @@
    "text": "*D/F♯*, the Neapolitan: pure shadow.",
    "notes": [
     "F#2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G#7",
@@ -74,11 +82,13 @@
    "text": "*G♯7*: B♯ leans hard toward home.",
    "notes": [
     "G#2",
+    "G#3",
     "B#3",
     "F#4",
-    "G#4"
+    "G#4",
+    "D#5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "C#m",
@@ -89,9 +99,11 @@
    "ending": true,
    "notes": [
     "C#3",
+    "G#3",
     "C#4",
     "E4",
-    "G#4"
+    "G#4",
+    "C#5"
    ]
   }
  ]

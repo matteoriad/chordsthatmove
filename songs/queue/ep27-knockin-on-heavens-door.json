@@ -18,9 +18,11 @@
    "text": "Home: *G major*. Plain and honest.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
    "bars": 1
   },
@@ -33,7 +35,9 @@
     "D3",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "bars": 1
   },
@@ -46,7 +50,9 @@
     "A2",
     "A3",
     "C4",
-    "E4"
+    "E4",
+    "A4",
+    "E5"
    ],
    "focus": 2,
    "bars": 2
@@ -60,7 +66,9 @@
     "G2",
     "G3",
     "B3",
-    "D4"
+    "D4",
+    "G4",
+    "D5"
    ],
    "bars": 1
   },
@@ -73,7 +81,9 @@
     "D3",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "bars": 1
   },
@@ -84,11 +94,13 @@
    "text": "This time *C major*: softer, a way in.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 2,
+   "focus": 3,
    "bars": 2
   },
   {
@@ -98,9 +110,11 @@
    "text": "No big ending. *Still waiting outside*.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
    "bars": 1,
    "ending": true

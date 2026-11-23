@@ -19,9 +19,11 @@
    "text": "*D major*: the chorus opens up.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "*A*: steady, like a slow breath.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -45,9 +49,11 @@
    "text": "Back to *D*. Calm, almost too calm.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -58,9 +64,11 @@
    "text": "*A* again. Drifting.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -71,11 +79,13 @@
    "text": "C♯ falls to C: *the floor drops away*.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G",
@@ -85,9 +95,11 @@
    "text": "*G*: you're weightless now.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   },
   {
@@ -98,11 +110,13 @@
    "text": "*C* again, further out.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G",
@@ -112,9 +126,11 @@
    "text": "*G*: numb, and floating away.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   }
  ]

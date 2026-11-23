@@ -18,9 +18,11 @@
    "text": "It starts on *Dmaj7*, the IV. Already dreaming.",
    "notes": [
     "D3",
+    "A3",
     "C#4",
-    "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "bars": 1
   },
@@ -31,9 +33,11 @@
    "text": "*A*, home. The place you want to leave.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
    "bars": 1
   },
@@ -46,7 +50,9 @@
     "F#2",
     "C#4",
     "F#4",
-    "A4"
+    "A4",
+    "C#5",
+    "F#5"
    ],
    "focus": 2,
    "bars": 1
@@ -60,7 +66,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ],
    "focus": 3,
    "bars": 1
@@ -72,9 +80,11 @@
    "text": "…it drives back to D. *Escape never lands*.",
    "notes": [
     "D3",
+    "A3",
     "C#4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
    "bars": 1,
    "ending": true

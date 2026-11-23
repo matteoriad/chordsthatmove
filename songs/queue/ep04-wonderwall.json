@@ -20,8 +20,10 @@
    "notes": [
     "F#2",
     "A3",
+    "C#4",
     "E4",
-    "A4"
+    "F#4",
+    "C#5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "The bass and one voice move. *The drone stays*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Esus4",
@@ -46,11 +50,13 @@
    "text": "Sus4: no third, so *neither major nor minor*.",
    "notes": [
     "E2",
+    "A3",
     "B3",
     "E4",
-    "A4"
+    "B4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "B7sus4",
@@ -60,11 +66,13 @@
    "text": "Still suspended. It *never lands*, so it loops.",
    "notes": [
     "B2",
+    "A3",
     "B3",
-    "E4",
-    "A4"
+    "F#4",
+    "B4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "F#m7",
@@ -75,8 +83,10 @@
    "notes": [
     "F#2",
     "A3",
-    "E4",
-    "A4"
+    "C#4",
+    "F#4",
+    "C#5",
+    "E5"
    ]
   }
  ]

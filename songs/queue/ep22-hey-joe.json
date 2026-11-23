@@ -18,9 +18,11 @@
    "text": "It starts on *C*, far from home in E.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
    "bars": 0.5
   },
@@ -31,11 +33,13 @@
    "text": "Up a fifth: *G*. Already moving.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
-   "focus": 1,
+   "focus": 2,
    "bars": 0.5
   },
   {
@@ -47,7 +51,9 @@
     "D3",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "focus": 3,
    "bars": 0.5
@@ -61,7 +67,9 @@
     "A2",
     "A3",
     "C#4",
-    "E4"
+    "E4",
+    "A4",
+    "E5"
    ],
    "focus": 2,
    "bars": 0.5
@@ -73,11 +81,13 @@
    "text": "*E major* at last. Its G♯ hits like a wall.",
    "notes": [
     "E2",
-    "G#3",
     "B3",
-    "E4"
+    "E4",
+    "G#4",
+    "B4",
+    "E5"
    ],
-   "focus": 1,
+   "focus": 3,
    "bars": 2
   },
   {
@@ -87,9 +97,11 @@
    "text": "Then back down to C. *Running again*.",
    "notes": [
     "C3",
-    "G3",
     "C4",
-    "E4"
+    "E4",
+    "G4",
+    "C5",
+    "G5"
    ],
    "bars": 1,
    "ending": true

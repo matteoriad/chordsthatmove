@@ -19,9 +19,11 @@
    "text": "Home: *G minor*. Cool, laid-back, a little dark.",
    "notes": [
     "G2",
+    "G3",
     "Bb3",
     "F4",
-    "G4"
+    "G4",
+    "D5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*C minor*, the iv. The mood sinks deeper.",
    "notes": [
     "C3",
+    "G3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Ebmaj7",
@@ -46,9 +50,11 @@
    "text": "*E♭maj7*: warm and hazy. A moment to breathe.",
    "notes": [
     "Eb3",
+    "G3",
     "Bb3",
-    "D4",
-    "G4"
+    "Eb4",
+    "Bb4",
+    "D5"
    ]
   },
   {
@@ -59,9 +65,11 @@
    "text": "Minor v: *F, not F♯*. Nothing pulls you home.",
    "notes": [
     "D3",
+    "A3",
     "C4",
-    "D4",
-    "F4"
+    "F4",
+    "A4",
+    "D5"
    ],
    "focus": 3
   },
@@ -73,9 +81,11 @@
    "text": "Home again, but *never relieved*. Still on edge.",
    "notes": [
     "G2",
-    "Bb3",
+    "G3",
     "D4",
-    "F4"
+    "F4",
+    "Bb4",
+    "D5"
    ]
   }
  ]

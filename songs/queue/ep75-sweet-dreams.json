@@ -19,9 +19,11 @@
    "text": "*C minor*: cold and mechanical.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "Eb4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*A♭*: a step down, darker.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G",
@@ -46,11 +50,13 @@
    "text": "*G major*. That *B* pulls you back in.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 2
   }
  ]
 }

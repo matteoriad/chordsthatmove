@@ -20,9 +20,11 @@
    "text": "*C minor*: tense, pacing.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "Eb4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -35,7 +37,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "focus": 1
   },
@@ -47,11 +51,13 @@
    "text": "*A♭*: sinking deeper.",
    "notes": [
     "Ab2",
-    "C4",
+    "Ab3",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "Eb5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "G7sus4",
@@ -61,9 +67,11 @@
    "text": "*C hangs on*. Not yet…",
    "notes": [
     "G2",
-    "C4",
+    "G3",
     "F4",
-    "G4"
+    "G4",
+    "C5",
+    "D5"
    ]
   },
   {
@@ -74,11 +82,13 @@
    "text": "C drops to B: *losing your mind*.",
    "notes": [
     "G2",
-    "B3",
+    "G3",
     "F4",
-    "G4"
+    "G4",
+    "B4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 4
   }
  ]
 }

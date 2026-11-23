@@ -18,6 +18,8 @@
    "text": "Home: *C major*. Calm, settled.",
    "notes": [
     "C3",
+    "G3",
+    "C4",
     "E4",
     "G4",
     "C5"
@@ -31,11 +33,13 @@
    "text": "Top note *C slips to B*. The mood shifts.",
    "notes": [
     "C3",
+    "G3",
+    "B3",
     "E4",
     "G4",
-    "B4"
+    "C5"
    ],
-   "focus": 3,
+   "focus": 2,
    "bars": 1
   },
   {
@@ -45,11 +49,13 @@
    "text": "*B slips to B♭*. Further down, deeper in.",
    "notes": [
     "C3",
+    "G3",
+    "Bb3",
     "E4",
     "G4",
-    "Bb4"
+    "C5"
    ],
-   "focus": 3,
+   "focus": 2,
    "bars": 1
   },
   {
@@ -61,7 +67,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "focus": 3,
    "bars": 1
@@ -74,10 +82,12 @@
    "notes": [
     "D3",
     "C4",
-    "F#4",
-    "A4"
+    "D4",
+    "A4",
+    "D5",
+    "F#5"
    ],
-   "focus": 2,
+   "focus": 5,
    "bars": 1
   },
   {
@@ -87,11 +97,13 @@
    "text": "*G*, the V. Waiting for an answer…",
    "notes": [
     "G2",
-    "B3",
+    "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5",
+    "G5"
    ],
-   "focus": 1,
+   "focus": 3,
    "bars": 1
   },
   {
@@ -102,8 +114,10 @@
    "notes": [
     "C3",
     "C4",
-    "E4",
-    "G4"
+    "G4",
+    "C5",
+    "E5",
+    "G5"
    ],
    "bars": 1,
    "ending": true

@@ -20,7 +20,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ],
    "bars": 1
   },
@@ -33,7 +35,9 @@
     "C3",
     "C4",
     "Eb4",
-    "G4"
+    "G4",
+    "C5",
+    "G5"
    ],
    "bars": 1
   },
@@ -46,7 +50,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "bars": 1
   },
@@ -59,7 +65,9 @@
     "Bb2",
     "Bb3",
     "D4",
-    "F4"
+    "F4",
+    "Bb4",
+    "F5"
    ],
    "focus": 2,
    "bars": 1
@@ -71,9 +79,11 @@
    "text": "Back to F minor. *Still alone, still racing*.",
    "notes": [
     "F2",
-    "Ab3",
     "C4",
-    "F4"
+    "F4",
+    "Ab4",
+    "C5",
+    "F5"
    ],
    "bars": 1,
    "ending": true

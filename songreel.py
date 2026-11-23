@@ -287,7 +287,7 @@ def synth(song, path):
         cyc = np.cumsum(f) / SR
         if v == 0:
             w = np.sin(2 * np.pi * cyc) + 0.3 * (2 * (cyc % 1) - 1)
-            bass += 0.5 * w * env
+            bass += 0.7 * w * env   # +3 dB since 2026-11-23 (Matteo: bass louder)
         else:
             w = sum(2 * ((cyc * 2 ** (d / 1200) + rng.random()) % 1) - 1 for d in (-8, 0, 7))
             pad += 0.12 * w * env

@@ -19,9 +19,11 @@
    "text": "Home: *D minor*. The bass sits on D.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*C* over a D that won't move. Unease.",
    "notes": [
     "D3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Bb/D",
@@ -46,11 +50,13 @@
    "text": "*B♭* over D: darker, closer.",
    "notes": [
     "D3",
+    "Bb3",
     "D4",
     "F4",
-    "Bb4"
+    "Bb4",
+    "F5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "C/D",
@@ -62,7 +68,9 @@
     "D3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5",
+    "G5"
    ],
    "focus": 1
   },
@@ -75,9 +83,11 @@
    "ending": true,
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   }
  ]

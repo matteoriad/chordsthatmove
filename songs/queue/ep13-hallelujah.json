@@ -20,7 +20,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "bars": 1
   },
@@ -31,9 +33,11 @@
    "text": "*G*, the V. You expect home, C major…",
    "notes": [
     "G2",
-    "B3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5",
+    "G5"
    ],
    "bars": 1
   },
@@ -44,11 +48,13 @@
    "text": "…but it lands on *A minor*. Comfort denied.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ],
-   "focus": 3,
+   "focus": 1,
    "bars": 1
   },
   {
@@ -60,7 +66,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "bars": 1
   },
@@ -71,9 +79,11 @@
    "text": "*G* again. Hoping…",
    "notes": [
     "G2",
-    "B3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5",
+    "G5"
    ],
    "bars": 1
   },
@@ -84,11 +94,13 @@
    "text": "*E7*: its G♯ isn't in C. It drags you toward A minor.",
    "notes": [
     "E2",
-    "B3",
-    "D4",
-    "G#4"
+    "E4",
+    "G#4",
+    "B4",
+    "D5",
+    "E5"
    ],
-   "focus": 3,
+   "focus": 2,
    "bars": 1
   },
   {
@@ -98,11 +110,13 @@
    "text": "A minor arrives. *Sadness feels inevitable*.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ],
-   "focus": 3,
+   "focus": 1,
    "bars": 1,
    "ending": true
   }

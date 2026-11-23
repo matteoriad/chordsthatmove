@@ -19,9 +19,11 @@
    "text": "Is *D* home? It sure sounds like it.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*C*: C natural isn't in D major.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G",
@@ -46,9 +50,11 @@
    "text": "G feels like home too. *So which is it?*",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   }
  ],

@@ -20,9 +20,11 @@
    "text": "*C6*: smooth, rolling along.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "C5"
    ]
   },
   {
@@ -33,11 +35,13 @@
    "text": "*D7♭5*: F♯ jolts us onto new tracks.",
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F#4",
-    "Ab4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Dm7",
@@ -47,11 +51,13 @@
    "text": "F♯ slides back to *F*: Dm7.",
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "G7",
@@ -61,9 +67,11 @@
    "text": "*G7*: the brakes come on.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "F4",
-    "G4"
+    "G4",
+    "D5"
    ]
   },
   {
@@ -75,9 +83,11 @@
    "ending": true,
    "notes": [
     "C3",
+    "G3",
     "A3",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   }
  ]

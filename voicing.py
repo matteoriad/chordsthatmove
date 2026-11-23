@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Turn a short song sketch (chord symbols + captions) into a full song spec
-with smooth voice leading: bass on the root, three upper voices that move as
-little as possible, each note spelled correctly for its chord (D♯ in B major,
-E♭ in C minor).
+with smooth voice leading: bass on the root, five upper voices (since 2026-11-23;
+three before, still available with voices=4) that move as little as possible,
+each note spelled correctly for its chord (D♯ in B major, E♭ in C minor).
 
 Sketch chords: {"name": "F#m7", "roman": "vi", "tag": "...", "beats": 8,
                 "text": "...", "focus_note": "A"  (optional),
@@ -28,8 +28,12 @@ QUAL = {
     "dim":   [(0, 0), (3, 2), (6, 4)],
     "5":     [(0, 0), (7, 4), (12, 0)],
 }
-LOW, HIGH = 55, 74          # upper voices between G3 and D5
+LOW, HIGH = 55, 74          # upper voices between G3 and D5 (4-voice voicing)
 BASS_LOW = 40               # bass root between E2 and D#3
+VOICES = 6                  # notes per chord: bass + 5 upper (2026-11-23)
+LOW6, HIGH6 = 55, 79        # 6-voice voicing: five upper voices between G3 and G5
+SPAN6 = 19                  # ... within an octave and a fifth
+DOUBLES = (0, 7, 12)        # only the root and the fifth may be doubled
 
 
 def parse(name):
@@ -77,19 +81,46 @@ def candidates(name):
     return letter, root_pc, out
 
 
-def voice(chords):
+def candidates6(name):
+    """Five upper voices: every 5-note subset (low → high, in itertools.combinations order) of the
+    chord's tones between G3 and G5 that holds every chord tone, doubles only the root or the fifth,
+    has no half step between neighbouring voices and spans at most an octave and a fifth. If nothing
+    qualifies, those last rules are dropped."""
+    letter, root_pc, qual, tones, _ = chord_tones(name)
+    if qual == "5":   # power chord: root, fifth, octave, twelfth, two octaves, stacked from the root
+        r = 48 + (root_pc - 48) % 12
+        if r < 52: r += 12
+        return letter, root_pc, [[(r, tones[0]), (r + 7, tones[1]), (r + 12, tones[2]), (r + 19, tones[1]), (r + 24, tones[2])]]
+    by_pc = {}
+    for t in tones: by_pc.setdefault(t[0], t)   # a pitch class spelled by its first chord tone
+    positions = [m for m in range(LOW6, HIGH6 + 1) if m % 12 in by_pc]
+    doublable = {t[0] for t in tones if t[1] in DOUBLES}
+    out, loose = [], []
+    for combo in itertools.combinations(positions, 5):
+        if combo[-1] - combo[0] > SPAN6: continue
+        pcs = [m % 12 for m in combo]
+        if set(pcs) != set(by_pc): continue
+        cb = [(m, by_pc[m % 12]) for m in combo]
+        clean = all(pcs.count(pc) == 1 or pc in doublable for pc in set(pcs)) and \
+            all(b - a > 1 for a, b in zip(combo, combo[1:]))   # and no half-step rubs between neighbours
+        (out if clean else loose).append(cb)
+    return letter, root_pc, out or loose
+
+
+def voice(chords, voices=VOICES):
     prev = None
     result = []
+    n = voices - 1
     for c in chords:
-        if c.get("notes"):
+        if c.get("notes") and len(c["notes"]) == voices:   # explicit voicing (a 4-note one is re-voiced in 6)
             result.append(c["notes"]); prev = None
             continue
-        letter, root_pc, cands = candidates(c["name"])
+        letter, root_pc, cands = candidates6(c["name"]) if voices == 6 else candidates(c["name"])
         if prev is None:
-            best = min(cands, key=lambda cb: abs(sum(m for m, _ in cb) / 3 - 64))
+            best = min(cands, key=lambda cb: abs(sum(m for m, _ in cb) / n - 64))
         else:
             best = min(cands, key=lambda cb: sum(abs(m - p) for (m, _), p in zip(cb, prev))
-                       + 0.05 * abs(sum(m for m, _ in cb) / 3 - 64))
+                       + 0.05 * abs(sum(m for m, _ in cb) / n - 64))
         prev = [m for m, _ in best]
         _, _, _, _, slash = chord_tones(c["name"])
         if slash:
@@ -105,9 +136,9 @@ def voice(chords):
     return result
 
 
-def build(sketch):
+def build(sketch, voices=VOICES):
     spec = {k: v for k, v in sketch.items() if k != "chords"}
-    notes = voice(sketch["chords"])
+    notes = voice(sketch["chords"], voices)
     chords = []
     for c, ns in zip(sketch["chords"], notes):
         cc = {k: v for k, v in c.items() if k not in ("focus_note",)}

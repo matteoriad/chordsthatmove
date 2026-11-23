@@ -19,9 +19,11 @@
    "text": "*D major*: calm on the surface.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*A major*: wants to go somewhere…",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Bm",
@@ -46,11 +50,13 @@
    "text": "*B minor*: the ache underneath.",
    "notes": [
     "B2",
+    "B3",
     "D4",
     "F#4",
-    "B4"
+    "B4",
+    "F#5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "G",
@@ -60,11 +66,13 @@
    "text": "*G major*, and round again. *Stuck.*",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 1
   }
  ]
 }

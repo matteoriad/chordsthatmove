@@ -18,9 +18,11 @@
    "text": "Home: *A minor*. A dark story begins.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
    "bars": 1
   },
@@ -31,9 +33,11 @@
    "text": "*C major*: a little light in the room.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
    "bars": 1
   },
@@ -44,11 +48,13 @@
    "text": "*D major*'s F♯ brightens it. Hope?",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2,
+   "focus": 3,
    "bars": 1
   },
   {
@@ -60,7 +66,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "focus": 2,
    "bars": 1
@@ -72,9 +80,11 @@
    "text": "Back to A minor, *heavier now*.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ],
    "bars": 1
   },
@@ -87,7 +97,9 @@
     "C3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5",
+    "G5"
    ],
    "bars": 1
   },
@@ -100,7 +112,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ],
    "focus": 3,
    "bars": 2
@@ -112,9 +126,11 @@
    "text": "*No escape*: back where it began.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ],
    "bars": 1,
    "ending": true

@@ -20,9 +20,11 @@
    "text": "It starts on *A♭*: heavy, not home.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ]
   },
   {
@@ -35,7 +37,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ],
    "focus": 2
   },
@@ -47,11 +51,13 @@
    "text": "C slips to *B♮*: G major pulls home.",
    "notes": [
     "G2",
-    "B3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5",
+    "G5"
    ],
-   "focus": 1
+   "focus": 3
   },
   {
    "name": "Cm",
@@ -62,8 +68,10 @@
    "notes": [
     "C3",
     "C4",
-    "Eb4",
-    "G4"
+    "G4",
+    "C5",
+    "Eb5",
+    "G5"
    ]
   }
  ]

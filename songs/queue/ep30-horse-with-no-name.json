@@ -18,9 +18,11 @@
    "text": "Home: *E minor*. Heat, dust, no shade.",
    "notes": [
     "E2",
-    "G3",
     "B3",
-    "E4"
+    "E4",
+    "G4",
+    "B4",
+    "E5"
    ],
    "bars": 1
   },
@@ -32,8 +34,10 @@
    "notes": [
     "F#2",
     "A3",
-    "B3",
-    "E4"
+    "D4",
+    "F#4",
+    "B4",
+    "D5"
    ],
    "focus": 1,
    "bars": 1
@@ -45,11 +49,13 @@
    "text": "Back to E minor. *The same horizon*.",
    "notes": [
     "E2",
-    "G3",
     "B3",
-    "E4"
+    "E4",
+    "G4",
+    "B4",
+    "E5"
    ],
-   "focus": 1,
+   "focus": 3,
    "bars": 1
   },
   {
@@ -60,8 +66,10 @@
    "notes": [
     "F#2",
     "A3",
-    "B3",
-    "E4"
+    "D4",
+    "F#4",
+    "B4",
+    "D5"
    ],
    "bars": 1
   },
@@ -72,9 +80,11 @@
    "text": "Two chords, one drone: *it never ends*.",
    "notes": [
     "E2",
-    "G3",
     "B3",
-    "E4"
+    "E4",
+    "G4",
+    "B4",
+    "E5"
    ],
    "bars": 1,
    "ending": true

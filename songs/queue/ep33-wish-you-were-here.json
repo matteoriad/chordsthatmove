@@ -19,9 +19,11 @@
    "text": "It starts on *C*, not home. Searching.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*D/F♯*: the chord that should lead home…",
    "notes": [
     "F#2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Am",
@@ -46,11 +50,13 @@
    "text": "…but it *slips to A minor* instead.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "G",
@@ -60,9 +66,11 @@
    "text": "*G*, home, through the back door.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   },
   {
@@ -75,7 +83,9 @@
     "F#2",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "focus": 3
   },
@@ -87,11 +97,13 @@
    "text": "No: *it falls back to C*.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Am",
@@ -101,9 +113,11 @@
    "text": "*A minor*. A long sigh…",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -115,9 +129,11 @@
    "ending": true,
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   }
  ],

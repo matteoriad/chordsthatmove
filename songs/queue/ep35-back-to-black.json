@@ -19,9 +19,11 @@
    "text": "Home: *D minor*. Already dark.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*G minor*, the iv. Heavier still.",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "Bb4"
+    "Bb4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 1
   },
   {
    "name": "Bb",
@@ -46,9 +50,11 @@
    "text": "*B♭ major*: a moment of warmth…",
    "notes": [
     "Bb2",
+    "Bb3",
     "D4",
     "F4",
-    "Bb4"
+    "Bb4",
+    "F5"
    ]
   },
   {
@@ -59,11 +65,13 @@
    "text": "…then *C♯* appears. A7 leans on D.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "G4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Dm",
@@ -74,11 +82,13 @@
    "ending": true,
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 2
   }
  ],
  "guess": true

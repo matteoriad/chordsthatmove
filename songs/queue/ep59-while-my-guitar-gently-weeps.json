@@ -21,9 +21,11 @@
    "text": "*A minor*: still and heavy.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -34,9 +36,11 @@
    "text": "The bass *drops to G*. Something gives.",
    "notes": [
     "G2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -47,9 +51,11 @@
    "text": "*F♯ in the bass*: a bittersweet ache.",
    "notes": [
     "F#2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -62,7 +68,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "focus": 2
   },
@@ -74,9 +82,11 @@
    "text": "Back to *A minor*. Again.",
    "notes": [
     "A2",
-    "C4",
+    "A3",
     "E4",
-    "A4"
+    "A4",
+    "C5",
+    "E5"
    ]
   },
   {
@@ -87,11 +97,13 @@
    "text": "*G*: one more step down…",
    "notes": [
     "G2",
-    "B3",
+    "G3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "D",
@@ -103,7 +115,9 @@
     "D3",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ],
    "focus": 3
   },
@@ -117,7 +131,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ],
    "focus": 3
   }
