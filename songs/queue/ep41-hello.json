@@ -22,7 +22,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ]
   },
   {
@@ -33,9 +35,11 @@
    "text": "The bass steps down to *E♭*. Reaching out.",
    "notes": [
     "Eb3",
-    "C4",
+    "Ab3",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "Eb5"
    ]
   },
   {
@@ -48,7 +52,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ]
   },
   {
@@ -59,11 +65,13 @@
    "text": "D♭. The V never comes: *no answer*.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Fm",
@@ -76,7 +84,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ]
   }
  ],

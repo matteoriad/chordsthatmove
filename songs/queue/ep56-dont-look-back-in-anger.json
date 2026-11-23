@@ -19,9 +19,11 @@
    "text": "*C major*: bright, open, home.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "Up to *G*. Still easy.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Am",
@@ -46,11 +50,13 @@
    "text": "*A minor*: a flicker of sadness.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "E",
@@ -62,7 +68,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ],
    "focus": 3
   },
@@ -76,7 +84,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ],
    "focus": 3
   },
@@ -88,11 +98,13 @@
    "text": "*G* pushes forward again.",
    "notes": [
     "G2",
-    "B3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5",
+    "G5"
    ],
-   "focus": 1
+   "focus": 3
   },
   {
    "name": "C",
@@ -104,8 +116,10 @@
    "notes": [
     "C3",
     "C4",
-    "E4",
-    "G4"
+    "G4",
+    "C5",
+    "E5",
+    "G5"
    ]
   }
  ]

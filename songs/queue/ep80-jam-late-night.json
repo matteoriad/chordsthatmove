@@ -55,9 +55,11 @@
    "text": "Scale: *C major*. Any of *C D E F G A B* works.",
    "notes": [
     "F2",
+    "A3",
     "C4",
-    "E4",
-    "A4"
+    "F4",
+    "C5",
+    "E5"
    ]
   },
   {
@@ -68,9 +70,11 @@
    "text": "Over *Em7*, land on *E G B D*.",
    "notes": [
     "E2",
-    "D4",
+    "G3",
+    "B3",
     "E4",
-    "G4"
+    "B4",
+    "D5"
    ]
   },
   {
@@ -81,9 +85,11 @@
    "text": "Over *Dm7*, land on *D F A C*.",
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -94,9 +100,11 @@
    "text": "Over *Cmaj7*, land on *C E G B*.",
    "notes": [
     "C3",
-    "C4",
+    "G3",
+    "B3",
     "E4",
-    "B4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -107,9 +115,11 @@
    "text": "Over *Fmaj7*, land on *F A C E*.",
    "notes": [
     "F2",
+    "A3",
     "C4",
-    "E4",
-    "A4"
+    "F4",
+    "C5",
+    "E5"
    ]
   },
   {
@@ -120,9 +130,11 @@
    "text": "Over *Em7*, land on *E G B D*.",
    "notes": [
     "E2",
-    "D4",
+    "G3",
+    "B3",
     "E4",
-    "G4"
+    "B4",
+    "D5"
    ]
   },
   {
@@ -133,9 +145,11 @@
    "text": "Over *Dm7*, land on *D F A C*.",
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -146,9 +160,11 @@
    "text": "Your turn. *Build your own* jam → link in bio.",
    "notes": [
     "C3",
-    "C4",
+    "G3",
+    "B3",
     "E4",
-    "B4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -160,9 +176,11 @@
    "text": "Back home. Again? *Hit replay.*",
    "notes": [
     "F2",
+    "A3",
     "C4",
-    "E4",
-    "A4"
+    "F4",
+    "C5",
+    "E5"
    ]
   }
  ]

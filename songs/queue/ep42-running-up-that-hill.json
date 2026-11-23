@@ -19,9 +19,11 @@
    "text": "*A♭*: it starts below home.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "One step up: *B♭*. Pushing uphill.",
    "notes": [
     "Bb2",
+    "Bb3",
     "D4",
     "F4",
-    "Bb4"
+    "Bb4",
+    "F5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "Cm",
@@ -46,11 +50,13 @@
    "text": "C minor: the top… then *you slide back*.",
    "notes": [
     "C3",
+    "C4",
     "Eb4",
     "G4",
-    "C5"
+    "C5",
+    "G5"
    ],
-   "focus": 3
+   "focus": 1
   }
  ]
 }

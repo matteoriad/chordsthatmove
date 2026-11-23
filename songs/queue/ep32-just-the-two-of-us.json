@@ -19,9 +19,11 @@
    "text": "*D♭maj7*: soft, wide, a little dreamy.",
    "notes": [
     "Db3",
+    "Ab3",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "Down a half step: *C7*. Its E aches for F.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "Bb4"
+    "Bb4",
+    "C5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Fm7",
@@ -46,11 +50,13 @@
    "text": "*E rises to F*. F minor: warm and close.",
    "notes": [
     "F2",
+    "Ab3",
     "C4",
+    "Eb4",
     "F4",
-    "Ab4"
+    "C5"
    ],
-   "focus": 2
+   "focus": 4
   },
   {
    "name": "Ebm7",
@@ -60,7 +66,9 @@
    "text": "*E♭m7*: a cool turn…",
    "notes": [
     "Eb3",
+    "Bb3",
     "Db4",
+    "Eb4",
     "Gb4",
     "Bb4"
    ]
@@ -73,7 +81,9 @@
    "text": "A♭7 sways back: *the dance goes on*.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
+    "Eb4",
     "Gb4",
     "Ab4"
    ]

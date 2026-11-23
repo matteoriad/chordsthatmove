@@ -18,9 +18,11 @@
    "text": "Home: *A minor*. Quiet, like an old story.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
    "bars": 0.5
   },
@@ -31,9 +33,11 @@
    "text": "The bass slips to *G♯*. A shiver.",
    "notes": [
     "G#2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
    "bars": 0.5
   },
@@ -44,9 +48,11 @@
    "text": "Down again to *G*. The floor keeps sinking.",
    "notes": [
     "G2",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
    "bars": 0.5
   },
@@ -57,9 +63,11 @@
    "text": "*F♯* in the bass: a brief, sad warmth.",
    "notes": [
     "F#2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
    "bars": 0.5
   },
@@ -70,11 +78,13 @@
    "text": "*Fmaj7*: five steps down, soft and sad.",
    "notes": [
     "F2",
-    "E4",
+    "A3",
+    "C4",
     "F4",
-    "A4"
+    "C5",
+    "E5"
    ],
-   "focus": 1,
+   "focus": 5,
    "bars": 0.5
   },
   {
@@ -84,9 +94,11 @@
    "text": "*G* climbs back toward the start…",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5"
    ],
    "bars": 0.5
   },
@@ -97,9 +109,11 @@
    "text": "…and the fall *begins again*.",
    "notes": [
     "A2",
+    "A3",
     "E4",
     "A4",
-    "C5"
+    "C5",
+    "E5"
    ],
    "bars": 1,
    "ending": true

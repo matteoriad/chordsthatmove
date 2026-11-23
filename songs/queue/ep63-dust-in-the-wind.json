@@ -20,9 +20,11 @@
    "text": "*C major*: simple and open.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -33,11 +35,13 @@
    "text": "C slips to *B*. Wistful.",
    "notes": [
     "C3",
+    "G3",
     "B3",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Cadd9",
@@ -47,11 +51,13 @@
    "text": "Now *D* rings out. Restless.",
    "notes": [
     "C3",
-    "D4",
+    "G3",
+    "C4",
     "E4",
-    "G4"
+    "G4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 5
   },
   {
    "name": "C",
@@ -61,9 +67,11 @@
    "text": "Back to *C*, as if nothing happened.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -74,11 +82,13 @@
    "text": "*Asus2*: not major, not minor.",
    "notes": [
     "A2",
+    "A3",
     "B3",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Asus4",
@@ -88,11 +98,13 @@
    "text": "*D* hangs over it. Waiting.",
    "notes": [
     "A2",
+    "A3",
     "D4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Am",
@@ -102,11 +114,13 @@
    "text": "D falls to C: *the truth lands*.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Asus2",
@@ -116,11 +130,13 @@
    "text": "B again: *time slipping away*.",
    "notes": [
     "A2",
+    "A3",
     "B3",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ],
-   "focus": 1
+   "focus": 2
   }
  ]
 }

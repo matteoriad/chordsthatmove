@@ -57,28 +57,31 @@ INK, SURFACE, MUTED, PAPER = (11, 11, 16), (21, 21, 29), (138, 138, 153), (242, 
 DIM, FAINT, SOFT = (110, 110, 124), (78, 78, 90), (180, 180, 192)
 LINE, BORDER = (34, 34, 44), (42, 42, 54)
 SOPRANO, ALTO, TENOR, BASS = (92, 200, 240), (169, 155, 255), (255, 122, 168), (245, 181, 74)
-VOICES = [BASS, TENOR, ALTO, SOPRANO]          # index 0 = lowest note
+LOWV, HIGHV = (255, 148, 102), (111, 227, 176)   # coral and mint: the two extra lines of 6 voices
+VOICES = [BASS, TENOR, ALTO, SOPRANO]          # index 0 = lowest note (4 voices)
+VOICES6 = [BASS, LOWV, TENOR, ALTO, HIGHV, SOPRANO]   # 6 voices (bass + 5 upper, since 2026-11-23)
 L, R = 72, 940                                  # safe-zone content edges
 
 PLAYHEAD, FUTURE, THEME, TEXTURE, DEFAULT_ACCENT = (255, 255, 255), "solid", "night", {}, (255, 122, 168)
 
 # ---- themes (the jam app's looks: src/lib/theme/themes.ts + the html[data-theme] blocks in globals.css) ----
 def _h(x): x = x.lstrip("#"); return tuple(int(x[i:i + 2], 16) for i in (0, 2, 4))
-THEMES = {   # bg surface line border fg soft muted dim faint accent playhead | bass tenor alto soprano | future line
+THEMES = {   # bg surface line border fg soft muted dim faint accent playhead | bass low tenor alto high soprano | future line
+    # (low = coral, high = mint: the two extra lines of the 6-voice voicing, 2026-11-23)
     "night": ("#0B0B10 #15151D #22222C #2A2A36 #F2F2F5 #B4B4C0 #8A8A99 #6E6E7C #4E4E5A #FF7AA8 #FFFFFF",
-              "#F5B54A #FF7AA8 #A99BFF #5CC8F0", "solid"),
+              "#F5B54A #FF9466 #FF7AA8 #A99BFF #6FE3B0 #5CC8F0", "solid"),
     "riso": ("#F2EEE5 #E9E4D8 #D8D2C3 #CFC8B6 #1B1B2F #3D3D52 #55556A #8A8A96 #B5B1A6 #C81E78 #1B1B2F",
-             "#F2A60C #F0409A #7A56B8 #0077C0", "solid"),
+             "#F2A60C #E8642A #F0409A #7A56B8 #1E9E6A #0077C0", "solid"),
     "chalk": ("#222B29 #2C3634 #3A4643 #46524F #ECEBE6 #C9C9C2 #A3ABA6 #7F8984 #566360 #FF9BBA #F2F2EE",
-              "#FFC870 #FF9AB8 #BFB2FF #7FD3F7", "solid"),
+              "#FFC870 #FFAE8A #FF9AB8 #BFB2FF #8FE8C2 #7FD3F7", "solid"),
     "blueprint": ("#1A4577 #1F4F87 #2D5F9B #4C7DB8 #F4F8FF #D2E2F7 #B0C7E7 #86A6D1 #5F86B8 #FFA3C4 #FFFFFF",
-                  "#FFCB6B #FF9EC0 #C8B8FF #8DD8FF", "dashed"),
+                  "#FFCB6B #FFB48E #FF9EC0 #C8B8FF #9AF0CA #8DD8FF", "dashed"),
     "graph": ("#EFF0E4 #E6E8D8 #D3D9C2 #C4CCB0 #1A241E #36423A #52605A #8A948C #B4BBA8 #B4235A #1A241E",
-              "#C47F14 #C2306B #5B45C8 #1B6F96", "solid"),
+              "#C47F14 #C9592B #C2306B #5B45C8 #2E8A5C #1B6F96", "solid"),
     "score": ("#EBE0C8 #E2D6BB #D2C4A4 #C4B592 #231C16 #3F342A #5E5040 #8C7C66 #B8A88A #A82462 #231C16",
-              "#A86A0C #BE3068 #5A46C8 #1F6E96", "dotted"),
+              "#A86A0C #B4542C #BE3068 #5A46C8 #3E7E4E #1F6E96", "dotted"),
     "paper": ("#E3DFD4 #DAD6CA #CBC7B9 #BDB9AA #1C1A18 #3A3733 #57534C #8A867D #B2AEA2 #A81F55 #1C1A18",
-              "#C98A12 #D43A78 #6B52D6 #2386B6", "solid"),
+              "#C98A12 #C85A2A #D43A78 #6B52D6 #2A8A5E #2386B6", "solid"),
 }
 ROTATION = ["riso", "chalk", "blueprint", "graph", "score", "paper"]
 
@@ -136,11 +139,12 @@ def texture(name, w, h):
 def set_theme(name):
     """Switch every colour token (module globals, read at draw time) to a theme."""
     global INK, SURFACE, LINE, BORDER, PAPER, SOFT, MUTED, DIM, FAINT, PLAYHEAD
-    global BASS, TENOR, ALTO, SOPRANO, VOICES, FUTURE, THEME, TEXTURE, DEFAULT_ACCENT
+    global BASS, TENOR, ALTO, SOPRANO, VOICES, VOICES6, LOWV, HIGHV, FUTURE, THEME, TEXTURE, DEFAULT_ACCENT
     base, voices, FUTURE = THEMES[name]
     (INK, SURFACE, LINE, BORDER, PAPER, SOFT, MUTED, DIM, FAINT, DEFAULT_ACCENT, PLAYHEAD) = [_h(x) for x in base.split()]
-    BASS, TENOR, ALTO, SOPRANO = [_h(x) for x in voices.split()]
+    BASS, LOWV, TENOR, ALTO, HIGHV, SOPRANO = [_h(x) for x in voices.split()]
     VOICES = [BASS, TENOR, ALTO, SOPRANO]
+    VOICES6 = [BASS, LOWV, TENOR, ALTO, HIGHV, SOPRANO]
     THEME, TEXTURE = name, {}
 
 
@@ -339,7 +343,7 @@ class Reel:
         self.accent = DEFAULT_ACCENT if acc.upper() == "#FF7AA8" else hexrgb(acc)   # the brand pink follows the theme
         self.hook_end = s.hook_end or sr.LEAD_IN
         self.outro_start = s.end + 0.3
-        self.voice_cols = [VOICES[min(i, 3)] if s.nv <= 4 else VOICES[i % 4] for i in range(s.nv)]
+        self.voice_cols = [VOICES[min(i, 3)] if s.nv <= 4 else VOICES6[i % 6] for i in range(s.nv)]
         # which voices move into each chord
         self.moved = [np.zeros(s.nv, bool)] + [s.pitch[i] != s.pitch[i - 1] for i in range(1, len(s.starts))]
         self.focus = []

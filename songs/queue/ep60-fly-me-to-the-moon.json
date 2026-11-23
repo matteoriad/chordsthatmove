@@ -19,9 +19,11 @@
    "text": "*Am7*: we start mid-air, not home.",
    "notes": [
     "A2",
-    "C4",
+    "G3",
+    "A3",
     "E4",
-    "G4"
+    "A4",
+    "C5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "Down a fifth: *Dm7*. Falling.",
    "notes": [
     "D3",
+    "A3",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "G7",
@@ -46,11 +50,13 @@
    "text": "Another fifth: *G7*. Gravity builds.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "F4",
-    "G4"
+    "G4",
+    "D5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Cmaj7",
@@ -60,11 +66,13 @@
    "text": "*Cmaj7*: home, but we don't stop.",
    "notes": [
     "C3",
+    "G3",
     "B3",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Fmaj7",
@@ -74,11 +82,13 @@
    "text": "Still falling: *Fmaj7*.",
    "notes": [
     "F2",
+    "A3",
     "C4",
-    "E4",
-    "A4"
+    "F4",
+    "C5",
+    "E5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "Bdim",
@@ -88,11 +98,13 @@
    "text": "*B diminished*: the floor gets thin.",
    "notes": [
     "B2",
+    "B3",
     "D4",
     "F4",
-    "B4"
+    "B4",
+    "F5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "E7",
@@ -102,11 +114,13 @@
    "text": "*E7*: G♯ swings us back around.",
    "notes": [
     "E2",
+    "B3",
     "D4",
     "G#4",
-    "B4"
+    "B4",
+    "E5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Am7",
@@ -117,9 +131,11 @@
    "ending": true,
    "notes": [
     "A2",
+    "A3",
     "E4",
     "G4",
-    "C5"
+    "C5",
+    "E5"
    ]
   }
  ]

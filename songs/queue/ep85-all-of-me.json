@@ -22,7 +22,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ]
   },
   {
@@ -33,11 +35,13 @@
    "text": "*D♭*: opening up.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "Ab",
@@ -47,11 +51,13 @@
    "text": "*A♭*: home, finally.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Eb",
@@ -63,7 +69,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "focus": 3
   }

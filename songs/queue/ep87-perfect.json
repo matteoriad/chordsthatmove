@@ -19,9 +19,11 @@
    "text": "*A♭ major*: barefoot on the grass.",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ]
   },
   {
@@ -34,7 +36,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ],
    "focus": 2
   },
@@ -46,11 +50,13 @@
    "text": "*D♭*: swaying.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Eb",
@@ -62,7 +68,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "focus": 3
   }

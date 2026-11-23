@@ -19,9 +19,11 @@
    "text": "*D♭ major*: you had it.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*A♭*: reaching…",
    "notes": [
     "Ab2",
+    "Ab3",
     "C4",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "Eb5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Bbm",
@@ -46,11 +50,13 @@
    "text": "*B♭ minor*: it slips away.",
    "notes": [
     "Bb2",
+    "Bb3",
     "Db4",
     "F4",
-    "Bb4"
+    "Bb4",
+    "F5"
    ],
-   "focus": 3
+   "focus": 1
   },
   {
    "name": "Gb",
@@ -62,7 +68,9 @@
     "Gb2",
     "Db4",
     "Gb4",
-    "Bb4"
+    "Bb4",
+    "Db5",
+    "Gb5"
    ],
    "focus": 2
   }

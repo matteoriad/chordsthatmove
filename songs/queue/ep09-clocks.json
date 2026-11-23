@@ -21,7 +21,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ]
   },
   {
@@ -34,7 +36,9 @@
     "Bb2",
     "Bb3",
     "Db4",
-    "F4"
+    "F4",
+    "Bb4",
+    "F5"
    ],
    "focus": 2
   },
@@ -46,9 +50,11 @@
    "text": "*F minor*. Still waiting for a V that never comes.",
    "notes": [
     "F2",
-    "Ab3",
     "C4",
-    "F4"
+    "F4",
+    "Ab4",
+    "C5",
+    "F5"
    ]
   },
   {
@@ -59,9 +65,11 @@
    "text": "No pull home, so it *never truly lands*. It just keeps going.",
    "notes": [
     "Eb3",
-    "G3",
     "Bb3",
-    "Eb4"
+    "Eb4",
+    "G4",
+    "Bb4",
+    "Eb5"
    ]
   }
  ]

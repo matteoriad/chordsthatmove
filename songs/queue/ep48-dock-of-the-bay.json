@@ -20,9 +20,11 @@
    "text": "Home: *G major*. Easy and sunny.",
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   },
   {
@@ -33,11 +35,13 @@
    "text": "*B7*: its D♯ isn't in G. It points away.",
    "notes": [
     "B2",
+    "A3",
     "B3",
     "D#4",
-    "A4"
+    "F#4",
+    "B4"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "C",
@@ -47,11 +51,13 @@
    "text": "But it *drifts to C* instead.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "A7",
@@ -61,11 +67,13 @@
    "text": "*A7*: C♯ points somewhere new…",
    "notes": [
     "A2",
-    "C#4",
+    "G3",
+    "A3",
     "E4",
-    "G4"
+    "A4",
+    "C#5"
    ],
-   "focus": 1
+   "focus": 5
   },
   {
    "name": "G",
@@ -76,9 +84,11 @@
    "ending": true,
    "notes": [
     "G2",
+    "G3",
     "B3",
     "D4",
-    "G4"
+    "G4",
+    "D5"
    ]
   }
  ]

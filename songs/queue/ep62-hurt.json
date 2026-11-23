@@ -19,9 +19,11 @@
    "text": "*A minor*: quiet, close to the bone.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "The bass climbs to *C*. A little hope.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -45,9 +49,11 @@
    "text": "*Dsus2*: no third. Hollow, numb.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "E4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -59,9 +65,11 @@
    "ending": true,
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   }
  ]

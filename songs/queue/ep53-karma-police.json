@@ -20,9 +20,11 @@
    "text": "Home: *A minor*. An uneasy calm.",
    "notes": [
     "A2",
+    "A3",
     "C4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -33,9 +35,11 @@
    "text": "*D/F♯*: a hopeful lift. F♯ is Dorian.",
    "notes": [
     "F#2",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ]
   },
   {
@@ -46,9 +50,11 @@
    "text": "*E minor*: it sinks again.",
    "notes": [
     "E2",
+    "B3",
     "E4",
     "G4",
-    "B4"
+    "B4",
+    "E5"
    ]
   },
   {
@@ -59,9 +65,11 @@
    "text": "*G*: a breath…",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5"
    ]
   },
   {
@@ -72,9 +80,11 @@
    "text": "*A minor*. Same suspicion…",
    "notes": [
     "A2",
+    "A3",
     "E4",
     "A4",
-    "C5"
+    "C5",
+    "E5"
    ]
   },
   {
@@ -85,11 +95,13 @@
    "text": "Now *F*, not F♯. The verdict lands.",
    "notes": [
     "F2",
+    "C4",
     "F4",
     "A4",
-    "C5"
+    "C5",
+    "F5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "Em",
@@ -99,9 +111,11 @@
    "text": "*E minor*: no appeal…",
    "notes": [
     "E2",
+    "B3",
     "E4",
     "G4",
-    "B4"
+    "B4",
+    "E5"
    ]
   },
   {
@@ -112,9 +126,11 @@
    "text": "G, and *the trial starts over*.",
    "notes": [
     "G2",
+    "G3",
     "D4",
     "G4",
-    "B4"
+    "B4",
+    "D5"
    ]
   }
  ]

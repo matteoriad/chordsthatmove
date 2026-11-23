@@ -18,9 +18,11 @@
    "text": "It starts on *D♭*, the IV. Not home. Already reaching.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ],
    "bars": 1
   },
@@ -33,7 +35,9 @@
     "Eb3",
     "Bb3",
     "Eb4",
-    "G4"
+    "G4",
+    "Bb4",
+    "Eb5"
    ],
    "bars": 1
   },
@@ -44,9 +48,11 @@
    "text": "Home: *A♭ major*. The victory.",
    "notes": [
     "Ab2",
-    "C4",
+    "Ab3",
     "Eb4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "Eb5"
    ],
    "bars": 1
   },
@@ -59,7 +65,9 @@
     "F2",
     "C4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "C5",
+    "F5"
    ],
    "focus": 2,
    "bars": 1
@@ -71,9 +79,11 @@
    "text": "Around again: the glory *never gets to stay*.",
    "notes": [
     "Db3",
+    "Ab3",
     "Db4",
     "F4",
-    "Ab4"
+    "Ab4",
+    "Db5"
    ],
    "bars": 1,
    "ending": true

@@ -54,9 +54,11 @@
    "text": "Scale: *A blues*. Any of *A C D E♭ E G* works.",
    "notes": [
     "A2",
-    "C#4",
+    "G3",
+    "A3",
     "E4",
-    "G4"
+    "A4",
+    "C#5"
    ]
   },
   {
@@ -67,9 +69,11 @@
    "text": "Over *D7*, land on *D F♯ A C*.",
    "notes": [
     "D3",
+    "A3",
     "C4",
-    "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ]
   },
   {
@@ -80,9 +84,11 @@
    "text": "Over *A7*, land on *A C♯ E G*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   },
   {
@@ -93,9 +99,11 @@
    "text": "Over *E7*, land on *E G♯ B D*.",
    "notes": [
     "E2",
+    "B3",
     "D4",
-    "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -106,9 +114,11 @@
    "text": "Over *A7*, land on *A C♯ E G*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   },
   {
@@ -119,9 +129,11 @@
    "text": "Over *D7*, land on *D F♯ A C*.",
    "notes": [
     "D3",
+    "A3",
     "C4",
-    "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ]
   },
   {
@@ -132,9 +144,11 @@
    "text": "Over *A7*, land on *A C♯ E G*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   },
   {
@@ -145,9 +159,11 @@
    "text": "Over *E7*, land on *E G♯ B D*.",
    "notes": [
     "E2",
+    "B3",
     "D4",
-    "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -158,9 +174,11 @@
    "text": "Over *A7*, land on *A C♯ E G*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   },
   {
@@ -171,9 +189,11 @@
    "text": "Over *D7*, land on *D F♯ A C*.",
    "notes": [
     "D3",
+    "A3",
     "C4",
-    "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ]
   },
   {
@@ -184,9 +204,11 @@
    "text": "Over *A7*, land on *A C♯ E G*.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   },
   {
@@ -197,9 +219,11 @@
    "text": "Your turn. *Build your own* jam → link in bio.",
    "notes": [
     "E2",
+    "B3",
     "D4",
-    "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -211,9 +235,11 @@
    "text": "Back home. Again? *Hit replay.*",
    "notes": [
     "A2",
+    "A3",
     "C#4",
-    "E4",
-    "G4"
+    "G4",
+    "A4",
+    "E5"
    ]
   }
  ]

@@ -19,9 +19,11 @@
    "text": "Home: *A major*. Warm and settled.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -34,7 +36,9 @@
     "E2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -47,7 +51,9 @@
     "F#2",
     "C#4",
     "F#4",
-    "A4"
+    "A4",
+    "C#5",
+    "F#5"
    ]
   },
   {
@@ -59,10 +65,12 @@
    "notes": [
     "A2",
     "C#4",
-    "G4",
-    "A4"
+    "E4",
+    "A4",
+    "E5",
+    "G5"
    ],
-   "focus": 2
+   "focus": 5
   },
   {
    "name": "D",
@@ -72,11 +80,13 @@
    "text": "*D major*: full and warm. The good days.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "Dm",
@@ -86,11 +96,13 @@
    "text": "*F♯ drops to F*. Borrowed D minor: gone.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   },
   {
    "name": "A",
@@ -101,9 +113,11 @@
    "ending": true,
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   }
  ]

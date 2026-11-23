@@ -19,9 +19,11 @@
    "text": "Home: *A major*. Warm, but fragile.",
    "notes": [
     "A2",
+    "A3",
     "C#4",
     "E4",
-    "A4"
+    "A4",
+    "E5"
    ]
   },
   {
@@ -34,7 +36,9 @@
     "G#2",
     "B3",
     "E4",
-    "G#4"
+    "G#4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -47,7 +51,9 @@
     "F#2",
     "C#4",
     "F#4",
-    "A4"
+    "A4",
+    "C#5",
+    "F#5"
    ],
    "focus": 3
   },
@@ -59,11 +65,13 @@
    "text": "*D major*: still hoping, just a little.",
    "notes": [
     "D3",
+    "A3",
     "D4",
     "F#4",
-    "A4"
+    "A4",
+    "D5"
    ],
-   "focus": 2
+   "focus": 3
   }
  ]
 }

@@ -19,9 +19,11 @@
    "text": "Home: *C major*. Simple and calm.",
    "notes": [
     "C3",
+    "G3",
     "C4",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ]
   },
   {
@@ -32,11 +34,13 @@
    "text": "*C slips to B*: the mind drifts.",
    "notes": [
     "C3",
+    "G3",
     "B3",
     "E4",
-    "G4"
+    "G4",
+    "C5"
    ],
-   "focus": 1
+   "focus": 2
   },
   {
    "name": "F",
@@ -48,7 +52,9 @@
     "F2",
     "C4",
     "F4",
-    "A4"
+    "A4",
+    "C5",
+    "F5"
    ]
   }
  ]

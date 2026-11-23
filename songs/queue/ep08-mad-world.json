@@ -21,7 +21,9 @@
     "E2",
     "B3",
     "E4",
-    "G4"
+    "G4",
+    "B4",
+    "E5"
    ]
   },
   {
@@ -32,9 +34,11 @@
    "text": "Up to *G major*. Brighter, but the same notes.",
    "notes": [
     "G2",
-    "B3",
+    "G3",
     "D4",
-    "G4"
+    "G4",
+    "B4",
+    "D5"
    ]
   },
   {
@@ -47,7 +51,9 @@
     "D3",
     "A3",
     "D4",
-    "F#4"
+    "F#4",
+    "A4",
+    "D5"
    ]
   },
   {
@@ -60,7 +66,9 @@
     "A2",
     "A3",
     "C#4",
-    "E4"
+    "E4",
+    "A4",
+    "E5"
    ],
    "focus": 2
   },
@@ -72,9 +80,11 @@
    "text": "Back to E minor. *Hope that doesn't fit* is what haunts.",
    "notes": [
     "E2",
-    "G3",
     "B3",
-    "E4"
+    "E4",
+    "G4",
+    "B4",
+    "E5"
    ]
   }
  ]
