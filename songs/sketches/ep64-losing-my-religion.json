@@ -3,29 +3,20 @@
  "artist": "R.E.M.",
  "key": "A minor",
  "bpm": 125,
- "episode": 65,
+ "episode": 64,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "Two chords, pacing like *someone who can't sleep*",
  "hook_focus": 5,
  "cover_text": "Two chords, then *the confession*",
  "question": "Did you get it before the reveal? Be honest 👇",
- "guess": true,
  "chords": [
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
    "bars": 1,
-   "text": "*A minor*: restless, pacing.",
-   "notes": [
-    "A2",
-    "A3",
-    "C4",
-    "E4",
-    "A4",
-    "E5"
-   ]
+   "text": "*A minor*: restless, pacing."
   },
   {
    "name": "Em",
@@ -33,45 +24,21 @@
    "tag": "minor v",
    "bars": 1,
    "text": "*E minor*: no answer, just back and forth.",
-   "notes": [
-    "E2",
-    "B3",
-    "E4",
-    "G4",
-    "B4",
-    "E5"
-   ],
-   "focus": 1
+   "focus_note": "B"
   },
   {
    "name": "Am",
    "roman": "i",
    "tag": "home",
    "bars": 1,
-   "text": "Back again. *Can't settle*.",
-   "notes": [
-    "A2",
-    "A3",
-    "E4",
-    "A4",
-    "C5",
-    "E5"
-   ]
+   "text": "Back again. *Can't settle*."
   },
   {
    "name": "Em",
    "roman": "v",
    "tag": "minor v",
    "bars": 1,
-   "text": "Still circling. *Holding it in*.",
-   "notes": [
-    "E2",
-    "B3",
-    "E4",
-    "G4",
-    "B4",
-    "E5"
-   ]
+   "text": "Still circling. *Holding it in*."
   },
   {
    "name": "Dm",
@@ -79,15 +46,7 @@
    "tag": "darker",
    "bars": 1,
    "text": "*D minor*: it gets heavier…",
-   "notes": [
-    "D3",
-    "A3",
-    "D4",
-    "F4",
-    "A4",
-    "D5"
-   ],
-   "focus": 3
+   "focus_note": "F"
   },
   {
    "name": "G",
@@ -95,15 +54,8 @@
    "tag": "spill",
    "bars": 1,
    "text": "*G major*: it all comes out.",
-   "notes": [
-    "G2",
-    "G3",
-    "D4",
-    "G4",
-    "B4",
-    "D5"
-   ],
-   "focus": 4
+   "focus_note": "B"
   }
- ]
+ ],
+ "guess": true
 }

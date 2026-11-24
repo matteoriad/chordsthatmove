@@ -3,7 +3,7 @@
  "artist": "Adele",
  "key": "A major",
  "bpm": 67,
- "episode": 64,
+ "episode": 65,
  "accent": "#FF7AA8",
  "handle": "@chordsthatmove",
  "hook": "The bass *sinks* one step at a time",
@@ -16,30 +16,14 @@
    "roman": "I",
    "tag": "home",
    "bars": 1,
-   "text": "Home: *A major*. Warm, but fragile.",
-   "notes": [
-    "A2",
-    "A3",
-    "C#4",
-    "E4",
-    "A4",
-    "E5"
-   ]
+   "text": "Home: *A major*. Warm, but fragile."
   },
   {
    "name": "E/G#",
    "roman": "V/3",
    "tag": "sinking",
    "bars": 1,
-   "text": "The bass slips *down* to G♯. Sinking.",
-   "notes": [
-    "G#2",
-    "B3",
-    "E4",
-    "G#4",
-    "B4",
-    "E5"
-   ]
+   "text": "The bass slips *down* to G♯. Sinking."
   },
   {
    "name": "F#m",
@@ -47,15 +31,7 @@
    "tag": "memory",
    "bars": 1,
    "text": "*F♯ minor*: the memory still hurts.",
-   "notes": [
-    "F#2",
-    "C#4",
-    "F#4",
-    "A4",
-    "C#5",
-    "F#5"
-   ],
-   "focus": 3
+   "focus_note": "A"
   },
   {
    "name": "D",
@@ -63,15 +39,7 @@
    "tag": "hope",
    "bars": 1,
    "text": "*D major*: still hoping, just a little.",
-   "notes": [
-    "D3",
-    "A3",
-    "D4",
-    "F#4",
-    "A4",
-    "D5"
-   ],
-   "focus": 3
+   "focus_note": "F#"
   }
  ]
 }
