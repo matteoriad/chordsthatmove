@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre été",
+  "title": "Comptine d'un autre \u00e9t\u00e9",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1230,5 +1230,17 @@
    "via": "chrome",
    "posted_at": "2026-11-23"
   }
+ },
+ {
+  "episode": 61,
+  "slug": "ep61-gangstas-paradise",
+  "title": "Gangsta's Paradise",
+  "media_id": "17945191044390112",
+  "permalink": "https://www.instagram.com/reel/DgHfMzDhean/",
+  "theme": "riso",
+  "held": "amb-grains",
+  "texture": "none",
+  "posted_at": "2026-11-24T08:07:09+00:00",
+  "story_id": "17989730619092780"
  }
 ]
