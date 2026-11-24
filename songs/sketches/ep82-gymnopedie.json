@@ -1,0 +1,47 @@
+{
+ "title": "Gymnopédie No. 1",
+ "artist": "Erik Satie",
+ "key": "D major",
+ "bpm": 72,
+ "episode": 82,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "beats_per_bar": 3,
+ "hook": "Two chords. *Marked 'painfully'.*",
+ "hook_focus": 1,
+ "cover_text": "Two chords that *rock like a lullaby*",
+ "question": "Where did you first hear this one? 👇",
+ "hashtag": "gymnopedie",
+ "chords": [
+  {
+   "name": "Gmaj7",
+   "roman": "IVmaj7",
+   "tag": "float",
+   "bars": 1,
+   "text": "*G maj7*: F♯ floats on top.",
+   "notes": [
+    "G2",
+    "D3",
+    "B3",
+    "D4",
+    "F#4",
+    "F#5"
+   ]
+  },
+  {
+   "name": "Dmaj7",
+   "roman": "Imaj7",
+   "tag": "sway",
+   "bars": 1,
+   "text": "*D maj7*: the floor moves, *F♯ stays*.",
+   "notes": [
+    "D2",
+    "A2",
+    "A3",
+    "C#4",
+    "F#4",
+    "F#5"
+   ]
+  }
+ ]
+}

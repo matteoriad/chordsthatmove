@@ -1,0 +1,61 @@
+{
+ "title": "Losing My Religion",
+ "artist": "R.E.M.",
+ "key": "A minor",
+ "bpm": 125,
+ "episode": 65,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Two chords, pacing like *someone who can't sleep*",
+ "hook_focus": 5,
+ "cover_text": "Two chords, then *the confession*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "chords": [
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A minor*: restless, pacing."
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "minor v",
+   "bars": 1,
+   "text": "*E minor*: no answer, just back and forth.",
+   "focus_note": "B"
+  },
+  {
+   "name": "Am",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "Back again. *Can't settle*."
+  },
+  {
+   "name": "Em",
+   "roman": "v",
+   "tag": "minor v",
+   "bars": 1,
+   "text": "Still circling. *Holding it in*."
+  },
+  {
+   "name": "Dm",
+   "roman": "iv",
+   "tag": "darker",
+   "bars": 1,
+   "text": "*D minor*: it gets heavier…",
+   "focus_note": "F"
+  },
+  {
+   "name": "G",
+   "roman": "VII",
+   "tag": "spill",
+   "bars": 1,
+   "text": "*G major*: it all comes out.",
+   "focus_note": "B"
+  }
+ ],
+ "guess": true
+}

@@ -1,0 +1,79 @@
+{
+ "title": "Despacito",
+ "artist": "Luis Fonsi",
+ "key": "B minor",
+ "bpm": 89,
+ "episode": 93,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Minor chords you *can dance to*",
+ "hook_focus": 1,
+ "cover_text": "Minor, but *it makes you dance*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "guess": true,
+ "chords": [
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*B minor*: slow and warm.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4",
+    "B4",
+    "F#5"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "VI",
+   "tag": "heat",
+   "bars": 1,
+   "text": "*G major*: the heat rises.",
+   "notes": [
+    "G2",
+    "G3",
+    "D4",
+    "G4",
+    "B4",
+    "D5"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "D",
+   "roman": "III",
+   "tag": "bright",
+   "bars": 1,
+   "text": "*D major*: brighter…",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4",
+    "A4",
+    "D5"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "A",
+   "roman": "VII",
+   "tag": "move",
+   "bars": 1,
+   "text": "*A major*: and move.",
+   "notes": [
+    "A2",
+    "A3",
+    "C#4",
+    "E4",
+    "A4",
+    "E5"
+   ],
+   "focus": 2
+  }
+ ]
+}

@@ -1,0 +1,77 @@
+{
+ "title": "The Scientist",
+ "artist": "Coldplay",
+ "key": "F major",
+ "bpm": 73,
+ "episode": 76,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "An apology in *three chords*",
+ "hook_focus": 3,
+ "cover_text": "Three chords that *say sorry*",
+ "question": "Piano or guitar: how did you learn this one? 👇",
+ "hashtag": "thescientist",
+ "chords": [
+  {
+   "name": "Dm7",
+   "roman": "vi7",
+   "tag": "sorry",
+   "bars": 1,
+   "text": "*D minor 7*: it starts with regret.",
+   "notes": [
+    "D3",
+    "A3",
+    "C4",
+    "D4",
+    "F4",
+    "D5"
+   ]
+  },
+  {
+   "name": "Bb",
+   "roman": "IV",
+   "tag": "soften",
+   "bars": 1,
+   "text": "*B♭*: softer, reaching out.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "D4",
+    "F4",
+    "Bb4",
+    "F5"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*F major*: home… almost.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4",
+    "C5",
+    "F5"
+   ]
+  },
+  {
+   "name": "Fsus2",
+   "roman": "Isus2",
+   "tag": "unsettled",
+   "bars": 1,
+   "text": "A *becomes G*: even home won't settle.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "G4",
+    "C5",
+    "F5"
+   ],
+   "focus": 3
+  }
+ ]
+}

@@ -1,0 +1,78 @@
+{
+ "title": "Someone You Loved",
+ "artist": "Lewis Capaldi",
+ "key": "Db major",
+ "bpm": 110,
+ "episode": 78,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "*One minor chord* and it all slips away",
+ "hook_focus": 2,
+ "cover_text": "The chord where *it slips away*",
+ "question": "Which line hits hardest for you? 👇",
+ "chords": [
+  {
+   "name": "Db",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D♭ major*: you had it.",
+   "notes": [
+    "Db3",
+    "Ab3",
+    "Db4",
+    "F4",
+    "Ab4",
+    "Db5"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "V",
+   "tag": "reach",
+   "bars": 1,
+   "text": "*A♭*: reaching…",
+   "notes": [
+    "Ab2",
+    "Ab3",
+    "C4",
+    "Eb4",
+    "Ab4",
+    "Eb5"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "Bbm",
+   "roman": "vi",
+   "tag": "slip",
+   "bars": 1,
+   "text": "*B♭ minor*: it slips away.",
+   "notes": [
+    "Bb2",
+    "Bb3",
+    "Db4",
+    "F4",
+    "Bb4",
+    "F5"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Gb",
+   "roman": "IV",
+   "tag": "miss",
+   "bars": 1,
+   "text": "*G♭*: just missing them.",
+   "notes": [
+    "Gb2",
+    "Db4",
+    "Gb4",
+    "Bb4",
+    "Db5",
+    "Gb5"
+   ],
+   "focus": 2
+  }
+ ]
+}

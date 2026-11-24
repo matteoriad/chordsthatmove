@@ -1,0 +1,46 @@
+{
+ "title": "Every Breath You Take",
+ "artist": "The Police",
+ "key": "A major",
+ "bpm": 117,
+ "episode": 63,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "A love song that's *secretly creepy*",
+ "hook_focus": 1,
+ "cover_text": "A love song that's *not a love song*",
+ "question": "Did you know this one's actually creepy? 👇",
+ "chords": [
+  {
+   "name": "Aadd9",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A add9*: sweet… almost too sweet."
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "shade",
+   "bars": 1,
+   "text": "*F♯ minor*: something's off.",
+   "focus_note": "A"
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "calm",
+   "bars": 1,
+   "text": "*D major*: calm, controlled.",
+   "focus_note": "D"
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "watch",
+   "bars": 1,
+   "text": "*E major*: still watching.",
+   "focus_note": "G#"
+  }
+ ]
+}

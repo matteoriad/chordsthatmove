@@ -1,0 +1,94 @@
+{
+ "title": "Take the \"A\" Train",
+ "artist": "Duke Ellington",
+ "key": "C major",
+ "bpm": 172,
+ "episode": 92,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "One strange chord makes this *jazz*",
+ "hook_focus": 1,
+ "cover_text": "The chord that *switches tracks*",
+ "question": "Ellington's version or Ella's? 👇",
+ "hashtag": "taketheatrain",
+ "chords": [
+  {
+   "name": "C6",
+   "roman": "I6",
+   "tag": "home",
+   "bars": 2,
+   "text": "*C6*: smooth, rolling along.",
+   "notes": [
+    "C3",
+    "G3",
+    "C4",
+    "E4",
+    "A4",
+    "C5"
+   ]
+  },
+  {
+   "name": "D7",
+   "roman": "II7♭5",
+   "tag": "secondary dominant",
+   "bars": 2,
+   "text": "*D7♭5*: F♯ jolts us onto new tracks.",
+   "notes": [
+    "D3",
+    "A3",
+    "C4",
+    "F#4",
+    "A4",
+    "D5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "Dm7",
+   "roman": "ii7",
+   "tag": "back",
+   "bars": 1,
+   "text": "F♯ slides back to *F*: Dm7.",
+   "notes": [
+    "D3",
+    "A3",
+    "C4",
+    "F4",
+    "A4",
+    "D5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "G7",
+   "roman": "V7",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "*G7*: the brakes come on.",
+   "notes": [
+    "G2",
+    "G3",
+    "B3",
+    "F4",
+    "G4",
+    "D5"
+   ]
+  },
+  {
+   "name": "C6",
+   "roman": "I6",
+   "tag": "home",
+   "bars": 2,
+   "text": "C6: *back on the main line*.",
+   "ending": true,
+   "notes": [
+    "C3",
+    "G3",
+    "A3",
+    "E4",
+    "G4",
+    "C5"
+   ]
+  }
+ ]
+}

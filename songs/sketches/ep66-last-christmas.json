@@ -1,0 +1,48 @@
+{
+ "title": "Last Christmas",
+ "artist": "Wham!",
+ "key": "D major",
+ "bpm": 107,
+ "episode": 66,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Four chords. *Every single December.*",
+ "hook_focus": 2,
+ "cover_text": "The oldest trick in pop, *wrapped up*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "hashtag": "lastchristmas",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D major*: warm, festive."
+  },
+  {
+   "name": "Bm",
+   "roman": "vi",
+   "tag": "regret",
+   "bars": 1,
+   "text": "*B minor*: a memory creeps in.",
+   "focus_note": "B"
+  },
+  {
+   "name": "Em",
+   "roman": "ii",
+   "tag": "heartbreak",
+   "bars": 1,
+   "text": "I–vi–ii–V: *pop's oldest loop*, gone sad.",
+   "focus_note": "G"
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "pull",
+   "bars": 1,
+   "text": "*A major* pulls you back to the start.",
+   "focus_note": "C#"
+  }
+ ]
+}

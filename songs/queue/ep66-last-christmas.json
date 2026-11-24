@@ -1,0 +1,80 @@
+{
+ "title": "Last Christmas",
+ "artist": "Wham!",
+ "key": "D major",
+ "bpm": 107,
+ "episode": 66,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "Four chords. *Every single December.*",
+ "hook_focus": 2,
+ "cover_text": "The oldest trick in pop, *wrapped up*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "hashtag": "lastchristmas",
+ "chords": [
+  {
+   "name": "D",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*D major*: warm, festive.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4",
+    "A4",
+    "D5"
+   ]
+  },
+  {
+   "name": "Bm",
+   "roman": "vi",
+   "tag": "regret",
+   "bars": 1,
+   "text": "*B minor*: a memory creeps in.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4",
+    "B4",
+    "F#5"
+   ],
+   "focus": 1
+  },
+  {
+   "name": "Em",
+   "roman": "ii",
+   "tag": "heartbreak",
+   "bars": 1,
+   "text": "I–vi–ii–V: *pop's oldest loop*, gone sad.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4",
+    "B4",
+    "E5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "A",
+   "roman": "V",
+   "tag": "pull",
+   "bars": 1,
+   "text": "*A major* pulls you back to the start.",
+   "notes": [
+    "A2",
+    "A3",
+    "E4",
+    "A4",
+    "C#5",
+    "E5"
+   ],
+   "focus": 4
+  }
+ ]
+}

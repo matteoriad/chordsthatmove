@@ -47,7 +47,12 @@ def youtube_enabled(): return _env("YT_CLIENT_ID", "YT_CLIENT_SECRET", "YT_REFRE
 
 
 def youtube_meta(spec, caption):
-    title = re.sub(r"\s+", " ", spec["hook"].replace("*", "")).strip()
+    hook = re.sub(r"\s+", " ", spec["hook"].replace("*", "")).strip()
+    # Searchable titles (2026-11-24): explainers lead with "<Song> chords" (people search for that);
+    # guess episodes never name the song; jams say what they are.
+    if spec.get("jam"): title = f"{hook} | jam track"
+    elif spec.get("guess"): title = f"Guess the song: {hook}"
+    else: title = f"{spec['title']} chords – {spec['artist']}: {hook}"
     tail = " #Shorts"
     if len(title) + len(tail) > 100: title = title[:100 - len(tail) - 1].rstrip() + "…"
     tags = ["music theory", "chord progression", spec["title"], spec["artist"], "songwriting",

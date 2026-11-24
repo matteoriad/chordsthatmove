@@ -1,0 +1,45 @@
+{
+ "title": "The Scientist",
+ "artist": "Coldplay",
+ "key": "F major",
+ "bpm": 73,
+ "episode": 76,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "An apology in *three chords*",
+ "hook_focus": 3,
+ "cover_text": "Three chords that *say sorry*",
+ "question": "Piano or guitar: how did you learn this one? 👇",
+ "hashtag": "thescientist",
+ "chords": [
+  {
+   "name": "Dm7",
+   "roman": "vi7",
+   "tag": "sorry",
+   "bars": 1,
+   "text": "*D minor 7*: it starts with regret."
+  },
+  {
+   "name": "Bb",
+   "roman": "IV",
+   "tag": "soften",
+   "bars": 1,
+   "text": "*B♭*: softer, reaching out."
+  },
+  {
+   "name": "F",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*F major*: home… almost."
+  },
+  {
+   "name": "Fsus2",
+   "roman": "Isus2",
+   "tag": "unsettled",
+   "bars": 1,
+   "text": "A *becomes G*: even home won't settle.",
+   "focus_note": "G"
+  }
+ ]
+}

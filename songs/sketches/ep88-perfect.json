@@ -1,0 +1,46 @@
+{
+ "title": "Perfect",
+ "artist": "Ed Sheeran",
+ "key": "Ab major",
+ "bpm": 63,
+ "episode": 88,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "A wedding song that *sways in threes*",
+ "hook_focus": 1,
+ "cover_text": "Four chords *in three*",
+ "question": "Wedding song or overplayed? Be honest 👇",
+ "chords": [
+  {
+   "name": "Ab",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A♭ major*: barefoot on the grass."
+  },
+  {
+   "name": "Fm",
+   "roman": "vi",
+   "tag": "close",
+   "bars": 1,
+   "text": "*F minor*: closer now.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Db",
+   "roman": "IV",
+   "tag": "sway",
+   "bars": 1,
+   "text": "*D♭*: swaying.",
+   "focus_note": "Db"
+  },
+  {
+   "name": "Eb",
+   "roman": "V",
+   "tag": "turn",
+   "bars": 1,
+   "text": "*E♭*: and turn.",
+   "focus_note": "G"
+  }
+ ]
+}

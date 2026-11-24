@@ -7,7 +7,7 @@ A platform failing never stops Instagram or the other platform; the next run ret
 
 Called by post.py after each Instagram post, or on its own (CROSSPOST_ONLY run):
   python pipeline/crosspost.py
-Env: CROSSPOST_LIMIT  max uploads per platform per run (default 6)
+Env: CROSSPOST_LIMIT  max uploads per platform per run (default 2: bursts of old uploads stall on TikTok/YouTube)
      DRY_RUN=true     list what would be uploaded, upload nothing
 """
 import json, os, sys
@@ -33,7 +33,7 @@ def catch_up(state, rendered=None, limit=None, dry=False):
     Returns True if state changed."""
     import post  # caption()
     rendered = dict(rendered or {})
-    limit = int(limit or os.environ.get("CROSSPOST_LIMIT", "6"))
+    limit = int(limit or os.environ.get("CROSSPOST_LIMIT", "2"))
     enabled = [n for n, (on, _) in platforms.PLATFORMS.items() if on()]
     if not enabled:
         log("Cross-posting: no YouTube/TikTok secrets set, skipping."); return False

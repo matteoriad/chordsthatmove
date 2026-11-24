@@ -1,0 +1,46 @@
+{
+ "title": "All I Want for Christmas",
+ "artist": "Mariah Carey",
+ "key": "G major",
+ "bpm": 150,
+ "episode": 73,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "The most *Christmassy chord* ever?",
+ "hook_focus": 2,
+ "cover_text": "The chord *under the Christmas tree*",
+ "question": "Mariah or Michael Bublé: whose version? 👇",
+ "hashtag": "alliwantforchristmasisyou",
+ "chords": [
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*G major*: home."
+  },
+  {
+   "name": "C",
+   "roman": "IV",
+   "tag": "lift",
+   "bars": 1,
+   "text": "*C major*: the lift.",
+   "focus_note": "E"
+  },
+  {
+   "name": "Cm6",
+   "roman": "iv6",
+   "tag": "borrowed",
+   "bars": 1,
+   "text": "Same C, but *E sinks to E♭*: instant nostalgia.",
+   "focus_note": "Eb"
+  },
+  {
+   "name": "G",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Home, *wrapped in nostalgia*."
+  }
+ ]
+}

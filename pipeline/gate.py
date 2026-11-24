@@ -11,7 +11,8 @@ backup post never cancels the next slot).
 already posted, wait for the slot if early. Manual runs from the Actions tab
 always go.
 Slots listed under "own" in schedule.json belong to Matteo's own videos (posted by hand):
-the automated reel skips them.
+the automated reel skips them, unless Instagram still shows no new post an hour after the
+slot; then the next reel fills it.
 """
 import datetime, json, os, subprocess, time
 from zoneinfo import ZoneInfo
@@ -33,6 +34,27 @@ def own_slots():
     p = os.path.join(ROOT, "schedule.json")
     if not os.path.exists(p): return set()
     return {e["slot"] for e in json.load(open(p)).get("own", [])}
+
+
+OWN_GRACE = datetime.timedelta(hours=1)   # how long an own-video slot waits for your video
+
+
+def latest_instagram_post():
+    """Time of the newest post on the Instagram account (hand-posted ones included), or None."""
+    user, token = os.environ.get("IG_USER_ID"), os.environ.get("IG_ACCESS_TOKEN")
+    if not (user and token): return None
+    host = "graph.instagram.com" if os.environ.get("IG_LOGIN", "facebook").strip().lower() == "instagram" \
+        else "graph.facebook.com"
+    try:
+        import urllib.request, urllib.parse
+        q = urllib.parse.urlencode({"fields": "timestamp", "limit": 1, "access_token": token})
+        with urllib.request.urlopen(f"https://{host}/v22.0/{user}/media?{q}", timeout=30) as r:
+            data = json.load(r).get("data", [])
+        if not data: return None
+        return datetime.datetime.strptime(data[0]["timestamp"], "%Y-%m-%dT%H:%M:%S%z")
+    except Exception as e:
+        print("could not read the latest Instagram post:", type(e).__name__)
+        return None
 
 
 def latest_posted():
@@ -69,7 +91,19 @@ def main():
                 continue
             name = f"{h:02d}:{m:02d}"
             if f"{slot_at:%Y-%m-%d} {name}" in own_slots():
-                return out(False, f"The {slot_at:%Y-%m-%d} {name} slot is for your own video (schedule.json): skipping.")
+                # Your own video goes here. From an hour after the slot, if Instagram still shows nothing
+                # new, the automated reel fills it so the slot isn't lost (2026-11-24: those slots
+                # were going out empty).
+                if now < slot_at + OWN_GRACE:
+                    return out(False, f"The {slot_at:%Y-%m-%d} {name} slot is for your own video (schedule.json): skipping.")
+                ig_last = latest_instagram_post()
+                if ig_last is None:
+                    return out(False, f"Own-video slot {name}: couldn't check Instagram, so not filling it.")
+                if ig_last >= slot_at - datetime.timedelta(hours=1):
+                    return out(False, f"Own-video slot {name}: your video went out at {ig_last.astimezone(BER):%H:%M}: skipping.")
+                if last and last >= slot_at - datetime.timedelta(hours=1):
+                    return out(False, f"Own-video slot {name}: already filled at {last.astimezone(BER):%H:%M}: skipping.")
+                return out(True, f"Own-video slot {name}: nothing posted by {now:%H:%M}, filling it with the next reel.")
             # One post per slot: skip only if something already went out for THIS slot (from the
             # hour before it on). A late backup post for the previous slot doesn't cancel this one.
             if last and last >= slot_at - datetime.timedelta(hours=1):

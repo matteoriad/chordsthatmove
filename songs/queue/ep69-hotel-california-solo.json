@@ -1,0 +1,139 @@
+{
+ "title": "Hotel California (solo)",
+ "artist": "Eagles",
+ "key": "B minor",
+ "bpm": 74,
+ "episode": 69,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Same 8 chords. *Why does the solo soar?*",
+ "hook_focus": 1,
+ "cover_text": "The solo that *never checks out*",
+ "question": "Best guitar solo ever? Name a better one 👇",
+ "hashtag": "hotelcalifornia",
+ "chords": [
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "The verse loop again: *B minor*.",
+   "notes": [
+    "B2",
+    "B3",
+    "D4",
+    "F#4",
+    "B4",
+    "F#5"
+   ]
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "harmonic minor",
+   "bars": 1,
+   "text": "*A♯*: the guitars lean on it, hard.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A#4",
+    "C#5",
+    "F#5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "A",
+   "roman": "VII",
+   "tag": "descent",
+   "bars": 1,
+   "text": "Sinking, step by step…",
+   "notes": [
+    "A2",
+    "A3",
+    "E4",
+    "A4",
+    "C#5",
+    "E5"
+   ]
+  },
+  {
+   "name": "E",
+   "roman": "IV",
+   "tag": "dorian",
+   "bars": 1,
+   "text": "*G♯*: a flash of light.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4",
+    "B4",
+    "E5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "G",
+   "roman": "VI",
+   "tag": "descent",
+   "bars": 1,
+   "text": "Down to *G*.",
+   "notes": [
+    "G2",
+    "G3",
+    "D4",
+    "G4",
+    "B4",
+    "D5"
+   ]
+  },
+  {
+   "name": "D",
+   "roman": "III",
+   "tag": "relative major",
+   "bars": 1,
+   "text": "*D major*: a way out?",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4",
+    "A4",
+    "D5"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "iv",
+   "tag": "minor iv",
+   "bars": 1,
+   "text": "No.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4",
+    "B4",
+    "E5"
+   ]
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "Back to the top. *Forever.*",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A#4",
+    "C#5",
+    "F#5"
+   ],
+   "focus": 3
+  }
+ ]
+}

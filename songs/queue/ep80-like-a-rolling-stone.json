@@ -1,0 +1,106 @@
+{
+ "title": "Like a Rolling Stone",
+ "artist": "Bob Dylan",
+ "key": "C major",
+ "bpm": 95,
+ "episode": 80,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Every chord climbs a step. *Then the fall.*",
+ "hook_focus": 4,
+ "cover_text": "A climb that *ends in a fall*",
+ "question": "Dylan or Hendrix version? 👇",
+ "chords": [
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 0.5,
+   "text": "*C*: on top of the world.",
+   "notes": [
+    "C3",
+    "G3",
+    "C4",
+    "E4",
+    "G4",
+    "C5"
+   ]
+  },
+  {
+   "name": "Dm",
+   "roman": "ii",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "Step up: *D minor*.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F4",
+    "A4",
+    "D5"
+   ]
+  },
+  {
+   "name": "Em",
+   "roman": "iii",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "Up again: *E minor*.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G4",
+    "B4",
+    "E5"
+   ]
+  },
+  {
+   "name": "F",
+   "roman": "IV",
+   "tag": "climb",
+   "bars": 0.5,
+   "text": "Up again: *F*. Almost there.",
+   "notes": [
+    "F2",
+    "C4",
+    "F4",
+    "A4",
+    "C5",
+    "F5"
+   ]
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "top",
+   "bars": 2,
+   "text": "*G*, the top. Hanging there…",
+   "notes": [
+    "G2",
+    "D4",
+    "G4",
+    "B4",
+    "D5",
+    "G5"
+   ]
+  },
+  {
+   "name": "C",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Then back down to C: *the fall*.",
+   "ending": true,
+   "notes": [
+    "C3",
+    "C4",
+    "G4",
+    "C5",
+    "E5",
+    "G5"
+   ]
+  }
+ ]
+}

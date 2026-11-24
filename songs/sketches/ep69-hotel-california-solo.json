@@ -1,0 +1,75 @@
+{
+ "title": "Hotel California (solo)",
+ "artist": "Eagles",
+ "key": "B minor",
+ "bpm": 74,
+ "episode": 69,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Same 8 chords. *Why does the solo soar?*",
+ "hook_focus": 1,
+ "cover_text": "The solo that *never checks out*",
+ "question": "Best guitar solo ever? Name a better one 👇",
+ "hashtag": "hotelcalifornia",
+ "chords": [
+  {
+   "name": "Bm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "The verse loop again: *B minor*."
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "harmonic minor",
+   "bars": 1,
+   "text": "*A♯*: the guitars lean on it, hard.",
+   "focus_note": "A#"
+  },
+  {
+   "name": "A",
+   "roman": "VII",
+   "tag": "descent",
+   "bars": 1,
+   "text": "Sinking, step by step…"
+  },
+  {
+   "name": "E",
+   "roman": "IV",
+   "tag": "dorian",
+   "bars": 1,
+   "text": "*G♯*: a flash of light.",
+   "focus_note": "G#"
+  },
+  {
+   "name": "G",
+   "roman": "VI",
+   "tag": "descent",
+   "bars": 1,
+   "text": "Down to *G*."
+  },
+  {
+   "name": "D",
+   "roman": "III",
+   "tag": "relative major",
+   "bars": 1,
+   "text": "*D major*: a way out?"
+  },
+  {
+   "name": "Em",
+   "roman": "iv",
+   "tag": "minor iv",
+   "bars": 1,
+   "text": "No."
+  },
+  {
+   "name": "F#",
+   "roman": "V",
+   "tag": "dominant",
+   "bars": 1,
+   "text": "Back to the top. *Forever.*",
+   "focus_note": "A#"
+  }
+ ]
+}

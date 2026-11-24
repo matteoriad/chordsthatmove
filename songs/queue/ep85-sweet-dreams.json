@@ -1,0 +1,62 @@
+{
+ "title": "Sweet Dreams",
+ "artist": "Eurythmics",
+ "key": "C minor",
+ "bpm": 126,
+ "episode": 85,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Three chords that sound like *a trap*",
+ "hook_focus": 2,
+ "cover_text": "One note that *locks the loop*",
+ "question": "Synth people: which sound would you use for this? 👇",
+ "chords": [
+  {
+   "name": "Cm",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*C minor*: cold and mechanical.",
+   "notes": [
+    "C3",
+    "G3",
+    "C4",
+    "Eb4",
+    "G4",
+    "C5"
+   ]
+  },
+  {
+   "name": "Ab",
+   "roman": "VI",
+   "tag": "drop",
+   "bars": 0.5,
+   "text": "*A♭*: a step down, darker.",
+   "notes": [
+    "Ab2",
+    "Ab3",
+    "C4",
+    "Eb4",
+    "Ab4",
+    "Eb5"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "G",
+   "roman": "V",
+   "tag": "pull",
+   "bars": 0.5,
+   "text": "*G major*. That *B* pulls you back in.",
+   "notes": [
+    "G2",
+    "G3",
+    "B3",
+    "D4",
+    "G4",
+    "D5"
+   ],
+   "focus": 2
+  }
+ ]
+}

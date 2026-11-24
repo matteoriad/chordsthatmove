@@ -284,6 +284,37 @@ def loops(spec):
     return LOOP and spec.get("loop", True)
 
 
+MAX_SECONDS = 18   # watch-time cap for song reels (2026-11-24): the short ones (14–15 s) did best
+
+
+def apply_cut(spec):
+    """"cut": indices of the sketch chords to keep (e.g. [0, 1, 2, 3]), so a long song shows only the
+    part with the "aha". Voicings stay as built from the full progression; "hook_focus" and
+    "explain" (indices into the full list) are remapped. A guess reel reveals on the last kept chord."""
+    keep = spec.get("cut")
+    if not keep: return spec
+    remap = {old: new for new, old in enumerate(keep)}
+    out = {**spec, "chords": [spec["chords"][i] for i in keep]}
+    if "hook_focus" in spec:
+        out["hook_focus"] = remap.get(spec["hook_focus"], len(keep) - 1)
+    if isinstance(spec.get("explain"), list):
+        out["explain"] = [remap[i] for i in spec["explain"] if i in remap]
+    return out
+
+
+def cap_length(spec, out, beat, min_sec):
+    """Song reels: squeeze the loop to at most "max_seconds" (default MAX_SECONDS) by shortening
+    every chord in proportion, never below min_sec per chord. Jam reels are meant to be played
+    along with, so they keep their length."""
+    if spec.get("jam"): return out
+    limit = spec.get("max_seconds", MAX_SECONDS)
+    total = sum(c["beats"] for c in out) * beat
+    if total <= limit: return out
+    floor_b = max(1, int(np.ceil(min_sec / beat - 1e-6)))
+    f = limit / total
+    return [{**c, "beats": max(floor_b, int(round(c["beats"] * f)))} for c in out]
+
+
 def expand(spec):
     """Musical timing. Chords given in real bars ("bars", may be 0.5 / 0.25) become:
     a whole-bar intro on the first chord (the hook plays over it), the loop with every
@@ -292,6 +323,7 @@ def expand(spec):
     Specs without "bars" keep their old "beats" timing."""
     if not any("bars" in c for c in spec["chords"]):
         return spec
+    spec = apply_cut(spec)
     bpb = spec.get("beats_per_bar", 4)
     bar = bpb * 60 / spec["bpm"]
     MIN = spec.get("min_chord_seconds", 2.0 if loops(spec) else 2.4)   # long enough to hear each chord
@@ -315,7 +347,9 @@ def expand(spec):
         beat = 60 / spec["bpm"]
         cap = max(bpb, int(4.5 / beat))   # no straight line longer than ~4.5 s: viewers scroll away
         out = [{**c, "beats": min(cap, int(round(c["bars"] * k * bpb)))} for c in chords]
-        if sum(c["beats"] for c in out) * beat < 12:   # short loops play twice (captions on the first pass)
+        out = cap_length(spec, out, beat, MIN)
+        once = sum(c["beats"] for c in out) * beat   # short loops play twice (captions on the first pass),
+        if once < 12 and (spec.get("jam") or 2 * once <= spec.get("max_seconds", MAX_SECONDS) + 0.5):   # if that still fits the cap
             out = out + [{**c, "_repeat": True} for c in out]
         return {**spec, "chords": out, "hook_beats": bpb, "_intro": 0, "_stretch": k}
     intro_bars = pow2_bars(spec.get("hook_seconds", 3.6))

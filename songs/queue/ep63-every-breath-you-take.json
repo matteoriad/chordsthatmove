@@ -1,0 +1,78 @@
+{
+ "title": "Every Breath You Take",
+ "artist": "The Police",
+ "key": "A major",
+ "bpm": 117,
+ "episode": 63,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "A love song that's *secretly creepy*",
+ "hook_focus": 1,
+ "cover_text": "A love song that's *not a love song*",
+ "question": "Did you know this one's actually creepy? 👇",
+ "chords": [
+  {
+   "name": "Aadd9",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*A add9*: sweet… almost too sweet.",
+   "notes": [
+    "A2",
+    "A3",
+    "B3",
+    "C#4",
+    "A4",
+    "E5"
+   ]
+  },
+  {
+   "name": "F#m",
+   "roman": "vi",
+   "tag": "shade",
+   "bars": 1,
+   "text": "*F♯ minor*: something's off.",
+   "notes": [
+    "F#2",
+    "C#4",
+    "F#4",
+    "A4",
+    "C#5",
+    "F#5"
+   ],
+   "focus": 3
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "calm",
+   "bars": 1,
+   "text": "*D major*: calm, controlled.",
+   "notes": [
+    "D3",
+    "A3",
+    "D4",
+    "F#4",
+    "A4",
+    "D5"
+   ],
+   "focus": 2
+  },
+  {
+   "name": "E",
+   "roman": "V",
+   "tag": "watch",
+   "bars": 1,
+   "text": "*E major*: still watching.",
+   "notes": [
+    "E2",
+    "B3",
+    "E4",
+    "G#4",
+    "B4",
+    "E5"
+   ],
+   "focus": 3
+  }
+ ]
+}

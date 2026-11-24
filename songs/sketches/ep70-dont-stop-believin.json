@@ -1,0 +1,75 @@
+{
+ "title": "Don't Stop Believin'",
+ "artist": "Journey",
+ "key": "E major",
+ "bpm": 119,
+ "episode": 70,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Everyone sings this. *Nobody hears the switch.*",
+ "hook_focus": 6,
+ "cover_text": "Same loop, *one darker chord*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "chords": [
+  {
+   "name": "E",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "*E major*: open road."
+  },
+  {
+   "name": "B",
+   "roman": "V",
+   "tag": "lift",
+   "bars": 1,
+   "text": "*B major*: moving forward."
+  },
+  {
+   "name": "C#m",
+   "roman": "vi",
+   "tag": "doubt",
+   "bars": 1,
+   "text": "*C♯ minor*: a small doubt…",
+   "focus_note": "E"
+  },
+  {
+   "name": "A",
+   "roman": "IV",
+   "tag": "hope",
+   "bars": 1,
+   "text": "*A major*: and hope again.",
+   "focus_note": "A"
+  },
+  {
+   "name": "E",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Same road, *second time*."
+  },
+  {
+   "name": "B",
+   "roman": "V",
+   "tag": "lift",
+   "bars": 1,
+   "text": "Moving forward…"
+  },
+  {
+   "name": "G#m",
+   "roman": "iii",
+   "tag": "shadow",
+   "bars": 1,
+   "text": "*G♯ minor*, not C♯m: *a shadow*.",
+   "focus_note": "D#"
+  },
+  {
+   "name": "A",
+   "roman": "IV",
+   "tag": "hope",
+   "bars": 1,
+   "text": "*A major*: keep going."
+  }
+ ],
+ "guess": true
+}

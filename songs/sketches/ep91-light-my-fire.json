@@ -1,0 +1,80 @@
+{
+ "title": "Light My Fire",
+ "artist": "The Doors",
+ "key": "A major",
+ "bpm": 128,
+ "episode": 91,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "guess": true,
+ "hook": "The organ chords that *lit the 60s*",
+ "hook_focus": 6,
+ "cover_text": "A chain of chords *burning down*",
+ "question": "Got it within 3 chords? Be honest 👇",
+ "chords": [
+  {
+   "name": "G",
+   "roman": "♭VII",
+   "tag": "spark",
+   "bars": 0.5,
+   "text": "*G*: no key yet. Just a spark."
+  },
+  {
+   "name": "D",
+   "roman": "IV",
+   "tag": "catch",
+   "bars": 0.5,
+   "text": "Up to *D*. It catches.",
+   "focus_note": "F#"
+  },
+  {
+   "name": "F",
+   "roman": "♭VI",
+   "tag": "jump",
+   "bars": 0.5,
+   "text": "*F*: a sudden jump off the map.",
+   "focus_note": "F"
+  },
+  {
+   "name": "Bb",
+   "roman": "♭II",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Up a fourth: *B♭*.",
+   "focus_note": "Bb"
+  },
+  {
+   "name": "Eb",
+   "roman": "♭V",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Up a fourth: *E♭*. Burning down…",
+   "focus_note": "Eb"
+  },
+  {
+   "name": "Ab",
+   "roman": "VII",
+   "tag": "fourth up",
+   "bars": 0.5,
+   "text": "Another: *A♭*. Nearly there…",
+   "focus_note": "Ab"
+  },
+  {
+   "name": "A",
+   "roman": "I",
+   "tag": "home",
+   "bars": 1,
+   "text": "Half step up: *A major*. Boom.",
+   "focus_note": "A"
+  },
+  {
+   "name": "Am7",
+   "roman": "i7",
+   "tag": "verse",
+   "bars": 1,
+   "text": "Into the verse: *the fuse has hit*.",
+   "focus_note": "C",
+   "ending": true
+  }
+ ]
+}

@@ -56,7 +56,7 @@ In the Instagram app: Settings → Account type and tools → **Switch to profes
 
 After every Instagram post the same video goes to YouTube Shorts and TikTok. Each platform is
 switched on by its secrets; without them it is skipped. Every run also uploads any posted episode
-that isn't on a platform yet, oldest first (up to 6 per platform per run), so old episodes get
+that isn't on a platform yet, oldest first (up to 2 per platform per run, so old episodes never land in a burst), so old episodes get
 backfilled and failed uploads retried. A YouTube/TikTok failure never blocks the Instagram post.
 `posted.json` records the YouTube ID and TikTok publish ID per episode.
 
@@ -107,6 +107,18 @@ and `python3 brandreel.py cover songs/queue/ep15-your-song.json test`.
 When fewer than 28 episodes are left (about a week at four a day), the run opens a "Queue is running low" issue, which GitHub emails you. When the queue runs out, the job fails and GitHub emails you.
 
 Optional sketch fields: `"question"` is a comment prompt added to the Instagram caption (default: asks which song to break down next); `"hashtag"` overrides the song hashtag (default: the title, lowercased).
+
+## Length, cuts and hooks (2026-11-24 analysis)
+- Song reels are capped at 18 s (`MAX_SECONDS` in brandreel.py, per episode `"max_seconds"`): chords are
+  shortened evenly, never below ~2 s each. Jam reels keep their length. Watch time drives reach: the
+  14–15 s reels did best, 25–40 s ones lost most viewers before the payoff.
+- `"cut": [0, 1, 2, 4]` (indices into the sketch chords) shows only the part of a long progression with
+  the "aha"; voicings stay as built from the full progression, a guess reel reveals on the last kept chord.
+- Hooks: one concrete, checkable promise (one chord / two notes / a number / a twist), max ~8 words.
+  Avoid the "Why do these chords feel like …" / "Why X feels like …" templates: they underperformed.
+- YouTube titles: explainers lead with "<Song> chords – <Artist>", guess reels with "Guess the song:".
+- Own-video slots (schedule.json): if Instagram shows no new post an hour after the slot, the next
+  reel fills it.
 
 ## "Jam over this" reels
 A progression to play along with, no song. Write a short file in `songs/jams/` (title, key, scale,

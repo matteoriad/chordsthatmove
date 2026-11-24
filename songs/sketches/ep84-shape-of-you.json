@@ -1,0 +1,47 @@
+{
+ "title": "Shape of You",
+ "artist": "Ed Sheeran",
+ "key": "C# minor",
+ "bpm": 96,
+ "episode": 84,
+ "accent": "#FF7AA8",
+ "handle": "@chordsthatmove",
+ "hook": "Billions of plays. *One loop.*",
+ "hook_focus": 3,
+ "cover_text": "One loop. *The whole song.*",
+ "question": "Did you get it before the reveal? Be honest 👇",
+ "chords": [
+  {
+   "name": "C#m",
+   "roman": "i",
+   "tag": "home",
+   "bars": 1,
+   "text": "*C♯ minor*: dark, low, groovy."
+  },
+  {
+   "name": "F#m",
+   "roman": "iv",
+   "tag": "sway",
+   "bars": 1,
+   "text": "*F♯ minor*: a slow sway.",
+   "focus_note": "A"
+  },
+  {
+   "name": "A",
+   "roman": "VI",
+   "tag": "warm",
+   "bars": 1,
+   "text": "*A major*: warmer, closer.",
+   "focus_note": "C#"
+  },
+  {
+   "name": "B",
+   "roman": "VII",
+   "tag": "pull",
+   "bars": 1,
+   "text": "*B major*: and pull back in.",
+   "focus_note": "D#"
+  }
+ ],
+ "guess": true
+}
