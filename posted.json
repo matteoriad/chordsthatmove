@@ -882,7 +882,7 @@
  {
   "episode": 45,
   "slug": "ep45-comptine-amelie",
-  "title": "Comptine d'un autre \u00e9t\u00e9",
+  "title": "Comptine d'un autre été",
   "media_id": "18650855668042376",
   "permalink": "https://www.instagram.com/reel/Df0ODuIz_Un/",
   "posted_at": "2026-11-16T20:31:48+00:00",
@@ -1313,6 +1313,18 @@
   "held": "pad-supersaw",
   "texture": "tex-marimba",
   "posted_at": "2026-11-25T07:31:53+00:00",
-  "story_id": "18034318034861944"
+  "story_id": "18034318034861944",
+  "youtube": {
+   "id": "cM-NaXPX_9M",
+   "url": "https://youtube.com/shorts/cM-NaXPX_9M",
+   "via": "chrome",
+   "posted_at": "2026-11-25"
+  },
+  "tiktok": {
+   "publish_id": "7712017939133648150",
+   "url": "https://www.tiktok.com/@chordsthatmove/video/7712017939133648150",
+   "via": "chrome",
+   "posted_at": "2026-11-25"
+  }
  }
 ]
