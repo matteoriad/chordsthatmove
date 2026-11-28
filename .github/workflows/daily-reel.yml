@@ -50,7 +50,7 @@ jobs:
         run: python3 pipeline/gate.py
 
       - name: System packages
-        if: steps.gate.outputs.go == 'true'
+        if: steps.gate.outputs.go == 'true' || steps.gate.outputs.prepare == 'true'
         timeout-minutes: 30
         run: |
           # The runner's default mirror (azure.archive.ubuntu.com) sometimes stops answering,
@@ -73,13 +73,19 @@ jobs:
           apt_install || { use_main_mirror; apt_install; }
 
       - uses: actions/setup-python@v5
-        if: steps.gate.outputs.go == 'true'
+        if: steps.gate.outputs.go == 'true' || steps.gate.outputs.prepare == 'true'
         with:
           python-version: "3.12"
           cache: pip
 
       - run: pip install -r requirements.txt
-        if: steps.gate.outputs.go == 'true'
+        if: steps.gate.outputs.go == 'true' || steps.gate.outputs.prepare == 'true'
+
+      - name: Render the next reels for Chrome posting (release "ready")
+        if: steps.gate.outputs.prepare == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: python pipeline/prepare.py
 
       - name: Render and post
         if: steps.gate.outputs.go == 'true'

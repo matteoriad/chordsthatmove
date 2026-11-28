@@ -24,9 +24,11 @@ BACKUP = datetime.timedelta(hours=2)   # how long after a slot a missed post may
 MIN_GAP = datetime.timedelta(hours=3)   # must stay below the 4 h spacing of the closest slots
 
 
-def out(go, why):
+def out(go, why, prepare=False):
     print(why)
-    with open(os.environ["GITHUB_OUTPUT"], "a") as f: f.write(f"go={'true' if go else 'false'}\n")
+    with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+        f.write(f"go={'true' if go else 'false'}\n")
+        f.write(f"prepare={'true' if prepare else 'false'}\n")
 
 
 def own_slots():
@@ -75,7 +77,10 @@ def main():
     if event == "workflow_dispatch":
         return out(True, "Manual run: going ahead.")
     if os.path.exists(os.path.join(ROOT, ".github", "PAUSED")):
-        return out(False, "Posting is paused (.github/PAUSED exists): skipping.")
+        # Chrome-posting mode: no API post, but render the next reels on GitHub (pipeline/prepare.py)
+        # so the Chrome scheduled tasks only download and upload them.
+        return out(False, "API posting is paused (.github/PAUSED exists): rendering the next reels for Chrome instead.",
+                   prepare=True)
     now = datetime.datetime.now(BER)
     posted = latest_posted()
     last = max((datetime.datetime.fromisoformat(p["posted_at"]) for p in posted), default=None)

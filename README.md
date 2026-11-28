@@ -210,5 +210,12 @@ When you post a video by hand, list its slot in `schedule.json` under `"own"`
 slot, so the queue lasts longer.
 
 ## Pausing
-Create `.github/PAUSED` to stop all automatic posting (manual runs from the Actions tab still work);
-delete it to resume.
+Create `.github/PAUSED` to stop automatic posting through the Instagram API (manual runs from the
+Actions tab still post); delete it to resume.
+
+While it exists (Chrome-posting mode, since 26 Nov 2026) every scheduled or post-now run still renders
+the next 4 unposted episodes (plus posted ones still waiting for YouTube/TikTok) with
+`pipeline/prepare.py` and puts them on the GitHub release **ready**: `<slug>.mp4`, `<slug>_cover.png`,
+`<slug>_caption.txt`, `<slug>_yt_title.txt` and `ready.json`. The Chrome scheduled tasks download them
+from `https://github.com/matteoriad/chordsthatmove/releases/download/ready/<file>` instead of rendering.
+Changing a queue file re-renders that episode on the next run.
